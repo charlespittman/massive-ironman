@@ -1,0 +1,67 @@
+set nocompatible    " It's Vi IMproved!  We don't need to be compatible.
+
+syntax on
+set background=dark
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
+set textwidth=79
+
+colorscheme elflord
+
+set autoindent
+set showcmd         " Show (partial) command in status line
+set showmatch       " Show matching brackets
+set ignorecase      " Do case insensitive matching
+set smartcase       " Do smart case matching
+set incsearch       " Incremental search
+set hlsearch        " Highlight the search
+set hidden          " Hide buffers when they are abandoned
+set noautowrite     " Don't automatically write when going to :next
+set number          " Show line numbers in margin
+set smarttab        " tab and backspace are smart
+set expandtab       " I HATE tabs.  Expand to appropriate number of spaces
+filetype on         " Enable filetype detection
+filetype indent on  " Enable filetype-specific indenting
+filetype plugin on  " Enable filetype-specific plugins
+
+set ofu=syntaxcomplete#Complete   " Enable Omni completion
+
+set list listchars=tab:▷⋅,trail:⋅,nbsp:⋅    " Print tabs and trailing spaces
+
+imap jj <ESC>   " Exit insert mode by typing jj
+nmap q :q<CR>   " Exit normal mode by typing q
+nmap Q :q!<CR>  " Exit normal mode without saving
+
+"-- Tagbar options --"
+nmap <F7> :TagbarToggle<CR>
+let g:tagbar_compact = 1
+let g:tagbar_iconchars = ['▸', '▾']
+let g:tagbar_autoshowtag = 1  " Open closed folds for tag under cursor
+" Automatically open tagbar when a supported file is opened
+"autocmd VimEnter * nested :call tagbar#autoopen(1)
+
+" Using the SingleCompile plugin. <F8> to compile, <F9> to compile & run
+nmap <F8> :SCCompile<CR>
+nmap <F9> :SCCompileRun<CR>
+
+" Hit <F4> to remove trailing whitespace
+nnoremap <silent> <F4> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
+
+" Printer options for :ha[rdcopy]
+set printdevice=KM-3050
+set printoptions=paper:letter,left:5pc,right:5pc,top:5pc,bottom:5pc,syntax:y,wrap:y,duplex:long
+
+" Pathogen makes it super easy to install plugins in their own directory
+call pathogen#infect()
+
+" Super fancy status line
+python from powerline.ext.vim import source_plugin; source_plugin()
+set laststatus=2
+
+let g:tex_fold_enabled = 1    " Enable automated folding of LaTeX files
+
+" Toggle 'paste' with notification
+nnoremap <F2> :set invpaste paste?<CR>
+set pastetoggle=<F2>    " Toggle paste while in Insert mode
+set showmode
