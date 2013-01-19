@@ -82,13 +82,14 @@ imap jj <ESC>   " Exit insert mode by typing jj
 nmap q :q<CR>   " Exit normal mode by typing q
 nmap Q :q!<CR>  " Exit normal mode without saving
 
-"-- Tagbar options --"
+"-- Tagbar options (begin) --"
 nmap <F7> :TagbarToggle<CR>
 let g:tagbar_compact = 1
 let g:tagbar_iconchars = ['▸', '▾']
 let g:tagbar_autoshowtag = 1  " Open closed folds for tag under cursor
 " Automatically open tagbar when a supported file is opened
 "autocmd VimEnter * nested :call tagbar#autoopen(1)
+"-- Tagbar options (end) --"
 
 " Using the SingleCompile plugin. <F8> to compile, <F9> to compile & run
 nmap <F8> :SCCompile<CR>
@@ -101,9 +102,6 @@ nnoremap <silent> <F4> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 set printdevice=KM-3050
 set printoptions=paper:letter,left:5pc,right:5pc,top:5pc,bottom:5pc,syntax:y,wrap:y,duplex:long
 
-" Pathogen makes it super easy to install plugins in their own directory
-call pathogen#infect()
-
 " Super fancy status line
 python from powerline.ext.vim import source_plugin; source_plugin()
 set laststatus=2
@@ -114,5 +112,3 @@ let g:tex_fold_enabled = 1    " Enable automated folding of LaTeX files
 nnoremap <F2> :set invpaste paste?<CR>
 set pastetoggle=<F2>    " Toggle paste while in Insert mode
 set showmode
-
-

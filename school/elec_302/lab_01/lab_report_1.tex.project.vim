@@ -1,5 +1,6 @@
 " ATP project vim script: Wed Jan 16, 2013 at 03:31 PM -0500.
 
+let b:atp_OutDir = '/home/charles/Dropbox/massive-ironman/school/elec_302/lab_01'
 let b:atp_MainFile = 'lab_report_1.tex'
 let g:atp_mapNn = 0
 let b:atp_autex = 1
