@@ -1,6 +1,43 @@
 *~
 ~.swp
 
+# C++ compiled files
+## Object files
+*.slo
+*.lo
+*.o
+
+## Dynamic libraries
+*.so
+*.dylib
+
+## Static libraries
+*.lai
+*.la
+*.a
+
+## Executables
+*.exe
+*.out
+*.app
+
+
+# Ruby stuff
+*.gem
+*.rbc
+.bundle
+.config
+coverage
+InstalledFiles
+lib/bundler/man
+pkg
+rdoc
+spec/reports
+test/tmp
+test/version_tmp
+tmp
+
+
 # LaTeX temporary files
 *.acn
 *.acr
