@@ -43,21 +43,13 @@
 
 \setlength\parindent{0pt} % Removes all indentation from paragraphs
 
-\section{Introduction}
-Praesent congue faucibus turpis et cursus. Phasellus vitae nisi felis,
-elementum malesuada ante. Aliquam bibendum quam ac libero sollicitudin vel
-congue eros feugiat. Aenean ultricies malesuada felis ut vestibulum. Praesent
-non tellus risus. Nulla feugiat mauris sed nisl hendrerit ultricies vitae non
-
-Donec non mollis turpis. Etiam tempus ligula et tellus tempus a mollis massa
-faucibus. Proin ac interdum risus. Duis nec lacus elit. Donec venenatis
-tristique diam, in sollicitudin dui laoreet nec.
-
-\begin{enumerate}{}{}
-  \item State the theoretical principles or concepts that this experiment is
-    trying to prove.
-  \item May also be to gain experience in using the lab equipment.
-\end{enumerate}
+\section{Purpose of Experiment}
+In this experiment, an RLC circuit was modeled on an EMS workstation.
+The capacitance was varied for two different inductance values. The circuit
+was then analyzed to obtain measured values for the circuit power factor, real
+power, and apparent power. These measured results were then compared to the 
+theoretical values calculated beforehand. Familiarization with the EMS
+workstaton was also obtained.
 
 \section{Circuit Tested}
 \begin{figure}[h]
@@ -86,56 +78,32 @@ tristique diam, in sollicitudin dui laoreet nec.
 \end{table}
 
 \section{Procedure}
-Sed luctus lacinia sollicitudin. Praesent arcu sapien, accumsan et convallis
-quis, fringilla vel ligula. Morbi id purus massa. Aliquam ut leo tellus, vel
-auctor urna. Nulla molestie tellus et velit aliquet convallis.
+At the EMS workstation, the main power switch of the Power Supply was 
+verified to be OFF, and the voltage control knob was verified to be 
+completely counterclockwise. The voltmeter selector switch was set to
+position 4-N. The RLC circuit shown in Figure 1 was modeled with the 
+capacitor left out at first. The elements labeled E1 and I1 on Figure 1
+refered to the ammeter and voltmeter Data Acquisition Interface (DAI)
+connections. The DAI 24-V supply was connected to the main Power Supply,
+and the DAI USB cable was connected to the PC workstation. The main power
+switch of the Power Supply was switched to ON.
 
-Suspendisse fermentum tincidunt lorem in pellentesque. Vestibulum tincidunt
-nibh eget lectus posuere ut luctus libero pretium. Integer sit amet purus ac
-nibh dictum elementum. Quisque sagittis leo eu felis mollis vitae interdum
-metus mattis. Maecenas et sem libero.
+On the PC, the Lab-Volt Data Acquisition Management application was
+started, and the file pertaining to the experiment being worked was 
+opened. Three windows (metering, oscilloscope, and phasor analyzer)
+were verified to open up along with the experiment file. The three 
+windows were set to continuously refresh.
 
-Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere
-cubilia Curae; Morbi imperdiet, odio id scelerisque euismod, lectus libero
-eleifend justo, sit amet porttitor diam est eget orci. Praesent congue
-facilisis sem nec condimentum. Suspendisse mi enim, pharetra imperdiet congue
-nec, tincidunt a tellus.
+The supply voltage was adjusted to read 24-V. Verification was obtained
+by monitoring the EMS analog voltmeter and the digital metering window
+on the PC. The load voltage E1, load current I1, the real power consumed 
+by the circuit, and the phase angle were recorded. In the Phasor Analyzer
+window, E1 was selected as the reference phasor. The voltage control knob 
+was then turn completely counterclockwise and the main power switch was 
+set to OFF.
 
-Maecenas lacus risus, elementum a pulvinar vel, ullamcorper a diam. Maecenas
-malesuada, turpis sit amet euismod posuere, lectus elit bibendum magna, a
-molestie erat neque ut magna. Integer magna neque, ultricies vitae eleifend ac,
-mollis eget erat. Aenean risus enim, venenatis quis dapibus vel, ullamcorper id
-ante. Proin eget mattis magna. Integer rhoncus facilisis leo eget semper.
-Aenean sodales sagittis eleifend. Nulla hendrerit nunc vel felis rutrum
-tristique. 
-
-Quisque posuere ullamcorper arcu. Etiam consequat accumsan elit at
-semper. Proin vulputate iaculis interdum. Praesent ac enim in enim commodo
-malesuada. Quisque non augue at nunc vulputate scelerisque id quis nisi.
-Vestibulum id augue eget neque semper aliquet.
-
-Aliquam laoreet elit quis arcu dignissim vitae ornare enim consequat. Donec
-sodales dignissim commodo. Vivamus porttitor laoreet tincidunt. Curabitur
-aliquam luctus sapien quis tincidunt. Quisque in diam velit, nec luctus nulla.
-Mauris vel est nec metus luctus suscipit. Vestibulum mattis laoreet ipsum eu
-ullamcorper. Maecenas sit amet tempus nisl. Quisque ut dui at erat dictum
-imperdiet. 
-
-Ut aliquet, mi quis tincidunt posuere, eros purus egestas diam, ac
-hendrerit quam lectus in orci. Vestibulum ante ipsum primis in faucibus orci
-luctus et ultrices posuere cubilia Curae; Proin vulputate porta mauris, ac
-congue tortor porta euismod. Donec sit amet massa diam. Etiam sed mi eros,
-porta congue libero. Lor
-
-\begin{enumerate}{}{}
-  \item Enough description that someone familiar with basic electrical
-    measurements could reproduce the experiment.
-  \item Sequential
-  \item Paragraph form is usually preferred.
-  \item Write in past tense.
-  \item Do not just copy the instruction lists in the lab assignments.
-  \item Learn to be brief
-\end{enumerate}
+The EMS workstation was then reconfigured to include the capacitance.
+The subsequent values included in Table 3 were then measured.
 
 \section{Calc}
 \begin{table}[h]
@@ -189,55 +157,42 @@ porta congue libero. Lor
   \end{center}
 \end{table}
 
-\section{Comparison with Theoretical}
-Praesent iaculis metus ornare tellus semper interdum. Nunc cursus sapien quis
-tortor condimentum fermentum. Fusce tristique, eros sit amet euismod elementum,
-tellus diam porttitor erat, et gravida nisi sapien et orci. Donec nec quam
-tempus mi gravida ornare in eu lorem. In sit amet massa vitae ligula malesuada
-consectetur. Vivamus faucibus tristique lacus, non scelerisque eros rhoncus ut.
-Mauris eget interdum nisi. Nullam ac est odio, in mollis dui. Suspendisse
-potenti.
+\section{Comparison with Theoretical: Percent Deviation}
+\begin{table}[h]
+  \begin{center}
+    \begin{tabular}{cccccccccc}
+      \hline
+      R & L & C & I$_1$ & E$_1$ & P & $\theta$ & S & Q & p.f. \\
+      \hline
+      0.0 & 0.0 & --- & 1.9 & 1.5 & 0.7 & 1.1 & 0.2 & 4.4 & 2.8 \\
+      0.0 & 0.0 & 0.0 & 3.7 & 1.5 & 0.0 & 2.5 & 2.4 & 6.4 & 6.5 \\
+      0.0 & 0.0 & 0.0 & 4.1 & 1.5 & 0.7 & 5.1 & 2.9 & 8.3 & 6.5 \\
+      0.0 & 0.0 & 0.0 & 6.6 & 1.7 & 2.0 & 65  & 8.3 & 71  & 0.0 \\
+      0.0 & 0.0 & --- & 1.8 & 1.7 & 16  & 8.1 & 3.5 & 94  & 100 \\
+      0.0 & 0.0 & 0.0 & 5.3 & 1.7 & 17  & 20  & 7.1 & 14  & 12  \\
+      0.0 & 0.0 & 0.0 & 18  & 1.7 & 18  & 1220& 21  & 1433& 0.0 \\
+      0.0 & 0.0 & 0.0 & 7.8 & 2.0 & 19  & 5.1 & 10  & 5.5 & 10  \\
 
-Donec posuere vestibulum viverra. In vestibulum sem nisl. Donec eros tortor,
-ultrices a ullamcorper vitae, dapibus ac libero. Vivamus quis nisi elit, non
-venenatis urna. Donec porta dolor in ligula vehicula in vulputate ligula
-commodo. Donec viverra convallis felis, eget vulputate nunc lacinia eget. 
-
-\begin{enumerate}{}{}
-  \item Measured values versus what would be predicted by a theoretical
-    analysis of the circuit performance.
-  \item For example, compare the measured resistance of two resistors connected
-    in series with R$_1 + $R($2$
-  \item Express comparison as a \%error.
-\end{enumerate}
-
-\[\text{\%deviation} = {\text{measured} - \text{theoretical}} \frac
-  {\text{theoretical}} \times \text{100\%}\]
+\[\text{\%deviation} = \frac{measured - theoretical}{theoretical}\ \times \text{100\%}\]
 
 \section{Conclusions}
-Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac
-turpis egestas. Duis dui turpis, convallis ac hendrerit in, facilisis sed
-lectus. Nulla facilisi. Aenean id nulla ante, sit amet venenatis eros.
+The effects of different levels of capacitance were observed by 
+conducting this experiemnt. The theoretical values for real power, 
+apparent power, and the phase angle were calculated. Then, 
+the experiment was conducted to verify the effects of a parallel 
+RLC circuit. These measured results were differed from the theoretical
+results because of one underlying reason. The switch modeling the 
+inductance at the EMS workstation contained an internal impedance.
+This added impedance caused the calculted results to differ from the 
+measured. Also, one can see that the voltage measured at E1 fluctuating throughout
+the experiment. This fluctuation caused added variations between measured
+and theoretical. 
 
-Fusce orci nibh, pharetra id bibendum sit amet, porta id metus. Sed faucibus
-ultricies ullamcorper. Class aptent taciti sociosqu ad litora torquent per
-conubia nostra, per inceptos himenaeos. Suspendisse bibendum vestibulum metus
-pellentesque gravida. Proin justo ligula, ultrices at faucibus at, blandit ut
-libero. Fusce cursus commodo nisl, sit amet pretium velit dignissim quis. Cras
-ut posuere felis.
-
-Proin suscipit porta sodales. Sed non massa sit amet dui condimentum convallis.
-Vestibulum vitae tincidunt dui. Mauris tincidunt, neque vel congue ornare, sem
-sapien eleifend urna, sit amet dictum neque orci id felis. Cras diam nunc,
-viverra interdum aliquam sit amet, blandit quis libero. Nunc eget odio
-scelerisque eros placerat auctor. Aliquam mattis tellus sed lacus sodales id
-molestie risus cursus.
-
-\begin{enumerate}{}
-  \item What theoretical principle or concept did this experiment prove?
-  \item Within experimental error, this laboratory exercise has demonstrated that
-    the equivalent resistance of two resistors connected in series is equal to the
-    sum of the individual values.
-\end{enumerate}
+It was noted that row 8 of Tables 2 and 3 contained a negative angle for
+the phase impedance. This signified a highly capacitative load where the phase 
+current lead the phase voltage. All other loads were inductive, except in
+rows 4 and 7, where the load was slightly capacitative. In these rows, 4 and
+7, the power factor recorded as 1.0 signifiying an inuctive load efficiently 
+corrected by a capacitance.
 
 \end{document}
