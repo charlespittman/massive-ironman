@@ -22,7 +22,7 @@
 \usepackage{graphicx}
 \usepackage{mathtools}
 
-\title{ELEC 302-81\\ Lab 1\\ Power in AC Circuits} % Title
+\title{ELEC 302-81\\ Lab 2\\ Transformer Fundamentals} % Title
 % \author{John \textsc{Smith}} % Author name
 \date{\today} % Specify a date for the report
 
@@ -32,7 +32,7 @@
 
 \begin{center}
   \begin{tabular}{lr}
-    Date Performed: & January 14, 2013 \\
+    Date Performed: & January 28, 2013 \\
     Partners: & Rawley Dent \\
               & Charles Pittman \\
     Instructor: & Dr. Weatherford
@@ -51,12 +51,29 @@ power, and apparent power. These measured results were then compared to the
 theoretical values calculated beforehand. Familiarization with the EMS
 workstation was also obtained.
 
-\section{Circuit Tested}
+\section{Circuits Tested}
 \begin{figure}[h]
   \begin{center}
-    \includegraphics[width=.8\textwidth]{test_circuit}
-    \caption{Parallel RLC Circuit Configuration}
-    \label{circuit_01}
+    \includegraphics[width=.8\textwidth]{circuit_01}
+    \caption{Single Phase Transformer Circuit for part }
+    \label{fig:circuit_01}
+  \end{center}
+\end{figure}
+
+\begin{figure}[h]
+  \begin{center}
+    \includegraphics[width=.8\textwidth]{circuit_02}
+    \caption{}
+    \caption{Single Phase Transformer Circuit for part two}
+    \label{fig:circuit_02}
+  \end{center}
+\end{figure}
+
+\begin{figure}[h]
+  \begin{center}
+    \includegraphics[width=.8\textwidth]{circuit_03}
+    \caption{Single Phase Transformer Circuit for part three}
+    \label{fig:circuit_03}
   \end{center}
 \end{figure}
 
@@ -73,7 +90,7 @@ workstation was also obtained.
       \hline
     \end{tabular}
     \caption{RLC Values for circuit in Figure~\ref{circuit_01}}
-    \label{testc_dat}
+    \label{tab:testc_dat}
   \end{center}
 \end{table}
 
@@ -81,9 +98,9 @@ workstation was also obtained.
 At the EMS workstation, the main power switch of the Power Supply was verified
 to be OFF, and the voltage control knob was verified to be completely
 counterclockwise. The voltmeter selector switch was set to position 4-N. The
-RLC circuit shown in Figure~\ref{circuit_01} was modeled with the capacitor
+RLC circuit shown in Figure~\ref{fig:circuit_xx} was modeled with the capacitor
 left out at first. The elements labeled E$_1$ and I$_1$ on
-Figure~\ref{circuit_01} referred to the ammeter and voltmeter Data Acquisition
+Figure~\ref{fig:circuit_xx} referred to the ammeter and voltmeter Data Acquisition
 Interface (DAI) connections. The DAI 24-V supply was connected to the main
 Power Supply, and the DAI USB cable was connected to the PC workstation. The
 main power switch of the Power Supply was switched to ON.
@@ -95,14 +112,14 @@ along with the experiment file. The three windows were set to continuously
 refresh.
 
 The supply voltage was adjusted to read 24-V. Verification was obtained by
-monitoring the EMS analog voltmeter and the digital metering window on the PC.
+monitoring the EMS analog voltmeter and the digital metering window on the {PC}.
 The load voltage E$_1$, load current I$_1$, the real power consumed by the
 circuit, and the phase angle were recorded. In the Phasor Analyzer window,
 E$_1$ was selected as the reference phasor. The voltage control knob was then
 turn completely counterclockwise and the main power switch was set to OFF.
 
 The EMS workstation was then reconfigured to include the capacitance.  The
-subsequent values included in Table~\ref{meas_data} were then measured.
+subsequent values included in Table~\ref{tab:meas_data} were then measured.
 
 \section{Calc}
 \begin{table}[h]
@@ -123,7 +140,7 @@ subsequent values included in Table~\ref{meas_data} were then measured.
       \hline
     \end{tabular}
     \caption{Calculated Data}
-    \label{calc_data}
+    \label{tab:calc_data}
   \end{center}
 \end{table}
 
@@ -152,7 +169,7 @@ subsequent values included in Table~\ref{meas_data} were then measured.
       \hline
     \end{tabular}
     \caption{Experimental Data}
-    \label{meas_data}
+    \label{tab:meas_data}
   \end{center}
 \end{table}
 
