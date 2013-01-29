@@ -44,14 +44,15 @@
 %\setlength\parindent{0pt} % Removes all indentation from paragraphs
 
 \section{Purpose of Experiment}
-In this experiment, an RLC circuit was modeled on an EMS workstation.  The
-capacitance was varied for two different inductance values. The circuit was
-then analyzed to obtain measured values for the circuit power factor, real
-power, and apparent power. These measured results were then compared to the
-theoretical values calculated beforehand. Familiarization with the EMS
-workstation was also obtained.
+CHANGE ME!! In this experiment, an RLC circuit was modeled on an EMS
+workstation.  The capacitance was varied for two different inductance values.
+The circuit was then analyzed to obtain measured values for the circuit power
+factor, real power, and apparent power. These measured results were then
+compared to the theoretical values calculated beforehand. Familiarization with
+the EMS workstation was also obtained.
 
 \section{Circuits Tested}
+\subsection*{Part 1}
 \begin{figure}[h]
   \centering
   \includegraphics[width=.8\textwidth]{circuit_01}
@@ -59,6 +60,7 @@ workstation was also obtained.
   \label{fig:circuit_01}
 \end{figure}
 
+\subsection*{Part 2}
 \begin{figure}[h]
   \centering
   \includegraphics[width=.8\textwidth]{circuit_02}
@@ -66,6 +68,7 @@ workstation was also obtained.
   \label{fig:circuit_02}
 \end{figure}
 
+\subsection*{Part 3}
 \begin{figure}[h]
   \centering
   \includegraphics[width=.8\textwidth]{circuit_03}
@@ -74,33 +77,36 @@ workstation was also obtained.
 \end{figure}
 
 \section{Procedure}
-At the EMS workstation, the main power switch of the Power Supply was verified
-to be OFF, and the voltage control knob was verified to be completely
-counterclockwise. The voltmeter selector switch was set to position 4-N. The
-RLC circuit shown in Figure~\ref{fig:XXX} was modeled with the capacitor
-left out at first. The elements labeled E$_1$ and I$_1$ on
+CHANGE ME!! At the EMS workstation, the main power switch of the Power Supply
+was verified to be OFF, and the voltage control knob was verified to be
+completely counterclockwise. The voltmeter selector switch was set to position
+4-N. The RLC circuit shown in Figure~\ref{fig:XXX} was modeled with the
+capacitor left out at first. The elements labeled E$_1$ and I$_1$ on
 Figure~\ref{fig:XXX} referred to the ammeter and voltmeter Data Acquisition
 Interface (DAI) connections. The DAI 24-V supply was connected to the main
 Power Supply, and the DAI USB cable was connected to the PC workstation. The
 main power switch of the Power Supply was switched to ON.
 
-On the PC, the Lab-Volt Data Acquisition Management application was started,
-and the file pertaining to the experiment being worked was opened. Three
-windows (metering, oscilloscope, and phasor analyzer) were verified to open up
-along with the experiment file. The three windows were set to continuously
-refresh.
+CHANGE ME!! On the PC, the Lab-Volt Data Acquisition Management application was
+started, and the file pertaining to the experiment being worked was opened.
+Three windows (metering, oscilloscope, and phasor analyzer) were verified to
+open up along with the experiment file. The three windows were set to
+continuously refresh.
 
-The supply voltage was adjusted to read 24-V. Verification was obtained by
-monitoring the EMS analog voltmeter and the digital metering window on the {PC}.
-The load voltage E$_1$, load current I$_1$, the real power consumed by the
-circuit, and the phase angle were recorded. In the Phasor Analyzer window,
-E$_1$ was selected as the reference phasor. The voltage control knob was then
-turn completely counterclockwise and the main power switch was set to OFF.
+CHANGE ME!! The supply voltage was adjusted to read 24-V. Verification was
+obtained by monitoring the EMS analog voltmeter and the digital metering window
+on the {PC}.  The load voltage E$_1$, load current I$_1$, the real power
+consumed by the circuit, and the phase angle were recorded. In the Phasor
+Analyzer window, E$_1$ was selected as the reference phasor. The voltage
+control knob was then turn completely counterclockwise and the main power
+switch was set to OFF.
 
-The EMS workstation was then reconfigured to include the capacitance.  The
-subsequent values included in Table~\ref{tab:XXX} were then measured.
+CHANGE ME!! The EMS workstation was then reconfigured to include the
+capacitance.  The subsequent values included in Table~\ref{tab:XXX} were then
+measured.
 
 \section{Results}
+\subsection{Part 1}
 \begin{table}[h]
   \centering
   \begin{tabular}{cc}
@@ -108,13 +114,13 @@ subsequent values included in Table~\ref{tab:XXX} were then measured.
     Winding & Resistance \\
     \# & $\Omega$ \\
     \hline
-    1--2 & -- \\
-    3--4 & -- \\
-    5--6 & -- \\
-    7--8 & -- \\
-    8--4 & -- \\
-    5--9 & -- \\
-    9--6 & -- \\
+    1--2 &  7.9 \\
+    3--4 & 24.9 \\
+    5--6 &  7.9 \\
+    7--8 &  9.4 \\
+    8--4 & 12.1 \\
+    5--9 &  3.6 \\
+    9--6 &  4.2 \\
   \end{tabular}
   \caption{Winding Resistances}
   \label{tab:wind_res}
@@ -127,17 +133,21 @@ subsequent values included in Table~\ref{tab:XXX} were then measured.
     Winding & Primary Voltage & Secondary Voltage & Turn Ratio \\
     \# & E$_1$ V (1--2) & E$_2$ V & N$_\text{P}$:N$_\text{S}$\\
     \hline
-    3--4 & -- & -- & -- \\
-    5--6 & -- & -- & -- \\
-    7--8 & -- & -- & -- \\
-    8--4 & -- & -- & -- \\
-    5--9 & -- & -- & -- \\
-    9--6 & -- & -- & -- \\
+    3--4 & 120.3 & 207.2 & 0.58 \\
+    5--6 & 119.9 & 119.4 & 1.00 \\
+    7--8 & 120.4 &  75.8 & 1.59 \\
+    3--7 & 120.3 & 103.6 & 1.16 \\
+    8--4 & 120.3 &  27.8 & 4.33 \\
+    5--9 & 120.2 &  59.8 & 2.01 \\
+    9--6 & 120.1 &  59.7 & 2.01 \\
   \end{tabular}
   \caption{Primary and Secondary Voltages}
   \label{tab:volt_rat}
 \end{table}
 
+\subsection{Part 2}
+
+\subsection{Part 3}
 \begin{table}[h]
   \centering
   \begin{tabular}{ccc}
@@ -145,34 +155,46 @@ subsequent values included in Table~\ref{tab:XXX} were then measured.
     Primary Voltage & Secondary Voltage & Exciting Voltage\\
     E$_1$ V (1--2) & E$_2$ V & E$_2$ V\\
     \hline
-    --  & -- & -- \\
-    --  & -- & -- \\
-    --  & -- & -- \\
-    --  & -- & -- \\
-    --  & -- & -- \\
-    --  & -- & -- \\
+    10.56 &  10.42 &  2.12 \\
+    19.61 &  19.39 &  2.84 \\
+    30.90 &  30.60 &  3.57 \\
+    40.77 &  40.39 &  4.11 \\
+    50.02 &  49.60 &  4.59 \\
+    60.76 &  60.27 &  5.12 \\
+    70.54 &  70.03 &  5.62 \\
+    80.48 &  79.90 &  6.04 \\
+    91.36 &  90.73 &  6.59 \\
+    99.36 &  98.66 &  7.02 \\
+    110.57 & 109.78 &  7.63 \\
+    119.85 & 119.07 &  8.20 \\
+    130.03 & 129.16 &  8.91 \\
+    140.67 & 139.77 &  9.76 \\
+    149.73 & 148.70 & 10.70 \\
+    160.85 & 159.70 & 12.25 \\
+    171.55 & 170.27 & 14.50 \\
+    180.38 & 178.92 & 17.11 \\
   \end{tabular}
   \caption{Data for Fig~\ref{fig:circuit_03}}
   \label{tab:circuit_3}
 \end{table}
 
 \section{Conclusions}
-The effects of different levels of capacitance were observed by conducting this
-experiment. The theoretical values for real power, apparent power, and the
-phase angle were calculated. Then, the experiment was conducted to verify the
-effects of a parallel RLC circuit. These measured results were differed from
-the theoretical results because of one underlying reason. The switch modeling
-the inductance at the EMS workstation contained an internal impedance.  This
-added impedance caused the calculated results to differ from the measured.
-Also, one can see that the voltage measured at E$_1$ fluctuating throughout the
-experiment. This fluctuation caused added variations between measured and
-theoretical.
+CHANGE ME!!  The effects of different levels of capacitance were observed by
+conducting this experiment. The theoretical values for real power, apparent
+power, and the phase angle were calculated. Then, the experiment was conducted
+to verify the effects of a parallel RLC circuit. These measured results were
+differed from the theoretical results because of one underlying reason. The
+switch modeling the inductance at the EMS workstation contained an internal
+impedance.  This added impedance caused the calculated results to differ from
+the measured.  Also, one can see that the voltage measured at E$_1$ fluctuating
+throughout the experiment. This fluctuation caused added variations between
+measured and theoretical.
 
-It was noted that row 8 of Tables~\ref{tab:XXX} and~\ref{tab:XXX} contained
-a negative angle for the phase impedance. This signified a highly capacitative
-load where the phase current lead the phase voltage. All other loads were
-inductive, except in rows 4 and 7, where the load was slightly capacitative. In
-these rows, 4 and 7, the power factor recorded as 1.0 signifying an inductive
-load efficiently corrected by a capacitance.
+CHANGE ME!!  It was noted that row 8 of Tables~\ref{tab:XXX} and~\ref{tab:XXX}
+contained a negative angle for the phase impedance. This signified a highly
+capacitative load where the phase current lead the phase voltage. All other
+loads were inductive, except in rows 4 and 7, where the load was slightly
+capacitative. In these rows, 4 and 7, the power factor recorded as 1.0
+signifying an inductive load efficiently corrected by a capacitance.
 
 \end{document}
