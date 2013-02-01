@@ -20,6 +20,7 @@
 
 \documentclass{article}
 \usepackage{graphicx}
+\usepackage{float}
 \usepackage{mathtools}
 
 \title{ELEC 302-81\\ Lab 2\\ Transformer Fundamentals} % Title
@@ -52,31 +53,33 @@ compared to the theoretical values calculated beforehand. Familiarization with
 the EMS workstation was also obtained.
 
 \section{Circuits Tested}
-\subsection*{Part 1}
-\begin{figure}[h]
+\subsection{Voltage Ratios}
+\begin{figure}[H]
   \centering
   \includegraphics[width=.8\textwidth]{circuit_01}
-  \caption{Single Phase Transformer Circuit for Part One}
+  \caption{Single Phase Transformer Circuit}
   \label{fig:circuit_01}
 \end{figure}
 
-\subsection*{Part 2}
-\begin{figure}[h]
+\subsection{Current Ratio}
+\begin{figure}[H]
   \centering
   \includegraphics[width=.8\textwidth]{circuit_02}
-  \caption{Single Phase Transformer Circuit for Part Two}
+  \caption{Single Phase Transformer Circuit}
   \label{fig:circuit_02}
 \end{figure}
 
-\subsection*{Part 3}
-\begin{figure}[h]
+\subsection{Saturation}
+\begin{figure}[H]
   \centering
   \includegraphics[width=.8\textwidth]{circuit_03}
-  \caption{Single Phase Transformer Circuit for Part Three}
+  \caption{Single Phase Transformer Circuit}
   \label{fig:circuit_03}
 \end{figure}
 
 \section{Procedure}
+\subsection{Voltage Ratios}
+\label{part1}
 CHANGE ME!! At the EMS workstation, the main power switch of the Power Supply
 was verified to be OFF, and the voltage control knob was verified to be
 completely counterclockwise. The voltmeter selector switch was set to position
@@ -87,12 +90,16 @@ Interface (DAI) connections. The DAI 24-V supply was connected to the main
 Power Supply, and the DAI USB cable was connected to the PC workstation. The
 main power switch of the Power Supply was switched to ON.
 
+\subsection{Current Ratio}
+\label{part2}
 CHANGE ME!! On the PC, the Lab-Volt Data Acquisition Management application was
 started, and the file pertaining to the experiment being worked was opened.
 Three windows (metering, oscilloscope, and phasor analyzer) were verified to
 open up along with the experiment file. The three windows were set to
 continuously refresh.
 
+\subsection{Saturation}
+\label{part3}
 CHANGE ME!! The supply voltage was adjusted to read 24-V. Verification was
 obtained by monitoring the EMS analog voltmeter and the digital metering window
 on the {PC}.  The load voltage E$_1$, load current I$_1$, the real power
@@ -106,8 +113,8 @@ capacitance.  The subsequent values included in Table~\ref{tab:XXX} were then
 measured.
 
 \section{Results}
-\subsection{Part 1}
-\begin{table}[h]
+\subsection{Voltage Ratios}
+\begin{table}[H]
   \centering
   \begin{tabular}{cc}
     \hline
@@ -126,7 +133,7 @@ measured.
   \label{tab:wind_res}
 \end{table}
 
-\begin{table}[h]
+\begin{table}[H]
   \centering
   \begin{tabular}{cccc}
     \hline
@@ -145,10 +152,22 @@ measured.
   \label{tab:volt_rat}
 \end{table}
 
-\subsection{Part 2}
+\subsection{Current Ratio}
+\begin{table}[H]
+  \centering
+  \begin{tabular}{ccc}
+    \hline
+    E$_1$ & I$_1$ & I$_2$ \\
+    V & A & A \\
+    \hline
+    -- & -- & -- \\
+  \end{tabular}
+  \caption{Winding Resistances}
+  \label{tab:curr_rat}
+\end{table}
 
-\subsection{Part 3}
-\begin{table}[h]
+\subsection{Saturation}
+\begin{table}[H]
   \centering
   \begin{tabular}{ccc}
     \hline
@@ -178,6 +197,13 @@ measured.
   \label{tab:circuit_3}
 \end{table}
 
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=.8\textwidth]{graph}
+  \caption{Saturation Curve}
+  \label{fig:graph}
+\end{figure}
+
 \section{Conclusions}
 CHANGE ME!!  The effects of different levels of capacitance were observed by
 conducting this experiment. The theoretical values for real power, apparent
@@ -189,12 +215,5 @@ impedance.  This added impedance caused the calculated results to differ from
 the measured.  Also, one can see that the voltage measured at E$_1$ fluctuating
 throughout the experiment. This fluctuation caused added variations between
 measured and theoretical.
-
-CHANGE ME!!  It was noted that row 8 of Tables~\ref{tab:XXX} and~\ref{tab:XXX}
-contained a negative angle for the phase impedance. This signified a highly
-capacitative load where the phase current lead the phase voltage. All other
-loads were inductive, except in rows 4 and 7, where the load was slightly
-capacitative. In these rows, 4 and 7, the power factor recorded as 1.0
-signifying an inductive load efficiently corrected by a capacitance.
 
 \end{document}
