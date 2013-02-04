@@ -45,10 +45,13 @@
 %\setlength\parindent{0pt} % Removes all indentation from paragraphs
 
 \section{Purpose of Experiment}
-In this experiment, the basic characteristics of transformers were studied. Various transformer circuits 
-with different unknown turns ratios were constructed in order to study the different voltage ratios at each particular 
-turns ratio. Other transformer circuits were constructed to observe the similarity between the current ratio 
-and turns ratio, and to observe the saturation curve of a magnetic circuit.
+
+In this experiment, the basic characteristics of transformers were studied.
+Various transformer circuits with different unknown turns ratios were
+constructed in order to study the different voltage ratios at each particular
+turns ratio. Other transformer circuits were constructed to observe the
+similarity between the current ratio and turns ratio, and to observe the
+saturation curve of a magnetic circuit.
 
 \section{Circuits Tested}
 \subsection{Voltage Ratios}
@@ -77,41 +80,57 @@ and turns ratio, and to observe the saturation curve of a magnetic circuit.
 
 \section{Procedure}
 \subsection{EMS Workstation Set-up}
-At the Lab-Volt EMS workstation, a Fluke multi-meter was used to measure the DC resistance of each transformer
-winding. These values are recorded in Table 1. The DAI 24-V supply was turned on, and the DAI USB connector was 
-connected between the EMSworkstation and the PC. On the LVDAM EMS application software, the metering windows 
-for E1, E2, E3, I1, and I2 were opened. The metering windows were set to continuous refresh. 
+
+At the Lab-Volt EMS workstation, a Fluke multi-meter was used to measure the DC
+resistance of each transformer winding. These values are recorded in
+Table~\ref{tab:wind_res}.  The DAI 24V supply was turned on, and the DAI USB
+connector was connected between the EMS workstation and the {PC}. On the LVDAM
+EMS application software, the metering windows for E$_1$, E$_2$, E$_3$, I$_1$,
+and I$_2$ were opened. The metering windows were set to continuous refresh.
 
 \subsection{Voltage Ratios}
-\label{part1}
-With the main power swtich to OFF and the voltage control knob fully counterclockwise (CCW), the voltmeter selector 
-switch was set to postion 4-N. The circuit shown in Figure 1 was then constructed. The main power switch was
-turned to ON and the voltage supply voltage was set to 120-V. The primary voltage was recorded from E1 and the 
-secondary voltage was recorded from E2. The values for E1 and E2 were then measured and recorded for each winding
-number listed in Table 2. The main power switch was set to OFF and the voltage control knob was set fully CCW
-before rewiring the circuit for each winding number. The respective turns ratio for each set of winding 
-number, primary, and secondary voltages was calculted and also listed in Table 2. After completing the requisite
-measurements, the main power switch was set OFF and the voltage control to fully CCW.
+
+\label{part1} With the main power switch to OFF and the voltage control knob
+fully counterclockwise (CCW), the voltmeter selector switch was set to position
+4--N. The circuit shown in Figure~\ref{fig:circuit_01}  was then constructed.
+The main power switch was turned to ON and the voltage supply voltage was set
+to 120V. The primary voltage was recorded from E$_1$ and the secondary voltage
+was recorded from E$_2$.  The values for E$_1$ and E$_2$ were then measured and
+recorded for each winding number listed in Table~\ref{tab:volt_rat}. The main
+power switch was set to OFF and the voltage control knob was set fully CCW
+before rewiring the circuit for each winding number. The respective turns ratio
+for each set of winding number, primary, and secondary voltages was calculated
+and also listed in Table~\ref{tab:volt_rat}. After completing the requisite
+measurements, the main power switch was set OFF and the voltage control to
+fully CCW.
 
 \subsection{Current Ratio}
-\label{part2}
-The circuit shown in Figure 2 was then constructed. The main power switch was set ON and the voltage control knob
-was slowly adjusted to read 0.4-A from I2. It was noted that the ammeter I2 shorted the windings 5-6. Hence,
-extreme care was given to not exceed the secondary winding current rating of 0.5-A. The values for primary voltage
-E1, primary current I1, and secondary current I2 were then measured and recorded, as shown in Table 3. The main 
-power switch was set OFF and the voltage control knob fully CCW.
+
+\label{part2} The circuit shown in Figure~\ref{fig:circuit_02} was then
+constructed. The main power switch was set ON and the voltage control knob was
+slowly adjusted to read 0.4-A from I$_2$. It was noted that the ammeter I$_2$
+shorted the windings 5--6.  Hence, extreme care was given to not exceed the
+secondary winding current rating of 0.5A. The values for primary voltage E$_1$,
+primary current I$_1$, and secondary current I$_2$ were then measured and
+recorded, as shown in Table~\ref{tab:circuit_3}.  The main power switch was set
+OFF and the voltage control knob fully CCW.
 
 \subsection{Saturation}
-\label{part3}
-The circuit shown in Figure 3 was then constucted. The voltage supply connection was set from 4-N to 4-5. Since 
-the exciting current was small the 300 ohm resistor was included and thus the voltage E3 across the resistor was 
-used to show the current variation. On the PC, the Data Table application was opened and set to record settings 
-from the Options tab. E1, E2, and E3 appeared as the columns in the data table. The main power switch was set ON 
-and the supply voltage was then increased in 10-V increments from 0-180 volts. At each increment, the Record Data 
-tab was clicked to instantly enter the voltage measurements in the data table. After reaching 180-V, the main power
-switch was set to OFF and the voltage supply control knob was fully CCW. On the PC, the Graph application was opened. 
-E3 (the excitiing current) was set as the x-axis, and E1 (the applied voltage) as the y-axis. The Line Graph tab was
-clicked to display the saturation curve of the transformer core.
+
+\label{part3} The circuit shown in Figure~\ref{fig:circuit_03} was then
+constructed. The voltage supply connection was set from 4--N to 4--5. Since the
+exciting current was small the 300$\Omega$ resistor was included and thus the
+voltage E$_3$ across the resistor was used to show the current variation. On
+the PC, the Data Table application was opened and set to record settings from
+the Options tab. E$_1$, E$_2$, and E$_3$ appeared as the columns in the data
+table. The main power switch was set ON and the supply voltage was then
+increased in 10V increments from 0--180 volts. At each increment, the Record
+Data tab was clicked to instantly enter the voltage measurements in the data
+table. After reaching 180V, the main power switch was set to OFF and the
+voltage supply control knob was fully {CCW}. On the {PC}, the Graph application
+was opened.  E$_3$ (the exciting current) was set as the x-axis, and E$_1$ (the
+applied voltage) as the y-axis. The Line Graph tab was clicked to display the
+saturation curve of the transformer core.
 
 \section{Results}
 \subsection{Voltage Ratios}
@@ -207,28 +226,37 @@ clicked to display the saturation curve of the transformer core.
 \end{figure}
 
 \section{Conclusions}
-By measuring the resistance of each transformer winding and not getting any extremely high resistance 
-readings similar to an open circuit, it was determined that the transformer windings had no faults and 
-the integrity of the windings were intact.
 
-By measuring the voltage ratios for each particular transformer winding, the turns ratio for that winding
-was calculated by taking the primary voltage over the secondary voltage. This was one method to determine
-the turns ratio of an unspecified transformer. 
+By measuring the resistance of each transformer winding and not getting any
+extremely high resistance readings similar to an open circuit, it was
+determined that the transformer windings had no faults and the integrity of the
+windings were intact.
 
-By measuring the current ratio for one set of transformer windings, another method to determine the turns ratio
-was implemented. By referring to the text \emph{Electric Machinery Fundamentals}, the current ratio of a 
-transformer is inversely proportional to the turns ratio. The relationship states: \frac{Ip}{Is} = \frac{Ns}{Np}, 
-where Ip is the primary current, Is the secondary current, Np the primary winding, and Ns the secondary winding. 
-The ratio of secondary current I2 over primary current I1 was the same as the turns ratio calculated and recorded 
-in row 2 of Table 2 pertaining to winding number 5-6. Therefore, the additional method of determing a transformer 
-turns ratio was verified.
+By measuring the voltage ratios for each particular transformer winding, the
+turns ratio for that winding was calculated by taking the primary voltage over
+the secondary voltage. This was one method to determine the turns ratio of an
+unspecified transformer.
 
-By analyzing the saturation curve, it was determined that the transformer core did indeed become saturated.
-From an applied voltage of 10-V to approximately 110-V, the saturation curve was linear and the tranformer
-core was unsaturated at this time. A small increase in the magnetomotive force (represented as E3) resulted in 
-a very large increase in the flux produced (represented as E1). Then the saturation curve started to level off 
-after an applied voltage of 110-V (termed the \emph{knee} of the curve), and therefore the core started to 
-become saturated. In the saturated region, increases in magnetomotive force produce smaller and smaller increases 
-in flux.
+By measuring the current ratio for one set of transformer windings, another
+method to determine the turns ratio was implemented. By referring to the text
+\emph{Electric Machinery Fundamentals}, the current ratio of a transformer is
+inversely proportional to the turns ratio. The relationship states:
+$\frac{I_p}{I_s} = \frac{N_s}{N_p}$, where I$_\text{p}$ is the primary current,
+I$_\text{s}$ the secondary current, N$_\text{p}$ the primary winding, and
+N$_\text{s}$ the secondary winding.  The ratio of secondary current I$_2$ over
+primary current I$_1$ was the same as the turns ratio calculated and recorded
+in row 2 of Table~\ref{tab:volt_rat} pertaining to winding number 5--6.
+Therefore, the additional method of determining a transformer turns ratio was
+verified.
+
+By analyzing the saturation curve, it was determined that the transformer core
+did indeed become saturated.  From an applied voltage of 10V to approximately
+110V, the saturation curve was linear and the transformer core was unsaturated
+at this time. A small increase in the magneto-motive force (represented as
+E$_3$) resulted in a very large increase in the flux produced (represented as
+E$_1$).  Then the saturation curve started to level off after an applied
+voltage of 110V (termed the \emph{knee} of the curve), and therefore the core
+started to become saturated. In the saturated region, increases in
+magneto-motive force produce smaller and smaller increases in flux.
 
 \end{document}
