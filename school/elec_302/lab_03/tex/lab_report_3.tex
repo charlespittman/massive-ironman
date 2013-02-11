@@ -56,22 +56,26 @@ adjusted to 120V. The primary voltage, primary current, input power, secondary
 voltage, secondary current, and output power were then measured for each of the
 four loads listed in Table~\ref{tab:volt_rat}.  Prior to changing each load,
 the voltage supply knob was set fully counter-clockwise and the main power
-switch set to off.
+switch turned off.
 
 \subsection{Open Circuit Test}
 
-\label{part2} The circuit shown in Figure~\ref{fig:circuit_02} was then constructed. The main power switch
-was turned on and the voltage control knob was adjusted to 120V. The values of the primary voltage E$_1$, primary
-current I$_1$, and input power P$_1$ were measured. These values were recorded in Table~\ref{tab:open_circ}.
-The main power switch was turned off and the voltage control knob fully counter-clockwise.
+\label{part2} The circuit shown in Figure~\ref{fig:circuit_02} was then
+constructed. The main power switch was turned on and the voltage control knob
+was adjusted to 120V. The values of the primary voltage, primary current, and
+input power were measured. These values were recorded in
+Table~\ref{tab:open_circ}.  The main power switch was turned off and the
+voltage control knob fully counter-clockwise.
 
 \subsection{Short Circuit Test}
 
-\label{part3} The circuit shown in Figure~\ref{fig:circuit_03} was then constructed. It was noted that
-I$_2$ short circuited the secondary windings 5-6. Thus the voltage supply knob was slowly adjusted until
-a secondary current of 0.4A was obtained. The primary voltage, primary current, input power, and the
-secondary current were measured. These values were recorded in Table~\ref{tab:short_circ}.
-The main power switch was turned off and the voltage control knob fully counter-clockwise.
+\label{part3} The circuit shown in Figure~\ref{fig:circuit_03} was then
+constructed. It was noted that I$_2$ short circuited the secondary windings
+5--6. Then the voltage supply knob was slowly adjusted until a secondary
+current of 0.4A was obtained. The primary voltage, primary current, input
+power, and the secondary current were measured and recorded in
+Table~\ref{tab:short_circ}.  The main power switch was turned off and the
+voltage control knob turned fully counter-clockwise.
 
 \section{Results}
 \subsection{Transformer Performance}
@@ -143,18 +147,19 @@ The main power switch was turned off and the voltage control knob fully counter-
   \begin{tabular}{*{4}{c}}
     \textbf{R$_C$} & \textbf{X$_M$}
     & \textbf{R$_{eq}$} & \textbf{X$_{eq}$} \\
-    $\Omega$ & $\Omega$ &$\Omega$ & $\Omega$ \\
+    k$\Omega$ & k$\Omega$ &$\Omega$ & $\Omega$ \\
     \hline
-    5.85k & 6.80k & 16.05 & 24.19 \\
+    5.85 & 6.80 & 16.05 & 24.19 \\
   \end{tabular}
   \caption{Equivalent Transformer Components}
   \label{tab:equiv_comp}
 \end{table}
 
-Equivalent circuit components found from the following methods:
-the admittance $Y_E = \frac{I_{OC}}{V_{OC}}\angle{-\theta} = \frac{1}{R_C} -
-j\frac{1}{X_M}$
-the series impedance $Z_{SE} = \frac{V_{SC}}{I_{SC}}\angle{\theta} = R_eq + jX_eq$
+Equivalent circuit components found from the following equations:
+\[\text{Admittance} = Y_E = \frac{I_{OC}}{V_{OC}}\angle{-\theta} =  \frac{1}{R_C} -
+\frac{1}{X_M}\]
+\[\text{Series Impedance} = Z_{SE} = \frac{V_{SC}}{I_{SC}}\angle{\theta} = R_{eq} +
+jX_{eq}\]
 
 \subsection{Transformer Losses}
 \begin{table}[H]
@@ -173,11 +178,11 @@ the series impedance $Z_{SE} = \frac{V_{SC}}{I_{SC}}\angle{\theta} = R_eq + jX_e
 \end{table}
 
 Equations Used:
-$P_{Cu} = I_S^2 * R_{eq}$
-$P_{core} = (V_P / a)^2 * 1/R_{C}$
+\[P_{Cu} = I_S^2 * R_{eq}\]
+\[P_{core} = (\frac{V_P}{a})^2 * \frac{1}{R_{C}}\]
 
 \subsection{Voltage Regulation VR and Efficiency Comparison}
-\begin{table}{H}
+\begin{table}[H]
   \centering
   \begin{tabular}{*{4}{c}}
     \textbf{Load} $\Omega$ & \textbf{VR} & \textbf{VR} & \textbf{Percent} \\
