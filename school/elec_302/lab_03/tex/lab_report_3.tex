@@ -45,33 +45,39 @@
 %\setlength\parindent{0pt} % Removes all indentation from paragraphs
 
 \section{Purpose of Experiment}
-In this experiment, the non-ideal properties of a transformer were examined. The performance
-of the transformer at the Lab-Volt station was analyzed by measuring the primary and secondary
-voltages, currents, and powers. Then the transformer was subjected to an open-circuit test and 
-a short-circuit test in order to generate the equivalent circuit components. The original performance 
-specifications and the performance specifications from the two tests were then compared to show 
-the trasformer's non-ideal properties.
 
+In this experiment, the non-ideal properties of a transformer were examined.
+The performance of the transformer at the Lab-Volt station was first analyzed
+by measuring the primary and secondary: voltages, currents, and powers. Then
+the transformer was subjected to an open-circuit test and a short-circuit test
+in order to generate the equivalent circuit components. These results were then
+compared to the original performance specifications to show the transformer's
+non-ideal properties.
+
+\pagebreak
 \section{Procedure}
+
 \subsection{EMS Workstation Set-up}
 
 At the Lab-Volt EMS workstation, a Fluke multi-meter was used to measure the DC
 resistance of the transformer windings. These values are recorded in
 Table~\ref{tab:wind_res}.  The DAI 24V supply was turned on, and the DAI USB
 connector was connected between the EMS workstation and the {PC}. On the LVDAM
-EMS application software, the metering windows for E$_1$, E$_2$, I$_1$,
-and I$_2$ were opened. The metering windows were set to continuous refresh.
+EMS application software, the metering windows for E$_1$, E$_2$, I$_1$, and
+I$_2$ were opened, set to continuous refresh.
 
 \subsection{Transformer Performance}
 
-\label{part1} With the main power switch set OFF and the voltage control knob fully CCW,
-the voltmeter selector switch was set to position 4-N. The circuit represented by Figure~\ref{fig:circuit_01}
-was constructed with the secondary voltmeter E$_2$ open-circuited at first to simulate an infinite load. 
-The main power supply was set ON and the supply voltage was adjusted to 120-V. The primary
-voltage E$_1$, primary current I$_1$, input power P$_1$, secondary voltage E$_2$, secondary current I$_2$, and
-output power P$_2$ were then measured for each of the four different loads listed in Table~\ref{tab:voltage_rat}.
-Prior to changing each load, the voltage supply knob was set fully CCW and the main power switch
-to OFF.
+\label{part1} With the main power switch set OFF and the voltage control knob
+fully CCW, the voltmeter selector switch was set to position 4-N. The circuit
+represented by Figure~\ref{fig:circuit_01} was constructed with the secondary
+voltmeter E$_2$ open-circuited at first to simulate an infinite load.  The main
+power supply was set ON and the supply voltage was adjusted to 120-V. The
+primary voltage E$_1$, primary current I$_1$, input power P$_1$, secondary
+voltage E$_2$, secondary current I$_2$, and output power P$_2$ were then
+measured for each of the four different loads listed in
+Table~\ref{tab:voltage_rat}.  Prior to changing each load, the voltage supply
+knob was set fully CCW and the main power switch to OFF.
 
 \subsection{Open Circuit Test}
 
@@ -88,7 +94,7 @@ a secondary current of 0.4-A was obtained. The primary voltage, primary current,
 secondary current were measured. These values were recorded in Table~\ref{tab:short_circ}.
 The main power switch was set OFF and the voltage control knob fully CCW.
 
-
+\pagebreak
 \section{Results}
 \subsection{Transformer Performance}
 \begin{table}[H]
@@ -152,12 +158,13 @@ The main power switch was set OFF and the voltage control knob fully CCW.
   \label{tab:short_circ}
 \end{table}
 
+\pagebreak
 \section{Analysis}
 \subsection{Transformer Equivalent Circuit Component Values}
 \begin{table}{H}
   \centering
   \begin{tabular}{*{4}{c}}
-    R$_C$ & X$_M$ & R$_EQ$ & X$_EQ$ & $\Omega$ \\
+    R$_C$ & X$_M$ & R$_EQ$ & X$_EQ$ \\
     \hline
     5.85k & 6.80k & 16.05 & 24.19 \\
   \end{tabular}
@@ -171,7 +178,7 @@ The main power switch was set OFF and the voltage control knob fully CCW.
   \begin{tabular}{*{3}{c}}
     Load $\Omega$ & Copper Losses P$_Cu$ W & Core Losses P$_Core$ W \\
     \hline
-    \infty & 0.0014 & 2.453 \\
+    $\infty$ & 0.0014 & 2.453 \\
     300 & 2.162 & 2.433 \\
     300 + j300 & 0.956 & 2.441 \\
     300 - j300 & 1.223 & 2.437 \\
@@ -180,19 +187,19 @@ The main power switch was set OFF and the voltage control knob fully CCW.
   \label{tab:power_losses}
 \end{table}
 
-\subsection{Voltage Regulation VR and Efficiency \eta Comparison}
+\subsection{Voltage Regulation VR and Efficiency $\eta$ Comparison}
 \begin{table}{H}
   \centering
   \begin{tabular}{*{4}{c}}
     Load $\Omega$ & VR Part 1 & Equiv. Circuit VR & Percent Difference \\
     \hline
-    \infty & 0.00 & 0.00 & 0.00 \\
+    $\infty$ & 0.00 & 0.00 & 0.00 \\
     300 & 5.97 & 6.39 & 7.0 \\
     300 + j300 & 6.16 & 6.69 & 8.6 \\
     300 - j300 & -0.92 & -1.25 & 35.9 \\
     \hline \hline
-    --- & \eta Part 1 & Equiv. Circuit \eta & --- \\
-    \infty & 0.00 & 0.00 & 0.00 \\
+    --- & $\eta$ Part 1 & Equiv. Circuit $\eta$ & --- \\
+    $\infty$ & 0.00 & 0.00 & 0.00 \\
     300 & 89.72 & 87.41 & 2.6 \\
     300 + j300 & 85.57 & 86.02 & 0.5 \\
     300 - j300 & 86.11 & 86.93 & 0.9 \\
@@ -201,6 +208,7 @@ The main power switch was set OFF and the voltage control knob fully CCW.
   \label{tab:vr_eff}
 \end{table}
 
+\pagebreak
 \section{Conclusions}
 
 By measuring the resistance of each transformer winding and not getting any
