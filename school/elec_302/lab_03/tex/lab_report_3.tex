@@ -141,8 +141,8 @@ The main power switch was turned off and the voltage control knob fully CCW.
 \begin{table}[H]
   \centering
   \begin{tabular}{*{4}{c}}
-    \textbf{R$_\text{C}$} & \textbf{X$_\text{M}$}
-    & \textbf{R$_{\text{eq}}$} & \textbf{X$_{\text{eq}}$} \\
+    \textbf{R$_C$} & \textbf{X$_M$}
+    & \textbf{R$_{eq}$} & \textbf{X$_{eq}$} \\
     $\Omega$ & $\Omega$ &$\Omega$ & $\Omega$ \\
     \hline
     5.85k & 6.80k & 16.05 & 24.19 \\
@@ -152,8 +152,9 @@ The main power switch was turned off and the voltage control knob fully CCW.
 \end{table}
 
 Equivalent cicuit components found from the following methods:
-the admittance Y$_E$ = \frac{I$_OC$}{V$_OC$}\angle{-\theta} = \frac{1}{R$_C$} - j\frac{1}{X$_M$}
-the series impedance Z$_SE$ = \frac{V$_SC$}{I$_SC$}\angle{\theta} = R$_EQ$ + jX$_EQ$
+the admittance $Y_E = \frac{I_{OC}}{V_{OC}}\angle{-\theta} = \frac{1}{R_C} -
+j\frac{1}{X_M}$
+the series impedance $Z_{SE} = \frac{V_{SC}}{I_{SC}}\angle{\theta} = R_eq + jX_eq$
 
 \subsection{Transformer Losses}
 \begin{table}[H]
@@ -172,15 +173,15 @@ the series impedance Z$_SE$ = \frac{V$_SC$}{I$_SC$}\angle{\theta} = R$_EQ$ + jX$
 \end{table}
 
 Equations Used:
-P$_Cu$ = I$_S$^2*R$_EQ$
-P$_Core$ = (V$_P$/a)^2*1/R$_C$
+$P_{Cu} = I_S^2 * R_{eq}$
+$P_{core} = (V_P / a)^2 * 1/R_{C}$
 
-\subsection{Voltage Regulation VR and Efficiency \eta Comparison}
+\subsection{Voltage Regulation VR and Efficiency Comparison}
 \begin{table}{H}
   \centering
   \begin{tabular}{*{4}{c}}
     \textbf{Load} $\Omega$ & \textbf{VR} & \textbf{VR} & \textbf{Percent} \\
-    & Part 1 & R$_\text{eq}$ & \textbf{Difference} \\
+    & Part 1 & R$_{eq}$ & \textbf{Difference} \\
     \hline
     $\infty$ & 0.00 & 0.00 & 0.00 \\
     300 & 5.97 & 6.39 & 7.0 \\
@@ -195,7 +196,7 @@ P$_Core$ = (V$_P$/a)^2*1/R$_C$
   \centering
   \begin{tabular}{*{4}{c}}
     \textbf{Load} $\Omega$ & $\eta$ & $\eta$ & \textbf{Percent} \\
-    & Part 1 & R$_\text{eq}$ & \textbf{Difference} \\
+    & Part 1 & R$_{eq}$ & \textbf{Difference} \\
     \hline
     $\infty$ & 0.00 & 0.00 & 0.00 \\
     300 & 89.72 & 87.41 & 2.6 \\
@@ -207,9 +208,10 @@ P$_Core$ = (V$_P$/a)^2*1/R$_C$
 \end{table}
 
 Equations Used:
-VR = \frac{V$_P$ - V$_S$}{V$_S} * 100\% ; V$_P$ = V$_S$ + R$_EQ$I$_S$ + jX$_EQ$I$_S$
-\eta = \frac{P$_OUT$}{P$_IN$} * 100\% = \frac{V$_S$I$_S$\cos\theta}{P$_Cu$ + P$_Core$ + V$_S$I$_S$\cos\theta}
-Percent Diff. = \frac{difference}{average} * 100\%
+\[VR = \frac{V_P - V_S}{V_S} * 100\%\]
+\[V_P = V_S + R_{eq} * I_S + \text{j}X_{eq} * I_S\]
+\[\eta = \frac{P_{out}}{P_\text{in}} * 100\% \]
+\[\text{Percent Diff} = \frac{\text{difference}}{\text{average}} * 100\%\]
 
 \section{Conclusions}
 
@@ -218,17 +220,18 @@ similar to an open circuit, it was determined that the windings were intact and 
 
 In Table~\ref{tab:equiv_circ}, the component values for the transformer equivalent circuit are listed. These
 values were needed to accurately model the equivalent circuit due to the imperfections in real transformers. The
-resistance R$_EQ$ was made up of R$_P$ + R$_S$. R$_P$ was a resistance in the primary circuit that represented the 
+resistance R$_{eq}$ was made up of R$_P$ + R$_S$. R$_P$ was a resistance in the primary circuit that represented the
 resistive losses in the primary windings of the transformer core. Similarly, R$_S$ was a resistance in the secondary
-circuit that represented the resistive losses in the secondary windings of the transformer core. The reactance X$_EQ$
+circuit that represented the resistive losses in the secondary windings of the
+transformer core. The reactance X$_{eq}$
 was made up of X$_P$ + X$_S$. These reactances represented the leakage inductances of the primary and secondary coils.
-The core excitation losses were modeled with a resistance R$_C$ in parallel with a reactance X$_M$. 
+The core excitation losses were modeled with a resistance R$_C$ in parallel with a reactance X$_M$.
 
 In Table~\ref{tab:power_losses} the copper and core excitation losses for each load are listed. These losses were
 accounted for by the component values for the equivalent circuit found in Table~\ref{tab:equiv_circ}.
 
 In Table~\ref{tab:vr_eff}, the transformer voltage regulation and efficiencies for the transformer modeled in Part 1
-and the equivalent circuit are compared. On average small percent differences were obtained, thus the equivalent 
+and the equivalent circuit are compared. On average small percent differences were obtained, thus the equivalent
 circuit constructed was an accurate model of the transformer in Part 1.
 
 \section*{Circuits Tested}
