@@ -47,7 +47,7 @@ I$_2$ were opened, set to continuous refresh.
 
 \subsection{Transformer Performance}
 
-\label{part1} With the main power switch set off And the voltage control knob
+\label{part1} With the main power switch set off and the voltage control knob
 fully CCW, the voltmeter selector switch was set to position 4--N. The circuit
 represented by Figure~\ref{fig:circuit_01} was constructed with the secondary
 voltmeter E$_2$ open-circuited at first to simulate an infinite load.  The main
@@ -61,9 +61,9 @@ knob was set fully CCW and the main power switch to off.
 \subsection{Open Circuit Test}
 
 \label{part2} The circuit shown in Figure~\ref{fig:circuit_02} was then constructed. The main power switch
-was set on And the voltage control knob was adjusted to 120V. The values of the primary voltage E$_1$, primary
+was turned on and the voltage control knob was adjusted to 120V. The values of the primary voltage E$_1$, primary
 current I$_1$, and input power P$_1$ were measured. These values were recorded in Table~\ref{tab:open_circ}.
-The main power switch was set off And the voltage control knob fully CCW.
+The main power switch was turned off and the voltage control knob fully CCW.
 
 \subsection{Short Circuit Test}
 
@@ -71,7 +71,7 @@ The main power switch was set off And the voltage control knob fully CCW.
 I$_2$ short circuited the secondary windings 5-6. Thus the voltage supply knob was slowly adjusted until
 a secondary current of 0.4A was obtained. The primary voltage, primary current, input power, and the
 secondary current were measured. These values were recorded in Table~\ref{tab:short_circ}.
-The main power switch was set off And the voltage control knob fully CCW.
+The main power switch was turned off and the voltage control knob fully CCW.
 
 \section{Results}
 \subsection{Transformer Performance}
@@ -151,6 +151,10 @@ The main power switch was set off And the voltage control knob fully CCW.
   \label{tab:equiv_comp}
 \end{table}
 
+Equivalent cicuit components found from the following methods:
+the admittance Y$_E$ = \frac{I$_OC$}{V$_OC$}\angle{-\theta} = \frac{1}{R$_C$} - j\frac{1}{X$_M$}
+the series impedance Z$_SE$ = \frac{V$_SC$}{I$_SC$}\angle{\theta} = R$_EQ$ + jX$_EQ$
+
 \subsection{Transformer Losses}
 \begin{table}[H]
   \centering
@@ -167,8 +171,12 @@ The main power switch was set off And the voltage control knob fully CCW.
   \label{tab:power_losses}
 \end{table}
 
-\subsection{Voltage Regulation and Efficiency Comparison}
-\begin{table}[H]
+Equations Used:
+P$_Cu$ = I$_S$^2*R$_EQ$
+P$_Core$ = (V$_P$/a)^2*1/R$_C$
+
+\subsection{Voltage Regulation VR and Efficiency \eta Comparison}
+\begin{table}{H}
   \centering
   \begin{tabular}{*{4}{c}}
     \textbf{Load} $\Omega$ & \textbf{VR} & \textbf{VR} & \textbf{Percent} \\
@@ -198,20 +206,30 @@ The main power switch was set off And the voltage control knob fully CCW.
   \label{tab:eff}
 \end{table}
 
+Equations Used:
+VR = \frac{V$_P$ - V$_S$}{V$_S} * 100\% ; V$_P$ = V$_S$ + R$_EQ$I$_S$ + jX$_EQ$I$_S$
+\eta = \frac{P$_OUT$}{P$_IN$} * 100\% = \frac{V$_S$I$_S$\cos\theta}{P$_Cu$ + P$_Core$ + V$_S$I$_S$\cos\theta}
+Percent Diff. = \frac{difference}{average} * 100\%
+
 \section{Conclusions}
 
-By measuring the resistance of each transformer winding and not getting any
-extremely high resistance readings similar to an open circuit, it was
-determined that the transformer windings had no faults and the integrity of the
-windings were intact.
+By measuring the resistance of each transformer winding and not getting any extremely high resistance readings
+similar to an open circuit, it was determined that the windings were intact and had integrity.
 
-In Table~\ref{tab:equiv_comp} the circuit components of the transformer equivalent circuit are listed. These
-values were computed by using the voltage, current, and power values obtained from both the open-circuit
-test and short-circuit test.
+In Table~\ref{tab:equiv_circ}, the component values for the transformer equivalent circuit are listed. These
+values were needed to accurately model the equivalent circuit due to the imperfections in real transformers. The
+resistance R$_EQ$ was made up of R$_P$ + R$_S$. R$_P$ was a resistance in the primary circuit that represented the 
+resistive losses in the primary windings of the transformer core. Similarly, R$_S$ was a resistance in the secondary
+circuit that represented the resistive losses in the secondary windings of the transformer core. The reactance X$_EQ$
+was made up of X$_P$ + X$_S$. These reactances represented the leakage inductances of the primary and secondary coils.
+The core excitation losses were modeled with a resistance R$_C$ in parallel with a reactance X$_M$. 
 
-In Table~\ref{tab:power_losses} the copper and core losses for each load are listed. The copper loss equation
-used was $\text{P}_\text{Cu} = \text{I}_\text{S}$
+In Table~\ref{tab:power_losses} the copper and core excitation losses for each load are listed. These losses were
+accounted for by the component values for the equivalent circuit found in Table~\ref{tab:equiv_circ}.
 
+In Table~\ref{tab:vr_eff}, the transformer voltage regulation and efficiencies for the transformer modeled in Part 1
+and the equivalent circuit are compared. On average small percent differences were obtained, thus the equivalent 
+circuit constructed was an accurate model of the transformer in Part 1.
 
 \section*{Circuits Tested}
 \begin{figure}[H]
