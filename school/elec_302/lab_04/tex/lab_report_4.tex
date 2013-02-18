@@ -28,12 +28,16 @@
 \begin{table}[H]
   \centering
   \begin{tabular}{*{6}{c}}
+
     & \multicolumn{2}{c}{\textbf{Primary}}
     & \multicolumn{2}{c}{\textbf{Secondary}} & \textbf{Load} \\
+
     \textbf{Case} & \textbf{Line} & \textbf{Phase} & \textbf{Line} &
     \textbf{Phase} & \textbf{Phase} \\
+
     & V & V & V & V & V \\
     \hline
+
     Y--Y        & 120 & 69.3 & 120 & 11 & 69.3 \\
     Y--$\Delta$ & 120 & 69.3 & 69.3 & 11 & 40 \\
   \end{tabular}
@@ -46,15 +50,54 @@
   \begin{tabular}{*{6}{c}}
     & \multicolumn{2}{c}{\textbf{Primary}}
     & \multicolumn{2}{c}{\textbf{Secondary}} & \textbf{Load} \\
+
     \textbf{Case} & \textbf{Line} & \textbf{Phase} & \textbf{Line} &
     \textbf{Phase} & \textbf{Phase} \\
+
     & A & A & A & A & A \\
     \hline
+
     Y--Y        & 0.1033 & 0.1033 & 0.1033 & 0.1033 & 0.1033 \\
     Y--$\Delta$ & 0.0596 & 0.0596 & 0.0344 & 0.0344 & 0.0344 \\
   \end{tabular}
   \caption{Computed Currents}
-  \label{tab:volt_comp}
+  \label{tab:curr_comp}
+\end{table}
+
+\begin{table}[H]
+  \centering
+  \begin{tabular}{*{4}{c}}
+    \textbf{Case} & \textbf{Primary} & \textbf{Secondary} & \textbf{Load} \\
+
+    & \textbf{Power} & \textbf{Power} & \textbf{Power} \\
+
+    & W & W & W \\
+    \hline
+
+    Y--Y        & 19.20 & 19.20 & 11.09 \\
+    Y--$\Delta$ & 11.08 & 3.693 & 2.132 \\
+  \end{tabular}
+  \caption{Computed Powers}
+  \label{tab:pow_comp}
+\end{table}
+
+\begin{table}[H]
+  \centering
+  \begin{tabular}{*{7}{c}}
+    & \multicolumn{2}{c}{\textbf{Primary}} &
+    \multicolumn{2}{c}{\textbf{Secondary}} & \textbf{3phase} & \textbf{Load} \\
+
+    \textbf{Case} & \textbf{Voltage} & \textbf{Current} & \textbf{Voltage} &
+    \textbf{Current} & \textbf{Input Power} & \textbf{Voltage} \\
+
+    & $E_1$ V & $I_1$ A & $E_3$ V & $I_3$ A & $B$ W & $E_4$ V \\
+
+    \hline
+    Y--Y        & 121.2 & 0.112 & 119.5 & 0.097 & 19.8 & 58.4 \\
+    Y--$\Delta$ & 120.1 & 0.151 & 68.4 & 0.055 & 4.7 & 32.4 \\
+  \end{tabular}
+  \caption{Measured Values}
+  \label{tab:results}
 \end{table}
 \section{Purpose of Experiment}
 
@@ -108,14 +151,6 @@ current of 0.4A was obtained. The primary voltage, primary current, input
 power, and the secondary current were measured and recorded in
 Table~\ref{tab:short_circ}.  The main power switch was turned off and the
 voltage control knob turned fully counter-clockwise.
-
-\subsection{$\Delta$--$\Delta$ Connected Transformer}
-
-\label{part4}
-
-\subsection{$\Delta$--Y Connected Transformer}
-
-\label{part5}
 
 \section{Results}
 \subsection{The Three Phase Source}
@@ -179,10 +214,6 @@ voltage control knob turned fully counter-clockwise.
   \caption{Data for Fig~\ref{fig:circuit_03}}
   \label{tab:short_circ}
 \end{table}
-
-\subsection{$\Delta$--$\Delta$ Connected Transformer}
-
-\subsection{$\Delta$--Y Connected Transformer}
 
 \section{Analysis}
 \subsection{Transformer Equivalent Circuit Component Values}
