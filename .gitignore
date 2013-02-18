@@ -73,3 +73,5 @@ tmp
 *.tdo
 
 *project.vim
+
+.DS_Store
