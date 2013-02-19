@@ -81,24 +81,6 @@
   \label{tab:pow_comp}
 \end{table}
 
-\begin{table}[H]
-  \centering
-  \begin{tabular}{*{7}{c}}
-    & \multicolumn{2}{c}{\textbf{Primary}} &
-    \multicolumn{2}{c}{\textbf{Secondary}} & \textbf{3phase} & \textbf{Load} \\
-
-    \textbf{Case} & \textbf{Voltage} & \textbf{Current} & \textbf{Voltage} &
-    \textbf{Current} & \textbf{Input Power} & \textbf{Voltage} \\
-
-    & $E_1$ V & $I_1$ A & $E_3$ V & $I_3$ A & $B$ W & $E_4$ V \\
-
-    \hline
-    Y--Y        & 121.2 & 0.112 & 119.5 & 0.097 & 19.8 & 58.4 \\
-    Y--$\Delta$ & 120.1 & 0.151 & 68.4 & 0.055 & 4.7 & 32.4 \\
-  \end{tabular}
-  \caption{Measured Values}
-  \label{tab:results}
-\end{table}
 \section{Purpose of Experiment}
 
 In this experiment, the non-ideal properties of a transformer were examined.
@@ -156,65 +138,40 @@ voltage control knob turned fully counter-clockwise.
 \subsection{The Three Phase Source}
 \begin{table}[H]
   \centering
-  \begin{tabular}{*{2}{c}}
-    \textbf{Winding} & \textbf{Resistance} \\
-    \textbf{\#} & $\Omega$ \\
-    \hline
-    1--2 &  7.9 \\
-    5--6 &  7.9 \\
-  \end{tabular}
-  \caption{Winding Resistances}
-  \label{tab:wind_res}
-\end{table}
+  \begin{tabular}{*{5}{c}}
+    & \textbf{$E_1$} & \textbf{$E_2$} & \textbf{$E_3$} & \textbf{$E_{tot}$} \\
 
-\begin{table}[H]
-  \centering
-  \begin{tabular}{*{7}{c}}
-    & \multicolumn{2}{c}{\textbf{Primary}} & \textbf{Input}
-    & \multicolumn{2}{c}{\textbf{Secondary}} & \textbf{Output} \\
-    \textbf{Load} & \textbf{Voltage} & \textbf{Current} & \textbf{Power}
-    & \textbf{Voltage} & \textbf{Current} & \textbf{Power} \\
-    Z$_\text{L}$ $\Omega$ & E$_1$ V & I$_1$ A & P$_1$ W
-    & E$_2$ V & I$_2$ A &
-    P$_2$ W \\
     \hline
-    $\infty$   & 119.9 & 0.027 & 2.453 & 119.0 & 0.003 & 0 \\
-    300        & 119.3 & 0.388 & 46.01 & 112.4 & 0.368 & 41.35 \\
-    300 + j300 & 119.5 & 0.270 & 23.63 & 112.4 & 0.244 & 20.20 \\
-    300 - j300 & 119.5 & 0.281 & 27.30 & 120.0 & 0.276 & 23.52 \\
+
+    \textbf{$V_{LL}$} & 119.9 & 0.027 & 2.453 & 119.0 \\
+    \textbf{$V_{phase}$} & 119.3 & 0.388 & 46.01 & 112.4 \\
   \end{tabular}
-  \caption{Primary and secondary voltages and currents}
+  \caption{Measured Voltages for Part 1}
   \label{tab:volt_rat}
 \end{table}
 
 \subsection{Y--Y Connected Transformer}
-\begin{table}[H]
-  \centering
-  \begin{tabular}{*{3}{c}}
-    \multicolumn{2}{c}{\textbf{Primary}} & \textbf{Input} \\
-    \textbf{Voltage} & \textbf{Current} & \textbf{Power} \\
-    E$_1$ V & I$_1$ A & P$_2$ W \\
-    \hline
-    119.7 & 0.027 & 2.44 \\
-  \end{tabular}
-  \caption{Open Circuit}
-  \label{tab:open_circ}
-\end{table}
 
 \subsection{Y--$\Delta$ Connected Transformer}
+
 \begin{table}[H]
   \centering
-  \begin{tabular}{*{4}{c}}
-    \multicolumn{2}{c}{\textbf{Primary}} & \textbf{Input} & \textbf{Secondary} \\
-    \textbf{Voltage} & \textbf{Current} & \textbf{Power} & \textbf{Current} \\
-    E$_1$ V & I$_1$ A & P$_1$ W & I$_2$ A \\
-    \hline
-    11.7 & 0.403 & 2.607 & 0.398 \\
-  \end{tabular}
-  \caption{Data for Fig~\ref{fig:circuit_03}}
-  \label{tab:short_circ}
-\end{table}
+  \begin{tabular}{*{7}{c}}
+    & \multicolumn{2}{c}{\textbf{Primary}} &
+    \multicolumn{2}{c}{\textbf{Secondary}} & \textbf{3phase} & \textbf{Load} \\
 
+    \textbf{Case} & \textbf{Voltage} & \textbf{Current} & \textbf{Voltage} &
+    \textbf{Current} & \textbf{Input Power} & \textbf{Voltage} \\
+
+    & $E_1$ V & $I_1$ A & $E_3$ V & $I_3$ A & $B$ W & $E_4$ V \\
+
+    \hline
+    Y--Y        & 121.2 & 0.112 & 119.5 & 0.097 & 19.8 & 58.4 \\
+    Y--$\Delta$ & 120.1 & 0.151 & 68.4 & 0.055 & 4.7 & 32.4 \\
+  \end{tabular}
+  \caption{Measured Values}
+  \label{tab:results}
+\end{table}
 \section{Analysis}
 \subsection{Transformer Equivalent Circuit Component Values}
 \begin{table}[H]
