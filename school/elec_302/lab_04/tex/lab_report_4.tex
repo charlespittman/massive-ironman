@@ -195,8 +195,8 @@ The main power switch was set OFF and the voltage control knob fully CCW.
 
     \hline
 
-    Y--Y        & 28.61\% \\
-    Y--$\Delta$ & 38.22. \\
+    Y--Y        & 54.29\% \\
+    Y--$\Delta$ & 72.53\% \\
   \end{tabular}
   \caption{Transformer Efficiency}
   \label{tab:efficiency}
@@ -209,11 +209,23 @@ Equations Used:
 \[\text{Percent Deviation} = \frac{\text{calculated data - lab data}}{\text{lab data}} * 100\%\]
 
 \section{Conclusions}
-During Part 1: The Three-Phase Source, the voltage phasors in the Phasor Analyzer window did
-indeed confirm that the phasors are equal with 120 degrees phase shift for both the line voltage
-and phase voltage measurements.
+During Part 1: The Three-Phase Source, the three-phase source line and phase voltages were 
+measured. In Circuit 1, the three source voltages are in a $\Delta$ connection, and hence the
+voltage values for each phase are the same as the supply voltage 120-V line-to-line. When the 
+voltages are added together, they approximate 0 volts due to Kirchoff's voltage law. In Circuit
+2, the three source voltages are in a Y-connection, and hence the voltage values for each phase
+are 1/\sqrt{3} times the line voltage of 120-V. When the voltages are added together, they 
+approximate 0 volts, since the connection is assumed to be balanced. When the Phasor Analyzer was
+analyzed on the PC, it was confirmed that the phasors were equal with 120 degrees phase shift
+for both the line and phase voltage measurements. The fact that the addition of the phasors
+was not exactly zero was most likely due to the fact that the voltage values measured were not 
+exactly equal to each other.
 
-It was noted that I3 measures the secondary line current.
+When the transformer efficiencies for both connections were calculated, it was found that 
+the Y-$\Delta$ connection was more efficient than the Y-Y connection. In the Y-$\Delta$ 
+connection, the secondary $\Delta$ configuration helped make the transformer bank more 
+stable and thus more efficient. This was most like due to the fact that a Y-$\Delta$ 
+has no problem with third-harmonic components in its voltages.
 
 \section*{Circuits Tested}
 \begin{figure}[H]
