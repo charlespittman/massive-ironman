@@ -3,9 +3,8 @@
 \usepackage{float}
 \usepackage{mathtools}
 
-\title{ELEC 302-81\\ Lab 4\\ Transformers in Three Phase Circuits} % Title
-% \author{John \textsc{Smith}} % Author name
-\date{\today} % Specify a date for the report
+\title{ELEC 302-81\\ Lab 4\\ Transformers in Three Phase Circuits}
+\date{\today} 
 
 \begin{document}
 
@@ -22,9 +21,98 @@
 
 \pagebreak
 
-%\setlength\parindent{0pt} % Removes all indentation from paragraphs
+\setlength\parindent{0pt} 
 
-% Not sure where to put this yet, but want to get it in anyways.
+\section{Purpose of Experiment}
+
+The purpose of this experiment was to observe the basic principals of balanced
+three-phase transformer circuits. Y-Y and Y-$\Delta$ connected transformer banks 
+were constructed separately to observe the differences, particularly in their 
+respective loads. Primary and secondary voltages, currents, and powers were first 
+calculated theoretically. Experimental values were then measured to compare. 
+
+\section{Procedure}
+
+\subsection{EMS Workstation Set-up}
+
+At the Lab-Volt EMS workstation, the DAI 24V supply was turned on, and the DAI USB
+connector was connected between the EMS workstation and the {PC}. On the LVDAM
+EMS application software, the metering windows for E$_1$, E$_2$, I$_1$, I$_2$, 
+P$_1$, 3 phase power, E$_3$, I$_3$, and E$_1$ + E$_2$ + E$_3$ were opened. 
+Under \emph{Options} -> \emph{Acquistion Settings}, the \emph{Sample Window} dialog box 
+was set to extended, and under \emph{View} -> the continuous refresh option was checked.
+
+\subsection{The Three Phase Source}
+
+\label{part1} The circuit represented by Figure~\ref{fig:circuit_01} was constructed.
+The main power switch was set ON and the voltage supply was adjusted to 120-V line-to-
+line. Both the installed analog EMS voltmeter and the metering window were monitored
+for proper indications. The line voltages were then measured and recorded. These values 
+are shown in Table~\ref{tab:3phase_source}. The main power switch was set OFF and the 
+voltage supply fully CCW. The circuit represented by Figure~\ref{fig:circuit_02}
+was constructed. The main power switch was set ON and the voltage supply was adjusted 
+to read 120-V line-to-line. The installed analog EMS voltmeter was used for this since 
+the 120-V were to be measured across voltage sources 4-5 only. The phase voltages were
+then measured and recorded. These values are shown in Table~\ref{tab:3phase_source}.  
+The main power switch was set OFF and the voltage supply fully CCW.
+
+\subsection{Y--Y Connected Transformer}
+
+\label{part2} The circuit shown in Figure~\ref{fig:circuit_03} was constructed. The 
+Y-connected load was 600 + j300 $\Omega$. The main power switch was turned on and the 
+voltage control knob was adjusted to 120-V line-to-line. The analog EMS voltmeter and 
+the metering window were both monitored for correct voltage. The values for primary and 
+secondary line voltage, primary and secondary line current, and primary input power were
+measured and recorded. A Fluke multimeter was used to measure the RMS voltage across the 
+load. This load voltage was labeled as $E_4$. These values are shown in Table~\ref{tab:results}.  
+The main power switch was set OFF and the voltage control knob fully CCW.
+
+\subsection{Y--$\Delta$ Connected Transformer}
+
+\label{part3} The circuit shown in Figure~\ref{fig:circuit_04} was then constructed. 
+The Y-connected load was 600 + j300 $\Omega$. The main power switch was turned on and the 
+voltage control knob was adjusted to 120-V line-to-line. The analog EMS voltmeter and 
+the metering window were both monitored for correct voltage. The values for primary and 
+secondary line voltage, primary and secondary line current, and primary input power were
+measured and recorded. A Fluke multimeter was used to measure the RMS voltage across the 
+load. This load voltage was labeled as $E_4$. These values are shown in Table~\ref{tab:results}.  
+The main power switch was set OFF and the voltage control knob fully CCW.
+
+\section{Results}
+\subsection{The Three Phase Source}
+\begin{table}[H]
+  \centering
+  \begin{tabular}{*{5}{c}}
+    & \textbf{$E_1$} & \textbf{$E_2$} & \textbf{$E_3$} & \textbf{$E_1$+$E_2$+$E_3$} \\
+    
+    \hline
+    
+    \textbf{$V_{LL}$} & 120.4 & 117.1 & 116.3 & 0.998 \\
+    \textbf{$V_{phase}$} & 69.77 & 64.56 & 69.01 & 5.15 \\
+  \end{tabular}
+  \caption{Measured line and phase voltages for Part 1}
+  \label{tab:3phase_source}
+\end{table}
+
+\begin{table}[H]
+  \centering
+  \begin{tabular}{*{7}{c}}
+    & \multicolumn{2}{c}{\textbf{Primary}} &
+    \multicolumn{2}{c}{\textbf{Secondary}} & \textbf{3phase} & \textbf{Load} \\
+
+    \textbf{Case} & \textbf{Voltage} & \textbf{Current} & \textbf{Voltage} &
+    \textbf{Current} & \textbf{Input Power} & \textbf{Voltage} \\
+
+    & $E_1$ V & $I_1$ A & $E_3$ V & $I_3$ A & $B$ W & $E_4$ V \\
+
+    \hline
+    Y--Y        & 121.2 & 0.112 & 119.5 & 0.097 & 19.8 & 58.4 \\
+    Y--$\Delta$ & 120.1 & 0.151 & 68.4 & 0.055 & 4.7 & 32.4 \\
+  \end{tabular}
+  \caption{Measured Values}
+  \label{tab:results}
+\end{table}
+
 \begin{table}[H]
   \centering
   \begin{tabular}{*{6}{c}}
@@ -74,85 +162,12 @@
     & W & W & W \\
     \hline
 
-    Y--Y        & 19.20 & 19.20 & 11.09 \\
-    Y--$\Delta$ & 11.08 & 3.693 & 2.132 \\
+    Y--Y        & 19.20 & 19.20 & 19.2 \\
+    Y--$\Delta$ & 6.40 & 6.4 & 6.4 \\
   \end{tabular}
   \caption{Computed Powers}
   \label{tab:pow_comp}
 \end{table}
-
-\section{Purpose of Experiment}
-
-In this experiment, the non-ideal properties of a transformer were examined.
-The performance of the transformer at the Lab-Volt station was first analyzed
-by measuring the primary and secondary: voltages, currents, and powers. Then
-the transformer was subjected to an open-circuit test and a short-circuit test
-in order to generate the equivalent circuit components. These results were then
-compared to the original performance specifications to show the transformer's
-non-ideal properties.
-
-\section{Procedure}
-
-\subsection{EMS Workstation Set-up}
-
-At the Lab-Volt EMS workstation, a Fluke multi-meter was used to measure the DC
-resistance of the transformer windings. These values are recorded in
-Table~\ref{tab:wind_res}.  The DAI 24V supply was turned on, and the DAI USB
-connector was connected between the EMS workstation and the {PC}. On the LVDAM
-EMS application software, the metering windows for E$_1$, E$_2$, I$_1$, and
-I$_2$ were opened and set to continuous refresh.
-
-\subsection{The Three Phase Source}
-
-\label{part1} With the main power switch turned off and the voltage control
-knob fully counter-clockwise, the voltmeter selector switch was set to position
-4--N. The circuit represented by Figure~\ref{fig:circuit_01} was constructed
-with the secondary voltmeter E$_2$ open-circuited at first to simulate an
-infinite load.  The main power supply was turned on, and the supply voltage was
-adjusted to 120V. The primary voltage, primary current, input power, secondary
-voltage, secondary current, and output power were then measured for each of the
-four loads listed in Table~\ref{tab:volt_rat}.  Prior to changing each load,
-the voltage supply knob was set fully counter-clockwise and the main power
-switch turned off.
-
-\subsection{Y--Y Connected Transformer}
-
-\label{part2} The circuit shown in Figure~\ref{fig:circuit_02} was then
-constructed. The main power switch was turned on and the voltage control knob
-was adjusted to 120V. The values of the primary voltage, primary current, and
-input power were measured. These values were recorded in
-Table~\ref{tab:open_circ}.  The main power switch was turned off and the
-voltage control knob fully counter-clockwise.
-
-\subsection{Y--$\Delta$ Connected Transformer}
-
-\label{part3} The circuit shown in Figure~\ref{fig:circuit_03} was then
-constructed. It was noted that I$_2$ short circuited the secondary windings
-5--6. Then the voltage supply knob was slowly adjusted until a secondary
-current of 0.4A was obtained. The primary voltage, primary current, input
-power, and the secondary current were measured and recorded in
-Table~\ref{tab:short_circ}.  The main power switch was turned off and the
-voltage control knob turned fully counter-clockwise.
-
-\section{Results}
-\subsection{The Three Phase Source}
-\begin{table}[H]
-  \centering
-  \begin{tabular}{*{5}{c}}
-    & \textbf{$E_1$} & \textbf{$E_2$} & \textbf{$E_3$} & \textbf{$E_{tot}$} \\
-
-    \hline
-
-    \textbf{$V_{LL}$} & 119.9 & 0.027 & 2.453 & 119.0 \\
-    \textbf{$V_{phase}$} & 119.3 & 0.388 & 46.01 & 112.4 \\
-  \end{tabular}
-  \caption{Measured Voltages for Part 1}
-  \label{tab:volt_rat}
-\end{table}
-
-\subsection{Y--Y Connected Transformer}
-
-\subsection{Y--$\Delta$ Connected Transformer}
 
 \begin{table}[H]
   \centering
@@ -166,138 +181,67 @@ voltage control knob turned fully counter-clockwise.
     & $E_1$ V & $I_1$ A & $E_3$ V & $I_3$ A & $B$ W & $E_4$ V \\
 
     \hline
-    Y--Y        & 121.2 & 0.112 & 119.5 & 0.097 & 19.8 & 58.4 \\
-    Y--$\Delta$ & 120.1 & 0.151 & 68.4 & 0.055 & 4.7 & 32.4 \\
+    Y--Y        & 0.99 & 7.77 & 3.03 & 0.42 & 6.49 & 18.7 \\
+    Y--$\Delta$ & 0.17 & 77.2 & 37.3 & 1.21 & 8.36 & 23.46 \\
   \end{tabular}
-  \caption{Measured Values}
+  \caption{Percent Deviations}
   \label{tab:results}
 \end{table}
-\section{Analysis}
-\subsection{Transformer Equivalent Circuit Component Values}
+
 \begin{table}[H]
   \centering
-  \begin{tabular}{*{4}{c}}
-    \textbf{R$_C$} & \textbf{X$_M$}
-    & \textbf{R$_{eq}$} & \textbf{X$_{eq}$} \\
-    k$\Omega$ & k$\Omega$ &$\Omega$ & $\Omega$ \\
+  \begin{tabular}{*{2}{c}}
+    \textbf{Case} & \textbf{Efficiency} \\
+
     \hline
-    5.85 & 6.80 & 16.05 & 24.19 \\
+
+    Y--Y        & 28.61\% \\
+    Y--$\Delta$ & 38.22. \\
   \end{tabular}
-  \caption{Equivalent Transformer Components}
-  \label{tab:equiv_comp}
+  \caption{Transformer Efficiency}
+  \label{tab:efficiency}
 \end{table}
 
-Equivalent circuit components found from the following equations:
-\[\text{Admittance} = Y_E = \frac{I_{OC}}{V_{OC}}\angle{-\theta} =  \frac{1}{R_C} -
-\frac{1}{X_M}\]
-\[\text{Series Impedance} = Z_{SE} = \frac{V_{SC}}{I_{SC}}\angle{\theta} = R_{eq} +
-jX_{eq}\]
 
-\subsection{Transformer Losses}
-\begin{table}[H]
-  \centering
-  \begin{tabular}{*{3}{c}}
-    & \multicolumn{2}{c}{\textbf{Losses}} \\
-    \textbf{Load} $\Omega$ & \textbf{P$_\text{Cu}$} W & \textbf{P$_\text{core}$} W \\
-    \hline
-    $\infty$ & 0.0014 & 2.453 \\
-    300 & 2.162 & 2.433 \\
-    300 + j300 & 0.956 & 2.441 \\
-    300 - j300 & 1.223 & 2.437 \\
-  \end{tabular}
-  \caption{Copper and Core Losses}
-  \label{tab:power_losses}
-\end{table}
 
 Equations Used:
-\[P_{Cu} = I_S^2 * R_{eq}\]
-\[P_{core} = (\frac{V_P}{a})^2 * \frac{1}{R_{C}}\]
-
-\subsection{Voltage Regulation VR and Efficiency Comparison}
-\begin{table}[H]
-  \centering
-  \begin{tabular}{*{4}{c}}
-    \textbf{Load} $\Omega$ & \textbf{VR} & \textbf{VR} & \textbf{Percent} \\
-    & Part 1 & R$_{eq}$ & \textbf{Difference} \\
-    \hline
-    $\infty$ & 0.00 & 0.00 & 0.00 \\
-    300 & 5.97 & 6.39 & 7.0 \\
-    300 + j300 & 6.16 & 6.69 & 8.6 \\
-    300 - j300 & -0.92 & -1.25 & 35.9 \\
-  \end{tabular}
-  \caption{Transformer Voltage Regulation (VR)}
-  \label{tab:vr}
-\end{table}
-
-\begin{table}[H]
-  \centering
-  \begin{tabular}{*{4}{c}}
-    \textbf{Load} $\Omega$ & $\eta$ & $\eta$ & \textbf{Percent} \\
-    & Part 1 & R$_{eq}$ & \textbf{Difference} \\
-    \hline
-    $\infty$ & 0.00 & 0.00 & 0.00 \\
-    300 & 89.72 & 87.41 & 2.6 \\
-    300 + j300 & 85.57 & 86.02 & 0.5 \\
-    300 - j300 & 86.11 & 86.93 & 0.9 \\
-  \end{tabular}
-  \caption{Transformer Efficiencies ($\eta$)}
-  \label{tab:eff}
-\end{table}
-
-Equations Used:
-\[VR = \frac{V_P - V_S}{V_S} * 100\%\]
-\[V_P = V_S + R_{eq} * I_S + \text{j}X_{eq} * I_S\]
-\[\eta = \frac{P_{out}}{P_\text{in}} * 100\% \]
-\[\text{Percent Diff} = \frac{\text{difference}}{\text{average}} * 100\%\]
+\[\text{Transformer Efficiency}\eta = \frac{P_{out}}{P_\text{in}} * 100\% \]
+\[\text{Percent Deviation} = \frac{\text{calculated data - lab data}}{\text{lab data}} * 100\%\]
 
 \section{Conclusions}
+During Part 1: The Three-Phase Source, the voltage phasors in the Phasor Analyzer window did
+indeed confirm that the phasors are equal with 120 degrees phase shift for both the line voltage
+and phase voltage measurements.
 
-By measuring the resistance of each transformer winding and not getting any
-extremely high resistance readings similar to an open circuit, it was
-determined that the windings were intact and had integrity.
-
-In Table~\ref{tab:equiv_comp}, the component values for the transformer
-equivalent circuit are listed. These values were needed to accurately model the
-equivalent circuit due to the imperfections in real transformers. The
-resistance R$_{eq}$ was made up of R$_P$ + R$_S$. R$_P$ was a resistance in the
-primary circuit that represented the resistive losses in the primary windings
-of the transformer core. Similarly, R$_S$ was a resistance in the secondary
-circuit that represented the resistive losses in the secondary windings of the
-transformer core. The reactance X$_{eq}$ was made up of X$_P$ + X$_S$. These
-reactances represented the leakage inductances of the primary and secondary
-coils.  The core excitation losses were modeled with a resistance R$_C$ in
-parallel with a reactance X$_M$.
-
-In Table~\ref{tab:power_losses} the copper and core excitation losses for each
-load are listed. These losses were accounted for by the component values for
-the equivalent circuit found in Table~\ref{tab:equiv_comp}.
-
-In Table~\ref{tab:vr} and Table~\ref{tab:eff}, the transformer voltage
-regulation and efficiencies for the transformer modeled in Part 1 and the
-equivalent circuit are compared.  On average small percent differences were
-obtained, thus the equivalent circuit constructed was an accurate model of the
-transformer in Part 1.
+It was noted that I3 measures the secondary line current.
 
 \section*{Circuits Tested}
 \begin{figure}[H]
   \centering
   \includegraphics[width=.8\textwidth]{img/circuit_01}
-  \caption{Single Phase Transformer Circuit for part one}
+  \caption{Cirucit used to measure line voltages for Part 1}
   \label{fig:circuit_01}
 \end{figure}
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=.8\textwidth]{img/circuit_02}
-  \caption{Single Phase Transformer Circuit for part two (open circuit test)}
+  \caption{Circuit used to measure phase voltages for Part 1}
   \label{fig:circuit_02}
 \end{figure}
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=.8\textwidth]{img/circuit_03}
-  \caption{Single Phase Transformer Circuit for part two (short circuit test)}
+  \caption{Y-Y connected three-phase transformer for Part 2}
   \label{fig:circuit_03}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=.8\textwidth]{img/circuit_04}
+  \caption{Y-$\Delta$ connected three-phase transformer for Part 3}
+  \label{fig:circuit_04}
 \end{figure}
 
 \end{document}
