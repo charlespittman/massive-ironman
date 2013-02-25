@@ -38,52 +38,52 @@ compare.
 
 At the Lab-Volt EMS workstation, the DAI 24-V supply was turned on, and the DAI
 USB connector was connected between the EMS workstation and the {PC}. On the
-LVDAM EMS application software, the metering windows for E$_1$, E$_2$, I$_1$,
-I$_2$, P$_1$, 3 phase power, E$_3$, I$_3$, and E$_1$ + E$_2$ + E$_3$ were
-opened.  Under \emph{Options} -> \emph{Acquisition Settings}, the \emph{Sample
-Window} dialog box was set to extended, and under \emph{View} -> the continuous
-refresh option was checked.
+LVDAM EMS application software, the metering windows for $E_1$, $E_2$, $I_1$,
+$I_2$, $P_1$, 3$\phi$ power, $E_3$, $I_3$, and $E_1 + E_2 + E_3$ were
+opened.  Under \emph{Options $\to$ Acquisition Settings}, the \emph{Sample
+Window} dialog box was set to extended, and under \emph{View}, the
+continuous refresh option was checked.
 
 \subsection{The Three Phase Source}
 
 \label{part1} The circuit represented by Figure~\ref{fig:circuit_01} was
-constructed.  The main power switch was set ON and the voltage supply was
-adjusted to 120-V line-to- line. Both the installed analog EMS voltmeter and
-the metering window were monitored for proper indications. The line voltages
-were then measured and recorded. These values are shown in
-Table~\ref{tab:3phase_source}. The main power switch was set OFF and the
-voltage supply fully {CCW}. The circuit represented by
-Figure~\ref{fig:circuit_02} was constructed. The main power switch was set ON
-and the voltage supply was adjusted to read 120-V line-to-line. The installed
-analog EMS voltmeter was used for this since the 120-V were to be measured
-across voltage sources 4-5 only. The phase voltages were then measured and
-recorded. These values are shown in Table~\ref{tab:3phase_source}.  The main
-power switch was set OFF and the voltage supply fully CCW.
+constructed.  The main power switch was set to ON and the voltage control knob
+adjusted to 120-V line-to-line. Both the installed analog EMS voltmeter and the
+metering window were monitored for proper indications. The line voltages were
+then measured and recorded in Table~\ref{tab:3phase_source}. The main power
+switch was set to OFF and the voltage supply fully {CCW}. The circuit
+represented by Figure~\ref{fig:circuit_02} was constructed. The main power
+switch was set to ON and the voltage supply was adjusted to read 120-V
+line-to-line. The installed analog EMS voltmeter was used for this since the
+120-V were to be measured across voltage sources 4--5 only. The phase voltages
+were then measured and recorded in Table~\ref{tab:3phase_source}.  The main
+power switch was set to OFF and the voltage supply turned fully CCW.
 
 \subsection{Y--Y Connected Transformer}
 
-\label{part2} The circuit shown in Figure~\ref{fig:circuit_03} was constructed.
-The Y-connected load was 600 + j300 $\Omega$. The main power switch was turned
-on and the voltage control knob was adjusted to 120-V line-to-line. The analog
-EMS voltmeter and the metering window were both monitored for correct voltage.
-The values for primary and secondary line voltage, primary and secondary line
-current, and primary input power were measured and recorded. A Fluke multimeter
-was used to measure the RMS voltage across the load. This load voltage was
-labeled as $E_4$. These values are shown in Table~\ref{tab:results}.  The main
-power switch was set OFF and the voltage control knob fully CCW.
+\label{part2} The circuit represented by Figure~\ref{fig:circuit_03} was
+constructed.  The Y-connected load was (600 + j300)$\Omega$. The main power
+switch was set to ON, and the voltage control knob adjusted to 120-V
+line-to-line. Both the installed analog EMS voltmeter and the metering window
+were monitored for correct voltage.  The values for primary and secondary line
+voltage, primary and secondary line current, and primary input power were
+measured and recorded in Table~\ref{tab:results}. A Fluke multimeter was used
+to measure the RMS voltage across the load, labeled $E_4$, and recorded in
+Table~\ref{tab:results}.  The main power switch was set to OFF and the voltage
+control knob turned fully CCW.
 
 \subsection{Y--$\Delta$ Connected Transformer}
 
-\label{part3} The circuit shown in Figure~\ref{fig:circuit_04} was then
-constructed.  The Y-connected load was 600 + j300 $\Omega$. The main power
-switch was turned on and the voltage control knob was adjusted to 120-V
-line-to-line. The analog EMS voltmeter and the metering window were both
+\label{part3} The circuit represented by Figure~\ref{fig:circuit_04} was
+constructed.  The Y-connected load was (600 + j300)$\Omega$. The main power
+switch was set to ON, and the voltage control knob adjusted to 120-V
+line-to-line. Both the analog EMS voltmeter and the metering window were
 monitored for correct voltage. The values for primary and secondary line
 voltage, primary and secondary line current, and primary input power were
-measured and recorded. A Fluke multimeter was used to measure the RMS voltage
-across the load. This load voltage was labeled as $E_4$. These values are shown
-in Table~\ref{tab:results}.  The main power switch was set OFF and the voltage
-control knob fully CCW.
+measured and recorded in Table~\ref{tab:results}. A Fluke multimeter was used
+to measure the RMS voltage across the load, labeled $E_4$, and recorded in
+Table~\ref{tab:results}.  The main power switch was set to OFF and the voltage
+control knob turned fully CCW.
 
 \section{Results}
 \subsection{The Three Phase Source}
@@ -95,7 +95,7 @@ control knob fully CCW.
     \hline
 
     \textbf{$V_{LL}$} & 120.4 & 117.1 & 116.3 & 0.998 \\
-    \textbf{$V_{phase}$} & 69.77 & 64.56 & 69.01 & 5.15 \\
+    \textbf{$V_{\phi}$} & 69.77 & 64.56 & 69.01 & 5.15 \\
   \end{tabular}
   \caption{Measured line and phase voltages for Part 1}
   \label{tab:3phase_source}
@@ -105,7 +105,7 @@ control knob fully CCW.
   \centering
   \begin{tabular}{*{7}{c}}
     & \multicolumn{2}{c}{\textbf{Primary}} &
-    \multicolumn{2}{c}{\textbf{Secondary}} & \textbf{3phase} & \textbf{Load} \\
+    \multicolumn{2}{c}{\textbf{Secondary}} & \textbf{3$\phi$} & \textbf{Load} \\
 
     \textbf{Case} & \textbf{Voltage} & \textbf{Current} & \textbf{Voltage} &
     \textbf{Current} & \textbf{Input Power} & \textbf{Voltage} \\
@@ -180,7 +180,7 @@ control knob fully CCW.
   \centering
   \begin{tabular}{*{7}{c}}
     & \multicolumn{2}{c}{\textbf{Primary}} &
-    \multicolumn{2}{c}{\textbf{Secondary}} & \textbf{3phase} & \textbf{Load} \\
+    \multicolumn{2}{c}{\textbf{Secondary}} & \textbf{3$\phi$} & \textbf{Load} \\
 
     \textbf{Case} & \textbf{Voltage} & \textbf{Current} & \textbf{Voltage} &
     \textbf{Current} & \textbf{Input Power} & \textbf{Voltage} \\
@@ -212,7 +212,7 @@ control knob fully CCW.
 
 
 Equations Used:
-\[\text{Transformer Efficiency}\eta = \frac{P_{out}}{P_\text{in}} * 100\% \]
+\[\text{Transformer Efficiency} (\eta) = \frac{P_{out}}{P_\text{in}} * 100\% \]
 \[\text{Percent Deviation} = \frac{\text{calculated data - lab data}}{\text{lab data}} * 100\%\]
 
 \section{Conclusions} During Part 1: The Three-Phase Source, the three-phase
