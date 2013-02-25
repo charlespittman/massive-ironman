@@ -57,7 +57,7 @@ switch was set to ON and the voltage supply was adjusted to read 120-V
 line-to-line. The installed analog EMS voltmeter was used for this since the
 120-V were to be measured across voltage sources 4--5 only. The phase voltages
 were then measured and recorded in Table~\ref{tab:3phase_source}.  The main
-power switch was set to OFF and the voltage supply turned fully CCW.
+power switch was set to OFF and the voltage control knob turned fully CCW.
 
 \subsection{Y--Y Connected Transformer}
 
@@ -86,11 +86,12 @@ Table~\ref{tab:results}.  The main power switch was set to OFF and the voltage
 control knob turned fully CCW.
 
 \section{Results}
-\subsection{The Three Phase Source}
+
 \begin{table}[H]
   \centering
   \begin{tabular}{*{5}{c}}
     & \textbf{$E_1$} & \textbf{$E_2$} & \textbf{$E_3$} & \textbf{$E_1$+$E_2$+$E_3$} \\
+    & V & V & V & V \\
 
     \hline
 
@@ -124,8 +125,8 @@ control knob turned fully CCW.
   \centering
   \begin{tabular}{*{6}{c}}
 
-    & \multicolumn{2}{c}{\textbf{Primary}}
-    & \multicolumn{2}{c}{\textbf{Secondary}} & \textbf{Load} \\
+    & \multicolumn{2}{c}{\textbf{Primary}} &
+    \multicolumn{2}{c}{\textbf{Secondary}} & \textbf{Load} \\
 
     \textbf{Case} & \textbf{Line} & \textbf{Phase} & \textbf{Line} &
     \textbf{Phase} & \textbf{Phase} \\
@@ -212,28 +213,30 @@ control knob turned fully CCW.
 
 
 Equations Used:
-\[\text{Transformer Efficiency} (\eta) = \frac{P_{out}}{P_\text{in}} * 100\% \]
+\[\text{Transformer Efficiency} = \eta = \frac{P_{out}}{P_\text{in}} * 100\% \]
 \[\text{Percent Deviation} = \frac{\text{calculated data - lab data}}{\text{lab data}} * 100\%\]
 
-\section{Conclusions} During Part 1: The Three-Phase Source, the three-phase
-source line and phase voltages were measured. In Circuit 1, the three source
-voltages are in a $\Delta$ connection, and hence the voltage values for each
-phase are the same as the supply voltage 120-V line-to-line. When the voltages
-are added together, they approximate 0 volts due to Kirchoff's voltage law. In
-Circuit 2, the three source voltages are in a Y-connection, and hence the
-voltage values for each phase are 1/$\sqrt{3}$ times the line voltage of 120-V.
-When the voltages are added together, they approximate 0 volts, since the
-connection is assumed to be balanced. When the Phasor Analyzer was analyzed on
-the PC, it was confirmed that the phasors were equal with 120 degrees phase
-shift for both the line and phase voltage measurements. The fact that the
-addition of the phasors was not exactly zero was most likely due to the fact
-that the voltage values measured were not exactly equal to each other.
+\section{Conclusions}
+
+During Part 1: The Three-Phase Source, the three-phase source line and phase
+voltages were measured. In Figure~\ref{fig:circuit_01}, the three source
+voltages are in a $\Delta$-connection, and hence the voltage values for each
+phase are the same as the supply voltage 120-V line-to-line.  When the voltages
+are added together, they approximate 0-V due to Kirchoff's voltage law. In
+Figure~\ref{fig:circuit_02}, the three source voltages are in a Y-connection,
+and hence the voltage values for each phase are $1 \over \sqrt{3}$ times the line
+voltage of 120-V.  When the voltages are added together, they approximate 0-V,
+since the connection is assumed to be balanced. When the Phasor Analyzer was
+analyzed on the PC, it was confirmed that the phasors were equal with 120
+degrees phase shift for both the line and phase voltage measurements. The fact
+that the addition of the phasors was not exactly zero is most likely due to the
+fact that the voltage values measured were not exactly equal to each other.
 
 When the transformer efficiencies for both connections were calculated, it was
-found that the Y-$\Delta$ connection was more efficient than the Y-Y
-connection. In the Y-$\Delta$ connection, the secondary $\Delta$ configuration
+found that the Y--$\Delta$ connection was more efficient than the Y-Y
+connection. In the Y--$\Delta$ connection, the secondary $\Delta$ configuration
 helped make the transformer bank more stable and thus more efficient. This was
-most like due to the fact that a Y-$\Delta$ has no problem with third-harmonic
+most like due to the fact that a Y--$\Delta$ has no problem with third-harmonic
 components in its voltages.
 
 \section*{Circuits Tested}
