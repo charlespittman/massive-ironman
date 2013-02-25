@@ -26,11 +26,10 @@
 \section{Purpose of Experiment}
 
 The purpose of this experiment was to observe the basic principals of balanced
-three-phase transformer circuits. Y-Y and Y-$\Delta$ connected transformer
-banks were constructed separately to observe the differences, particularly in
+three-phase transformer circuits. Y--Y and Y--$\Delta$ connected transformer
+banks were constructed separately to observe any differences, particularly in
 their respective loads. Primary and secondary voltages, currents, and powers
-were first calculated theoretically. Experimental values were then measured to
-compare.
+were first calculated, and then actual measurements were gathered to compare.
 
 \section{Procedure}
 
@@ -51,13 +50,13 @@ constructed.  The main power switch was set to ON and the voltage control knob
 adjusted to 120-V line-to-line. Both the installed analog EMS voltmeter and the
 metering window were monitored for proper indications. The line voltages were
 then measured and recorded in Table~\ref{tab:3phase_source}. The main power
-switch was set to OFF and the voltage supply fully {CCW}. The circuit
-represented by Figure~\ref{fig:circuit_02} was constructed. The main power
-switch was set to ON and the voltage supply was adjusted to read 120-V
+switch was set to OFF and the voltage control knob turned fully {CCW}. The
+circuit represented by Figure~\ref{fig:circuit_02} was constructed. The main
+power switch was set to ON and the voltage supply was adjusted to read 120-V
 line-to-line. The installed analog EMS voltmeter was used for this since the
 120-V were to be measured across voltage sources 4--5 only. The phase voltages
 were then measured and recorded in Table~\ref{tab:3phase_source}.  The main
-power switch was set to OFF and the voltage control knob turned fully CCW.
+power switch was set to OFF and the voltage control knob turned fully {CCW}.
 
 \subsection{Y--Y Connected Transformer}
 
@@ -66,11 +65,11 @@ constructed.  The Y-connected load was (600 + j300)$\Omega$. The main power
 switch was set to ON, and the voltage control knob adjusted to 120-V
 line-to-line. Both the installed analog EMS voltmeter and the metering window
 were monitored for correct voltage.  The values for primary and secondary line
-voltage, primary and secondary line current, and primary input power were
+voltages, primary and secondary line currents, and primary input power were
 measured and recorded in Table~\ref{tab:results}. A Fluke multimeter was used
-to measure the RMS voltage across the load, labeled $E_4$, and recorded in
+to measure the RMS voltage across the load, $E_4$, and recorded in
 Table~\ref{tab:results}.  The main power switch was set to OFF and the voltage
-control knob turned fully CCW.
+control knob turned fully {CCW}.
 
 \subsection{Y--$\Delta$ Connected Transformer}
 
@@ -81,9 +80,9 @@ line-to-line. Both the analog EMS voltmeter and the metering window were
 monitored for correct voltage. The values for primary and secondary line
 voltage, primary and secondary line current, and primary input power were
 measured and recorded in Table~\ref{tab:results}. A Fluke multimeter was used
-to measure the RMS voltage across the load, labeled $E_4$, and recorded in
+to measure the RMS voltage across the load, $E_4$, and recorded in
 Table~\ref{tab:results}.  The main power switch was set to OFF and the voltage
-control knob turned fully CCW.
+control knob turned fully {CCW}.
 
 \section{Results}
 
@@ -100,25 +99,6 @@ control knob turned fully CCW.
   \end{tabular}
   \caption{Measured line and phase voltages for Part 1}
   \label{tab:3phase_source}
-\end{table}
-
-\begin{table}[H]
-  \centering
-  \begin{tabular}{*{7}{c}}
-    & \multicolumn{2}{c}{\textbf{Primary}} &
-    \multicolumn{2}{c}{\textbf{Secondary}} & \textbf{3$\phi$} & \textbf{Load} \\
-
-    \textbf{Case} & \textbf{Voltage} & \textbf{Current} & \textbf{Voltage} &
-    \textbf{Current} & \textbf{Input Power} & \textbf{Voltage} \\
-
-    & $E_1$ V & $I_1$ A & $E_3$ V & $I_3$ A & $B$ W & $E_4$ V \\
-
-    \hline
-    Y--Y        & 121.2 & 0.112 & 119.5 & 0.097 & 19.8 & 58.4 \\
-    Y--$\Delta$ & 120.1 & 0.151 & 68.4 & 0.055 & 4.7 & 32.4 \\
-  \end{tabular}
-  \caption{Measured Values}
-  \label{tab:results}
 \end{table}
 
 \begin{table}[H]
@@ -189,6 +169,25 @@ control knob turned fully CCW.
     & $E_1$ V & $I_1$ A & $E_3$ V & $I_3$ A & $B$ W & $E_4$ V \\
 
     \hline
+    Y--Y        & 121.2 & 0.112 & 119.5 & 0.097 & 19.8 & 58.4 \\
+    Y--$\Delta$ & 120.1 & 0.151 & 68.4 & 0.055 & 4.7 & 32.4 \\
+  \end{tabular}
+  \caption{Measured Values}
+  \label{tab:results}
+\end{table}
+
+\begin{table}[H]
+  \centering
+  \begin{tabular}{*{7}{c}}
+    & \multicolumn{2}{c}{\textbf{Primary}} &
+    \multicolumn{2}{c}{\textbf{Secondary}} & \textbf{3$\phi$} & \textbf{Load} \\
+
+    \textbf{Case} & \textbf{Voltage} & \textbf{Current} & \textbf{Voltage} &
+    \textbf{Current} & \textbf{Input Power} & \textbf{Voltage} \\
+
+    & $E_1$ V & $I_1$ A & $E_3$ V & $I_3$ A & $B$ W & $E_4$ V \\
+
+    \hline
     Y--Y        & 0.99 & 7.77 & 3.03 & 0.42 & 6.49 & 18.7 \\
     Y--$\Delta$ & 0.17 & 77.2 & 37.3 & 1.21 & 8.36 & 23.46 \\
   \end{tabular}
@@ -200,6 +199,7 @@ control knob turned fully CCW.
   \centering
   \begin{tabular}{*{2}{c}}
     \textbf{Case} & \textbf{Efficiency} \\
+    & $\eta$ \\
 
     \hline
 
@@ -213,27 +213,31 @@ control knob turned fully CCW.
 
 
 Equations Used:
-\[\text{Transformer Efficiency} = \eta = \frac{P_{out}}{P_\text{in}} * 100\% \]
-\[\text{Percent Deviation} = \frac{\text{calculated data - lab data}}{\text{lab data}} * 100\%\]
+
+\[\text{Transformer Efficiency} = \eta =
+\left(\frac{P_{out}}{P_\text{in}}\right) \cdot 100\% \]
+
+\[\text{Percent Deviation} = \left(\frac{\text{calculated} -
+\text{measured}}{\text{measured}}\right) \cdot 100\%\]
 
 \section{Conclusions}
 
-During Part 1: The Three-Phase Source, the three-phase source line and phase
-voltages were measured. In Figure~\ref{fig:circuit_01}, the three source
-voltages are in a $\Delta$-connection, and hence the voltage values for each
-phase are the same as the supply voltage 120-V line-to-line.  When the voltages
-are added together, they approximate 0-V due to Kirchoff's voltage law. In
-Figure~\ref{fig:circuit_02}, the three source voltages are in a Y-connection,
-and hence the voltage values for each phase are $1 \over \sqrt{3}$ times the line
-voltage of 120-V.  When the voltages are added together, they approximate 0-V,
-since the connection is assumed to be balanced. When the Phasor Analyzer was
-analyzed on the PC, it was confirmed that the phasors were equal with 120
-degrees phase shift for both the line and phase voltage measurements. The fact
-that the addition of the phasors was not exactly zero is most likely due to the
-fact that the voltage values measured were not exactly equal to each other.
+The line and phase voltages of the source were measured in part 1. In
+Figure~\ref{fig:circuit_01}, the three source voltages are in a
+$\Delta$-connection, and hence the voltage values for each phase are the same
+as the supply line-voltage.  When the voltages are added, they approximate 0-V
+due to Kirchoff's voltage law. In Figure~\ref{fig:circuit_02}, the three source
+voltages are in a Y-connection, and hence the voltage values for each phase are
+$\frac{1}{\sqrt{3}}$ times the line voltage of 120-V.  When the voltages are
+added, they approximate 0-V, since the connection is assumed to be balanced.
+When the Phasor Analyzer was analyzed on the {PC}, it was confirmed that the
+phasors were equal with 120 degrees phase shift for both the line and phase
+voltage measurements. The fact that the addition of the phasors was not exactly
+zero is most likely due to the fact that the voltage values measured were not
+exactly equal to each other.
 
 When the transformer efficiencies for both connections were calculated, it was
-found that the Y--$\Delta$ connection was more efficient than the Y-Y
+found that the Y--$\Delta$ connection was more efficient than the Y--Y
 connection. In the Y--$\Delta$ connection, the secondary $\Delta$ configuration
 helped make the transformer bank more stable and thus more efficient. This was
 most like due to the fact that a Y--$\Delta$ has no problem with third-harmonic
@@ -242,29 +246,29 @@ components in its voltages.
 \section*{Circuits Tested}
 \begin{figure}[H]
   \centering
-  \includegraphics[width=.8\textwidth]{img/circuit_01}
+  \includegraphics[]{img/circuit_01}
   \caption{Circuit used to measure line voltages for Part 1}
   \label{fig:circuit_01}
 \end{figure}
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=.8\textwidth]{img/circuit_02}
+  \includegraphics[]{img/circuit_02}
   \caption{Circuit used to measure phase voltages for Part 1}
   \label{fig:circuit_02}
 \end{figure}
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=.8\textwidth]{img/circuit_03}
-  \caption{Y-Y connected three-phase transformer for Part 2}
+  \includegraphics[width=\textwidth]{img/circuit_03}
+  \caption{Y--Y connected three-phase transformer for Part 2}
   \label{fig:circuit_03}
 \end{figure}
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=.8\textwidth]{img/circuit_04}
-  \caption{Y-$\Delta$ connected three-phase transformer for Part 3}
+  \includegraphics[width=\textwidth]{img/circuit_04}
+  \caption{Y--$\Delta$ connected three-phase transformer for Part 3}
   \label{fig:circuit_04}
 \end{figure}
 
