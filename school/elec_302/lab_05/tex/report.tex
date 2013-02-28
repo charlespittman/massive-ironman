@@ -33,19 +33,19 @@ their respective loads. Primary and secondary voltages, currents, and powers
 were first calculated, and then actual measurements were gathered to compare.
 
 \section{Procedure}
-
+% Note: There is a (slight) difference between '-' and '--'.
+% '-' goes between words: X-ray, 120-V
+% '--' goes between numbers (like ranges): 1--10, 7--N
 \subsection{EMS Workstation Set-up}
-
 At the Lab-Volt EMS workstation, the DAI 24-V supply was turned on, and the DAI
 USB connector was connected between the EMS workstation and the {PC}. On the
 LVDAM EMS application software, the metering windows for $E_1$, $E_2$, $I_1$,
-$I_2$, $P_1$, 3$\phi$ power, $E_3$, $I_3$, and $E_1 + E_2 + E_3$ were
-opened.  Under \emph{Options $\to$ Acquisition Settings}, the \emph{Sample
-Window} dialog box was set to extended, and under \emph{View}, the
-continuous refresh option was checked.
+$I_2$, $P_1$, 3$\phi$ power, $E_3$, $I_3$, and $E_1 + E_2 + E_3$ were opened.
+Under \emph{Options $\to$ Acquisition Settings}, the \emph{Sample Window}
+dialog box was set to extended, and under \emph{View}, the continuous refresh
+option was checked.
 
-\subsection{The Three Phase Source}
-
+\subsection{Prime Mover Operation}
 \label{part1} The circuit represented by Figure~\ref{fig:circuit_01} was
 constructed.  The main power switch was set to ON and the voltage control knob
 adjusted to 120-V line-to-line. Both the installed analog EMS voltmeter and the
@@ -59,8 +59,7 @@ line-to-line. The installed analog EMS voltmeter was used for this since the
 were then measured and recorded in Table~\ref{tab:3phase_source}.  The main
 power switch was set to OFF and the voltage control knob turned fully {CCW}.
 
-\subsection{Y--Y Connected Transformer}
-
+\subsection{Dynamometer Operation}
 \label{part2} The circuit represented by Figure~\ref{fig:circuit_03} was
 constructed.  The Y-connected load was (600 + j300)$\Omega$. The main power
 switch was set to ON, and the voltage control knob adjusted to 120-V
@@ -72,8 +71,7 @@ to measure the RMS voltage across the load, $E_4$, and recorded in
 Table~\ref{tab:results}.  The main power switch was set to OFF and the voltage
 control knob turned fully {CCW}.
 
-\subsection{Y--$\Delta$ Connected Transformer}
-
+\subsection{Motor Losses and Efficiency}
 \label{part3} The circuit represented by Figure~\ref{fig:circuit_04} was
 constructed.  The Y-connected load was (600 + j300)$\Omega$. The main power
 switch was set to ON, and the voltage control knob adjusted to 120-V
@@ -87,38 +85,56 @@ control knob turned fully {CCW}.
 
 \section{Results}
 
+\subsection{Prime Mover Operation}
 \begin{table}[H]
   \centering
   \begin{tabular}{*{3}{c}}
-
     \textbf{Voltage} & \textbf{Torque} & \textbf{Speed} \\
-    $E_1$ V & $T$ N-m & $n$ rpm \\
+    $E_1$ V          & $T$ N-m         & $n$ rpm \\
 
     \hline
 
-    0.04 &     0 &    0.43 \\
-    18.84 & -0.15 &  308.54 \\
-    35.6 & -0.17 &  607.85 \\
-    53 & -0.18 &  913.84 \\
-    70.23 & -0.19 & 1220.52 \\
-    86.02 & -0.20 & 1502.90 \\
+      0.04 &     0 &    0.43 \\
+     18.84 & -0.15 &  308.54 \\
+     35.60 & -0.17 &  607.85 \\
+     53.00 & -0.18 &  913.84 \\
+     70.23 & -0.19 & 1220.52 \\
+     86.02 & -0.20 & 1502.90 \\
     102.99 & -0.21 & 1807.37 \\
     119.92 & -0.22 & 2107.53 \\
   \end{tabular}
-  \caption{Results for part 3}
+  \caption{}
   \label{}
 \end{table}
 
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{img/plot1}
+  \caption{}
+  \label{}
+\end{figure}
+
+\subsection{Dynamometer Operation}
+
+\subsection{Motor Losses and Efficiency}
 \begin{table}[H]
   \centering
   \begin{tabular}{*{7}{c}}
+    \multicolumn{3}{c}{\textbf{Input}} & \multicolumn{3}{c}{\textbf{Output}}
+    & \\
 
-    \textbf{Voltage} & \textbf{Current} & \textbf{Power} & \textbf{Torque} &
-    \textbf{Speed} & \textbf{Mechanical} & \textbf{Efficiency} \\
+    \textbf{Voltage} & \textbf{Current} & \textbf{Electrical} &
+    \textbf{Torque}  & \textbf{Speed}   & \textbf{Mechanical} &
+    \textbf{Efficiency} \\
 
-    \textbf{In} & \textbf{In} & \textbf{In} & & & \textbf{Power} & \\
+    &                  & \textbf{Power}      &
+    &                  & \textbf{Power}
+    & \\
 
-    V & I & W & N-m & rpm & $P_{mech}$ W & $\eta$ \\
+    $E_1$ V          & $I_1$ I          & $PQS_1$ W           &
+    $T$ N-m          & $N$ rpm          & $P_{m}$ W           &
+    $A$ $\eta$ \\
+
     \hline
 
     88.71 & 0.94 &  89.90 & 0.32 & 1525.44 &  51.03 & 56.76 \\
@@ -133,12 +149,34 @@ control knob turned fully {CCW}.
     80.34 & 4.24 & 349.83 & 2.08 & 1232.10 & 268.29 & 76.69 \\
     79.57 & 4.64 & 379.02 & 2.30 & 1208.88 & 291.42 & 76.89 \\
   \end{tabular}
-  \caption{Results for part 4}
+  \caption{}
   \label{}
 \end{table}
 
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{img/plot2}
+  \caption{}
+  \label{}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{img/plot3}
+  \caption{}
+  \label{}
+\end{figure}
+
 \section{Conclusions}
 
+% Note: The \label function lets you refer to whatever container it lives in
+% with \ref.  You can see it's used every time we refer to a table or figure.
+% You can also see that each \ref is preceded by a tilde, which is the symbol
+% for a non-breaking space.
+%
+% So, if you want to refer to the section where Part 1 (\label{part1} was
+% described, it'd look like: Section~\ref{part1} or \S~\ref{part1}
+% \S is the symbol that means ``Section''.
 The line and phase voltages of the source were measured in part 1. In
 Figure~\ref{fig:circuit_01}, the three source voltages are in a
 $\Delta$-connection, and hence the voltage values for each phase are the same
@@ -152,13 +190,6 @@ phasors were equal with 120 degrees phase shift for both the line and phase
 voltage measurements. The fact that the addition of the phasors was not exactly
 zero is most likely due to the fact that the voltage values measured were not
 exactly equal to each other.
-
-When the transformer efficiencies for both connections were calculated, it was
-found that the Y--$\Delta$ connection was more efficient than the Y--Y
-connection. In the Y--$\Delta$ connection, the secondary $\Delta$ configuration
-helped make the transformer bank more stable and thus more efficient. This was
-most like due to the fact that a Y--$\Delta$ has no problem with third-harmonic
-components in its voltages.
 
 \section*{Equations}
 
