@@ -133,7 +133,7 @@ in Figure~\ref{fig:plot_03}. The 24-V power supply was then turned OFF and the t
      30.10 &  503.0 &  509.6 &  CW & -0.18 & -1.60 \\
     -30.19 & -508.0 & -513.0 & CCW &   --- &   --- \\
   \end{tabular}
-  \caption{}
+  \caption{Prime Mover friction torque; Prime Mover polarity reversal}
   \label{tab:table_01}
 \end{table}
 
@@ -154,21 +154,21 @@ in Figure~\ref{fig:plot_03}. The 24-V power supply was then turned OFF and the t
     102.99 & -0.21 & 1807.37 \\
     119.92 & -0.22 & 2107.53 \\
   \end{tabular}
-  \caption{}
+  \caption{Recorded data when the Prime Mover speed was increased}
   \label{tab:table_02}
 \end{table}
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=\textwidth]{img/plot1}
-  \caption{}
+  \caption{Prime Mover Speed vs. Prime Mover Voltage}
   \label{fig:plot_01}
 \end{figure}
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=\textwidth]{img/plot2}
-  \caption{}
+  \caption{Prime Mover friction torque vs. Prime Mover Speed}
   \label{fig:plot_02}
 \end{figure}
 
@@ -182,7 +182,7 @@ in Figure~\ref{fig:plot_03}. The 24-V power supply was then turned OFF and the t
     1500 &   0 & -0.66 &  --- &  --- \\
     1500 & 2.0 & -2.26 & 1.76 & 2.33 \\
   \end{tabular}
-  \caption{}
+  \caption{Prime Mover non-corrected and corrected torques}
   \label{tab:table_03}
 \end{table}
 
@@ -250,7 +250,7 @@ in Figure~\ref{fig:plot_03}. The 24-V power supply was then turned OFF and the t
     80.34 & 4.24 & 349.83 & 2.08 & 1232.10 & 268.29 & 76.69 \\
     79.57 & 4.64 & 379.02 & 2.30 & 1208.88 & 291.42 & 76.89 \\
   \end{tabular}
-  \caption{Recorded values from the Dynamometer module simulating various loads}
+  \caption{Recorded values as the Dynamometer's torque was increased}
   \label{tab:table_06}
 \end{table}
 
@@ -263,14 +263,25 @@ in Figure~\ref{fig:plot_03}. The 24-V power supply was then turned OFF and the t
 
 \section{Conclusions}
 In Figure~\ref{fig:plot_02}, as the Prime Mover was first starting to increase there was a large increase
-in torque in the opposite direction of motion. However, as the Prime Mover gain rotational speed, the 
+in torque in the opposite direction of motion. However, as the Prime Mover gained rotational speed, the 
 opposition torque continued to increase but at a slower rate. In Figure~\ref{fig:plot_03}, as the mechanical
 output power increased, the efficiency also increased. This was because of the relationship between output
-power and input power. As the output power becomes closer to the value of the input power, then the efficiency 
-of the motor becomes closer to 1. 
+power and input power. As the output power became closer to the value of the input power, then the efficiency 
+of the motor became closer to 1. 
 
+In Part 2, when the Dynamometer was connected to the Prime Mover, the Prime Mover generated a larger torque
+than it generated without the Dynanometer. This was because of the added belt frition and friction torque of the 
+Dyno bearings. When the Dyno was set to genearate its own magnetic torque of 2 Nm, the Prime Mover rotational speed 
+decreased and thus its opposition torque in the opposite direction of motion increased. The non-corrected torque 
+generated was by the Prime Mover was without the loading of the Dyno taken into account. When the the corrected
+torque was generated, the Dyno loading was taken into account and thus this value represented the true torque 
+produced by the Prime Mover. The corrected torque was greater than the non-corrected torque by approximately the 
+same amount that the Prime Mover generated when the Dyno had not produced its own magnetic torque.
 
-
+In Part 3, the current was being increased because the PM/Dyno was set up as a motor. As the torque produced 
+by the Dyno increased, the voltage produced by the Prime Mover decreased. However, the current increased as the 
+Prime Mover rotational speed decreased. The mechanical output power was less than the electrical input power. 
+Electric power was being converted to mechanical power. 
 
 \section*{Equations}
 
@@ -288,7 +299,7 @@ of the motor becomes closer to 1.
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.8\textwidth]{img/circuit_02}
-  \caption{Prime Mover Circuit}
+  \caption{Prime Mover Coupled to the Dynanometer}
   \label{fig:circuit_02}
 \end{figure}
 
