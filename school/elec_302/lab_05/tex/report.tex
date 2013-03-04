@@ -2,11 +2,14 @@
 \usepackage{graphicx}
 \usepackage{float}
 \usepackage{mathtools}
+\usepackage[acronym]{glossaries}
 
 \author{}
 \title{ELEC 302-81\\ Lab 5\\ Motor Torque, Speed, Losses, and Efficiency}
 \date{\today}
 
+\loadglsentries{acronyms}
+\makeglossaries
 \begin{document}
 
 \maketitle
@@ -22,18 +25,18 @@
 
 \pagebreak
 
-\setlength\parindent{0pt}
+%\setlength\parindent{0pt}
 
 \section{Purpose of Experiment}
 
-In this experiment, the Prime Mover and Dynamometer modules were used to
-measure torque, speed, power, and efficiency of a DC motor. This experiment
-consisted of three parts. Part 1 involved only the Prime Mover module, and the
-basic operation of the Prime Mover was studied and the friction torque
-generated without a load was measured. Part 2 involved the Dynamometer acting
-as a load to the Prime Mover, and the changes in torque due to the additon of
-the Dynamometer were studied. Part 3 involved an experimental study of the
-Prime Mover power losses and efficiency.
+In this experiment, the \gls{pm} and \gls{dyno} modules were used to measure
+torque, speed, power, and efficiency of a DC motor. This experiment consisted
+of three parts. Part 1 involved only the \gls{pm} module, and the basic
+operation of the \gls{pm} was studied and the friction torque generated without
+a load was measured. Part 2 involved the \gls{dyno} acting as a load to the
+\gls{pm}, and the changes in torque due to the addition of the \gls{dyno} were
+studied. Part 3 involved an experimental study of the \gls{pm} power losses and
+efficiency.
 
 \section{Procedure}
 
@@ -41,122 +44,121 @@ Prime Mover power losses and efficiency.
 
 The main power switch and voltage control knob were verified to be OFF and
 fully counterclockwise, respectively. The voltmeter selector switch was set to
-position 7--N. The Low Power Inputs for the Prime Mover/Dynamometer (PM/Dyno)
-module and the Data Acquisition Interface (DAI) were connected to the 24-V
-supply. The 24-V supply was turned on. The DAI USB was connected to the
-computer. On the computer, the file for Lab 05 was opened in the EMS
-application, and the metering window was set to continuous refresh.
+position 7--N. The Low Power Inputs for the \gls{pm}/\gls{dyno} module and the
+\gls{dai} were connected to the 24-V supply. The 24-V supply was turned on. The
+\gls{dai} USB was connected to the computer. On the computer, the file for Lab
+05 was opened in the EMS application, and the metering window was set to
+continuous refresh.
 
 \subsection{Prime Mover Operation}
 
-\label{part1} The cicuit represented by Figure~\ref{fig:circuit_01} was
-constructed. The Prime Mover module on the left side of the Prime
-Mover/Dynamometer workstation was used in Part 1. Special, smaller sized
-connection wires were used to connect the torque (T) and speed (N) terminals
-from the PM/Dyno module to the DAI module. The white ground terminal was also
-connected between the two modules. On the PM/Dyno control switches, the Mode
-switch was set to Prime Mover (PM) and the Display switch was set to Speed (n).
-The main voltage supply was turned ON and the DC supply voltage was adjuted to
-30-V. Both the installed analog EMS voltmeter and the metering window were
-monitored for proper indications. The DC voltage E1, the speed n indicated on
-the Prime Mover digital display, and the speed N indicated on the computer
-metering window were measured and recorded. The direction of rotation of the
-prime mover was also recorded. These values are shown in
-Table~\ref{tab:table_01}. On the PM/Dyno module, the Display switch was set to
-the Torque position.  The friction torque, $T_f$, indicated on the Prime Mover
-digital display and the Torque, $T$, indicated in the metering window were
-measured and recorded. These values are also shown in Table~\ref{tab:table_01}.
-On the PM/Dyno module, the Mode switch was set to the Dyn position. After a few
-seconds, the Mode was set back to the PM position. The voltage control knob was
-turned fully CCW and the main power switch was set to {OFF}.  The polarity of
-the leads at the Prime Mover Input were then reversed. The main power switch
-was turned ON and the voltage supply was adjusted to 30-V. The DC voltage E1,
-the speed n indicated on the Prime Mover digital display, and the speed N
-indicated on the computer metering window were measured and recorded. The
-direction of rotation of the prime mover was also recorded. These values are
-shown in Table~\ref{tab:table_01}. The voltage control knob was set fully CCW
-and the main power switch to {OFF}. The leads were then connected to their
-original polarity.
+\label{part1} The circuit represented by Figure~\ref{fig:circuit_01} was
+constructed. The \gls{pm} module on the left side of the \gls{pm}/\gls{dyno}
+workstation was used in Part 1. Special, smaller sized connection wires were
+used to connect the torque (T) and speed (N) terminals from the
+\gls{pm}/\gls{dyno} module to the \gls{dai} module. The white ground terminal
+was also connected between the two modules. On the \gls{pm}/\gls{dyno} control
+switches, the Mode switch was set to \gls{pm} and the Display switch was set to
+Speed (n).  The main voltage supply was turned ON and the DC supply voltage was
+adjusted to 30-V. Both the installed analog EMS voltmeter and the metering
+window were monitored for proper indications. The DC voltage, $E_1$, the speed,
+$n$, indicated on the \gls{pm} digital display, and the speed N indicated on
+the computer metering window were measured and recorded. The direction of
+rotation of the prime mover was also recorded. These values are shown in
+Table~\ref{tab:table_01}. On the \gls{pm}/\gls{dyno} module, the Display switch
+was set to the Torque position.  The friction torque, $T_f$, indicated on the
+\gls{pm} digital display and the Torque, $T$, indicated in the metering window
+were measured and recorded. These values are also shown in
+Table~\ref{tab:table_01}.  On the \gls{pm}/\gls{dyno} module, the Mode switch
+was set to the {Dyn}. position. After a few seconds, the Mode was set back to
+the PM position. The voltage control knob was turned fully CCW and the main
+power switch was set to {OFF}.  The polarity of the leads at the \gls{pm} input
+was then reversed. The main power switch was turned ON and the voltage supply
+was adjusted to 30-V. The DC voltage, $E_1$, the speed, $n$, indicated on the
+\gls{pm} digital display, and the speed N indicated on the computer metering
+window were measured and recorded. The direction of rotation of the prime mover
+was also recorded. These values are shown in Table~\ref{tab:table_01}. The
+voltage control knob was set fully CCW and the main power switch to {OFF}. The
+leads were then connected to their original polarity.
 
 The power supply was set to {ON}. On the computer application, the Data Table
-Applications window was opened. The Prime Mover Voltage, $E_1$, speed, $N$, and
+Applications window was opened. The \gls{pm} Voltage, $E_1$, speed, $N$, and
 torque, $T$, were checked as the values to be recorded in the table. Using the
-voltage control knob, the Prime Mover speed was increased in approximately
-300-rpm increments from 0--2100-rpm. At each 300- rpm increment, the values for
-E1, N, and T were recorded into the Data Table. This data is shown in
+voltage control knob, the \gls{pm} speed was increased in approximately 300-rpm
+increments from 0--2100-rpm. At each 300-rpm increment, the values for $E_1$,
+$N$, and $T$ were recorded into the Data Table. This data is shown in
 Table~\ref{tab:table_02}. The voltage control knob was set fully CCW, and the
 main power switch set to {OFF}. On the computer application, the Graph window
-was opened. The Graph window was set to obtain a plot of Prime Mover Speed,
-$N$, vs.  Prime Mover Voltage, $E_1$. The graph was created and then saved.
-This graph is shown in Figure~\ref{fig:plot_01}. The graph window was then set
-to obtain a plot of Prime Mover friction torque, $T$, vs. Prime Mover Speed
-(rpm). The graph was created and then saved. This graph is shown in
-Figure~\ref{fig:plot_02}.
+was opened. The Graph window was set to obtain a plot of \gls{pm} Speed, $N$,
+vs.  \gls{pm} Voltage, $E_1$. The graph was created and then saved.  This graph
+is shown in Figure~\ref{fig:plot_01}. The graph window was then set to obtain a
+plot of \gls{pm} friction torque, $T$, vs. \gls{pm} Speed (rpm). The graph was
+created and then saved. This graph is shown in Figure~\ref{fig:plot_02}.
 
 \subsection{Dynamometer Operation}
 
-\label{part2} A timing belt was used to couple the two modules of the PM/Dyno
-together. The module on the left acted as the Prime Mover, and the module on
-the right acted as the Dynamometer. The circuit represented by
+\label{part2} A timing belt was used to couple the two modules of the
+\gls{pm}/\gls{dyno} together. The module on the left acted as the \gls{pm}, and
+the module on the right acted as the \gls{dyno}. The circuit represented by
 Figure~\ref{fig:circuit_02} was constructed. The smaller sized leads were
-connected to the T and N meters on the Dynamometer side. The 24-V supply was
-connected to the PM/Dyno and the DAI modules. On the Prime Mover module, the
-Mode switch was set to Prime Mover, and the Display switch was set to Speed. On
-the Dynamometer module, the Mode switch was set to DYN, the Display switch was
-set to Torque, the Load Control Mode switch was set to Man., and the Load
-Control knob was set to Min. (fully CCW). The main power switch was set ON and
-the voltage control knob was adjusted until to Prime Mover rotated at a speed
-of 1500 rpm. On the Prime Mover module, the Display switch was set to Torque.
-The opposition torque was then measured and recorded. This data is shown in
+connected to the T and N meters on the \gls{dyno} side. The 24-V supply was
+connected to the \gls{pm}/\gls{dyno} and the \gls{dai} modules. On the \gls{pm}
+module, the Mode switch was set to \gls{pm}, and the Display switch was set to
+Speed. On the \gls{dyno} module, the Mode switch was set to DYN, the Display
+switch was set to Torque, the Load Control Mode switch was set to Man., and the
+Load Control knob was set to Min. (fully CCW). The main power switch was set ON
+and the voltage control knob was adjusted until the \gls{pm} rotated at a speed
+of 1500-rpm. On the \gls{pm} module, the Display switch was set to Torque.  The
+opposition torque was then measured and recorded. This data is shown in
 Table~\ref{tab:table_03}. The Display switch was returned to Speed. On the
-Dynamometer module, the Load Control knob was slowly adjusted clockwise until
-the torque on the digital dispay indicated 2.0 Nm. The voltage control knob was
-then adjusted so that the Prime Mover rotated at 1500 rpm. The opposition
-torque, $T_{PM}$, indicated by the Prime Mover digital display and the
+\gls{dyno} module, the Load Control knob was slowly adjusted clockwise until
+the torque on the digital display indicated 2.0 Nm. The voltage control knob
+was then adjusted so that the \gls{pm} rotated at 1500-rpm. The opposition
+torque, $T_{PM}$, indicated by the \gls{pm} digital display and the
 non-corrected output torque, $T_{NC}$, in the metering window were measured and
 recorded. These values are shown in Table~\ref{tab:table_03}. On the computer
 in the metering window, the torque correction function (mode C) for the torque
-meter was selected. The meter was then set to read the Prime Mover output
-torque corrected for belt friction and windage. The voltage control knob was
-then adjusted so that the Prime Mover rotated at 1500-rpm.  The corrected
-torque $T_C$ was then indicated in the metering window. This value was reorded
-and is shown in Table~\ref{tab:table_03}. The voltage supply was set fully CCW
-and the main power switch to OFF.
+meter was selected. The meter was then set to read the \gls{pm} output torque
+corrected for belt friction and windage. The voltage control knob was then
+adjusted so that the \gls{pm} rotated at 1500-rpm.  The corrected torque $T_C$
+was then indicated in the metering window. This value was recorded and is shown
+in Table~\ref{tab:table_03}. The voltage supply was set fully CCW and the main
+power switch to OFF.
 
 \subsection{Motor Losses and Efficiency}
 
-\label{part3} The cicuit represented by Figure~\ref{fig:circuit_02} was kept
-connected on the EMS workstation.  On the Prime Mover module, the Mode switch
-was set to Prime Mover, and the Display switch was set to Speed. On the
-Dynamometer module, the Mode switch was set to Dyn, the Display switch was set
-to Torque, the Load Control Mode switch was set to Man., and the Load Control
-knob was turned fully {CCW}. On the metering window, the torque correction
-function (mode C) for the torque meter was selected. The voltage supply knob
-was then adjusted so that the Prime Mover rotated at 1500 rpm. On the
-Dynamometer module, the Load Control knob was adjusted until the digital
-display indicated 1.0 Nm. The Dynamometer speed, $N$, and the corrected output
-torque, $T_C$, from the metering window were measured and recorded. These
-values are shown in Table~\ref{tab:table_04}. The Prime Mover mechanical output
-power, $P_{mech}$, indicated on meter, $P_m$, the Prime Mover electrical input
-power, $P_{in}$, indicated on meter PQS1, and the Prime Mover efficiency,
-$\eta$, indicated on meter A were measured and recorded. These values are shown
-in Table~\ref{tab:table_05}.
+\label{part3} The circuit represented by Figure~\ref{fig:circuit_02} was kept
+connected on the EMS workstation.  On the \gls{pm} module, the Mode switch was
+set to Prime Mover, and the Display switch was set to Speed. On the \gls{dyno}
+module, the Mode switch was set to Dyn., the Display switch was set to Torque,
+the Load Control Mode switch was set to Man., and the Load Control knob was
+turned fully {CCW}. On the metering window, the torque correction function
+(mode C) for the torque meter was selected. The voltage supply knob was then
+adjusted so that the \gls{pm} rotated at 1500-rpm. On the \gls{dyno} module,
+the Load Control knob was adjusted until the digital display indicated 1.0-Nm.
+The \gls{dyno} speed, $N$, and the corrected output torque, $T_C$, from the
+metering window were measured and recorded. These values are shown in
+Table~\ref{tab:table_04}. The \gls{pm} mechanical output power, $P_{mech}$,
+indicated on meter, $P_m$, the \gls{pm} electrical input power, $P_{in}$,
+indicated on meter $PQS_1$, and the \gls{pm} efficiency, $\eta$, indicated on
+meter $A$ were measured and recorded. These values are shown in
+Table~\ref{tab:table_05}.
 
-On the Dynamometer module, the Load Control knob was slowly adjusted CCW until
+On the \gls{dyno} module, the Load Control knob was slowly adjusted CCW until
 the indicated torque display read 0-Nm. The voltage control knob was then
-adjusted until the Prime Mover rotated at 1500-rpm. The Data Table Application
-was opended on the computer. The Prime Mover voltage, $E_1$, current, $I_1$,
-electrical input power, $PQS_1$, speed, $N$, output torque, $T$, mechanical
-output power, $P_{m}$, and efficiency, $A$, were set to be recorded in the Data
-Table. On the Dynamometer module, the Load Control knob was adjusted so that
-the torque indicated on its digital display increased from 0 to 2.0 Nm in 0.2
-Nm increments. For each increment value, the values to be recorded were entered
-into the Data Table.  These values are shown in Table~\ref{tab:table_06}. The
-voltage control knob was set fully CCW and the main power switch to {OFF}. The
-Graph window on the computer was then opened. It was set to obtain a plot of
-Prime Mover efficiency vs. Prime Mover mechanical output power. This graph was
-created and saved. It is shown in Figure~\ref{fig:plot_03}. The 24-V power
-supply was then turned OFF and the timing belt removed.
+adjusted until the \gls{pm} rotated at 1500-rpm. The Data Table Application was
+opened on the computer. The \gls{pm} voltage, $E_1$, current, $I_1$, electrical
+input power, $PQS_1$, speed, $N$, output torque, $T$, mechanical output power,
+$P_{m}$, and efficiency, $A$, were set to be recorded in the Data Table. On the
+\gls{dyno} module, the Load Control knob was adjusted so that the torque
+indicated on its digital display increased from 0--2.0-Nm in 0.2-Nm increments.
+For each increment value, the values to be recorded were entered into the Data
+Table.  These values are shown in Table~\ref{tab:table_06}. The voltage control
+knob was set fully CCW and the main power switch to {OFF}. The Graph window on
+the computer was then opened. It was set to obtain a plot of \gls{pm}
+efficiency vs. \gls{pm} mechanical output power. This graph was created and
+saved. It is shown in Figure~\ref{fig:plot_03}. The 24-V power supply was then
+turned OFF and the timing belt removed.
 
 \section{Results}
 
@@ -172,7 +174,7 @@ supply was then turned OFF and the timing belt removed.
      30.10 &  503.0 &  509.6 &  CW & -0.18 & -1.60 \\
     -30.19 & -508.0 & -513.0 & CCW &   --- &   --- \\
   \end{tabular}
-  \caption{Prime Mover friction torque; Prime Mover polarity reversal}
+  \caption{\gls{pm} friction torque; \gls{pm} polarity reversal}
   \label{tab:table_01}
 \end{table}
 
@@ -193,21 +195,21 @@ supply was then turned OFF and the timing belt removed.
     102.99 & -0.21 & 1807.37 \\
     119.92 & -0.22 & 2107.53 \\
   \end{tabular}
-  \caption{Recorded data when the Prime Mover speed was increased}
+  \caption{Recorded data when the \gls{pm} speed was increased}
   \label{tab:table_02}
 \end{table}
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=\textwidth]{img/plot1}
-  \caption{Prime Mover Speed vs. Prime Mover Voltage}
+  \caption{\gls{pm} Speed vs. \gls{pm} Voltage}
   \label{fig:plot_01}
 \end{figure}
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=\textwidth]{img/plot2}
-  \caption{Prime Mover friction torque vs. Prime Mover Speed}
+  \caption{\gls{pm} friction torque vs. \gls{pm} Speed}
   \label{fig:plot_02}
 \end{figure}
 
@@ -221,7 +223,7 @@ supply was then turned OFF and the timing belt removed.
     1500 &   0 & -0.66 &  --- &  --- \\
     1500 & 2.0 & -2.26 & 1.76 & 2.33 \\
   \end{tabular}
-  \caption{Prime Mover non-corrected and corrected torques}
+  \caption{\gls{pm} non-corrected and corrected torques}
   \label{tab:table_03}
 \end{table}
 
@@ -234,7 +236,7 @@ supply was then turned OFF and the timing belt removed.
     \hline
     1.31 & 1337  \\
   \end{tabular}
-  \caption{Dynamometer speed and correceted output torque for a dyno torque of 1.0 Nm}
+  \caption{Dynamometer speed and corrected output torque for a dyno torque of 1.0 Nm}
   \label{tab:table_04}
 \end{table}
 
@@ -249,7 +251,7 @@ supply was then turned OFF and the timing belt removed.
     $\eta$ \% & 75.5 & 75.45 & 0.60 \\
   \end{tabular}
   \caption{Measured and calculated values for mechanical power output,
-  electrical power input, and Prime Mover efficiency; computed Prime Mover
+    electrical power input, and \gls{pm} efficiency; computed \gls{pm}
   power losses}
   \label{tab:table_05}
 \end{table}
@@ -293,38 +295,40 @@ supply was then turned OFF and the timing belt removed.
 \begin{figure}[H]
   \centering
   \includegraphics[width=\textwidth]{img/plot3}
-  \caption{Prime Mover efficiency vs.\ mechanical output power}
+  \caption{\gls{pm} efficiency vs.\ mechanical output power}
   \label{fig:plot_03}
 \end{figure}
 
-\section{Conclusions} In Figure~\ref{fig:plot_02}, as the Prime Mover was first
-starting to increase there was a large increase in torque in the opposite
-direction of motion. However, as the Prime Mover gained rotational speed, the
-opposition torque continued to increase but at a slower rate. In
-Figure~\ref{fig:plot_03}, as the mechanical output power increased, the
-efficiency also increased. This was because of the relationship between output
-power and input power. As the output power became closer to the value of the
-input power, then the efficiency of the motor became closer to 1.
+\section{Conclusions}
 
-In Part 2, when the Dynamometer was connected to the Prime Mover, the Prime
-Mover generated a larger torque than it generated without the Dynanometer. This
-was because of the added belt frition and friction torque of the Dyno bearings.
-When the Dyno was set to genearate its own magnetic torque of 2 Nm, the Prime
-Mover rotational speed decreased and thus its opposition torque in the opposite
-direction of motion increased. The non-corrected torque generated by the Prime
-Mover was without the loading of the Dyno taken into account. When the the
-corrected torque was generated, the Dyno loading was taken into account and
-thus this value represented the true torque produced by the Prime Mover. The
-corrected torque was greater than the non-corrected torque by approximately the
-same amount that the Prime Mover generated when the Dyno had not produced its
-own magnetic torque.
+In Figure~\ref{fig:plot_02}, as the \gls{pm} was first starting to increase
+there was a large increase in torque in the opposite direction of motion.
+However, as the \gls{pm} gained rotational speed, the opposition torque
+continued to increase but at a slower rate. In Figure~\ref{fig:plot_03}, as the
+mechanical output power increased, the efficiency also increased. This was
+because of the relationship between output power and input power. As the output
+power became closer to the value of the input power, then the efficiency of the
+motor became closer to 1.
 
-In Part 3, the current was being increased because the PM/Dyno was set up as a
-motor. As the torque produced by the Dyno increased, the voltage produced by
-the Prime Mover decreased. However, the current increased as the Prime Mover
-rotational speed decreased. The mechanical output power was less than the
-electrical input power.  Electric power was being converted to mechanical
-power.
+In Part 2, when the \gls{dyno} was connected to the \gls{pm}, the \gls{pm}
+generated a larger torque than it generated without the \gls{dyno}. This was
+because of the added belt friction and friction torque of the \gls{dyno}
+bearings.  When the \gls{dyno} was set to generate its own magnetic torque of 2
+Nm, the \gls{pm} rotational speed decreased and thus its opposition torque in
+the opposite direction of motion increased. The non-corrected torque generated
+by the \gls{pm} was without the loading of the \gls{dyno} taken into
+account. When the the corrected torque was generated, the \gls{dyno} loading
+was taken into account and thus this value represented the true torque produced
+by the \gls{pm}. The corrected torque was greater than the non-corrected torque
+by approximately the same amount that the \gls{pm} generated when the
+\gls{dyno} had not produced its own magnetic torque.
+
+In Part 3, the current was being increased because the \gls{pm}/\gls{dyno} was
+set up as a motor. As the torque produced by the \gls{dyno} increased, the
+voltage produced by the \gls{pm} decreased. However, the current increased as
+the \gls{pm} rotational speed decreased. The mechanical output power was less
+than the electrical input power.  Electric power was being converted to
+mechanical power.
 
 \section*{Equations}
 
@@ -343,7 +347,7 @@ power.
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.8\textwidth]{img/circuit_02}
-  \caption{Prime Mover Coupled to the Dynanometer}
+  \caption{Prime Mover Coupled to the Dynamometer}
   \label{fig:circuit_02}
 \end{figure}
 
