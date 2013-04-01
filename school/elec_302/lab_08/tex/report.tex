@@ -20,13 +20,10 @@
 
 \section*{Abstract}
 
-In this experiment, the basic principles of operation of DC generators were studied. A seperately excited 
-DC generator was setup and its magnetization curve was created for a no-load scenario and for a loaded 
-scenario with 100 \Omega. Then, the output voltage and output current relationship for a separately excited
-generator was studied with various loads, from no-load down to 57 \Omega. A shunt connected DC genearator was
-then constructed and its output voltage and output current relationship was studied with the same types of 
-loads. A compound connected DC generator was then constructed and its output voltage and output current 
-relationship was studied with the same types of loads as used with the shunt connected and separately excited.
+In this experiment, the basic principles of operation of DC generators were studied. The output voltage (terminal
+voltage $V_T$) and output current (line current $I_L$) relationship for a separately excited generator, shunt 
+connected generator, and cumulatively compounded connected generator were studied with various loads, from no-load 
+down to 57 \Omega. 
 
 \section*{Results}
 
@@ -42,12 +39,18 @@ relationship was studied with the same types of loads as used with the shunt con
 For DC motors, the teminal characteristics are induced torque and motor speed. However, for DC generators the 
 terminal characteristics are terminal voltage and line current, that is the output voltage and output current. 
 In the figure above the terminal characteristics of a separately excited, shunt connected, and compound connected
-DC generator are compared. In the plot of the terminal characteristics of a separately excited generator, it can 
-be seen to be a straight line. As the load was increased in the experiment, the line current and thus the armature
-current increased. From Kirchoff's voltage law $V_T = E_A - I_A*R_A$ the terminal voltage will thus decrease as
-line current increases, and in a linearly fashion since the internal generated voltage $E_A$ is independent of the 
-armature current $I_A$. The terminal characteristics of a shunt connected generator are similar to that of a 
-separately excited generator. However, since the amount of field current depends of the terminal voltgae as the 
-terminal voltage decreases then so does the field current. This causes the flux to decrease which then causes the 
-internal genearated voltage $E_A$ to decrease and thus the terminal voltage decreases even more. 
+DC generator are compared. The terminal characteristics of a separately excited generator can be seen to be a straight 
+line. As the load was increased in the experiment, the line current and thus the armature current increased. From 
+Kirchoff's voltage law $V_T = E_A - I_AR_A$ the terminal voltage will thus decrease as line current increases, and 
+in a linearly fashion since the internal generated voltage $E_A$ is independent of the armature current $I_A$. The 
+terminal characteristics of a shunt connected generator are similar to that of a separately excited generator. However,
+in a shunt generator the amount of field current depends of the terminal voltage. As the terminal voltage decreases then 
+so does the field current. This causes the flux to decrease which then causes the internal genearated voltage $E_A$ to 
+decrease and thus the terminal voltage decreases even more as the output current increases. The terminal characteristics 
+of a cumulatively compounded generator consist of two terminal voltage effects which oppose each other. As the load 
+increased, the output current and thus the armature current increased. From Kirchoff's voltage law 
+$V_T = E_A - I_A(R_A + R_S)$ as the armature current increases, the terminal voltage decreases. However, since the 
+armature current increases then the total magnetomotive force increases which increases the flux in the 
+generator, which in turn increases the internal generated voltage $E_A$ and thus increases the terminal voltage. Thus,
+the two terminal voltage effects oppose each other with one or the other predominating.
 \end{document}
