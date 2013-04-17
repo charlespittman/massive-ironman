@@ -20,41 +20,29 @@
 
 \section*{Abstract}
 
-In this experiment, the basic principles of operation of DC generators were
-studied. The output voltage ($V_T$) and output current current ($I_L$)
-relationship for separately excited, shunt, and compound generators were
-studied under various loads.
+In this experiment, the basic principals of operation of an induction motor were studied. These studies included the 
+characteristics of a wound-rotor induction motor analyzed at two different supply voltages. The characteristics such 
+as motor speed, output torque, and line current were recorded while varying load torque.
 
 \section*{Results}
 
 \begin{figure}[H]
   \centering
     \includegraphics[width=0.7\textwidth]{img/graph}
-    \caption{\textbf{Comparison of Terminal Characteristics}}
+    \caption{\textbf{Comparison of Output Torque vs. Motor Speed for two different supply voltages}}
     \label{fig:graph}
 \end{figure}
 
 \section*{Conclusions}
 
-The terminal characteristics for DC motors are induced torque and speed; for DC
-generators they are terminal voltage and line current.  Figure~\ref{fig:graph}
-shows a comparison of the terminal characteristics of a separately excited,
-shunt, and compound generators.
-
-The terminal characteristics of a separately excited generator are linear,
-following $V_T = E_A - {I_A}{R_A}$.  As the load increased, the line and
-armature currents ($I_L$ and $I_A$) increased, decreasing $V_T$, as the internal
-generated voltage ($E_A$) is independent of $I_A$.
-
-A shunt generator behaves similarly, except that the field current ($I_F$) is
-proportional to $V_T$.  As $I_F$ decreases $V_T$, flux, and $E_A$ also
-decrease. This causes $I_A$ to increase, which decreases $V_T$ further, so the
-relationship is not quite linear.
-
-The terminal characteristics of a compound generator consist of two opposing
-terminal voltages, following $V_T = E_A - I_A(R_A + R_S)$.  As the load
-increased, $I_L$ and $I_A$ increased.  Since $I_A$ increases, the total
-magneto-motive force increases, which increases the flux, which increases
-$E_A$, which increases $V_T$.
+In a typical torque speed curve, the plot rises sharply from the starting torque to peak at a breakdown torque and then 
+drastically decrease to the no load mark. In a typical induction motor torque-speed curve the operating region is from 
+the mark where the induced torque gives 100\% full load to the mark where no induced torque gives 0\% load. The plot in 
+this region is linear. However, the data obtained in the experiment is represented in the figure above. The plot is
+not characteristic of a typical induction motor torque-speed curve as described. This is because of a high unknown 
+rotor resistance. Both supply voltages of 100 V and 75 V have the starting torques and breakdown torques to be at the 
+same mark. The motor with a starting voltage of 100 V has a starting torque of 0.68 Nm and a no-load speed of 1565 rpm. 
+The motor with a starting torque of 75 V had a starting torque of 0.44 and a no-load speed of 1343 rpm. Thus a wound-
+rotor induction motor needs to have a higher supply voltage to be start heavy loads. 
 
 \end{document}
