@@ -4,23 +4,23 @@
 
 # C++ compiled files
 ## Object files
-*.slo
 *.lo
 *.o
+*.slo
 
 ## Dynamic libraries
-*.so
 *.dylib
+*.so
 
 ## Static libraries
-*.lai
-*.la
 *.a
+*.la
+*.lai
 
 ## Executables
+*.app
 *.exe
 *.out
-*.app
 
 
 # Ruby stuff
@@ -28,8 +28,8 @@
 *.rbc
 .bundle
 .config
-coverage
 InstalledFiles
+coverage
 lib/bundler/man
 pkg
 rdoc
@@ -40,6 +40,7 @@ tmp
 
 
 # LaTeX temporary files
+*.*log
 *.acn
 *.acr
 *.alg
@@ -48,6 +49,7 @@ tmp
 *.blg
 *.dvi
 *.fdb_latexmk
+*.fls
 *.glg
 *.glo
 *.gls
@@ -56,7 +58,6 @@ tmp
 *.ind
 *.ist
 *.lof
-*.*log
 *.lot
 *.maf
 *.mtc
@@ -68,12 +69,9 @@ tmp
 *.ps
 *.snm
 *.synctex.gz
+*.tdo
 *.toc
 *.vrb
 *.xdy
-*.tdo
-*.fls
 
 *project.vim
-
-.DS_Store
