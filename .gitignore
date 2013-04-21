@@ -43,7 +43,7 @@ tmp
 *.acn
 *.acr
 *.alg
-*aux
+*.aux
 *.bbl
 *.blg
 *.dvi
@@ -72,6 +72,7 @@ tmp
 *.vrb
 *.xdy
 *.tdo
+*.fls
 
 *project.vim
 
