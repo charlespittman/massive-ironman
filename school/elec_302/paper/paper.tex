@@ -1,4 +1,4 @@
-\documentclass{article}
+\documentclass[11pt]{article}
 \usepackage{fullpage}
 \usepackage{nopageno}
 \usepackage{setspace}
@@ -13,7 +13,7 @@
 \acrodef{EE}{Electrical Engineering}
 \acrodef{EMF}{electromotive force}
 
-\doublespacing{}
+%\doublespacing{}
 \begin{document}
   \maketitle
 
@@ -58,14 +58,14 @@
 
   \section*{What is Complex Power?}
 
-  \begin{figure}
+  \begin{figure}[p]
     \centering
     \includegraphics[width=0.7\textwidth]{acwave}
     \caption{Two Sinusoidal Waves With Phase Difference}
     \label{acwave}
   \end{figure}
 
-  \begin{figure}
+  \begin{figure}[p]
     % ``Review of 3-Phase AC Circuits''  Not sure the university, but class
     % listed as EE340.  Author Y. Baghzouz.
     \centering
@@ -74,5 +74,10 @@
     \label{alternator}
   \end{figure}
 
-
+  \begin{figure}[p]
+    \centering
+    \includegraphics[width=0.6\textwidth]{complexpwr}
+    \caption{Complex Power Triangle}
+    \label{complexpwr}
+  \end{figure}
 \end{document}
