@@ -1,0 +1,75 @@
+\documentclass{article}
+\usepackage{fullpage}
+\usepackage{nopageno}
+\usepackage{setspace}
+\usepackage{acronym}
+\usepackage{graphicx}
+
+\author{Charles Pittman}
+\title{Three-Phase Circuits}
+
+\acrodef{AC}{Alternating Current}
+\acrodef{DC}{Direct Current}
+\acrodef{EE}{Electrical Engineering}
+\acrodef{EMF}{electromotive force}
+
+\doublespacing{}
+\begin{document}
+  \maketitle
+
+  \section{Introduction}
+  The study of electronics generally begins with exloring the function and
+  operation of \ac{DC} circuits, with skills learned then translated for
+  \ac{AC} circuits.  In that translation some students tend to focus more on
+  applying the formulas in problem solving, losing sight of how they were
+  derived.  As a result, they may have trouble explaining how \ac{AC} is
+  generated, how it functions, and  why sinusoidal functions are used in the
+  equations.
+
+  \section{What is \ac{AC}?}
+  Because current flows in a single direction in \ac{DC} circuits, the polarity
+  of any terminal stays constant.  As the name implies, direction of current
+  flow in \ac{AC} circuits alternates, and polarity at terminals with it.
+  Figure~\ref{acwave} shows how these values change over time.  One full
+  alternation, or period, is marked by the section $T$; the frequency of an
+  \ac{AC} value refers to the number of periods per second.
+
+  The horizontal axis in Figure~\ref{acwave} can be measured in time, degrees,
+  or radians.  One cycle of a sinusoidal wave is 360$^\circ$ or 2$\pi$ radians.
+  This figure also illustrates phase angle, either as the time delay between
+  two waveforms or as the angle between them.  This time difference is also
+  what is being referred to when a waveform is described as either ``leading''
+  or ``lagging'' another.  With respect to a reference, a leading waveform is
+  one that is further along in its cycle.
+
+  \section{How is it Generated?}
+  Figure~\ref{alternator} shows a simple model of a three-phase alternator,
+  consisting of a magnetic rotar and stator with three separate sets of coil
+  windings mounted 120$^\circ$ from each other.  In accordance with Faraday's
+  law of induction, the relative movement of the magnetic field to the
+  conductors as the shaft rotates an \ac{EMF} is created.
+
+  \section{Why Use Three-Phases?}
+
+  \section{Heading}
+
+  \section{If needed: Why AC over DC?}
+
+  \begin{figure}
+    \centering
+    \includegraphics[width=0.7\textwidth]{acwave}
+    \caption{Two Sinusoidal Waves With Phase Difference}
+    \label{acwave}
+  \end{figure}
+
+  \begin{figure}
+    % ``Review of 3-Phase AC Circuits''  Not sure the university, but class
+    % listed as EE340.  Author Y. Baghzouz.
+    \centering
+    \includegraphics[width=0.45\textwidth]{threephasemotor}
+    \caption{Simple Diagram of a Three-Phase Alternator}
+    \label{alternator}
+  \end{figure}
+
+
+\end{document}
