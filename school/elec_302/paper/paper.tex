@@ -6,7 +6,7 @@
 \usepackage{graphicx}
 
 \author{Charles Pittman}
-\title{Three-Phase Circuits}
+\title{AC Circuits}
 
 \acrodef{AC}{Alternating Current}
 \acrodef{DC}{Direct Current}
@@ -17,43 +17,46 @@
 \begin{document}
   \maketitle
 
-  \section{Introduction}
+  % This could probably do with some reorganizing, if I have time.
+
+  \section*{Introduction}
   The study of electronics generally begins with exloring the function and
   operation of \ac{DC} circuits, with skills learned then translated for
   \ac{AC} circuits.  In that translation some students tend to focus more on
   applying the formulas in problem solving, losing sight of how they were
-  derived.  As a result, they may have trouble explaining how \ac{AC} is
-  generated, how it functions, and  why sinusoidal functions are used in the
-  equations.
+  derived.  As a result, they may have trouble describing what \ac{AC} is, how
+  it functions, or how it's generated.
 
-  \section{What is \ac{AC}?}
+  \section*{What is \ac{AC}?}
   Because current flows in a single direction in \ac{DC} circuits, the polarity
   of any terminal stays constant.  As the name implies, direction of current
   flow in \ac{AC} circuits alternates, and polarity at terminals with it.
   Figure~\ref{acwave} shows how these values change over time.  One full
-  alternation, or period, is marked by the section $T$; the frequency of an
-  \ac{AC} value refers to the number of periods per second.
+  alternation, or period, is marked by the section labeled $T$; the frequency
+  of an \ac{AC} waveform refers to the number of periods per second.
 
   The horizontal axis in Figure~\ref{acwave} can be measured in time, degrees,
   or radians.  One cycle of a sinusoidal wave is 360$^\circ$ or 2$\pi$ radians.
   This figure also illustrates phase angle, either as the time delay between
-  two waveforms or as the angle between them.  This time difference is also
-  what is being referred to when a waveform is described as either ``leading''
-  or ``lagging'' another.  With respect to a reference, a leading waveform is
-  one that is further along in its cycle.
+  two waveforms or as the angle between them.
 
-  \section{How is it Generated?}
+  This time difference is also what is being referred to when a waveform is
+  described as either ``leading'' or ``lagging'' another.  With respect to a
+  reference, a leading waveform is one that is further along in its cycle.
+
+  \section*{How is \ac{AC} Generated?}
   Figure~\ref{alternator} shows a simple model of a three-phase alternator,
   consisting of a magnetic rotar and stator with three separate sets of coil
   windings mounted 120$^\circ$ from each other.  In accordance with Faraday's
-  law of induction, the relative movement of the magnetic field to the
-  conductors as the shaft rotates an \ac{EMF} is created.
+  law of induction, an \ac{EMF} is created in the conductors as the magnetic
+  field rotates with the shaft, with each set of windings as a separate phase.
 
-  \section{Why Use Three-Phases?}
+  Not surprisingly, most values used in solving \ac{AC} circuits describe the
+  characteristics of the alternator.  The period previously mentioned is one
+  revolution of the rotar, so the frequency of the \ac{AC} waveform produced is
+  the number of revolutions per second.
 
-  \section{Heading}
-
-  \section{If needed: Why AC over DC?}
+  \section*{What is Complex Power?}
 
   \begin{figure}
     \centering
