@@ -1,9 +1,10 @@
-\documentclass[11pt]{article}
+\documentclass[12pt]{article}
 \usepackage{fullpage}
 \usepackage{nopageno}
 \usepackage{setspace}
 \usepackage{acronym}
 \usepackage{graphicx}
+\usepackage{multicol}
 
 \author{Charles Pittman}
 \title{AC Circuits}
@@ -16,8 +17,6 @@
 %\doublespacing{}
 \begin{document}
   \maketitle
-
-  % This could probably do with some reorganizing, if I have time.
 
   \section*{Introduction}
   The study of electronics generally begins with exploring the function and
@@ -36,7 +35,7 @@
   of an \ac{AC} waveform refers to the number of periods per second.
 
   The horizontal axis in Figure~\ref{acwave} can be measured in time, degrees,
-  or radians.  One cycle of a sinusoidal wave is 360$^\circ$ or 2$\pi$ radians.
+  or radians.  One cycle of a sinusoidal wave is $360^\circ$ or $2\pi$ radians.
   This figure also illustrates phase angle, either as the time delay between
   two waveforms or as the angle between them.
 
@@ -56,15 +55,22 @@
   revolution of the rotor, so the frequency of the \ac{AC} waveform produced is
   the number of revolutions per second.
 
-%  \section*{What is Complex Power?}
-%	Impedance, the opposition of current in a circuit, is extended in \ac{AC}.
-%	The fields in capacitors and inductors continued to grow in \ac{DC} circuits
-%	until they stopped current and voltage, respectively.  Those fields are
-%	discharged when the current flow reverses
+  \section*{What is Complex Power?}
+  Impedance, the opposition of current in a circuit, is extended in \ac{AC}.
+  The fields in capacitors and inductors continue to grow in \ac{DC} circuits
+  until large enough to stop current and voltage, respectively.  They function
+  similarly in \ac{AC} circuits, but discharge each time current changes
+  direction.
 
+  The sum of capacitance and inductance, referred to as reactance, describes
+  the energy stored in the circuit each cycle.  A purely reactive impedence
+  causes voltage and current to shift $90^\circ$ out of phase, causing the
+  energy flow to return after only half a cycle, and negating any work done.
+
+  %\twocolumn
   \begin{figure}[p]
     \centering
-    \includegraphics[width=0.7\textwidth]{acwave}
+    \includegraphics[width=0.6\textwidth]{img/acwave}
     \caption{Two Sinusoidal Waves With Phase Difference}
     \label{acwave}
   \end{figure}
@@ -73,15 +79,16 @@
     % ``Review of 3-Phase AC Circuits''  Not sure the university, but class
     % listed as EE340.  Author Y. Baghzouz.
     \centering
-    \includegraphics[width=0.45\textwidth]{threephasemotor}
+    \includegraphics[width=0.4\textwidth]{img/threephasemotor}
     \caption{Simple Diagram of a Three-Phase Alternator}
     \label{alternator}
   \end{figure}
 
-%  \begin{figure}[p]
-%    \centering
-%    \includegraphics[width=0.6\textwidth]{complexpwr}
-%    \caption{Complex Power Triangle}
-%    \label{complexpwr}
-%  \end{figure}
+  \begin{figure}[p]
+    \centering
+    \includegraphics[width=0.5\textwidth]{img/complexpwr}
+    \caption{Complex Power Triangle}
+    \label{complexpwr}
+  \end{figure}
+
 \end{document}
