@@ -13,7 +13,8 @@
 \acrodef{EE}{Electrical Engineering}
 \acrodef{EMF}{electromotive force}
 
-%\doublespacing{}
+%\doublespacing
+\onehalfspacing
 \begin{document}
 \maketitle
 
@@ -23,39 +24,48 @@ The study of electronics generally begins with exploring the function and
 operation of \ac{DC} circuits, with skills learned then translated for \ac{AC}
 circuits.  In that translation some students tend to focus more on applying the
 formulas in problem solving, losing sight of how they were derived.  As a
-result, they may have trouble describing what \ac{AC} is, how it functions, or
-how it's generated.
+result, they may have trouble describing exactly what \ac{AC} is and how it
+works.
 
 \section*{What is \ac{AC}?}
 
-Because current flows in a single direction in \ac{DC} circuits, the polarity
-of any terminal stays constant.  As the name implies, direction of current flow
-in \ac{AC} circuits alternates, and polarity at terminals with it.
-Figure~\ref{acwave} shows how these values change over time.  One full
-alternation, or period, is marked by the section labeled $T$; the frequency of
-an \ac{AC} waveform refers to the number of periods per second.
+Recall that current flows only one way in \ac{DC} circuits.  Since the current
+is moving in one direction the entire time the polarity of any terminal remains
+constant.  As the name implies, current flows in alternating directions in
+\ac{AC} circuits.  The current changes direction, so polarity between terminals
+must change, thus voltage also alternates.
 
-The horizontal axis in Figure~\ref{acwave} can be measured in time, degrees, or
-radians.  One cycle of a sinusoidal wave is $360^\circ$ or $2\pi$ radians.
-This figure also illustrates phase angle, either as the time delay between two
-waveforms or as the angle between them.
+When plotted against time, an \ac{AC} current (or voltage) produces a
+sinusoidal wave as shown in Figure~\ref{acwave} with one cycle (period) labeled
+as $T$.  The period is used in defining another important value of the
+waveform, frequency, determined to be the number of periods per second.
 
-This time difference is also what is being referred to when a waveform is
-described as either ``leading'' or ``lagging'' another.  With respect to a
-reference, a leading waveform is one that is further along in its cycle.
+Note that the horizontal axis can be divided into angles using the fact that a
+period in a sinusoidal wave is equal to $2\pi$ radians (or $360^\circ$).  As
+the waves are periodic, when they fall out of phase, the difference occurs
+through the whole wave.  This constant phase shift is labeled $\theta$ in
+Figure~\ref{acwave}.  By relating this shift of phase to the angle divisions
+along the axis, a phase angle is determined.
+
+When referring to waveforms out of phase, it is common to determine one as
+``leading'' or ``lagging''.  With respect to a reference, a leading waveform is
+one that is further along in its cycle.  By convention, voltage is used as the
+reference in \ac{AC} circuits.
 
 \section*{How is \ac{AC} Generated?}
 
-Figure~\ref{alternator} shows a simple model of a three-phase alternator,
-consisting of a magnetic rotor and stator with three separate sets of coil
-windings mounted 120$^\circ$ from each other.  In accordance with Faraday's law
-of induction, an \ac{EMF} is created in the conductors as the magnetic field
-rotates with the shaft, with each set of windings as a separate phase.
+A simple model of a three-phase alternator is shown in Figure~\ref{alternator}.
+It consists of a magnetic rotor, and spaced evenly around the stator are three
+separate sets of coil windings.  As the rotor spins, an \ac{EMF} is produced,
+in accordance with Faraday's Law, that changes polarity as each magnetic pole
+passes over the windings.
 
-Not surprisingly, most values used in solving \ac{AC} circuits describe the
-characteristics of the alternator.  The period previously mentioned is one
-revolution of the rotor, so the frequency of the \ac{AC} waveform produced is
-the number of revolutions per second.
+Studying this motion, each value previously mentioned can be related, given a
+single rotation is one full period.  If one revolution is a period, then the
+number of revolutions in a certain amount of time must be the frequency.  Note
+that since the windings are evenly spaced, there is an angle of $120^\circ$
+between each, which is why each phase in a three-phase source is said to be
+offset by $120^\circ$.
 
 \section*{What is Complex Power?}
 
@@ -66,7 +76,7 @@ similarly in \ac{AC} circuits, but discharge each time current changes
 direction.
 
 The sum of capacitance and inductance, referred to as reactance, describes the
-energy stored in the circuit each cycle.  A purely reactive impedence causes
+energy stored in the circuit each cycle.  A purely reactive impedance causes
 voltage and current to shift $90^\circ$ out of phase, causing the current to
 return after only half a cycle.  Though there is no net flow through the
 circuit, energy is still consumed because of the movement.
