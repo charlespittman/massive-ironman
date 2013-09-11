@@ -1,5 +1,5 @@
-The report's written with the LaTeX markup language, which can be
-frustrating to learn, but provides several advantages:
+The lab reports are written with the LaTeX markup language, which can
+be frustrating to learn, but provides several advantages:
 
 1. The input file(s) are plain-text, so can be edited on essentially
 any computer.
@@ -15,24 +15,21 @@ each.
 than goes into a typical Word document of similar complexity.
 
 It can look intimidating at first, but it is mostly straightforward.
-
-While I haven't had a chance to try it, everyone I know that edits
-LaTeX in Windows uses MiKTEX (http://miktex.org).  There's even a
-portable edition that can be run from a flash drive.  It should be as
-simple as loading the .tex file and compiling.
+It's _highly_ recommended to use an editor with syntax highlighting.
 
 For a tutorial on LaTeX itself, check out:
 http://en.wikibooks.org/wiki/LaTeX
 
+While I haven't had a chance to try it, everyone I know that edits
+LaTeX on Windows uses MiKTEX (http://miktex.org).  There's even a
+portable edition that can be run from a flash drive.  It should be as
+simple as loading the .tex file and compiling.
+
 I set up a repository on GitHub to do version control
 (https://github.com/charlespittman/massive-ironman).  Check out
 (http://windows.github.com/) for a Windows client, as well.  Just
-clone the repository, make whatever changes and sync.
+fork the repository, make whatever changes, and do a pull request.
 
-The files for lab 1 are in the school/elec_302/lab_01 directory, and
-lab_report_1.tex and test_circuit.png under the tex directory are the
-two files you're looking for.
-
-It may be worthwhile to check out later labs, as there were minor
-improvements.  Labs 4 and 5 are probably good examples.  See the
-output under 'tex/report.pdf'
+There's a semi-updated, commented template in the school/elec_311/tex
+directory.  I'll try to make a more general template some time this
+week.
