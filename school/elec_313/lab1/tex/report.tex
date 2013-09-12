@@ -18,9 +18,10 @@
 
 \usepackage{graphicx} % Lets us use images
 %\usepackage[acronym]{glossaries} % Lets us use acronyms
+\usepackage{siunitx} % SI units in math mode
 
 \author{}
-\title{ELEC-313 \\ Lab 1 \\ }
+\title{ELEC-313 \\ Lab 1: Amplifier Models \\ }
 \date{\today}
 
 % This loads the acronym definitions and creates a glossary.
@@ -41,7 +42,6 @@
     Date Performed: & September 11, 2013 \\
     Partners: & Charles Pittman \\
               & Stephen W-something? \\
-%    Instructor: & Kirk
   \end{tabular}
 \end{center}
 
@@ -83,6 +83,20 @@ accumsan nisl.
 %   Objective 2 text
 % \end{description}
 
+\section{Schematics}
+\label{sec:schematics}
+
+% Insert a picture:
+\begin{figure}[h]
+  \label{fig:circuit}
+  \centering
+  % File is at "./img/circuit.png".  Plain LaTeX only supports .eps
+  % files.  Other LaTeX compilers support different formats.  I use
+  % pdflatex.
+    \includegraphics[]{img/circuit.png}
+  \caption{Circuit being tested.  $C_1 = C_2 = \SI{1}{\micro\farad}$}
+\end{figure}
+
 \section{Procedure}
 \label{sec:procedure}
 
@@ -104,29 +118,32 @@ accumsan nisl.
 % I've never tried putting them inside the tabular environment yet,
 % but it may work:
 \begin{table}[h]
+  \label{tab:table_01}
   \centering
   \begin{tabular}{*{4}{c}}
     \textbf{Name} & \textbf{Nominal} & \textbf{Measured} & \textbf{\% Error} \\
     & \textbf{Value} & \textbf{Value} \\
-    & $\Omega$ & $\Omega$ & \\
+    & $\si{\kilo\ohm}$ & $\si{\kilo\ohm}$ & \\
     \hline
-    $R_1$ & 1k & 986 & \\
-    $R_2$ & 10k & 9.88k \\
-    $R_3$ & 1k & 983 \\
+    $R_1$ & 1 & 0.986 & \\
+    $R_2$ & 10 & 9.88 & \\
+    $R_3$ & 1 & 0.983 & \\
   \end{tabular}
-%  \caption{\gls{pm} friction torque; \gls{pm} polarity reversal}
-  \label{tab:table_01}
+  \caption{}
 \end{table}
 
-% Insert a picture.  The file was "./img/plot1.png".  The LaTeX
-% compiler is finicky sometimes about filenames and extensions.  I
-% think it depends on what compiler is actually being used.
-%\begin{figure}[h]
-%  \centering
-%  \includegraphics[width=\textwidth]{img/plot1}
-%  \caption{\gls{pm} Speed vs. \gls{pm} Voltage}
-%  \label{fig:plot_01}
-%\end{figure}
+\begin{table}[h]
+  \label{tab:table_02}
+  \centering
+  \begin{tabular}{*{5}{c}}
+    \textbf{Load} & \multicolumn{2}{c}{\textbf{In}} & \multicolumn{2}{c}{\textbf{Out}} \\
+    & $V_i (\si{\milli\volt})$ & $V_o (\si{\volt})$ & $I_i (\si{\milli\ampere})$ & $I_o (\si{\milli\ampere})$ \\
+    \hline
+    \textbf{No Load} & 200 & 1.98 & 0.2 & nil \\
+    \textbf{Load} & 200 & 1.98 & 0.2 & 9.52 \\
+  \end{tabular}
+  \caption{}
+\end{table}
 
 \section{Conclusions}
 \label{sec:conclusion}
