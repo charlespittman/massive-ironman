@@ -1,0 +1,164 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% This layout was adapted from one found at latextemplates.com which
+% was adapted from another.
+%
+% License: CC BY-NC-SA 3.0
+% (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+% Original header:
+%
+% This is a LaTeX version of the sample laboratory report from
+% Virginia Tech's copyrighted 08-09 CHEM 1045/1046 lab manual.
+% Reproduction of this one appendix section for academic purposes
+% should fall under fair use.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass{article}
+
+\usepackage{graphicx} % Lets us use images
+\usepackage[acronym]{glossaries} % Lets us use acronyms
+
+\author{Charles Pittman}
+\title{ELEC-XXX\\ Lab X\\ LABTITLE}
+\date{\today}
+
+% This loads the acronym definitions and creates a glossary.
+% \makeglossaries is required (I think), even though we don't print
+% out a separate glossary page.  The first time an acronym is used,
+% LaTeX writes the whole word (defining the acronym), and after that
+% it prints only the acronym.  There is an example of their use in the
+% caption of the table in the Results section.
+\loadglsentries{acronyms} % Actually loads 'acronyms.tex'
+\makeglossaries
+
+\begin{document}
+
+\maketitle % Inserts title, author, and date from above
+
+% Commented out, used in another style of report (with partner)
+% \begin{center}
+%   \begin{tabular}{lr}
+%    Date Performed: & February 31, 2000 \\
+%    Partners: & Spock \\
+%              & Evil Spock \\
+%    Instructor: & Kirk
+%  \end{tabular}
+%\end{center}
+
+\pagebreak
+
+% If there's an abstract:
+% \begin{abstract}
+%   Abstract text
+% \end{abstract}
+
+% Removes indentation from paragraphs: \setlength\parindent{0pt}
+
+% Number the enumerate environment (unordered lists) by letter:
+\renewcommand{\labelenumi}{\alph{enumi}.}
+
+% And now we start our actual text.  Note that each chunk is
+% designated by the \section{} tag.
+\section{Objective}
+
+% \label{} is used when you want to refer to something later.  It's
+% simply an identifier for whatever container it's in.  See
+% Conclusions section for an example of \ref{}.
+\label{sec:objective}
+
+% Single objective:
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
+hendrerit tempor tellus. Donec pretium posuere tellus. Proin quam
+nisl, tincidunt et, mattis eget, convallis nec, purus. Cum sociis
+natoque penatibus et magnis dis parturient montes, nascetur ridiculus
+mus. Nulla posuere. Donec vitae dolor. Nullam tristique diam non
+turpis. Cras placerat accumsan nulla. Nullam rutrum. Nam vestibulum
+accumsan nisl.
+
+% Multiple objectives:
+% \begin{description}
+% \item[First Objective] \hfill \\
+%   Objective 1 text
+% \item[Second Objective] \hfill \\
+%   Objective 2 text
+% \end{description}
+
+\section{Procedure}
+\label{sec:procedure}
+
+% Using subsections:
+% \subsection{Setup}
+% \label{ssec:setup}
+
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
+hendrerit tempor tellus. Donec pretium posuere tellus. Proin quam
+nisl, tincidunt et, mattis eget, convallis nec, purus. Cum sociis
+natoque penatibus et magnis dis parturient montes, nascetur ridiculus
+mus. Nulla posuere. Donec vitae dolor. Nullam tristique diam non
+turpis. Cras placerat accumsan nulla. Nullam rutrum. Nam vestibulum
+accumsan nisl.
+
+\section{Results}
+
+% We use the table environment just to hold the caption and label.
+% I've never tried putting them inside the tabular environment yet,
+% but it may work:
+\begin{table}[h]
+  \centering
+  \begin{tabular}{*{6}{c}}
+    % Note use of \multicolumn here:
+    \textbf{Voltage} & \multicolumn{2}{c}{\textbf{Speed}} & \textbf{Direction}
+    & \textbf{Friction} & \textbf{Torque} \\
+    % Text
+    $E_1$ V & $n$ rpm & $N$ rpm & CW/CCW & $T_f$ Nm & $T$ Nm \\
+    \hline
+    30.10 &  503.0 &  509.6 &  CW & -0.18 & -1.60 \\
+    -30.19 & -508.0 & -513.0 & CCW &   --- &   --- \\
+  \end{tabular}
+  \caption{\gls{pm} friction torque; \gls{pm} polarity reversal}
+  \label{tab:table_01}
+\end{table}
+
+% Insert a picture.  The file was "./img/plot1.png".  The LaTeX
+% compiler is finicky sometimes about filenames and extensions.  I
+% think it depends on what compiler is actually being used.
+%\begin{figure}[h]
+%  \centering
+%  \includegraphics[width=\textwidth]{img/plot1}
+%  \caption{\gls{pm} Speed vs. \gls{pm} Voltage}
+%  \label{fig:plot_01}
+%\end{figure}
+
+\section{Conclusions}
+\label{sec:conclusion}
+
+In Table~\ref{tab:table_01}, lorem ipsum dolor sit amet, consectetuer
+adipiscing elit. Donec hendrerit tempor tellus. Donec pretium posuere
+tellus. Proin quam nisl, tincidunt et, mattis eget, convallis nec,
+purus. Cum sociis natoque penatibus et magnis dis parturient montes,
+nascetur ridiculus mus. Nulla posuere. Donec vitae dolor. Nullam
+tristique diam non turpis. Cras placerat accumsan nulla. Nullam
+rutrum. Nam vestibulum accumsan nisl.
+
+Nullam eu ante vel est convallis dignissim. Fusce suscipit, wisi nec
+facilisis facilisis, est dui fermentum leo, quis tempor ligula erat
+quis odio. Nunc porta vulputate tellus. Nunc rutrum turpis sed
+pede. Sed bibendum. Aliquam posuere. Nunc aliquet, augue nec
+adipiscing interdum, lacus tellus malesuada massa, quis varius mi
+purus non odio. Pellentesque condimentum, magna ut suscipit hendrerit,
+ipsum augue ornare nulla, non luctus diam neque sit amet
+urna. Curabitur vulputate vestibulum lorem. Fusce sagittis, libero non
+molestie mollis, magna orci ultrices dolor, at vulputate neque nulla
+lacinia eros. Sed id ligula quis est convallis tempor. Curabitur
+lacinia pulvinar nibh. Nam a sapien.
+
+% The asterisk after section inhibits the numbering of the section.
+\section*{Equations}
+
+% \[ and \] designate "math mode" (just like $ did).  Note, this is
+% also how we get special characters and pretty-print equations.
+\[P_{mech}\ = \left( \frac{60}{2\pi} \right) (n \cdot T)\]
+\[P_{loss} = P_{in} - P_{mech}\]
+
+\end{document}
