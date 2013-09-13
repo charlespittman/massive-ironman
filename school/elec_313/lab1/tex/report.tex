@@ -47,11 +47,6 @@
 
 \pagebreak
 
-% If there's an abstract:
-% \begin{abstract}
-%   Abstract text
-% \end{abstract}
-
 % Removes indentation from paragraphs: \setlength\parindent{0pt}
 
 % Number the enumerate environment (unordered lists) by letter:
@@ -75,16 +70,12 @@ mus. Nulla posuere. Donec vitae dolor. Nullam tristique diam non
 turpis. Cras placerat accumsan nulla. Nullam rutrum. Nam vestibulum
 accumsan nisl.
 
-% Multiple objectives:
-% \begin{description}
-% \item[First Objective] \hfill \\
-%   Objective 1 text
-% \item[Second Objective] \hfill \\
-%   Objective 2 text
-% \end{description}
-
 \section{Schematics}
 \label{sec:schematics}
+
+% The asterisk after section inhibits the numbering of the section.
+\subsection*{Circuit Tested}
+\label{sec:ckt_tested}
 
 % Insert a picture:
 \begin{figure}[h]
@@ -93,16 +84,22 @@ accumsan nisl.
   % File is at "./img/circuit.png".  Plain LaTeX only supports .eps
   % files.  Other LaTeX compilers support different formats.  I use
   % pdflatex.
-    \includegraphics[]{img/circuit.png}
+    \includegraphics[]{img/circuit}
   \caption{Circuit being tested.  $C_1 = C_2 = \SI{1}{\micro\farad}$}
+\end{figure}
+
+\subsection*{Test Configuration}
+\label{sec:test_config}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[]{img/test_config}
+  \caption{Test Configuration}
+  \label{fig:test_config}
 \end{figure}
 
 \section{Procedure}
 \label{sec:procedure}
-
-% Using subsections:
-% \subsection{Setup}
-% \label{ssec:setup}
 
 Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
 hendrerit tempor tellus. Donec pretium posuere tellus. Proin quam
@@ -122,27 +119,26 @@ accumsan nisl.
   \centering
   \begin{tabular}{*{4}{c}}
     \textbf{Name} & \textbf{Nominal} & \textbf{Measured} & \textbf{\% Error} \\
-    & \textbf{Value} & \textbf{Value} \\
-    & $\si{\kilo\ohm}$ & $\si{\kilo\ohm}$ & \\
+    & ($\si{\kilo\ohm}$) & ($\si{\kilo\ohm}$) & \\
     \hline
-    $R_1$ & 1 & 0.986 & \\
-    $R_2$ & 10 & 9.88 & \\
-    $R_3$ & 1 & 0.983 & \\
+    $R_1$ & 1 & 0.986 & 1.40 \\
+    $R_2$ & 10 & 9.88 & 1.20 \\
+    $R_3$ & 1 & 0.983 & 1.70 \\
   \end{tabular}
-  \caption{}
+  \caption{Comparison of labelled and actual resistance.}
 \end{table}
 
 \begin{table}[h]
   \label{tab:table_02}
   \centering
   \begin{tabular}{*{5}{c}}
-    \textbf{Load} & \multicolumn{2}{c}{\textbf{In}} & \multicolumn{2}{c}{\textbf{Out}} \\
-    & $V_i (\si{\milli\volt})$ & $V_o (\si{\volt})$ & $I_i (\si{\milli\ampere})$ & $I_o (\si{\milli\ampere})$ \\
+    & \multicolumn{2}{c}{\textbf{Voltage}} & \multicolumn{2}{c}{\textbf{Current}} \\
+    & $V_i (\si{\milli\volt_{rms}})$ & $V_o (\si{\volt_{rms}})$ & $I_i (\si{\milli\ampere_{rms}})$ & $I_o (\si{\milli\ampere_{rms}})$ \\
     \hline
     \textbf{No Load} & 200 & 1.98 & 0.2 & nil \\
     \textbf{Load} & 200 & 1.98 & 0.2 & 9.52 \\
   \end{tabular}
-  \caption{}
+  \caption{Comparison of electrical characteristics of the amplifier under load.}
 \end{table}
 
 \section{Conclusions}
@@ -168,12 +164,11 @@ molestie mollis, magna orci ultrices dolor, at vulputate neque nulla
 lacinia eros. Sed id ligula quis est convallis tempor. Curabitur
 lacinia pulvinar nibh. Nam a sapien.
 
-% The asterisk after section inhibits the numbering of the section.
 \section*{Equations}
 
 % \[ and \] designate "math mode" (just like $ did).  Note, this is
 % also how we get special characters and pretty-print equations.
-\[\%_{error} = \frac{|nominal - measured|}{measured} \times 100\%\]
+\[\%_{error} = \frac{|measured - nominal|}{nominal} \times 100\%\]
 \[R_i = \frac{V_i}{I_i}\]
 \[R_o = \frac{V_{noload} - V_{load}}{I_{load}}\]
 \[A_v = \frac{V_o}{V_i}\]
