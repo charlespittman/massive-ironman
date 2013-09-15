@@ -160,36 +160,39 @@ lacinia pulvinar nibh. Nam a sapien.
 
 \section*{Equations}
 
+% LaTeX sees blank lines as a start of another paragraph.  To avoid
+% unnecessary vertical spaces between equations, and still visually
+% separate in source, put a comment between them.
 \begin{equation}
   \label{eqn:percent_error}
   \%_{error} = \frac{|measured - nominal|}{nominal} \times 100\%
 \end{equation}
-
+%
 \begin{equation}
   \label{eqn:R_o}
   R_o = \frac{V_{noload} - V_{load}}{I_{load}}
 \end{equation}
-
+%
 \begin{equation}
   \label{eqn:R_i}
   R_i = \frac{V_i}{I_i}
 \end{equation}
-
+%
 \begin{equation}
   \label{eqn:A_v}
   A_v = \frac{V_o}{V_i}
 \end{equation}
-
+%
 \begin{equation}
   \label{eqn:A_i}
   A_i = A_v \left(\frac{R_i}{R_o}\right)
 \end{equation}
-
+%
 \begin{equation}
   \label{eqn:G_m}
   G_m = \frac{A_v}{R_o}
 \end{equation}
-
+%
 \begin{equation}
   \label{eqn:R_m}
   R_m = A_v R_i
