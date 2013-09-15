@@ -73,5 +73,5 @@ tmp
 *.toc
 *.vrb
 *.xdy
-
+*eps-converted-to.pdf
 *project.vim
