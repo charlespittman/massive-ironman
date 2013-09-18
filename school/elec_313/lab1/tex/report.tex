@@ -39,9 +39,9 @@
 
  \begin{center}
    \begin{tabular}{lr}
-    Date Performed: & September 11, 2013 \\
-    Partners: & Charles Pittman \\
-              & Stephen Wilson \\
+     Date Performed: & September 11, 2013 \\
+     Partners: & Charles Pittman \\
+               & Stephen Wilson \\
   \end{tabular}
 \end{center}
 
@@ -55,13 +55,13 @@
 % And now we start our actual text.  Note that each chunk is
 % designated by the \section{} tag.
 \section{Objective}
-
 % \label{} is used when you want to refer to something later.  It's
 % simply an identifier for whatever container it's in.  See
 % Conclusions section for an example of \ref{}.
 \label{sec:objective}
 
-The objective is to verify the equivalence of four circuits used to model an amplifier, shown in Figure~\ref{fig:amp_models}.
+The objective is to verify the equivalence of four circuits used to
+model an amplifier, shown in Figure~\ref{fig:amp_models}.
 
 \section{Schematics}
 \label{sec:schematics}
@@ -71,12 +71,9 @@ The objective is to verify the equivalence of four circuits used to model an amp
 \label{sec:ckt_tested}
 
 % Insert a picture:
-\begin{figure}[h]
+\begin{figure}[hbtp]
   \label{fig:circuit}
   \centering
-  % File is at "./img/circuit.png".  Plain LaTeX only supports .eps
-  % files.  Other LaTeX compilers support different formats.  I use
-  % pdflatex.
     \includegraphics[]{img/ckt_tested}
   \caption{Circuit being tested.  $C_1 = C_2 = \SI{1}{\micro\farad}$}
 \end{figure}
@@ -84,7 +81,7 @@ The objective is to verify the equivalence of four circuits used to model an amp
 \subsection*{Test Configuration}
 \label{sec:test_config}
 
-\begin{figure}[h]
+\begin{figure}[hbtp]
   \centering
   \includegraphics[]{img/test_config}
   \caption{Test Configuration}
@@ -94,20 +91,25 @@ The objective is to verify the equivalence of four circuits used to model an amp
 \section{Procedure}
 \label{sec:procedure}
 
-Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
-hendrerit tempor tellus. Donec pretium posuere tellus. Proin quam
-nisl, tincidunt et, mattis eget, convallis nec, purus. Cum sociis
-natoque penatibus et magnis dis parturient montes, nascetur ridiculus
-mus. Nulla posuere. Donec vitae dolor. Nullam tristique diam non
-turpis. Cras placerat accumsan nulla. Nullam rutrum. Nam vestibulum
-accumsan nisl.
+First, the resistors that were intended for use in the experiment were
+measured with a multimeter and recorded in Table 1.  Then the circuit
+in Figure 1 was built on a breadboard.  A function generator was
+programmed to output a sine wave at $1\si{\kilo\hertz}$.  The test
+configuration was constructed as shown in Figure 2 using Fluke
+multimeters as the ammeters and an oscilloscope as both voltmeters.
+The function generator was added to the circuit as the voltage input
+($V_i$) and, with the oscilloscope measuring the voltage generator,
+the amplitude was adjusted to $200\si{\volt_{rms}}$.  The input
+voltage, input current, and output voltage were taken and recorded in
+Table 2 with the open circuit across the load terminals.  Finally, the
+decade box was added to the output terminals (V0 in Figure 1) of the
+circuit and, set to $200 \si{\ohm}$, and the output voltage was
+measured and recorded in (Table 2).
 
 \section{Results}
+\label{sec:results}
 
-% We use the table environment just to hold the caption and label.
-% I've never tried putting them inside the tabular environment yet,
-% but it may work:
-\begin{table}[h]
+\begin{table}[hbtp]
   \label{tab:table_01}
   \centering
   \begin{tabular}{*{4}{c}}
@@ -121,7 +123,7 @@ accumsan nisl.
   \caption{Comparison of labelled and actual resistance.}
 \end{table}
 
-\begin{table}[h]
+\begin{table}[hbtp]
   \label{tab:table_02}
   \centering
   \begin{tabular}{*{7}{c}}
@@ -135,28 +137,24 @@ accumsan nisl.
   \caption{Comparison of electrical characteristics of the amplifier under load.}
 \end{table}
 
-\section{Conclusions}
+	Nominal - Calculated		Measured		
+	Loaded	No Load	Loaded	No Load	Loaded % diff
+Ri=Vi/Ii	1000	1000	1000	1000	0.00%
+Ai=AvRi/Ro	50	0	47.6	0	4.80%
+Gm=Av/Ro	0.05	0	0.0495	0	1.00%
+Av=GmRo	10	10	9.9	9.9	1.00%
+Rm=AvRi	10000	10000	9900	9900	1.00%
+Ro=AvRi/Ai	200	infinity	207.983	infinity	3.99%
+\section{Conclusion}
 \label{sec:conclusion}
 
-In Table~\ref{tab:table_01}, lorem ipsum dolor sit amet, consectetuer
-adipiscing elit. Donec hendrerit tempor tellus. Donec pretium posuere
-tellus. Proin quam nisl, tincidunt et, mattis eget, convallis nec,
-purus. Cum sociis natoque penatibus et magnis dis parturient montes,
-nascetur ridiculus mus. Nulla posuere. Donec vitae dolor. Nullam
-tristique diam non turpis. Cras placerat accumsan nulla. Nullam
-rutrum. Nam vestibulum accumsan nisl.
-
-Nullam eu ante vel est convallis dignissim. Fusce suscipit, wisi nec
-facilisis facilisis, est dui fermentum leo, quis tempor ligula erat
-quis odio. Nunc porta vulputate tellus. Nunc rutrum turpis sed
-pede. Sed bibendum. Aliquam posuere. Nunc aliquet, augue nec
-adipiscing interdum, lacus tellus malesuada massa, quis varius mi
-purus non odio. Pellentesque condimentum, magna ut suscipit hendrerit,
-ipsum augue ornare nulla, non luctus diam neque sit amet
-urna. Curabitur vulputate vestibulum lorem. Fusce sagittis, libero non
-molestie mollis, magna orci ultrices dolor, at vulputate neque nulla
-lacinia eros. Sed id ligula quis est convallis tempor. Curabitur
-lacinia pulvinar nibh. Nam a sapien.
+As seen in Table 3, the measured results of the circuit were very
+close to the calculated values using nominal values of the resistors.
+This shows that the four amplifier models shown in
+Figure~\ref{fig:amp_models} are closely representative of the
+operational amplifier circuit seen in Figure 1.  The highest \%
+difference when comparing the measured with the nominal theoretical
+value was only 4.8\% (current gain [Ai] Table 3)!
 
 \section*{Equations}
 
