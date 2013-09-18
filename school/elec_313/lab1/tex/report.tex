@@ -72,10 +72,10 @@ model an amplifier, shown in Figure~\ref{fig:amp_models}.
 
 % Insert a picture:
 \begin{figure}[hbtp]
-  \label{fig:circuit}
   \centering
     \includegraphics[]{img/ckt_tested}
   \caption{Circuit being tested.  $C_1 = C_2 = \SI{1}{\micro\farad}$}
+  \label{fig:circuit}
 \end{figure}
 
 \subsection*{Test Configuration}
@@ -91,60 +91,69 @@ model an amplifier, shown in Figure~\ref{fig:amp_models}.
 \section{Procedure}
 \label{sec:procedure}
 
-First, the resistors that were intended for use in the experiment were
-measured with a multimeter and recorded in Table 1.  Then the circuit
-in Figure 1 was built on a breadboard.  A function generator was
-programmed to output a sine wave at $1\si{\kilo\hertz}$.  The test
-configuration was constructed as shown in Figure 2 using Fluke
-multimeters as the ammeters and an oscilloscope as both voltmeters.
-The function generator was added to the circuit as the voltage input
-($V_i$) and, with the oscilloscope measuring the voltage generator,
-the amplitude was adjusted to $200\si{\volt_{rms}}$.  The input
-voltage, input current, and output voltage were taken and recorded in
-Table 2 with the open circuit across the load terminals.  Finally, the
-decade box was added to the output terminals (V0 in Figure 1) of the
-circuit and, set to $200 \si{\ohm}$, and the output voltage was
-measured and recorded in (Table 2).
+First, resistors $R_1$, $R_2$, and $R_3$ were measured with a
+multimeter and recorded in Table~\ref{tab:table_01}.  Then the circuit
+in Figure~\ref{fig:circuit} was constructed on a breadboard.  A function
+generator was programmed to output a sine wave at \SI{1}{\kilo\hertz}.
+The test configuration was constructed as shown in Figure 2 using
+Fluke multimeters as the ammeters and an oscilloscope as both
+voltmeters.  The function generator was added to the circuit as the
+voltage input ($V_i$) and, with the oscilloscope measuring the voltage
+generator, the amplitude was adjusted to $200\si{\volt_{rms}}$.  The
+input voltage, input current, and output voltage were taken and
+recorded in Table 2 with the open circuit across the load terminals.
+Finally, the decade box was added to the output terminals (V0 in
+Figure 1) of the circuit and, set to $200 \si{\ohm}$, and the output
+voltage was measured and recorded in (Table 2).
 
 \section{Results}
 \label{sec:results}
 
 \begin{table}[hbtp]
-  \label{tab:table_01}
   \centering
   \begin{tabular}{*{4}{c}}
     \textbf{Name} & \textbf{Nominal} & \textbf{Measured} & \textbf{\% Error} \\
-    & ($\si{\kilo\ohm}$) & ($\si{\kilo\ohm}$) & \\
+    & (\si{\kilo\ohm}) & (\si{\kilo\ohm}) & \\
     \hline
     $R_1$ & 1 & 0.986 & 1.40 \\
     $R_2$ & 10 & 9.88 & 1.20 \\
     $R_3$ & 1 & 0.983 & 1.70 \\
   \end{tabular}
   \caption{Comparison of labelled and actual resistance.}
+  \label{tab:table_01}
+  \end{table}
+
+\begin{table}[hbtp]
+  \centering
+  \begin{tabular}{*{5}{c}}
+    & \multicolumn{2}{c}{\textbf{Voltage}} & \multicolumn{2}{c}{\textbf{Current}} \\
+    & $V_i$ & $V_o$ & $I_i$ & $I_o$ \\
+    & (\si{\milli\volt_{rms}}) & (\si{\volt_{rms}}) & (\si{\milli\ampere_{rms}}) & (\si{\milli\ampere_{rms}}) \\
+    \hline
+    \textbf{No Load} & 200 & 1.98 & 0.2 & nil \\
+    \textbf{Load} & 200 & 1.98 & 0.2 & 9.52 \\
+  \end{tabular}
+  \caption{Comparison of electrical characteristics of the amplifier under load.}
+  \label{tab:table_02}
 \end{table}
 
 \begin{table}[hbtp]
-  \label{tab:table_02}
   \centering
-  \begin{tabular}{*{7}{c}}
-    & \multicolumn{2}{c}{\textbf{Voltage}} & \multicolumn{2}{c}{\textbf{Current}} & \multicolumn{2}{c}{\textbf{Gain}} \\
-    & $V_i$ & $V_o$ & $I_i$ & $I_o$ & $A_v$ & $A_i$ \\
-    & $(\si{\milli\volt_{rms}})$ & $(\si{\volt_{rms}})$ & $(\si{\milli\ampere_{rms}})$ & $(\si{\milli\ampere_{rms}})$ & & \\
+  \begin{tabular}{l*{5}{c}}
+    & \multicolumn{3}{c}{\textbf{Load}} & \multicolumn{2}{c}{\textbf{No Load}} \\
+    & \textbf{Nominal} & \textbf{Measured} & \textbf{\% Error} & \textbf{Nominal} & \textbf{Measured} \\
     \hline
-    \textbf{No Load} & 200 & 1.98 & 0.2 & nil & 9.9 & nil \\
-    \textbf{Load} & 200 & 1.98 & 0.2 & 9.52 & 9.9 & 47.6 \\
+    $R_o$ (\si{\ohm}) & 200 & 207.98 & 3.99\% & $\infty$ & $\infty$ \\
+    $R_i$ (\si{\kilo\ohm}) & 1 & 1 & 0.00\% & 1 & 1 \\
+    $A_v$ & 10 & 9.9 & 1.00\% & 10 & 9.9 \\
+    $A_i$ & 50 & 47.6 & 4.80\% & nil & nil \\
+    $G_m$ (\si{\siemens}) & 0.05 & 0.0495 & 1.00\% & 0 & 0 \\
+    $R_m$ (\si{\kilo\ohm}) & 10 & 9.9 & 1.00\% & 10 & 9.90 \\
   \end{tabular}
-  \caption{Comparison of electrical characteristics of the amplifier under load.}
+  \caption{Comparison of values determined from amplifier models in Figure~\ref{fig:amp_models}}
+  \label{tab:table_03}
 \end{table}
 
-	Nominal - Calculated		Measured		
-	Loaded	No Load	Loaded	No Load	Loaded % diff
-Ri=Vi/Ii	1000	1000	1000	1000	0.00%
-Ai=AvRi/Ro	50	0	47.6	0	4.80%
-Gm=Av/Ro	0.05	0	0.0495	0	1.00%
-Av=GmRo	10	10	9.9	9.9	1.00%
-Rm=AvRi	10000	10000	9900	9900	1.00%
-Ro=AvRi/Ai	200	infinity	207.983	infinity	3.99%
 \section{Conclusion}
 \label{sec:conclusion}
 
@@ -155,8 +164,17 @@ Figure~\ref{fig:amp_models} are closely representative of the
 operational amplifier circuit seen in Figure 1.  The highest \%
 difference when comparing the measured with the nominal theoretical
 value was only 4.8\% (current gain [Ai] Table 3)!
+\section{Appendix}
+\label{sec:appendix}
 
-\section*{Equations}
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=\textwidth]{img/amp_models}
+  \caption{Four equivalent models of an amplifier}
+  \label{fig:amp_models}
+\end{figure}
+
+\subsection*{Equations}
 
 % LaTeX sees blank lines as a start of another paragraph.  To avoid
 % unnecessary vertical spaces between equations, and still visually
@@ -196,13 +214,4 @@ value was only 4.8\% (current gain [Ai] Table 3)!
   R_m = A_v R_i
 \end{equation}
 
-\section{Appendix}
-\label{sec:appendix}
-
-\begin{figure}[h]
-  \centering
-  \includegraphics[]{img/amp_models}
-  \caption{Four equivalent models of an amplifier}
-  \label{fig:amp_models}
-\end{figure}
 \end{document}

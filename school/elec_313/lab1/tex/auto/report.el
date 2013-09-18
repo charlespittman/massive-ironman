@@ -11,16 +11,17 @@
      "sec:results"
      "tab:table_01"
      "tab:table_02"
+     "tab:table_03"
      "sec:conclusion"
+     "sec:appendix"
+     "fig:amp_models"
      "eqn:percent_error"
      "eqn:R_o"
      "eqn:R_i"
      "eqn:A_v"
      "eqn:A_i"
      "eqn:G_m"
-     "eqn:R_m"
-     "sec:appendix"
-     "fig:amp_models")
+     "eqn:R_m")
     (TeX-run-style-hooks
      "siunitx"
      "graphicx"
