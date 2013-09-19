@@ -16,32 +16,26 @@
 
 \documentclass{article}
 
-\usepackage{graphicx} % Lets us use images
+\usepackage{graphicx}
 %\usepackage[acronym]{glossaries} % Lets us use acronyms
 \usepackage{siunitx} % SI units in math mode
 
 \author{}
-\title{ELEC-313 \\ Lab 1: Amplifier Models \\ }
+\title{ELEC-313 \\ Lab 2: Diode Characterization \\ }
 \date{\today}
 
-% This loads the acronym definitions and creates a glossary.
-% \makeglossaries is required (I think), even though we don't print
-% out a separate glossary page.  The first time an acronym is used,
-% LaTeX writes the whole word (defining the acronym), and after that
-% it prints only the acronym.  There is an example of their use in the
-% caption of the table in the Results section.
 %\loadglsentries{acronyms} % Actually loads 'acronyms.tex'
 %\makeglossaries
 
 \begin{document}
 
-\maketitle % Inserts title, author, and date from above
+\maketitle
 
- \begin{center}
-   \begin{tabular}{lr}
-     Date Performed: & September 11, 2013 \\
-     Partners: & Charles Pittman \\
-               & Stephen Wilson \\
+\begin{center}
+  \begin{tabular}{lr}
+    Date Performed: & September 18, 2013 \\
+    Partners: & Charles Pittman \\
+    & Stephen Wilson \\
   \end{tabular}
 \end{center}
 
@@ -52,16 +46,9 @@
 % Number the enumerate environment (unordered lists) by letter:
 \renewcommand{\labelenumi}{\alph{enumi}.}
 
-% And now we start our actual text.  Note that each chunk is
-% designated by the \section{} tag.
 \section{Objective}
-% \label{} is used when you want to refer to something later.  It's
-% simply an identifier for whatever container it's in.  See
-% Conclusions section for an example of \ref{}.
 \label{sec:objective}
 
-The objective is to verify the equivalence of four circuits used to
-model an amplifier, shown in Figure~\ref{fig:amp_models}.
 
 \section{Schematics}
 \label{sec:schematics}
@@ -70,92 +57,135 @@ model an amplifier, shown in Figure~\ref{fig:amp_models}.
 \subsection*{Circuit Tested}
 \label{sec:ckt_tested}
 
-% Insert a picture:
-\begin{figure}[hbtp]
-  \centering
-    \includegraphics[]{img/ckt_tested}
-  \caption{Circuit being tested.  $C_1 = C_2 = \SI{1}{\micro\farad}$}
-  \label{fig:circuit}
-\end{figure}
+%\begin{figure}[hbtp]
+%  \centering
+%    \includegraphics[]{img/ckt_tested}
+%  \caption{\label{fig:circuit} Circuit being tested.  $C_1 = C_2 = \SI{1}{\micro\farad}$}
+%\end{figure}
 
 \subsection*{Test Configuration}
 \label{sec:test_config}
 
-\begin{figure}[hbtp]
-  \centering
-  \includegraphics[]{img/test_config}
-  \caption{\label{fig:test_config} Test Configuration}
-\end{figure}
+%\begin{figure}[hbtp]
+%  \centering
+%  \includegraphics[]{img/test_config}
+%  \caption{\label{fig:test_config} Test Configuration}
+%\end{figure}
 
 \section{Procedure}
 \label{sec:procedure}
 
-First, resistors $R_1$, $R_2$, and $R_3$ were measured with a
-multimeter and recorded in Table~\ref{tab:table_01}.  Then the circuit
-in Figure~\ref{fig:circuit} was constructed on a breadboard.  Next,
-the configuration depicted in Figure~\ref{fig:test_config} was assembled.
-
-Two Fluke multimeters served as the ammeters, and two input channels
-of an oscilloscope served as voltmeters.  The function generator was
-set to produce a sine wave with amplitude of
-\SI{200}{\milli\volt_{rms}} @ \SI{1}{\kilo\hertz}, serving as the
-voltage source, and a decade box set to \SI{200}{\ohm} serving as the
-load.
-
-With the load disconnected, the input voltage ($V_i$), input current
-($I_i$), output voltage ($V_o$), and output current ($I_i$) were
-measured and recorded in Table~\ref{tab:table_02}.  This step was then
-repeated with the load connected.  Using these values with the
-equations derived from the four amplifier models, measured values were
-determined where direct measurement was difficult.
+%First, resistors $R_1$, $R_2$, and $R_3$ were measured with a
+%multimeter and recorded in Table~\ref{tab:table_01}.  Then the circuit
+%in Figure~\ref{fig:circuit} was constructed on a breadboard.  Next,
+%the configuration depicted in Figure~\ref{fig:test_config} was assembled.
+%
+%Two Fluke multimeters served as the ammeters, and two input channels
+%of an oscilloscope served as voltmeters.  The function generator was
+%set to produce a sine wave with amplitude of
+%\SI{200}{\milli\volt_{rms}} @ \SI{1}{\kilo\hertz}, serving as the
+%voltage source, and a decade box set to \SI{200}{\ohm} serving as the
+%load.
+%
+%With the load disconnected, the input voltage ($V_i$), input current
+%($I_i$), output voltage ($V_o$), and output current ($I_i$) were
+%measured and recorded in Table~\ref{tab:table_02}.  This step was then
+%repeated with the load connected.  Using these values with the
+%equations derived from the four amplifier models, measured values were
+%determined where direct measurement was difficult.
 
 \section{Results}
 \label{sec:results}
 
-\begin{table}[hbtp]
-  \centering
-  \begin{tabular}{*{4}{c}}
-    \textbf{Name} & \textbf{Nominal} & \textbf{Measured} & \textbf{\% Error} \\
-    & (\si{\kilo\ohm}) & (\si{\kilo\ohm}) & \\
-    \hline
-    $R_1$ & 1 & 0.986 & 1.40 \\
-    $R_2$ & 10 & 9.88 & 1.20 \\
-    $R_3$ & 1 & 0.983 & 1.70 \\
-  \end{tabular}
-  \caption{Comparison of labelled and actual resistance.}
-  \label{tab:table_01}
-  \end{table}
+\subsection{Part A}
+\label{sec:result_a}
 
-\begin{table}[hbtp]
-  \centering
-  \begin{tabular}{*{5}{c}}
-    & \multicolumn{2}{c}{\textbf{Voltage}} & \multicolumn{2}{c}{\textbf{Current}} \\
-    & $V_i$ & $V_o$ & $I_i$ & $I_o$ \\
-    & (\si{\milli\volt_{rms}}) & (\si{\volt_{rms}}) & (\si{\milli\ampere_{rms}}) & (\si{\milli\ampere_{rms}}) \\
-    \hline
-    \textbf{No Load} & 200 & 1.98 & 0.2 & nil \\
-    \textbf{Load} & 200 & 1.98 & 0.2 & 9.52 \\
-  \end{tabular}
-  \caption{Comparison of electrical characteristics of the amplifier under load.}
-  \label{tab:table_02}
-\end{table}
-
-\begin{table}[hbtp]
-  \centering
-  \begin{tabular}{l*{5}{c}}
-    & \multicolumn{3}{c}{\textbf{Load}} & \multicolumn{2}{c}{\textbf{No Load}} \\
-    & \textbf{Nominal} & \textbf{Measured} & \textbf{\% Error} & \textbf{Nominal} & \textbf{Measured} \\
-    \hline
-    $R_o$ (\si{\ohm}) & 0 & 0 & nil & 0 & 0 \\
-    $R_i$ (\si{\kilo\ohm}) & 1 & 1 & 0.00\% & 1 & 1 \\
-    $A_v$ & 10 & 9.9 & 1.00\% & 10 & 9.9 \\
-    $A_i$ & 50 & 47.6 & 4.80\% & nil & nil \\
-    $G_m$ (\si{\siemens}) & $\infty$ & $\infty$ & nil & $\infty$ & $\infty$ \\
-    $R_m$ (\si{\kilo\ohm}) & 10 & 9.9 & 1.00\% & 10 & 9.90 \\
-  \end{tabular}
-  \caption{Comparison of values determined from amplifier models in Figure~\ref{fig:amp_models}}
-  \label{tab:table_03}
-\end{table}
+% This LaTeX table template is generated by emacs 24.3.1
+\begin{tabular}{|l|l|l|}
+  \hline
+  -5.00 & -5.000 & 0.01 \\
+  \hline
+  -4.50 & -4.500 & 0.01 \\
+  \hline
+  -4.00 & -4.000 & 0.01 \\
+  \hline
+  -3.50 & -3.500 & 0.01 \\
+  \hline
+  -3.00 & -3.000 & 0.01 \\
+  \hline
+  -2.50 & -2.500 & 0.01 \\
+  \hline
+  -2.00 & -2.000 & 0.01 \\
+  \hline
+  -1.50 & -1.500 & 0.01 \\
+  \hline
+  -1.00 & -1.000 & 0.01 \\
+  \hline
+  -0.50 & -0.500 & 0.01 \\
+  \hline
+  0.00 & 0.277 & 0.01 \\
+  \hline
+  0.25 & 0.254 & 0.01 \\
+  \hline
+  0.50 & 0.461 & 0.10 \\
+  \hline
+  0.75 & 0.536 & 0.46 \\
+  \hline
+  1.00 & 0.570 & 0.92 \\
+  \hline
+  1.25 & 0.591 & 1.40 \\
+  \hline
+  1.50 & 0.606 & 1.89 \\
+  \hline
+  1.75 & 0.618 & 2.39 \\
+  \hline
+  2.00 & 0.627 & 2.90 \\
+  \hline
+  2.25 & 0.635 & 3.41 \\
+  \hline
+  2.50 & 0.642 & 3.92 \\
+  \hline
+  2.75 & 0.648 & 4.44 \\
+  \hline
+  3.00 & 0.653 & 4.95 \\
+  \hline
+  3.25 & 0.658 & 5.47 \\
+  \hline
+  3.50 & 0.662 & 5.99 \\
+  \hline
+  3.75 & 0.666 & 6.51 \\
+  \hline
+  4.00 & 0.670 & 7.03 \\
+  \hline
+  4.25 & 0.673 & 7.55 \\
+  \hline
+  4.50 & 0.676 & 8.08 \\
+  \hline
+  4.75 & 0.679 & 8.60 \\
+  \hline
+  5.00 & 0.682 & 9.13 \\
+  \hline
+  5.50 & 0.687 & 10.18 \\
+  \hline
+  6.00 & 0.692 & 11.23 \\
+  \hline
+  6.50 & 0.696 & 12.30 \\
+  \hline
+  7.00 & 0.699 & 13.36 \\
+  \hline
+  7.50 & 0.703 & 14.42 \\
+  \hline
+  8.00 & 0.706 & 15.49 \\
+  \hline
+  8.50 & 0.709 & 16.56 \\
+  \hline
+  9.00 & 0.712 & 17.66 \\
+  \hline
+  9.50 & 0.714 & 18.75 \\
+  \hline
+  10.00 & 0.717 & 19.84 \\
+  \hline
+\end{tabular}
 
 \section{Conclusion}
 \label{sec:conclusion}
@@ -167,12 +197,6 @@ being nearly zero.  This also causes $G_m$ to be very large.
 
 \section{Appendix}
 \label{sec:appendix}
-
-\begin{figure}[hbtp]
-  \centering
-  \includegraphics[width=\textwidth]{img/amp_models}
-  \caption{\label{fig:amp_models} Four equivalent models of an amplifier}
-\end{figure}
 
 \subsection*{Equations}
 
