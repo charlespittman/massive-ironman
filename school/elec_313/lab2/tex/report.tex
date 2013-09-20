@@ -100,55 +100,48 @@
 \subsection{Part A}
 \label{sec:result_a}
 
--5.00 -5.000 0.01
--4.50 -4.500 0.01
--4.00 -4.000 0.01
--3.50 -3.500 0.01
--3.00 -3.000 0.01
--2.50 -2.500 0.01
--2.00 -2.000 0.01
--1.50 -1.500 0.01
--1.00 -1.000 0.01
--0.50 -0.500 0.01
-0.00 0.277 0.01
-0.25 0.254 0.01
-0.50 0.461 0.10
-0.75 0.536 0.46
-1.00 0.570 0.92
-1.25 0.591 1.40
-1.50 0.606 1.89
-1.75 0.618 2.39
-2.00 0.627 2.90
-2.25 0.635 3.41
-2.50 0.642 3.92
-2.75 0.648 4.44
-3.00 0.653 4.95
-3.25 0.658 5.47
-3.50 0.662 5.99
-3.75 0.666 6.51
-4.00 0.670 7.03
-4.25 0.673 7.55
-4.50 0.676 8.08
-4.75 0.679 8.60
-5.00 0.682 9.13
-5.50 0.687 10.18
-6.00 0.692 11.23
-6.50 0.696 12.30
-7.00 0.699 13.36
-7.50 0.703 14.42
-8.00 0.706 15.49
-8.50 0.709 16.56
-9.00 0.712 17.66
-9.50 0.714 18.75
-10.00 0.717 19.84
+\begin{figure}[hbtp]
+  \begin{center}
+    \input{part_a}
+  \end{center}
+  \caption{\label{fig:part_a_graph} Diode characteristics measured in Part A.}
+\end{figure}
+
+\subsection{Part B}
+\label{sec:result_b}
+
+\begin{table}[hbtp]
+  \begin{center}
+    \begin{tabular}{ccc}
+      $R$ (\si{\ohm}) & $V_d$ (\si{V}) & $I_d$ (\si{mA}) \\
+      \hline
+      200 & 0.751 & 46.00 \\
+      500 & 0.713 & 18.60 \\
+      1k & 0.682 & 9.30 \\
+      2k & 0.650 & 4.70 \\
+      5k & 0.605 & 1.85 \\
+      10k & 0.571 & 0.94 \\
+      20k & 0.538 & 0.47 \\
+      50k & 0.494 & 0.19 \\
+      100k & 0.464 & 0.10 \\
+    \end{tabular}
+  \end{center}
+  \caption{\label{tab:part_b} Diode characteristics measured in Part B.}
+\end{table}
+
+\begin{table}[hbtp]
+  \begin{center}
+    \begin{tabular}{ccc}
+      $V_d$ (\si{V}) & $I_d$ (\si{mA}) & $V_{OC}$ (\si{V}) \\
+      \hline
+      0.712 & 27.2 & 6.70 \\
+    \end{tabular}
+  \end{center}
+  \caption{\label{tab:part_b} Diode characteristics measured in Part C.}
+\end{table}
 
 \section{Conclusion}
 \label{sec:conclusion}
-
-As shown in Table~\ref{tab:table_03}, the amplifier models do closely
-represent the amplifier used in the experiment.  The greatest
-difference occurred in the current gain ($A_i$), largely due to $R_o$
-being nearly zero.  This also causes $G_m$ to be very large.
 
 \section{Appendix}
 \label{sec:appendix}
@@ -158,39 +151,39 @@ being nearly zero.  This also causes $G_m$ to be very large.
 % LaTeX sees blank lines as a start of another paragraph.  To avoid
 % unnecessary vertical spaces between equations, and still visually
 % separate in source, put a comment between them.
-\begin{equation}
-  \label{eqn:percent_error}
-  \%_{error} = \frac{|measured - nominal|}{nominal} \times 100\%
-\end{equation}
-%
-\begin{equation}
-  \label{eqn:R_o}
-  R_o = \frac{V_{noload} - V_{load}}{I_{load}}
-\end{equation}
-%
-\begin{equation}
-  \label{eqn:R_i}
-  R_i = \frac{V_i}{I_i}
-\end{equation}
-%
-\begin{equation}
-  \label{eqn:A_v}
-  A_v = \frac{V_o}{V_i}
-\end{equation}
-%
-\begin{equation}
-  \label{eqn:A_i}
-  A_i = A_v \left(\frac{R_i}{R_o}\right)
-\end{equation}
-%
-\begin{equation}
-  \label{eqn:G_m}
-  G_m = \frac{A_v}{R_o}
-\end{equation}
-%
-\begin{equation}
-  \label{eqn:R_m}
-  R_m = A_v R_i
-\end{equation}
+%\begin{equation}
+%  \label{eqn:percent_error}
+%  \%_{error} = \frac{|measured - nominal|}{nominal} \times 100\%
+%\end{equation}
+%%
+%\begin{equation}
+%  \label{eqn:R_o}
+%  R_o = \frac{V_{noload} - V_{load}}{I_{load}}
+%\end{equation}
+%%
+%\begin{equation}
+%  \label{eqn:R_i}
+%  R_i = \frac{V_i}{I_i}
+%\end{equation}
+%%
+%\begin{equation}
+%  \label{eqn:A_v}
+%  A_v = \frac{V_o}{V_i}
+%\end{equation}
+%%
+%\begin{equation}
+%  \label{eqn:A_i}
+%  A_i = A_v \left(\frac{R_i}{R_o}\right)
+%\end{equation}
+%%
+%\begin{equation}
+%  \label{eqn:G_m}
+%  G_m = \frac{A_v}{R_o}
+%\end{equation}
+%%
+%\begin{equation}
+%  \label{eqn:R_m}
+%  R_m = A_v R_i
+%\end{equation}
 
 \end{document}
