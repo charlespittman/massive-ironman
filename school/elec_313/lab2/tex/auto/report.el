@@ -8,20 +8,19 @@
      "sec:procedure"
      "sec:results"
      "sec:result_a"
+     "fig:part_a_graph"
+     "fig:part_a_graph2"
+     "sec:result_b"
+     "tab:part_b"
      "sec:conclusion"
-     "sec:appendix"
-     "eqn:percent_error"
-     "eqn:R_o"
-     "eqn:R_i"
-     "eqn:A_v"
-     "eqn:A_i"
-     "eqn:G_m"
-     "eqn:R_m")
+     "sec:appendix")
     (TeX-run-style-hooks
      "siunitx"
      "graphicx"
      "latex2e"
      "art10"
      "article"
-     "")))
+     ""
+     "part_a"
+     "part_a2")))
 
