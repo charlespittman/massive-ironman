@@ -49,9 +49,10 @@
 \section{Objective}
 \label{sec:objective}
 
-The objective is to observe the operation of a diode, and its
-conformance to the Schlockley equation:
-\[I_D = I_S \left(e^{\frac{V_D}{V_T}} - 1\right)\]
+The objective is to observe the basic operation of a diode.  In
+addition, the Schlockley equation (Eq~\ref{eqn:schlockley}) is used to
+find the diode's reverse saturation current ($I_S$) and thermal
+voltage ($V_T$) using measured values in the lab.
 
 \section{Equipment}
 \label{sec:equipment}
@@ -59,15 +60,14 @@ conformance to the Schlockley equation:
 \begin{tabular}{ll}
   \centering
   Diode: 1N4002 & Power supply: HP E3631A \\
-  Resistor: \SI{470}{\ohm} & Multimeter: Fluke 8010A \\
+  Resistors: \SI{330}{\ohm}, \SI{470}{\ohm}, \SI{680}{\ohm} & Multimeter: Fluke 8010A \\
   Resistive decade box: HeathKit IN-3117 & \\
 \end{tabular}
 
 \section{Schematics}
 \label{sec:schematics}
 
-% The asterisk after section inhibits the numbering of the section.
-\subsection*{Circuit Tested}
+\subsection{Circuits Tested}
 \label{sec:ckt_tested}
 
 \begin{figure}[hbtp]
@@ -88,13 +88,8 @@ conformance to the Schlockley equation:
 \subsection{Part A}
 \label{sec:proc_a}
 
-Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
-hendrerit tempor tellus. Donec pretium posuere tellus. Proin quam
-nisl, tincidunt et, mattis eget, convallis nec, purus. Cum sociis
-natoque penatibus et magnis dis parturient montes, nascetur ridiculus
-mus. Nulla posuere. Donec vitae dolor. Nullam tristique diam non
-turpis. Cras placerat accumsan nulla. Nullam rutrum. Nam vestibulum
-accumsan nisl.
+The circuit in Figure~\ref{fig:circuit1} with $R = \SI{470}{\ohm}$ and
+the power supply as $V_S$.
 
 \subsection{Part B}
 \label{sec:proc_b}
@@ -173,18 +168,16 @@ accumsan nisl.
 \section{Conclusion}
 \label{sec:conclusion}
 
-\section{Appendix}
-\label{sec:appendix}
-
-\subsection*{Equations}
+\section{Equations}
+\label{sec:equations}
 
 % LaTeX sees blank lines as a start of another paragraph.  To avoid
 % unnecessary vertical spaces between equations, and still visually
 % separate in source, put a comment between them.
-%\begin{equation}
-%  \label{eqn:percent_error}
-%  \%_{error} = \frac{|measured - nominal|}{nominal} \times 100\%
-%\end{equation}
+\begin{equation}
+  \label{eqn:schlockley}
+  I_D = I_S \left(e^{\frac{V_D}{V_T}} - 1\right)
+\end{equation}
 %%
 %\begin{equation}
 %  \label{eqn:R_o}
