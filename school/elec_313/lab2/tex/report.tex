@@ -53,6 +53,16 @@ The objective is to observe the operation of a diode, and its
 conformance to the Schlockley equation:
 \[I_D = I_S \left(e^{\frac{V_D}{V_T}} - 1\right)\]
 
+\section{Equipment}
+\label{sec:equipment}
+
+\begin{tabular}{ll}
+  \centering
+  Diode: 1N4002 & Power supply: HP E3631A \\
+  Resistor: \SI{470}{\ohm} & Multimeter: Fluke 8010A \\
+  Resistive decade box: HeathKit IN-3117 & \\
+\end{tabular}
+
 \section{Schematics}
 \label{sec:schematics}
 
@@ -61,40 +71,52 @@ conformance to the Schlockley equation:
 \label{sec:ckt_tested}
 
 \begin{figure}[hbtp]
-  \begin{center}
-    \includegraphics[]{img/circuit1}
-  \end{center}
+  \centering
+  \includegraphics[]{img/circuit1}
   \caption{\label{fig:circuit1} Circuit used for Part A and Part B.}
 \end{figure}
 
 \begin{figure}[hbtp]
-  \begin{center}
-    \includegraphics[]{img/circuit2}
-  \end{center}
+  \centering
+  \includegraphics[]{img/circuit2}
   \caption{\label{fig:circuit2} Circuit used for Part C.}
 \end{figure}
 
 \section{Procedure}
 \label{sec:procedure}
 
-%First, resistors $R_1$, $R_2$, and $R_3$ were measured with a
-%multimeter and recorded in Table~\ref{tab:table_01}.  Then the circuit
-%in Figure~\ref{fig:circuit} was constructed on a breadboard.  Next,
-%the configuration depicted in Figure~\ref{fig:test_config} was assembled.
-%
-%Two Fluke multimeters served as the ammeters, and two input channels
-%of an oscilloscope served as voltmeters.  The function generator was
-%set to produce a sine wave with amplitude of
-%\SI{200}{\milli\volt_{rms}} @ \SI{1}{\kilo\hertz}, serving as the
-%voltage source, and a decade box set to \SI{200}{\ohm} serving as the
-%load.
-%
-%With the load disconnected, the input voltage ($V_i$), input current
-%($I_i$), output voltage ($V_o$), and output current ($I_i$) were
-%measured and recorded in Table~\ref{tab:table_02}.  This step was then
-%repeated with the load connected.  Using these values with the
-%equations derived from the four amplifier models, measured values were
-%determined where direct measurement was difficult.
+\subsection{Part A}
+\label{sec:proc_a}
+
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
+hendrerit tempor tellus. Donec pretium posuere tellus. Proin quam
+nisl, tincidunt et, mattis eget, convallis nec, purus. Cum sociis
+natoque penatibus et magnis dis parturient montes, nascetur ridiculus
+mus. Nulla posuere. Donec vitae dolor. Nullam tristique diam non
+turpis. Cras placerat accumsan nulla. Nullam rutrum. Nam vestibulum
+accumsan nisl.
+
+\subsection{Part B}
+\label{sec:proc_b}
+
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
+hendrerit tempor tellus. Donec pretium posuere tellus. Proin quam
+nisl, tincidunt et, mattis eget, convallis nec, purus. Cum sociis
+natoque penatibus et magnis dis parturient montes, nascetur ridiculus
+mus. Nulla posuere. Donec vitae dolor. Nullam tristique diam non
+turpis. Cras placerat accumsan nulla. Nullam rutrum. Nam vestibulum
+accumsan nisl.
+
+\subsection{Part C}
+\label{sec:proc_c}
+
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
+hendrerit tempor tellus. Donec pretium posuere tellus. Proin quam
+nisl, tincidunt et, mattis eget, convallis nec, purus. Cum sociis
+natoque penatibus et magnis dis parturient montes, nascetur ridiculus
+mus. Nulla posuere. Donec vitae dolor. Nullam tristique diam non
+turpis. Cras placerat accumsan nulla. Nullam rutrum. Nam vestibulum
+accumsan nisl.
 
 \section{Results}
 \label{sec:results}
@@ -103,16 +125,14 @@ conformance to the Schlockley equation:
 \label{sec:result_a}
 
 \begin{figure}[hbtp]
-  \begin{center}
-    \input{part_a}
-  \end{center}
+  \centering
+  \input{part_a}
   \caption{\label{fig:part_a_graph} Diode characteristics measured in Part A.}
 \end{figure}
 
 \begin{figure}[hbtp]
-  \begin{center}
-    \input{part_a2}
-  \end{center}
+  \centering
+  \input{part_a2}
   \caption{\label{fig:part_a_graph2} $\ln{(I_d)}$ vs. $V_d$.}
 \end{figure}
 
@@ -120,32 +140,33 @@ conformance to the Schlockley equation:
 \label{sec:result_b}
 
 \begin{table}[hbtp]
-  \begin{center}
-    \begin{tabular}{ccc}
-      $R$ (\si{\ohm}) & $V_d$ (\si{V}) & $I_d$ (\si{mA}) \\
-      \hline
-      200 & 0.751 & 46.00 \\
-      500 & 0.713 & 18.60 \\
-      1k & 0.682 & 9.30 \\
-      2k & 0.650 & 4.70 \\
-      5k & 0.605 & 1.85 \\
-      10k & 0.571 & 0.94 \\
-      20k & 0.538 & 0.47 \\
-      50k & 0.494 & 0.19 \\
-      100k & 0.464 & 0.10 \\
-    \end{tabular}
-  \end{center}
+  \centering
+  \begin{tabular}{ccc}
+    $R$ (\si{\ohm}) & $V_d$ (\si{V}) & $I_d$ (\si{mA}) \\
+    \hline
+    200 & 0.751 & 46.00 \\
+    500 & 0.713 & 18.60 \\
+    1k & 0.682 & 9.30 \\
+    2k & 0.650 & 4.70 \\
+    5k & 0.605 & 1.85 \\
+    10k & 0.571 & 0.94 \\
+    20k & 0.538 & 0.47 \\
+    50k & 0.494 & 0.19 \\
+    100k & 0.464 & 0.10 \\
+  \end{tabular}
   \caption{\label{tab:part_b} Diode characteristics measured in Part B.}
 \end{table}
 
+\subsection{Part C}
+\label{sec:result_c}
+
 \begin{table}[hbtp]
-  \begin{center}
-    \begin{tabular}{ccc}
-      $V_d$ (\si{V}) & $I_d$ (\si{mA}) & $V_{OC}$ (\si{V}) \\
-      \hline
-      0.712 & 27.2 & 6.70 \\
-    \end{tabular}
-  \end{center}
+  \centering
+  \begin{tabular}{ccc}
+    $V_d$ (\si{V}) & $I_d$ (\si{mA}) & $V_{OC}$ (\si{V}) \\
+    \hline
+    0.712 & 27.2 & 6.70 \\
+  \end{tabular}
   \caption{\label{tab:part_b} Diode characteristics measured in Part C.}
 \end{table}
 
