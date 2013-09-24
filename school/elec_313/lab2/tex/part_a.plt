@@ -11,5 +11,5 @@ set xtic auto
 set ytic auto
 set title "Diode Current vs. Voltage"
 set xlabel "$V_d$ (V)"
-set ylabel "$I_d$ (mA)"
-plot 'part_a.dat' using 2:3 title "" with linespoints, 'part_a.dat' using 2:4
+set ylabel "$I_d$\\\\(mA)"
+plot 'part_a.dat' using 2:3 title "" with linespoints
