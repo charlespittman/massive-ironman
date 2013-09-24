@@ -2,19 +2,29 @@
  (lambda ()
     (LaTeX-add-labels
      "sec:objective"
+     "sec:equipment"
      "sec:schematics"
      "sec:ckt_tested"
      "fig:circuit1"
      "fig:circuit2"
      "sec:procedure"
+     "sec:proc_a"
+     "sec:proc_b"
+     "sec:proc_c"
      "sec:results"
      "sec:result_a"
+     "tab:percent_err"
      "fig:part_a_graph"
      "fig:part_a_graph2"
      "sec:result_b"
      "tab:part_b"
+     "sec:result_c"
      "sec:conclusion"
-     "sec:appendix")
+     "sec:equations"
+     "eqn:percent_err"
+     "eqn:schlockley"
+     "sec:appendix"
+     "tab:part_a")
     (TeX-run-style-hooks
      "siunitx"
      "graphicx"
