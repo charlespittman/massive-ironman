@@ -1,6 +1,6 @@
 # gnuplot script
 set terminal latex
-set output "part_a.tex"
+set output "combined.tex"
 set autoscale
 set border 31 linewidth .3
 unset log
@@ -13,4 +13,6 @@ set ytic auto
 set title "Diode Current vs. Voltage"
 set xlabel "$V_d$ (V)"
 set ylabel "$I_d$\\\\(mA)"
-plot 'part_a.dat' using 2:3 title ""
+set key top left box
+plot 'part_a.dat' using 2:3 title "Part A", \
+     'part_b.dat' using 2:3 title "Part B"
