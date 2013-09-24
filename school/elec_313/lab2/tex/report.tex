@@ -18,6 +18,7 @@
 
 \usepackage{graphicx}
 %\usepackage[acronym]{glossaries} % Lets us use acronyms
+\usepackage{multicol}
 \usepackage{siunitx} % SI units in math mode
 
 \author{}
@@ -52,38 +53,25 @@
 The objective is to observe the basic operation of a diode.  In
 addition, the Schlockley equation (Eq~\ref{eqn:schlockley}) is used to
 find the diode's reverse saturation current ($I_S$) and thermal
-voltage ($V_T$) using measured values in the lab.
-
-
-In part A, first the 470 ohm resistor was measured with a multi-meter
-and the %error was calculated. Both values were recorded in Table
-X. Then the circuit in Figure 1 was built on a breadboard using the HP
-power supply as the source voltage. The source voltage (Vs) was swept
-from 0 to -5 volts in .5V increments and the diode voltage (Vd) was
-recorded with a second multi-meter and the diode current (Id) was
-measured with an ammeter. The Vd and the Id were recorded in Table
-Y. Then the Vs was swept from 0V to 5V in .25V increments and Vd and
-the Id were measured in recorded and Table Y. And finally for part A,
-the Vs was swept from 5V to 10V in .5V increments and once again, Vd
-and the Id were measured and recorded in Table Y.  In part B, the 470
-ohm resistor (Figure 1) was replaced with a 200 resistor using a
-decade box and Vs (Figure 1) was set to 10V and Vd and the Id were
-measured and recorded in Table 1. The decade box was adjust with the
-voltages listed in Table 1 by adjusting the decade box , and the Vd
-and the Id were measured and recorded for each setting of resistance.
-In part C of the experiment, the circuit in Figure 2 was built on a
-breadboard using the HP power supply as the Vs. Vd and the Id were
-measured and recorded in Table 2. The diode was then removed and the
-open circuit voltage (VOC) was recorded (Table 2).
-
+voltage ($V_T$) using values measured in the lab.
 
 \section{Equipment}
 \label{sec:equipment}
 
+%\begin{multicols}{2}
+%  \begin{description}
+%  \item[Diode] \hfill \\ 1N4002
+%  \item[Resistors] \hfill \\ \SI{330}{\ohm}, \SI{470}{\ohm}, \SI{680}{\ohm}
+%  \item[Resistive Decade box] \hfill \\ Heathkit IN--3117
+%  \item[Power supply] \hfill \\ HP E3631A
+%  \item[Multimeter] \hfill \\ Fluke 8010A
+%  \end{description}
+%\end{multicols}
+
 \begin{tabular}{ll}
   \centering
   Diode: 1N4002 & Power supply: HP E3631A \\
-  Resistors: \SI{330}{\ohm}, \SI{470}{\ohm}, \SI{680}{\ohm} & Multimeter: Fluke 8010A \\
+  Resistors: \SI{330}{\ohm}, \SI{470}{\ohm}, \SI{680}{\ohm} & Multimeter: Fluke 8010A (x2)\\
   Resistive decade box: HeathKit IN-3117 & \\
 \end{tabular}
 
@@ -112,10 +100,16 @@ open circuit voltage (VOC) was recorded (Table 2).
 \label{sec:proc_a}
 
 The circuit in Figure~\ref{fig:circuit1} was constructed, with $R =
-\SI{470}{\ohm}$ and the power supply as $V_S$.  The actual resistance
-was measured with the multimeter, percent error calculated
-(Eq~\ref{eqn:percent_err}), and recorded in
-Table~\ref{tab:percent_err}.
+\SI{470}{\ohm}$ and the power supply as $V_s$.  The actual resistance
+was measured with one a multimeter and recorded in
+Table~\ref{tab:percent_err} along with the percent error calculated
+(Eq~\ref{eqn:percent_err}).  Next, the multimeters were used to
+measure voltage across and current through the diode ($V_d$ and $I_d$,
+respectively) while $V_s$ was swept from \SI{-5}{V} to \SI{+10}{V}.
+The step size from \SI{-5}{V} to \SI{0}{V} and from \SI{5}{V} to
+\SI{10}{V} was \SI{0.5}{V}, and \SI{0.25}{V} from \SI{0}{V} to
+\SI{5}{V}.  These values were recorded in Table~\ref{tab:part_a} and
+used to generate the graph in Figure~\ref{fig:part_a_graph}.
 
 \subsection{Part B}
 \label{sec:proc_b}
@@ -139,6 +133,17 @@ mus. Nulla posuere. Donec vitae dolor. Nullam tristique diam non
 turpis. Cras placerat accumsan nulla. Nullam rutrum. Nam vestibulum
 accumsan nisl.
 
+In part B, the 470 ohm resistor (Figure 1) was replaced with
+a 200 resistor using a decade box and Vs (Figure 1) was set to 10V and
+Vd and the Id were measured and recorded in Table 1. The decade box
+was adjust with the voltages listed in Table 1 by adjusting the decade
+box , and the Vd and the Id were measured and recorded for each
+setting of resistance.  In part C of the experiment, the circuit in
+Figure 2 was built on a breadboard using the HP power supply as the
+Vs. Vd and the Id were measured and recorded in Table 2. The diode was
+then removed and the open circuit voltage (VOC) was recorded (Table
+2).
+
 \section{Results}
 \label{sec:results}
 
@@ -155,7 +160,7 @@ accumsan nisl.
   \end{tabular}
   \caption{\label{tab:percent_err} Comparison of nominal and measured resistance in Part A.}
 \end{table}
-    
+
 \begin{figure}[hbtp]
   \centering
   \input{part_a}
@@ -207,10 +212,10 @@ accumsan nisl.
 
 As seen in Table A, the measured values of Vd and the Id taken in Part
 B of the experiment were very close to the theoretical values
-calculated in PSpice. The largest %difference was only 2.65%.  As seen
+calculated in PSpice. The largest \%difference was only 2.65\%.  As seen
 in Table B, the measured values of Vd and the Id taken in Part C of
 the experiment were very close to the theoretical values calculated in
-PSpice. The largest %difference was on 4.17%
+PSpice. The largest \%difference was on 4.17%
 
 \section{Equations}
 \label{sec:equations}
@@ -260,7 +265,6 @@ PSpice. The largest %difference was on 4.17%
 
 \section{Apendix}
 \label{sec:appendix}
-
 
 \begin{table}[hbtp]
   \centering
