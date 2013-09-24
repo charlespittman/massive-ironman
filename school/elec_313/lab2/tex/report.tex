@@ -18,7 +18,7 @@
 
 \usepackage{graphicx}
 %\usepackage[acronym]{glossaries} % Lets us use acronyms
-\usepackage{multicol}
+%\usepackage{multicol}
 \usepackage{siunitx} % SI units in math mode
 
 \author{}
@@ -40,7 +40,18 @@
   \end{tabular}
 \end{center}
 
-\pagebreak
+\newpage
+
+\tableofcontents
+%\cleardoublepage
+%\addcontentsline{toc}{chapter}{\listfigurename}
+\listoffigures
+%\cleardoublepage
+%\addcontentsline{toc}{chapter}{\listtablename}
+\listoftables
+
+
+\newpage
 
 % Removes indentation from paragraphs: \setlength\parindent{0pt}
 
@@ -114,13 +125,7 @@ used to generate the graph in Figure~\ref{fig:part_a_graph}.
 \subsection{Part B}
 \label{sec:proc_b}
 
-Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
-hendrerit tempor tellus. Donec pretium posuere tellus. Proin quam
-nisl, tincidunt et, mattis eget, convallis nec, purus. Cum sociis
-natoque penatibus et magnis dis parturient montes, nascetur ridiculus
-mus. Nulla posuere. Donec vitae dolor. Nullam tristique diam non
-turpis. Cras placerat accumsan nulla. Nullam rutrum. Nam vestibulum
-accumsan nisl.
+The circuit in Figure~\ref{fig:circuit1}
 
 \subsection{Part C}
 \label{sec:proc_c}
@@ -176,23 +181,11 @@ then removed and the open circuit voltage (VOC) was recorded (Table
 \subsection{Part B}
 \label{sec:result_b}
 
-\begin{table}[hbtp]
+\begin{figure}[hbtp]
   \centering
-  \begin{tabular}{ccc}
-    $R$ (\si{\ohm}) & $V_d$ (\si{V}) & $I_d$ (\si{mA}) \\
-    \hline
-    200 & 0.751 & 46.00 \\
-    500 & 0.713 & 18.60 \\
-    1k & 0.682 & 9.30 \\
-    2k & 0.650 & 4.70 \\
-    5k & 0.605 & 1.85 \\
-    10k & 0.571 & 0.94 \\
-    20k & 0.538 & 0.47 \\
-    50k & 0.494 & 0.19 \\
-    100k & 0.464 & 0.10 \\
-  \end{tabular}
-  \caption{\label{tab:part_b} Diode characteristics measured in Part B.}
-\end{table}
+  \input{part_b}
+  \caption{\label{fig:part_b_graph} Diode characteristics measured in Part B.}
+\end{figure}
 
 \subsection{Part C}
 \label{sec:result_c}
@@ -314,6 +307,24 @@ PSpice. The largest \%difference was on 4.17%
     10.00 & 0.717 & 19.84 & 2.987700 \\
   \end{tabular}
   \caption{\label{tab:part_a} Diode characteristics measured in Part A.}
+\end{table}
+
+\begin{table}[hbtp]
+  \centering
+  \begin{tabular}{ccc}
+    $R$ (\si{\ohm}) & $V_d$ (\si{V}) & $I_d$ (\si{mA}) \\
+    \hline
+    200 & 0.751 & 46.00 \\
+    500 & 0.713 & 18.60 \\
+    1k & 0.682 & 9.30 \\
+    2k & 0.650 & 4.70 \\
+    5k & 0.605 & 1.85 \\
+    10k & 0.571 & 0.94 \\
+    20k & 0.538 & 0.47 \\
+    50k & 0.494 & 0.19 \\
+    100k & 0.464 & 0.10 \\
+  \end{tabular}
+  \caption{\label{tab:part_b} Diode characteristics measured in Part B.}
 \end{table}
 
 \end{document}
