@@ -54,6 +54,29 @@ addition, the Schlockley equation (Eq~\ref{eqn:schlockley}) is used to
 find the diode's reverse saturation current ($I_S$) and thermal
 voltage ($V_T$) using measured values in the lab.
 
+
+In part A, first the 470 ohm resistor was measured with a multi-meter
+and the %error was calculated. Both values were recorded in Table
+X. Then the circuit in Figure 1 was built on a breadboard using the HP
+power supply as the source voltage. The source voltage (Vs) was swept
+from 0 to -5 volts in .5V increments and the diode voltage (Vd) was
+recorded with a second multi-meter and the diode current (Id) was
+measured with an ammeter. The Vd and the Id were recorded in Table
+Y. Then the Vs was swept from 0V to 5V in .25V increments and Vd and
+the Id were measured in recorded and Table Y. And finally for part A,
+the Vs was swept from 5V to 10V in .5V increments and once again, Vd
+and the Id were measured and recorded in Table Y.  In part B, the 470
+ohm resistor (Figure 1) was replaced with a 200 resistor using a
+decade box and Vs (Figure 1) was set to 10V and Vd and the Id were
+measured and recorded in Table 1. The decade box was adjust with the
+voltages listed in Table 1 by adjusting the decade box , and the Vd
+and the Id were measured and recorded for each setting of resistance.
+In part C of the experiment, the circuit in Figure 2 was built on a
+breadboard using the HP power supply as the Vs. Vd and the Id were
+measured and recorded in Table 2. The diode was then removed and the
+open circuit voltage (VOC) was recorded (Table 2).
+
+
 \section{Equipment}
 \label{sec:equipment}
 
@@ -88,8 +111,11 @@ voltage ($V_T$) using measured values in the lab.
 \subsection{Part A}
 \label{sec:proc_a}
 
-The circuit in Figure~\ref{fig:circuit1} with $R = \SI{470}{\ohm}$ and
-the power supply as $V_S$.
+The circuit in Figure~\ref{fig:circuit1} was constructed, with $R =
+\SI{470}{\ohm}$ and the power supply as $V_S$.  The actual resistance
+was measured with the multimeter, percent error calculated
+(Eq~\ref{eqn:percent_err}), and recorded in
+Table~\ref{tab:percent_err}.
 
 \subsection{Part B}
 \label{sec:proc_b}
@@ -179,6 +205,13 @@ accumsan nisl.
 \section{Conclusion}
 \label{sec:conclusion}
 
+As seen in Table A, the measured values of Vd and the Id taken in Part
+B of the experiment were very close to the theoretical values
+calculated in PSpice. The largest %difference was only 2.65%.  As seen
+in Table B, the measured values of Vd and the Id taken in Part C of
+the experiment were very close to the theoretical values calculated in
+PSpice. The largest %difference was on 4.17%
+
 \section{Equations}
 \label{sec:equations}
 
@@ -186,13 +219,13 @@ accumsan nisl.
 % unnecessary vertical spaces between equations, and still visually
 % separate in source, put a comment between them.
 \begin{equation}
-  \%_{error} = \frac{|nominal - measured|}{nominal}100\%
   \label{eqn:percent_err}
+  \%_{error} = \frac{|nominal - measured|}{nominal}100\%
 \end{equation}
 %
 \begin{equation}
-  I_D = I_S \left(e^{\frac{V_D}{V_T}} - 1\right)
   \label{eqn:schlockley}
+  I_D = I_S \left(e^{\frac{V_D}{V_T}} - 1\right)
 \end{equation}
 %%
 %\begin{equation}
