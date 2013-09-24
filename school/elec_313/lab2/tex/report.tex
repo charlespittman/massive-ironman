@@ -18,8 +18,9 @@
 
 \usepackage{graphicx}
 %\usepackage[acronym]{glossaries} % Lets us use acronyms
-%\usepackage{multicol}
+\usepackage{multicol}
 \usepackage{siunitx} % SI units in math mode
+\usepackage{subcaption}
 
 \author{}
 \title{ELEC-313 \\ Lab 2: Diode Characterization \\ }
@@ -43,13 +44,8 @@
 \newpage
 
 \tableofcontents
-%\cleardoublepage
-%\addcontentsline{toc}{chapter}{\listfigurename}
 \listoffigures
-%\cleardoublepage
-%\addcontentsline{toc}{chapter}{\listtablename}
 \listoftables
-
 
 \newpage
 
@@ -89,19 +85,18 @@ voltage ($V_T$) using values measured in the lab.
 \section{Schematics}
 \label{sec:schematics}
 
-\subsection{Circuits Tested}
-\label{sec:ckt_tested}
-
 \begin{figure}[hbtp]
   \centering
-  \includegraphics[]{img/circuit1}
-  \caption{\label{fig:circuit1} Circuit used for Part A and Part B.}
-\end{figure}
-
-\begin{figure}[hbtp]
-  \centering
-  \includegraphics[]{img/circuit2}
-  \caption{\label{fig:circuit2} Circuit used for Part C.}
+  \begin{subfigure}[b]{0.4\textwidth}
+    \includegraphics[width=\textwidth]{img/circuit1}
+    \caption{\label{fig:circuit1} Circuit used for Parts A and Part B.}
+  \end{subfigure}%
+  ~
+  \begin{subfigure}[b]{0.6\textwidth}
+    \includegraphics[width=\textwidth]{img/circuit2}
+    \caption{\label{fig:circuit2} Circuit used for Part C.}
+  \end{subfigure}
+  \caption{\label{fig:circuits_tested} Circuits used in this lab.}
 \end{figure}
 
 \section{Procedure}
@@ -110,7 +105,7 @@ voltage ($V_T$) using values measured in the lab.
 \subsection{Part A}
 \label{sec:proc_a}
 
-The circuit in Figure~\ref{fig:circuit1} was constructed, with $R =
+The circuit in Figure~\ref{fig:circuit1} was constructed with $R =
 \SI{470}{\ohm}$ and the power supply as $V_s$.  The actual resistance
 was measured with one a multimeter and recorded in
 Table~\ref{tab:percent_err} along with the percent error calculated
@@ -125,29 +120,25 @@ used to generate the graph in Figure~\ref{fig:part_a_graph}.
 \subsection{Part B}
 \label{sec:proc_b}
 
-The circuit in Figure~\ref{fig:circuit1}
+The circuit in Figure~\ref{fig:circuit1} was constructed with the
+resistive decade box as $R$ and the power supply as $V_s$.  The
+multimeters were again used to measure diode voltage ($V_d$) and
+current ($I_d$).  This time $V_s$ was held at \SI{10}{V} and $R$
+varied: \SI{200}{\ohm}, \SI{500}{\ohm}, \SI{1}{\kilo\ohm},
+\SI{2}{\kilo\ohm}, \SI{5}{\kilo\ohm}, \SI{10}{\kilo\ohm},
+\SI{20}{\kilo\ohm}, \SI{50}{\kilo\ohm}, \SI{100}{\kilo\ohm}.  These
+values were recorded in Table~\ref{tab:part_b} and used to generate
+the graph in Figure~\ref{fig:part_b_graph}.
 
 \subsection{Part C}
 \label{sec:proc_c}
 
-Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
-hendrerit tempor tellus. Donec pretium posuere tellus. Proin quam
-nisl, tincidunt et, mattis eget, convallis nec, purus. Cum sociis
-natoque penatibus et magnis dis parturient montes, nascetur ridiculus
-mus. Nulla posuere. Donec vitae dolor. Nullam tristique diam non
-turpis. Cras placerat accumsan nulla. Nullam rutrum. Nam vestibulum
-accumsan nisl.
-
-In part B, the 470 ohm resistor (Figure 1) was replaced with
-a 200 resistor using a decade box and Vs (Figure 1) was set to 10V and
-Vd and the Id were measured and recorded in Table 1. The decade box
-was adjust with the voltages listed in Table 1 by adjusting the decade
-box , and the Vd and the Id were measured and recorded for each
-setting of resistance.  In part C of the experiment, the circuit in
-Figure 2 was built on a breadboard using the HP power supply as the
-Vs. Vd and the Id were measured and recorded in Table 2. The diode was
-then removed and the open circuit voltage (VOC) was recorded (Table
-2).
+Thi circuit in Figure~\ref{fig:circuit2} was constructed with $R_1 =
+\SI{330}{\ohm}$, $R_2 = \SI{680}{\ohm}$, and the power supply as $V_s
+= \SI{10}{V}$.  The multimeters were again used to measure diode
+voltage ($V_d$) and current ($I_d$).  Finally, the diode was removed
+and a multimeter was used to measure the voltage at that node
+($V_{OC}$).  These values were recorded in Table~\ref{tab:part_c}.
 
 \section{Results}
 \label{sec:results}
@@ -158,7 +149,7 @@ then removed and the open circuit voltage (VOC) was recorded (Table
 \begin{table}[hbtp]
   \centering
   \begin{tabular}{*{4}{c}}
-    \textbf{Name} & \textbf{Nominal} & \textbf{Measured} & \textbf{\% Error} \\
+    & \textbf{Nominal} & \textbf{Measured} & \textbf{\% Error} \\
     & (\si{\ohm}) & (\si{\ohm}) & \\
     \hline
     $R_1$ & 470 & 465.3 & 1.00 \\
@@ -265,7 +256,7 @@ then removed and the open circuit voltage (VOC) was recorded (Table
     \hline
     0.712 & 27.2 & 6.70 \\
   \end{tabular}
-  \caption{\label{tab:part_b} Diode characteristics measured in Part C.}
+  \caption{\label{tab:part_c} Diode characteristics measured in Part C.}
 \end{table}
 
 \section{Conclusion}
@@ -276,7 +267,7 @@ B of the experiment were very close to the theoretical values
 calculated in PSpice. The largest \%difference was only 2.65\%.  As seen
 in Table B, the measured values of Vd and the Id taken in Part C of
 the experiment were very close to the theoretical values calculated in
-PSpice. The largest \%difference was on 4.17%
+PSpice. The largest \%difference was on 4.17\%
 
 \section{Equations}
 \label{sec:equations}
@@ -323,8 +314,5 @@ PSpice. The largest \%difference was on 4.17%
 %  \label{eqn:R_m}
 %  R_m = A_v R_i
 %\end{equation}
-
-
-
 
 \end{document}
