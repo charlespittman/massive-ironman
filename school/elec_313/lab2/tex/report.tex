@@ -58,7 +58,7 @@
 \label{sec:objective}
 
 The objective is to observe the basic operation of a diode.  In
-addition, the Schlockley equation (Eq~\ref{eqn:schlockley}) is used to
+addition, the Schockley equation (Eq~\ref{eq:schockley}) is used to
 find the diode's reverse saturation current ($I_S$) and thermal
 voltage ($V_T$) using values measured in the lab.
 
@@ -108,13 +108,14 @@ voltage ($V_T$) using values measured in the lab.
 The circuit in Figure~\ref{fig:circuit1} was constructed with $R =
 \SI{470}{\ohm}$ and the power supply as $V_s$.  The actual resistance
 was measured with one a multimeter and recorded in
-Table~\ref{tab:percent_err} along with the percent error calculated
-(Eq~\ref{eqn:percent_err}).  Next, the multimeters were used to
+Table~\ref{tab:percent_diff} along with the percent difference calculated
+(Eq~\ref{eq:percent_diff}).  Next, the multimeters were used to
 measure voltage across and current through the diode ($V_d$ and $I_d$,
 respectively) while $V_s$ was swept from \SI{-5}{V} to \SI{+10}{V}.
 The step size from \SI{-5}{V} to \SI{0}{V} and from \SI{5}{V} to
 \SI{10}{V} was \SI{0.5}{V}, and \SI{0.25}{V} from \SI{0}{V} to
-\SI{5}{V}.  These values were recorded in Table~\ref{tab:part_a} and plotted in Figure~\ref{fig:combined_graph}.
+\SI{5}{V}.  These values were recorded in Table~\ref{tab:part_a} and
+plotted in Figure~\ref{fig:combined_graph}.
 
 \subsection{Part B}
 \label{sec:proc_b}
@@ -126,12 +127,13 @@ current ($I_d$).  This time $V_s$ was held at \SI{10}{V} and $R$
 varied: \SI{200}{\ohm}, \SI{500}{\ohm}, \SI{1}{\kilo\ohm},
 \SI{2}{\kilo\ohm}, \SI{5}{\kilo\ohm}, \SI{10}{\kilo\ohm},
 \SI{20}{\kilo\ohm}, \SI{50}{\kilo\ohm}, \SI{100}{\kilo\ohm}.  These
-values were recorded in Table~\ref{tab:part_b} and plotted in Figure~\ref{fig:combined_graph}.
+values were recorded in Table~\ref{tab:part_b} and plotted in
+Figure~\ref{fig:combined_graph}.
 
 \subsection{Part C}
 \label{sec:proc_c}
 
-Thi circuit in Figure~\ref{fig:circuit2} was constructed with $R_1 =
+The circuit in Figure~\ref{fig:circuit2} was constructed with $R_1 =
 \SI{330}{\ohm}$, $R_2 = \SI{680}{\ohm}$, and the power supply as $V_s
 = \SI{10}{V}$.  The multimeters were again used to measure diode
 voltage ($V_d$) and current ($I_d$).  Finally, the diode was removed
@@ -147,63 +149,122 @@ and a multimeter was used to measure the voltage at that node
 \begin{table}[hbtp]
   \centering
   \begin{tabular}{*{4}{c}}
-    & \textbf{Nominal} & \textbf{Measured} & \textbf{\% Error} \\
+    & \textbf{Nominal} & \textbf{Measured} & \textbf{\% Difference} \\
     & (\si{\ohm}) & (\si{\ohm}) & \\
     \hline
     $R_1$ & 470 & 465.3 & 1.00 \\
   \end{tabular}
-  \caption{\label{tab:percent_err} Comparison of nominal and measured resistance in Part A.}
+  \caption{\label{tab:percent_diff} Comparison of nominal and measured resistance in Part A.}
 \end{table}
 
 \begin{table}[hbtp]
   \centering
-  \begin{tabular}{cccc}
-    $V_s$ (V) & $V_d$ (V) & $I_d$ (mA) & $ln(I_d)$ (mA) \\
-    \hline
-    -5.00 & -5.000 & 0.01 & -4.605170 \\
-    -4.50 & -4.500 & 0.01 & -4.605170 \\
-    -4.00 & -4.000 & 0.01 & -4.605170 \\
-    -3.50 & -3.500 & 0.01 & -4.605170 \\
-    -3.00 & -3.000 & 0.01 & -4.605170 \\
-    -2.50 & -2.500 & 0.01 & -4.605170 \\
-    -2.00 & -2.000 & 0.01 & -4.605170 \\
-    -1.50 & -1.500 & 0.01 & -4.605170 \\
-    -1.00 & -1.000 & 0.01 & -4.605170 \\
-    -0.50 & -0.500 & 0.01 & -4.605170 \\
-    0.00 & 0.277 & 0.01 & -4.605170 \\
-    0.25 & 0.254 & 0.01 & -4.605170 \\
-    0.50 & 0.461 & 0.10 & -2.302585 \\
-    0.75 & 0.536 & 0.46 & -0.776529 \\
-    1.00 & 0.570 & 0.92 & -0.083382 \\
-    1.25 & 0.591 & 1.40 & 0.336472 \\
-    1.50 & 0.606 & 1.89 & 0.636577 \\
-    1.75 & 0.618 & 2.39 & 0.871293 \\
-    2.00 & 0.627 & 2.90 & 1.064711 \\
-    2.25 & 0.635 & 3.41 & 1.226712 \\
-    2.50 & 0.642 & 3.92 & 1.366092 \\
-    2.75 & 0.648 & 4.44 & 1.490654 \\
-    3.00 & 0.653 & 4.95 & 1.599388 \\
-    3.25 & 0.658 & 5.47 & 1.699279 \\
-    3.50 & 0.662 & 5.99 & 1.790091 \\
-    3.75 & 0.666 & 6.51 & 1.873339 \\
-    4.00 & 0.670 & 7.03 & 1.950187 \\
-    4.25 & 0.673 & 7.55 & 2.021548 \\
-    4.50 & 0.676 & 8.08 & 2.089392 \\
-    4.75 & 0.679 & 8.60 & 2.151762 \\
-    5.00 & 0.682 & 9.13 & 2.211566 \\
-    5.50 & 0.687 & 10.18 & 2.320425 \\
-    6.00 & 0.692 & 11.23 & 2.418589 \\
-    6.50 & 0.696 & 12.30 & 2.509599 \\
-    7.00 & 0.699 & 13.36 & 2.592265 \\
-    7.50 & 0.703 & 14.42 & 2.668616 \\
-    8.00 & 0.706 & 15.49 & 2.740195 \\
-    8.50 & 0.709 & 16.56 & 2.806990 \\
-    9.00 & 0.712 & 17.66 & 2.871302 \\
-    9.50 & 0.714 & 18.75 & 2.931194 \\
-    10.00 & 0.717 & 19.84 & 2.987700 \\
-  \end{tabular}
+  \begin{subtable}[t]{0.5\textwidth}
+    \begin{tabular}{cccc}
+      $V_s$ (V) & $V_d$ (V) & $I_d$ (mA) \\
+      \hline
+      -5.00 & -5.000 & 0.01 \\
+      -4.50 & -4.500 & 0.01 \\
+      -4.00 & -4.000 & 0.01 \\
+      -3.50 & -3.500 & 0.01 \\
+      -3.00 & -3.000 & 0.01 \\
+      -2.50 & -2.500 & 0.01 \\
+      -2.00 & -2.000 & 0.01 \\
+      -1.50 & -1.500 & 0.01 \\
+      -1.00 & -1.000 & 0.01 \\
+      -0.50 & -0.500 & 0.01 \\
+      0.00 & 0.277 & 0.010 \\
+      0.25 & 0.254 & 0.010 \\
+      0.50 & 0.461 & 0.105 \\
+      0.75 & 0.536 & 0.469 \\
+      1.00 & 0.570 & 0.922 \\
+      1.25 & 0.591 & 1.40 \\
+      1.50 & 0.606 & 1.89 \\
+      1.75 & 0.618 & 2.39 \\
+      2.00 & 0.627 & 2.90 \\
+      2.25 & 0.635 & 3.41 \\
+      2.50 & 0.642 & 3.92 \\
+    \end{tabular}
+  \end{subtable}%
+%  ~
+  \begin{subtable}[t]{0.5\textwidth}
+    \begin{tabular}{cccc}
+      $V_s$ (V) & $V_d$ (V) & $I_d$ (mA) \\
+      \hline
+      2.75 & 0.648 & 4.44 \\
+      3.00 & 0.653 & 4.95 \\
+      3.25 & 0.658 & 5.47 \\
+      3.50 & 0.662 & 5.99 \\
+      3.75 & 0.666 & 6.51 \\
+      4.00 & 0.670 & 7.03 \\
+      4.25 & 0.673 & 7.55 \\
+      4.50 & 0.676 & 8.08 \\
+      4.75 & 0.679 & 8.60 \\
+      5.00 & 0.682 & 9.13 \\
+      5.50 & 0.687 & 10.18 \\
+      6.00 & 0.692 & 11.23 \\
+      6.50 & 0.696 & 12.30 \\
+      7.00 & 0.699 & 13.36 \\
+      7.50 & 0.703 & 14.42 \\
+      8.00 & 0.706 & 15.49 \\
+      8.50 & 0.709 & 16.56 \\
+      9.00 & 0.712 & 17.66 \\
+      9.50 & 0.714 & 18.75 \\
+      10.00 & 0.717 & 19.84 \\
+    \end{tabular}
+  \end{subtable}
   \caption{\label{tab:part_a} Diode characteristics measured in Part A.}
 \end{table}
+
+% \begin{table}[hbtp]
+%   \centering
+%   \begin{tabular}{cccc}
+%     $V_s$ (V) & $V_d$ (V) & $I_d$ (mA) \\
+%     \hline
+%     -5.00 & -5.000 & 0.01 \\
+%     -4.50 & -4.500 & 0.01 \\
+%     -4.00 & -4.000 & 0.01 \\
+%     -3.50 & -3.500 & 0.01 \\
+%     -3.00 & -3.000 & 0.01 \\
+%     -2.50 & -2.500 & 0.01 \\
+%     -2.00 & -2.000 & 0.01 \\
+%     -1.50 & -1.500 & 0.01 \\
+%     -1.00 & -1.000 & 0.01 \\
+%     -0.50 & -0.500 & 0.01 \\
+%     0.00 & 0.277 & 0.010 \\
+%     0.25 & 0.254 & 0.010 \\
+%     0.50 & 0.461 & 0.105 \\
+%     0.75 & 0.536 & 0.469 \\
+%     1.00 & 0.570 & 0.922 \\
+%     1.25 & 0.591 & 1.40 \\
+%     1.50 & 0.606 & 1.89 \\
+%     1.75 & 0.618 & 2.39 \\
+%     2.00 & 0.627 & 2.90 \\
+%     2.25 & 0.635 & 3.41 \\
+%     2.50 & 0.642 & 3.92 \\
+%     2.75 & 0.648 & 4.44 \\
+%     3.00 & 0.653 & 4.95 \\
+%     3.25 & 0.658 & 5.47 \\
+%     3.50 & 0.662 & 5.99 \\
+%     3.75 & 0.666 & 6.51 \\
+%     4.00 & 0.670 & 7.03 \\
+%     4.25 & 0.673 & 7.55 \\
+%     4.50 & 0.676 & 8.08 \\
+%     4.75 & 0.679 & 8.60 \\
+%     5.00 & 0.682 & 9.13 \\
+%     5.50 & 0.687 & 10.18 \\
+%     6.00 & 0.692 & 11.23 \\
+%     6.50 & 0.696 & 12.30 \\
+%     7.00 & 0.699 & 13.36 \\
+%     7.50 & 0.703 & 14.42 \\
+%     8.00 & 0.706 & 15.49 \\
+%     8.50 & 0.709 & 16.56 \\
+%     9.00 & 0.712 & 17.66 \\
+%     9.50 & 0.714 & 18.75 \\
+%     10.00 & 0.717 & 19.84 \\
+%   \end{tabular}
+%   \caption{\label{tab:part_a} Diode characteristics measured in Part A.}
+% \end{table}
 
 \begin{figure}[hbtp]
   \centering
@@ -263,15 +324,45 @@ and a multimeter was used to measure the voltage at that node
   \caption{\label{tab:part_c} Diode characteristics measured in Part C.}
 \end{table}
 
+\begin{table}[hbtp]
+  \centering
+  \begin{tabular}{ccccc}
+    $m$ & $V_T$ (\si{V}) & $V_d$ (\si{V}) & $I_d$ (\si{mA}) & $I_s$ (\si{\micro\ampere}) \\
+    \hline
+    21.772 & 0.046 & 0.687 & 10.18 & 0.325 \\
+  \end{tabular}
+  \caption{\label{tab:analysis} Results from data analysis.}
+\end{table}
+
 \section{Conclusion}
 \label{sec:conclusion}
 
-As seen in Table A, the measured values of Vd and the Id taken in Part
-B of the experiment were very close to the theoretical values
-calculated in PSpice. The largest \%difference was only 2.65\%.  As seen
-in Table B, the measured values of Vd and the Id taken in Part C of
-the experiment were very close to the theoretical values calculated in
-PSpice. The largest \%difference was on 4.17\%
+% As seen in Table A, the measured values of $V_d$ and the $I_d$ taken
+% in Part B of the experiment were very close to the theoretical values
+% calculated in PSpice. The largest \%difference was only 2.65\%.  As
+% seen in Table B, the measured values of $V_d$ and the $I_d$ taken in
+% Part C of the experiment were very close to the theoretical values
+% calculated in PSpice. The largest \%difference was on 4.17\%
+
+As seen in Figure A, the graph of the natural log of $I_d$ vs. $V_d$
+derived from Part A data (Table 2) generates a curve that is closely
+represented by a straight line, as seen in multiple examples from
+circuits textbooks.  The slope ($m$) of this line was approximated by
+using two data points (Table C).  The inverse of the m generated a
+calculated thermal voltage ($V_T$) and it was also recorded in Table
+C.  Two corresponding $I_d$ and $V_d$ values (shown in Table C) along
+with $V_T$ were plugged into the Schockley equation
+(Eq~\ref{eq:schockley}) to derive the saturation current ($I_S$) seen
+in (Table C).  The value of $V_T$ is very close to the assumed value
+of \SI{0.026}{V}.  Also the value of $I_S$ seems to be close to what
+is typically seen in circuits textbooks thus showing that diode
+parameters can be calculated by using the Schockley equation.  As seen
+in Table A, the measured values of $V_d$ and the $I_d$ taken in Part B
+of the experiment were very close to the theoretical values calculated
+in PSpice. The largest \%difference was only 2.65\%.  As seen in Table
+B, the measured values of $V_d$ and the $I_d$ taken in Part C of the
+experiment were very close to the theoretical values calculated in
+PSpice. The largest \%difference was on 4.17\%.
 
 \section{Equations}
 \label{sec:equations}
@@ -280,43 +371,23 @@ PSpice. The largest \%difference was on 4.17\%
 % unnecessary vertical spaces between equations, and still visually
 % separate in source, put a comment between them.
 \begin{equation}
-  \label{eqn:percent_err}
-  \%_{error} = \frac{|nominal - measured|}{nominal}100\%
+  \label{eq:percent_diff}
+  \%_{diff} = \frac{|nominal - measured|}{nominal}100\%
 \end{equation}
 %
 \begin{equation}
-  \label{eqn:schlockley}
+  \label{eq:schockley}
   I_D = I_S \left(e^{\frac{V_D}{V_T}} - 1\right)
 \end{equation}
-%%
-%\begin{equation}
-%  \label{eqn:R_o}
-%  R_o = \frac{V_{noload} - V_{load}}{I_{load}}
-%\end{equation}
-%%
-%\begin{equation}
-%  \label{eqn:R_i}
-%  R_i = \frac{V_i}{I_i}
-%\end{equation}
-%%
-%\begin{equation}
-%  \label{eqn:A_v}
-%  A_v = \frac{V_o}{V_i}
-%\end{equation}
-%%
-%\begin{equation}
-%  \label{eqn:A_i}
-%  A_i = A_v \left(\frac{R_i}{R_o}\right)
-%\end{equation}
-%%
-%\begin{equation}
-%  \label{eqn:G_m}
-%  G_m = \frac{A_v}{R_o}
-%\end{equation}
-%%
-%\begin{equation}
-%  \label{eqn:R_m}
-%  R_m = A_v R_i
-%\end{equation}
+%
+\begin{equation}
+  \label{eq:m_nom}
+  m = \frac{1}{V_T}
+\end{equation}
+%
+\begin{equation}
+  \label{eq:m_meas}
+  m = \frac{ln(I_2)-ln(I_1)}{V_2-V_1}
+\end{equation}
 
 \end{document}
