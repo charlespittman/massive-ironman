@@ -275,23 +275,22 @@ and a multimeter was used to measure the voltage at that node
 % Part C of the experiment were very close to the theoretical values
 % calculated in PSpice. The largest \%difference was on 4.17\%
 
-As seen in Figure A, the graph of the natural log of $I_d$ vs. $V_d$
-derived from Part A data (Table 2) generates a curve that is closely
-represented by a straight line, as seen in multiple examples from
-circuits textbooks.  The slope ($m$) of this line was approximated by
-using two data points (Table C).  The inverse of the m generated a
-calculated thermal voltage ($V_T$) and it was also recorded in Table
-C.  Two corresponding $I_d$ and $V_d$ values (shown in Table C) along
-with $V_T$ were plugged into the Schockley equation
-(Eq~\ref{eq:schockley}) to derive the saturation current ($I_S$) seen
-in (Table C).  The value of $V_T$ is very close to the assumed value
-of \SI{0.026}{V}.  Also the value of $I_S$ seems to be close to what
-is typically seen in circuits textbooks thus showing that diode
-parameters can be calculated by using the Schockley equation.  As seen
-in Table A, the measured values of $V_d$ and the $I_d$ taken in Part B
-of the experiment were very close to the theoretical values calculated
-in PSpice. The largest \%difference was only 2.65\%.  As seen in Table
-B, the measured values of $V_d$ and the $I_d$ taken in Part C of the
+As seen in Figure~\ref{fig:part_a_graph2}, the graph of the natural
+log of $I_d$ vs. $V_d$ derived from Part A data
+(Table~\ref{tab:part_a}) generates a linear plot.  The slope ($m$) of
+this line was then calculated using Equation~\ref{eq:m_meas}, and used
+to determine the thermal voltage ($V_T$) (Eq~\ref{eq:m_nom}).  Two
+corresponding $I_d$ and $V_d$ values (shown in Table C) along with
+$V_T$ were plugged into the Schockley equation (Eq~\ref{eq:schockley})
+to derive the saturation current ($I_S$) seen in (Table C).  The value
+of $V_T$ is very close to the assumed value of \SI{0.026}{V}.  Also
+the value of $I_S$ seems to be close to what is typically seen in
+circuits textbooks thus showing that diode parameters can be
+calculated by using the Schockley equation.  As seen in Table A, the
+measured values of $V_d$ and the $I_d$ taken in Part B of the
+experiment were very close to the theoretical values calculated in
+PSpice. The largest \%difference was only 2.65\%.  As seen in Table B,
+the measured values of $V_d$ and the $I_d$ taken in Part C of the
 experiment were very close to the theoretical values calculated in
 PSpice. The largest \%difference was on 4.17\%.
 
