@@ -19,6 +19,7 @@
 \usepackage{graphicx}
 %\usepackage[acronym]{glossaries} % Lets us use acronyms
 \usepackage{multicol}
+\usepackage{amsmath}
 \usepackage{siunitx} % SI units in math mode
 \usepackage{subcaption}
 
@@ -144,20 +145,23 @@ and a multimeter was used to measure the voltage at that node
   \caption{\label{tab:percent_diff} Comparison of nominal and measured resistance in Part A.}
 \end{table}
 
-\begin{table}[hbtp]
+%%%%%
+%%%%% Needed to turn some of these off for layout
+%%%%%
+\begin{table}[btph]
   \centering
   \begin{subtable}[t]{0.5\textwidth}
     \begin{tabular}{cccc}
       $V_s$ (V) & $V_d$ (V) & $I_d$ (mA) \\
       \hline
       -5.00 & -5.000 & 0.01 \\
-      -4.50 & -4.500 & 0.01 \\
+      %-4.50 & -4.500 & 0.01 \\
       -4.00 & -4.000 & 0.01 \\
-      -3.50 & -3.500 & 0.01 \\
+      %-3.50 & -3.500 & 0.01 \\
       -3.00 & -3.000 & 0.01 \\
-      -2.50 & -2.500 & 0.01 \\
+      %-2.50 & -2.500 & 0.01 \\
       -2.00 & -2.000 & 0.01 \\
-      -1.50 & -1.500 & 0.01 \\
+      %-1.50 & -1.500 & 0.01 \\
       -1.00 & -1.000 & 0.01 \\
       -0.50 & -0.500 & 0.01 \\
       0.00 & 0.277 & 0.010 \\
@@ -192,28 +196,22 @@ and a multimeter was used to measure the voltage at that node
       6.00 & 0.692 & 11.23 \\
       6.50 & 0.696 & 12.30 \\
       7.00 & 0.699 & 13.36 \\
-      7.50 & 0.703 & 14.42 \\
+      %7.50 & 0.703 & 14.42 \\
       8.00 & 0.706 & 15.49 \\
-      8.50 & 0.709 & 16.56 \\
+      %8.50 & 0.709 & 16.56 \\
       9.00 & 0.712 & 17.66 \\
-      9.50 & 0.714 & 18.75 \\
+      %9.50 & 0.714 & 18.75 \\
       10.00 & 0.717 & 19.84 \\
     \end{tabular}
   \end{subtable}
   \caption{\label{tab:part_a} Diode characteristics measured in Part A.}
 \end{table}
 
-\begin{figure}[hbtp]
+\begin{figure}[btph]
   \centering
   \input{combined}
   \caption{\label{fig:combined_graph} Diode characteristics measured in Parts A and B.}
 \end{figure}
-
-% \begin{figure}[hbtp]
-%   \centering
-%   \input{part_a}
-%   \caption{\label{fig:part_a_graph} Diode characteristics measured in Part A.}
-% \end{figure}
 
 \begin{figure}[hbtp]
   \centering
@@ -239,12 +237,6 @@ and a multimeter was used to measure the voltage at that node
   \caption{\label{tab:part_b} Diode characteristics measured in Part B.}
 \end{table}
 
-% \begin{figure}[hbtp]
-%   \centering
-%   \input{part_b}
-%   \caption{\label{fig:part_b_graph} Diode characteristics measured in Part B.}
-% \end{figure}
-
 \begin{table}[hbtp]
   \centering
   \begin{tabular}{ccc}
@@ -255,7 +247,7 @@ and a multimeter was used to measure the voltage at that node
   \caption{\label{tab:part_c} Diode characteristics measured in Part C.}
 \end{table}
 
-\begin{table}[hbtp]
+\begin{table}[h!]
   \centering
   \begin{tabular}{ccccc}
     $m$ & $V_T$ (\si{V}) & $V_d$ (\si{V}) & $I_d$ (\si{mA}) & $I_s$ (\si{\micro\ampere}) \\
@@ -268,31 +260,29 @@ and a multimeter was used to measure the voltage at that node
 \section{Conclusion}
 \label{sec:conclusion}
 
-% As seen in Table A, the measured values of $V_d$ and the $I_d$ taken
-% in Part B of the experiment were very close to the theoretical values
-% calculated in PSpice. The largest \%difference was only 2.65\%.  As
-% seen in Table B, the measured values of $V_d$ and the $I_d$ taken in
-% Part C of the experiment were very close to the theoretical values
-% calculated in PSpice. The largest \%difference was on 4.17\%
-
 As seen in Figure~\ref{fig:part_a_graph2}, the graph of the natural
 log of $I_d$ vs. $V_d$ derived from Part A data
 (Table~\ref{tab:part_a}) generates a linear plot.  The slope ($m$) of
-this line was then calculated using Equation~\ref{eq:m_meas}, and used
-to determine the thermal voltage ($V_T$) (Eq~\ref{eq:m_nom}).  Two
-corresponding $I_d$ and $V_d$ values (shown in Table C) along with
-$V_T$ were plugged into the Schockley equation (Eq~\ref{eq:schockley})
-to derive the saturation current ($I_S$) seen in (Table C).  The value
-of $V_T$ is very close to the assumed value of \SI{0.026}{V}.  Also
-the value of $I_S$ seems to be close to what is typically seen in
-circuits textbooks thus showing that diode parameters can be
-calculated by using the Schockley equation.  As seen in Table A, the
-measured values of $V_d$ and the $I_d$ taken in Part B of the
-experiment were very close to the theoretical values calculated in
-PSpice. The largest \%difference was only 2.65\%.  As seen in Table B,
-the measured values of $V_d$ and the $I_d$ taken in Part C of the
-experiment were very close to the theoretical values calculated in
-PSpice. The largest \%difference was on 4.17\%.
+this line was then calculated and used to determine the thermal
+voltage ($V_T$) (Eq~\ref{eq:m}).  Two corresponding $I_d$ and $V_d$
+values (shown in Table~\ref{tab:analysis}) along with $V_T$ were
+plugged into the Schockley equation (Eq~\ref{eq:schockley}) to derive
+the saturation current ($I_S$), seen in (Table~\ref{tab:analysis}).
+The value of $V_T$ is very close to the assumed value of
+\SI{0.026}{V}.  Also the value of $I_S$ seems to be close to what is
+typically seen in circuits textbooks, thus showing that diode
+parameters can be calculated with the Schockley equation.
+
+%%%%%
+%%%%% I'm taking this out because we didn't include any values from
+%%%%% PSpice, so it doesn't make sense to refer to them.
+%%%%%
+% As seen in Table A, the measured values of $V_d$ and the $I_d$ taken
+% in Part B of the experiment were very close to the theoretical values
+% calculated in PSpice. The largest \%difference was only 2.65\%.  As
+% seen in Table B, the values measured of $V_d$ and the $I_d$ taken in
+% Part C of the experiment were very close to the theoretical values
+% calculated in PSpice. The largest \%difference was on 4.17\%.
 
 \section{Equations}
 \label{sec:equations}
@@ -300,6 +290,7 @@ PSpice. The largest \%difference was on 4.17\%.
 % LaTeX sees blank lines as a start of another paragraph.  To avoid
 % unnecessary vertical spaces between equations, and still visually
 % separate in source, put a comment between them.
+%
 \begin{equation}
   \label{eq:percent_diff}
   \%_{diff} = \frac{|nominal - measured|}{nominal}100\%
@@ -310,14 +301,9 @@ PSpice. The largest \%difference was on 4.17\%.
   I_D = I_S \left(e^{\frac{V_D}{V_T}} - 1\right)
 \end{equation}
 %
-\begin{equation}
-  \label{eq:m_nom}
-  m = \frac{1}{V_T}
-\end{equation}
-%
-\begin{equation}
-  \label{eq:m_meas}
-  m = \frac{ln(I_2)-ln(I_1)}{V_2-V_1}
+  \begin{equation}
+  \label{eq:m}
+    m = \frac{ln(I_2)-ln(I_1)}{V_2-V_1} = \frac{1}{V_T}
 \end{equation}
 
 \end{document}
