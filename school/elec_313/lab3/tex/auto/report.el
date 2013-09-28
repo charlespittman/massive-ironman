@@ -12,7 +12,7 @@
      "sec:volt_reg"
      "sec:results"
      "tab:percent_diff"
-     "fig:combined_graph"
+     "fig:rect_vp_vdc"
      "tab:part_b"
      "tab:part_c"
      "tab:analysis"
@@ -30,5 +30,6 @@
      "latex2e"
      "art10"
      "article"
-     "")))
+     ""
+     "rect_vp_vdc")))
 
