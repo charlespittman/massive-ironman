@@ -1,0 +1,309 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% This layout was adapted from one found at latextemplates.com which
+% was adapted from another.
+%
+% License: CC BY-NC-SA 3.0
+% (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+% Original header:
+%
+% This is a LaTeX version of the sample laboratory report from
+% Virginia Tech's copyrighted 08-09 CHEM 1045/1046 lab manual.
+% Reproduction of this one appendix section for academic purposes
+% should fall under fair use.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass{article}
+
+\usepackage{graphicx}
+%\usepackage[acronym]{glossaries} % Lets us use acronyms
+\usepackage{multicol}
+\usepackage{amsmath}
+\usepackage{siunitx} % SI units in math mode
+\usepackage{subcaption}
+
+\author{}
+\title{ELEC-313 \\ Lab 2: Diode Characterization \\ }
+\date{\today}
+
+%\loadglsentries{acronyms} % Actually loads 'acronyms.tex'
+%\makeglossaries
+
+\begin{document}
+
+\maketitle
+
+\begin{center}
+  \begin{tabular}{lr}
+    Date Performed: & September 18, 2013 \\
+    Partners: & Charles Pittman \\
+    & Stephen Wilson \\
+  \end{tabular}
+\end{center}
+
+\newpage
+
+\tableofcontents
+\listoffigures
+\listoftables
+
+\newpage
+
+% Removes indentation from paragraphs: \setlength\parindent{0pt}
+
+% Number the enumerate environment (unordered lists) by letter:
+\renewcommand{\labelenumi}{\alph{enumi}.}
+
+\section{Objective}
+\label{sec:objective}
+
+The objective is to observe the basic operation of a diode.  In
+addition, the Schockley equation (Eq~\ref{eq:schockley}) is used to
+find the diode's reverse saturation current ($I_S$) and thermal
+voltage ($V_T$) using values measured in the lab.
+
+\section{Equipment}
+\label{sec:equipment}
+
+\begin{tabular}{ll}
+  \centering
+  Diode: 1N4002 & Power supply: HP E3631A \\
+  Resistors: \SI{330}{\ohm}, \SI{470}{\ohm}, \SI{680}{\ohm} & Multimeter: Fluke 8010A (x2)\\
+  Resistive decade box: HeathKit IN-3117 & \\
+\end{tabular}
+
+\section{Schematics}
+\label{sec:schematics}
+
+\begin{figure}[hbtp]
+  \centering
+  \begin{subfigure}[b]{0.4\textwidth}
+    \includegraphics[width=\textwidth]{circuit1}
+    \caption{\label{fig:circuit1} Circuit used for Parts A and Part B.}
+  \end{subfigure}%
+  ~
+  \begin{subfigure}[b]{0.6\textwidth}
+    \includegraphics[width=\textwidth]{circuit2}
+    \caption{\label{fig:circuit2} Circuit used for Part C.}
+  \end{subfigure}
+  \caption{\label{fig:circuits_tested} Circuits used in this lab.}
+\end{figure}
+
+\section{Procedure}
+\label{sec:procedure}
+
+\subsection{Part A}
+\label{sec:proc_a}
+
+The circuit in Figure~\ref{fig:circuit1} was constructed with $R =
+\SI{470}{\ohm}$ and the power supply as $V_s$.  The actual resistance
+was measured with one a multimeter and recorded in
+Table~\ref{tab:percent_diff} along with the percent difference calculated
+(Eq~\ref{eq:percent_diff}).  Next, the multimeters were used to
+measure voltage across and current through the diode ($V_d$ and $I_d$,
+respectively) while $V_s$ was swept from \SI{-5}{V} to \SI{+10}{V}.
+The step size from \SI{-5}{V} to \SI{0}{V} and from \SI{5}{V} to
+\SI{10}{V} was \SI{0.5}{V}, and \SI{0.25}{V} from \SI{0}{V} to
+\SI{5}{V}.  These values were recorded in Table~\ref{tab:part_a} and
+plotted in Figure~\ref{fig:combined_graph}.
+
+\subsection{Part B}
+\label{sec:proc_b}
+
+The circuit in Figure~\ref{fig:circuit1} was constructed with the
+resistive decade box as $R$ and the power supply as $V_s$.  The
+multimeters were again used to measure diode voltage ($V_d$) and
+current ($I_d$).  This time $V_s$ was held at \SI{10}{V} and $R$
+varied: \SI{200}{\ohm}, \SI{500}{\ohm}, \SI{1}{\kilo\ohm},
+\SI{2}{\kilo\ohm}, \SI{5}{\kilo\ohm}, \SI{10}{\kilo\ohm},
+\SI{20}{\kilo\ohm}, \SI{50}{\kilo\ohm}, \SI{100}{\kilo\ohm}.  These
+values were recorded in Table~\ref{tab:part_b} and plotted in
+Figure~\ref{fig:combined_graph}.
+
+\subsection{Part C}
+\label{sec:proc_c}
+
+The circuit in Figure~\ref{fig:circuit2} was constructed with $R_1 =
+\SI{330}{\ohm}$, $R_2 = \SI{680}{\ohm}$, and the power supply as $V_s
+= \SI{10}{V}$.  The multimeters were again used to measure diode
+voltage ($V_d$) and current ($I_d$).  Finally, the diode was removed
+and a multimeter was used to measure the voltage at that node
+($V_{OC}$).  These values were recorded in Table~\ref{tab:part_c}.
+
+\section{Results}
+\label{sec:results}
+
+\begin{table}[hbtp]
+  \centering
+  \begin{tabular}{*{4}{c}}
+    & \textbf{Nominal} & \textbf{Measured} & \textbf{\% Difference} \\
+    & (\si{\ohm}) & (\si{\ohm}) & \\
+    \hline
+    $R_1$ & 470 & 465.3 & 1.00 \\
+  \end{tabular}
+  \caption{\label{tab:percent_diff} Comparison of nominal and measured resistance in Part A.}
+\end{table}
+
+%%%%%
+%%%%% Needed to turn some of these off for layout
+%%%%%
+\begin{table}[btph]
+  \centering
+  \begin{subtable}[t]{0.5\textwidth}
+    \begin{tabular}{cccc}
+      $V_s$ (V) & $V_d$ (V) & $I_d$ (mA) \\
+      \hline
+      -5.00 & -5.000 & 0.01 \\
+      %-4.50 & -4.500 & 0.01 \\
+      -4.00 & -4.000 & 0.01 \\
+      %-3.50 & -3.500 & 0.01 \\
+      -3.00 & -3.000 & 0.01 \\
+      %-2.50 & -2.500 & 0.01 \\
+      -2.00 & -2.000 & 0.01 \\
+      %-1.50 & -1.500 & 0.01 \\
+      -1.00 & -1.000 & 0.01 \\
+      -0.50 & -0.500 & 0.01 \\
+      0.00 & 0.277 & 0.010 \\
+      0.25 & 0.254 & 0.010 \\
+      0.50 & 0.461 & 0.105 \\
+      0.75 & 0.536 & 0.469 \\
+      1.00 & 0.570 & 0.922 \\
+      1.25 & 0.591 & 1.40 \\
+      1.50 & 0.606 & 1.89 \\
+      1.75 & 0.618 & 2.39 \\
+      2.00 & 0.627 & 2.90 \\
+      2.25 & 0.635 & 3.41 \\
+      2.50 & 0.642 & 3.92 \\
+    \end{tabular}
+  \end{subtable}%
+%  ~
+  \begin{subtable}[t]{0.5\textwidth}
+    \begin{tabular}{cccc}
+      $V_s$ (V) & $V_d$ (V) & $I_d$ (mA) \\
+      \hline
+      2.75 & 0.648 & 4.44 \\
+      3.00 & 0.653 & 4.95 \\
+      3.25 & 0.658 & 5.47 \\
+      3.50 & 0.662 & 5.99 \\
+      3.75 & 0.666 & 6.51 \\
+      4.00 & 0.670 & 7.03 \\
+      4.25 & 0.673 & 7.55 \\
+      4.50 & 0.676 & 8.08 \\
+      4.75 & 0.679 & 8.60 \\
+      5.00 & 0.682 & 9.13 \\
+      5.50 & 0.687 & 10.18 \\
+      6.00 & 0.692 & 11.23 \\
+      6.50 & 0.696 & 12.30 \\
+      7.00 & 0.699 & 13.36 \\
+      %7.50 & 0.703 & 14.42 \\
+      8.00 & 0.706 & 15.49 \\
+      %8.50 & 0.709 & 16.56 \\
+      9.00 & 0.712 & 17.66 \\
+      %9.50 & 0.714 & 18.75 \\
+      10.00 & 0.717 & 19.84 \\
+    \end{tabular}
+  \end{subtable}
+  \caption{\label{tab:part_a} Diode characteristics measured in Part A.}
+\end{table}
+
+\begin{figure}[btph]
+  \centering
+  \input{combined}
+  \caption{\label{fig:combined_graph} Diode characteristics measured in Parts A and B.}
+\end{figure}
+
+\begin{figure}[hbtp]
+  \centering
+  \input{part_a2}
+  \caption{\label{fig:part_a_graph2} $\ln{(I_d)}$ vs. $V_d$.}
+\end{figure}
+
+\begin{table}[hbtp]
+  \centering
+  \begin{tabular}{ccc}
+    $R$ (\si{\ohm}) & $V_d$ (\si{V}) & $I_d$ (\si{mA}) \\
+    \hline
+    200 & 0.751 & 46.00 \\
+    500 & 0.713 & 18.60 \\
+    1k & 0.682 & 9.30 \\
+    2k & 0.650 & 4.70 \\
+    5k & 0.605 & 1.85 \\
+    10k & 0.571 & 0.94 \\
+    20k & 0.538 & 0.47 \\
+    50k & 0.494 & 0.19 \\
+    100k & 0.464 & 0.10 \\
+  \end{tabular}
+  \caption{\label{tab:part_b} Diode characteristics measured in Part B.}
+\end{table}
+
+\begin{table}[hbtp]
+  \centering
+  \begin{tabular}{ccc}
+    $V_d$ (\si{V}) & $I_d$ (\si{mA}) & $V_{OC}$ (\si{V}) \\
+    \hline
+    0.712 & 27.2 & 6.70 \\
+  \end{tabular}
+  \caption{\label{tab:part_c} Diode characteristics measured in Part C.}
+\end{table}
+
+\begin{table}[h!]
+  \centering
+  \begin{tabular}{ccccc}
+    $m$ & $V_T$ (\si{V}) & $V_d$ (\si{V}) & $I_d$ (\si{mA}) & $I_s$ (\si{\micro\ampere}) \\
+    \hline
+    21.772 & 0.046 & 0.687 & 10.18 & 0.325 \\
+  \end{tabular}
+  \caption{\label{tab:analysis} Results from data analysis.}
+\end{table}
+
+\section{Conclusion}
+\label{sec:conclusion}
+
+As seen in Figure~\ref{fig:part_a_graph2}, the graph of the natural
+log of $I_d$ vs. $V_d$ derived from Part A data
+(Table~\ref{tab:part_a}) generates a linear plot.  The slope ($m$) of
+this line was then calculated and used to determine the thermal
+voltage ($V_T$) (Eq~\ref{eq:m}).  Two corresponding $I_d$ and $V_d$
+values (shown in Table~\ref{tab:analysis}) along with $V_T$ were
+plugged into the Schockley equation (Eq~\ref{eq:schockley}) to derive
+the saturation current ($I_S$), seen in (Table~\ref{tab:analysis}).
+The value of $V_T$ is very close to the assumed value of
+\SI{0.026}{V}.  Also the value of $I_S$ seems to be close to what is
+typically seen in circuits textbooks, thus showing that diode
+parameters can be calculated with the Schockley equation.
+
+%%%%%
+%%%%% I'm taking this out because we didn't include any values from
+%%%%% PSpice, so it doesn't make sense to refer to them.
+%%%%%
+% As seen in Table A, the measured values of $V_d$ and the $I_d$ taken
+% in Part B of the experiment were very close to the theoretical values
+% calculated in PSpice. The largest \%difference was only 2.65\%.  As
+% seen in Table B, the values measured of $V_d$ and the $I_d$ taken in
+% Part C of the experiment were very close to the theoretical values
+% calculated in PSpice. The largest \%difference was on 4.17\%.
+
+\section{Equations}
+\label{sec:equations}
+
+% LaTeX sees blank lines as a start of another paragraph.  To avoid
+% unnecessary vertical spaces between equations, and still visually
+% separate in source, put a comment between them.
+%
+\begin{equation}
+  \label{eq:percent_diff}
+  \%_{diff} = \frac{|nominal - measured|}{nominal}100\%
+\end{equation}
+%
+\begin{equation}
+  \label{eq:schockley}
+  I_D = I_S \left(e^{\frac{V_D}{V_T}} - 1\right)
+\end{equation}
+%
+  \begin{equation}
+  \label{eq:m}
+    m = \frac{ln(I_2)-ln(I_1)}{V_2-V_1} = \frac{1}{V_T}
+\end{equation}
+
+\end{document}
