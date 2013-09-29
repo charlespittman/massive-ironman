@@ -20,8 +20,7 @@
      "sec:conclusion"
      "sec:equations"
      "eq:percent_diff"
-     "eq:schockley"
-     "eq:m")
+     "eq:volt_reg")
     (TeX-run-style-hooks
      "subcaption"
      "siunitx"
