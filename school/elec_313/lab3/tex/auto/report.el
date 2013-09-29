@@ -11,6 +11,7 @@
      "sec:rectifier"
      "sec:volt_reg"
      "sec:results"
+     "tab:cap"
      "tab:rect_vp_vdc"
      "tab:load_v_ripple"
      "fig:rect_vp_vdc"
