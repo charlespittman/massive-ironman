@@ -9,8 +9,6 @@
      "fig:circuit"
      "fig:circuit_nand")
     (TeX-run-style-hooks
-     "glossaries"
-     "acronym"
      "graphicx"
      "latex2e"
      "art10"
