@@ -3,9 +3,11 @@
     (LaTeX-add-labels
      "sec:objective"
      "sec:procedure"
-     "tab:truth"
      "sec:results"
-     "tab:truth_simp")
+     "tab:truth"
+     "fig:k_map"
+     "fig:circuit"
+     "fig:circuit_nand")
     (TeX-run-style-hooks
      "glossaries"
      "acronym"
