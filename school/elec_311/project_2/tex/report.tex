@@ -61,8 +61,11 @@ Q_0) = (4, 8, 9, 12, 13,14)$.
 Using a Karnaugh map (Fig~\ref{fig:k_map}), a minimal form of the
 function was found: $GT = P_0 \overline{Q_1 Q_0} + P_1 P_0
 \overline{Q_0} + P_1 \overline{Q_1}$.  This function was then
-translated into the circuit shown in Fig~\ref{fig:circuit}.  Finally,
-this circuit was again translated into one using only NAND gates
+translated into the circuit shown in Fig~\ref{fig:circuit}.
+
+The NAND gate is considered to be a functionally complete set because
+any logic function can be created with only NAND gates.  To verify, the
+circuit was again translated into one using only NAND gates
 (Fig~\ref{fig:circuit_nand}).
 
 \section{Results}
