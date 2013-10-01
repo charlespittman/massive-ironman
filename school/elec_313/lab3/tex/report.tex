@@ -217,14 +217,17 @@ The objective is to construct, measure, and observe the behavior of two common d
   \caption{\label{tab:volt_reg_diff} Comparison of values for voltage regulator circuit}
 \end{table}
 
+\section{Comparison of Results}
+\label{sec:comp_of_res}
+
+The PSpice computed values of $V_{OC}$ shown in Table~\ref{tab:volt_reg_calc}, were very close to the measured $V_{OC}$ values (Table~\ref{tab:volt_reg_calc}), and were at most only 3.327\% different (Table~\ref{tab:volt_reg_diff}). Also, the PSpice computed $V_S$ Drop (Table~\ref{tab:volt_reg_calc}) was very close to the measured $V_S$ Drop (Table~\ref{tab:volt_reg_meas})and the \% difference was at most only 1.7\% (Table~\ref{tab:volt_reg_diff}) (suggesting that the experimenter may have “peaked” at the computed results and subconsciously (or consciously) noticed the recorded value to be almost exactly the same in all three circumstances).
+
 \section{Conclusion}
 \label{sec:conclusion}
 
 As seen in Figure~\ref{fig:rect_vp_vdc}, as the peak voltage of the rectifier circuit increases (Figure~\ref{fig:volt_rect}), the rectifier dc voltage increases. Also, as load resistance is increased on the rectifier, it decreases the \% ripple as shown in Table~\ref{tab:load_v_ripple}. This was probably because the increase of resistance reduced the amount of current that could be dissipated from the capacitor over the same amount of time before it was “charged up” again. Additionally, the \% ripple would likely decrease as the input frequency were increased because there would be a smaller time interval for the capacitor to discharge. 
 
-As shown in Table~\ref{tab:volt_reg_calc}, the $V_L$ across the 100 ohms resistor is 5.02\% different (Table~\ref{tab:volt_reg_calc}) than the 5.38 V that was measured when the load resistor was removed. This shows that the Zener used in the experiment is not an ideal Zener.
-In the regulator circuit, when $V_S$ is below the Zener diode voltage ($V_Z$), $V_{OC}$ is linearly related to $V_S$. When $V_S$ is above $V_Z$, $V_{OC}$ is almost at a constant value approximately equal to $V_Z$. When $V_S$ is “close” to $V_Z$, the relationship of $V_{OC}$ to $V_S$ is not linearly related and the simplified calculations we learned in class are less effective at computing the $V_{OC}$.  
-
+As shown in Table~\ref{tab:volt_reg_meas}, the Voltage Regulation across the \SI{100}{\ohm} resistor is 5.02\% different than the 5.38 V that was measured when the load resistor was removed from the circuit. This shows that the Zener used in the experiment is not an ideal Zener. In the regulator circuit (Figure~\ref{fig:volt_reg}), when $V_S$ is below the Zener diode voltage ($V_Z$), $V_{OC}$ is linearly related to $V_S$. When $V_S$ is above $V_Z$, $V_{OC}$ is almost at a constant value approximately equal to $V_Z$. When $V_S$ is “close” to $V_Z$, the relationship of $V_{OC}$ to $V_S$ is not linearly related and the simplified calculations we learned in class are less effective at computing the $V_{OC}$. 
 \section{Equations}
 \label{sec:equations}
 
