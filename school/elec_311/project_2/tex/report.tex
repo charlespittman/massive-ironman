@@ -18,6 +18,7 @@
 
 \usepackage{graphicx} % Lets us use images
 %\usepackage[acronym]{glossaries} % Lets us use acronyms
+\usepackage{subcaption}
 
 \author{Charles Pittman}
 \title{ELEC-311\\ Project 2\\ Combinational Circuit Design}
@@ -33,20 +34,17 @@
 \pagebreak
 
 % Number the enumerate environment (unordered lists) by letter:
-\renewcommand{\labelenumi}{\alph{enumi}.}
+%\renewcommand{\labelenumi}{\alph{enumi}.}
 
 \section{Objective}
 \label{sec:objective}
 
 % Multiple objectives:
- \begin{description}
- \item[First Objective] \hfill \\
-   Given a function, design a combinational logic logic circuit.
- \item[Second Objective] \hfill \\
-   Minimize the circuit using a Karnaugh map.
- \item[Third Objective] \hfill \\
-   Create the circuit using only NAND gates.
- \end{description}
+\begin{itemize}
+\item Given a function, design a combinational logic logic circuit.
+\item Minimize the circuit using a Karnaugh map.
+\item Create the circuit using only NAND gates.
+\end{itemize}
 
 \section{Discussion}
 \label{sec:procedure}
@@ -64,9 +62,10 @@ function was found: $GT = P_0 \overline{Q_1 Q_0} + P_1 P_0
 translated into the circuit shown in Fig~\ref{fig:circuit}.
 
 The NAND gate is considered to be a functionally complete set because
-any logic function can be created with only NAND gates.  To verify, the
-circuit was again translated into one using only NAND gates
-(Fig~\ref{fig:circuit_nand}).
+any logic function can be created with only NAND gates.  This is
+demonstrated graphically in Figure~\ref{fig:nand_gates}.  Using these conversions,
+the circuit was again translated into one using only NAND gates
+(Fig~\ref{fig:circuit_nand}), and truth table verified (not shown).
 
 \section{Results}
 \label{sec:results}
@@ -111,8 +110,26 @@ circuit was again translated into one using only NAND gates
 
 \begin{figure}[hbtp]
   \centering
-  \includegraphics[width=0.8\textwidth]{circuit_nand}
+  \includegraphics[width=\textwidth]{circuit_nand}
   \caption{\label{fig:circuit_nand} Identical circuit using only NAND gates.}
+\end{figure}
+
+\begin{figure}[hbtp]
+  \centering
+  \begin{subfigure}[b]{0.4\textwidth}
+    \includegraphics[width=\textwidth]{nand_invert}
+    \caption{\label{fig:nand-invert} NOT gate}
+  \end{subfigure}%
+  ~
+  \begin{subfigure}[t]{0.5\textwidth}
+    \includegraphics[width=\textwidth]{nand_and}
+    \caption{\label{fig:nand_and} AND gate}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.5\textwidth}
+    \includegraphics[width=\textwidth]{nand_or}
+    \caption{\label{fig:nand_or} OR gate}
+    \end{subfigure}
+  \caption{\label{fig:nand_gates} NAND implementing other logic functions.}
 \end{figure}
 
 \end{document}
