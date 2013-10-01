@@ -93,17 +93,7 @@ The objective is to construct, measure, and observe the behavior of two common d
 \subsection{Rectifier}
 \label{sec:rectifier}
 
-% The circuit in Figure~\ref{fig:circuit1} was constructed with $R =
-% \SI{470}{\ohm}$ and the power supply as $V_s$.  The actual resistance
-% was measured with one a multimeter and recorded in
-% Table~\ref{tab:percent_diff} along with the percent difference calculated
-% (Eq~\ref{eq:percent_diff}).  Next, the multimeters were used to
-% measure voltage across and current through the diode ($V_d$ and $I_d$,
-% respectively) while $V_s$ was swept from \SI{-5}{V} to \SI{+10}{V}.
-% The step size from \SI{-5}{V} to \SI{0}{V} and from \SI{5}{V} to
-% \SI{10}{V} was \SI{0.5}{V}, and \SI{0.25}{V} from \SI{0}{V} to
-% \SI{5}{V}.  These values were recorded in Table~\ref{tab:part_a} and
-% plotted in Figure~\ref{fig:combined_graph}.
+First, the capacitance of a 1 microfarad capacitor was measured and that measurement, along with its \% difference (from the nominal) value, was recorded in Table~\ref{tab:cap}. Then the circuit shown in Figure~\ref{fig:volt_rect} was constructed on a breadboard. The voltage source ($V_S$) and \SI{50}{\ohm} resistor seen in Figure~\ref{fig:volt_rect} represented the function generator used.  Using a resistive decade box, the load resistance ($R_L$) was initially set to \SI{10}{\kilo\ohm}. Then, the first channel of the oscilloscope was set to measure the output of the function generator and the second channel was set to measure the voltage across the load ($V_L$). The function generator was programmed to produce a sine wave at 400 Hz with a peak voltage of 1 V, which was measured with the ($V_{pk}$) function on the oscilloscope. The dc voltage ($V_{DC}$) across $V_L$ was additionally measured with a multi-meter and recorded in Table~\ref{tab:rect_vp_vdc}. The Vmax and Vmin voltages were measured across $V_L$ and recorded in Table~\ref{tab:rect_vp_vdc}. The ripple voltage $V_r$ was determined and also recorded in Table~\ref{tab:rect_vp_vdc}. This process was repeated 4 more times by adjusting the $V_S$ to peak amplitudes of 2, 3, 4, and finally 5 volts, and each time the dc voltage, $V_{max}$ and $V_{min}$, and $V_r$ were measured and recorded in Table~\ref{tab:rect_vp_vdc}. Finally, the source voltage was then left at 5 $V_{pk}$, and the $R_L$ was adjusted to \SI{1}{\kilo\ohm} and \SI{100}{\kilo\ohm} and each $V_{DC}$, $V_{max}$, $V_{min}$, and $V_r$ were measured and recorded in Table~\ref{tab:load_v_ripple}.
 
 \subsection{Voltage Regulator}
 \label{sec:volt_reg}
