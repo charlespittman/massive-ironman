@@ -37,8 +37,8 @@
 \begin{center}
   \begin{tabular}{lr}
     Date Performed: & September 25, 2013 \\
-    Partners: & Charles Pittman \\
-    & Stephen Wilson \\
+    Partners:       & Charles Pittman    \\
+                    & Stephen Wilson     \\
   \end{tabular}
 \end{center}
 
@@ -63,11 +63,11 @@ The objective is to construct, measure, and observe the behavior of two common d
 
 \begin{tabular}{ll}
   \centering
-  Diode: 1N4007 & Power supply: HP E3631A \\
-  Zener diode: 1N5231 & Function generator: HP 33120A \\
-  Resistors: \SI{47}{\ohm} & Multimeter: Fluke 8010A \\
-  Capacitor: \SI{1}{\micro\farad} & Oscilloscope: Agilent 54622D \\
-  Resistive decade box: HeathKit IN-3117 \\
+  Diode: 1N4007                          & Power supply: HP E3631A       \\
+  Zener diode: 1N5231                    & Function generator: HP 33120A \\
+  Resistors: \SI{47}{\ohm}               & Multimeter: Fluke 8010A       \\
+  Capacitor: \SI{1}{\micro\farad}        & Oscilloscope: Agilent 54622D  \\
+  Resistive decade box: HeathKit IN-3117 &                               \\
 \end{tabular}
 
 \section{Schematics}
@@ -106,10 +106,10 @@ First, a \SI{47}{\ohm} resistor was measured and its \% difference from the nomi
 \begin{table}[hbtp]
   \centering
   \begin{tabular}{ccc}
-    Nominal & Measured & Difference \\
-    (\si{\micro\farad}) & (\si{\micro\farad}) & \\
+    Nominal             & Measured            & Difference \\
+    (\si{\micro\farad}) & (\si{\micro\farad}) &            \\
     \hline
-    1 & 0.938 & 6.2\% \\
+    1                   & 0.938               & 6.2\%      \\
   \end{tabular}
   \caption{\label{tab:cap} Percent difference of capacitor in rectifier circuit.}
 \end{table}
@@ -117,14 +117,14 @@ First, a \SI{47}{\ohm} resistor was measured and its \% difference from the nomi
 \begin{table}[hbtp]
   \centering
   \begin{tabular}{cccccc}
-    $V_S$ & $V_{max}$ & $V_{min}$ & $V_r$ & $V_{DC}$ & Ripple \\
-    (\si{V_{peak}}) & (\si{V}) & (\si{V}) & (\si{V}) & (\si{V}) & \\
+    $V_S$           & $V_{max}$ & $V_{min}$ & $V_r$    & $V_{DC}$ & Ripple \\
+    (\si{V_{peak}}) & (\si{V})  & (\si{V})  & (\si{V}) & (\si{V}) &        \\
     \hline
-    1 & 0.488 & 0.369 & 0.119 & 0.429 & 24.4\% \\
-    2 & 1.41 & 1.10 & 0.310 & 1.26 & 22.0\% \\
-    3 & 2.39 & 1.88 & 0.510 & 2.14 & 21.3\% \\
-    4 & 3.31 & 2.38 & 0.930 & 2.85 & 28.1\% \\
-    5 & 4.25 & 3.19 & 1.06 & 3.72 & 24.9\% \\
+    1               & 0.488     & 0.369     & 0.119    & 0.429    & 24.4\% \\
+    2               & 1.41      & 1.10      & 0.310    & 1.26     & 22.0\% \\
+    3               & 2.39      & 1.88      & 0.510    & 2.14     & 21.3\% \\
+    4               & 3.31      & 2.38      & 0.930    & 2.85     & 28.1\% \\
+    5               & 4.25      & 3.19      & 1.06     & 3.72     & 24.9\% \\
   \end{tabular}
   \caption{\label{tab:rect_vp_vdc} AC input vs. DC output of rectifier circuit, where $R_L=\SI{10}{\kilo\ohm}$.}
 \end{table}
@@ -132,12 +132,12 @@ First, a \SI{47}{\ohm} resistor was measured and its \% difference from the nomi
 \begin{table}[hbtp]
   \centering
   \begin{tabular}{cccccc}
-    $R_L$ & $V_{max}$ & $V_{min}$ & $V_r$ & $V_{DC}$ & Ripple \\
-    (\si{\ohm}) & (\si{V}) & (\si{V}) & (\si{V}) & (\si{V}) & \\
+    $R_L$       & $V_{max}$ & $V_{min}$ & $V_r$    & $V_{DC}$ & Ripple  \\
+    (\si{\ohm}) & (\si{V})  & (\si{V})  & (\si{V}) & (\si{V}) &         \\
     \hline
-    1k & 4.13 & 0.440 & 3.69 & 2.29 & 89.3\% \\
-    10k & 4.25 & 3.19 & 1.06 & 3.72 & 24.9\% \\
-    100k & 4.321 & 4.193 & 0.128 & 4.257 & 2.962\% \\
+    1k          & 4.13      & 0.440     & 3.69     & 2.29     & 89.3\%  \\
+    10k         & 4.25      & 3.19      & 1.06     & 3.72     & 24.9\%  \\
+    100k        & 4.321     & 4.193     & 0.128    & 4.257    & 2.962\% \\
   \end{tabular}
   \caption{\label{tab:load_v_ripple} Effect of $R_L$ on DC output in rectifier circuit.}
 \end{table}
@@ -151,10 +151,10 @@ First, a \SI{47}{\ohm} resistor was measured and its \% difference from the nomi
 \begin{table}[hbtp]
   \centering
   \begin{tabular}{ccc}
-    Nominal & Measured & Difference \\
-    (\si{\ohm}) & (\si{\ohm}) & \\
+    Nominal     & Measured    & Difference \\
+    (\si{\ohm}) & (\si{\ohm}) &            \\
     \hline
-    47 & 46.52 & 1.13\% \\
+    47          & 46.52       & 1.13\%     \\
   \end{tabular}
   \caption{\label{tab:res} Percent difference of resistor in voltage regulator circuit.}
 \end{table}
@@ -162,12 +162,12 @@ First, a \SI{47}{\ohm} resistor was measured and its \% difference from the nomi
 \begin{table}
   \centering
   \begin{tabular}{ccc}
-    $R_L$ & $V_{OC}$ & $V_S$ Drop \\
-    (\si{\ohm})  & (\si{V}) & (\si{V}) \\
+    $R_L$       & $V_{OC}$ & $V_S$ Drop \\
+    (\si{\ohm}) & (\si{V}) & (\si{V})   \\
     \hline
-    100 & 6.12 & 7.5 \\
-    330 & 7.88 & 5.8 \\
-    1k & 8.90 & 5.3 \\
+    100         & 6.12     & 7.5        \\
+    330         & 7.88     & 5.8        \\
+    1k          & 8.90     & 5.3        \\
   \end{tabular}
   \caption{\label{tab:volt_reg_calc} Calculated values for voltage regulator circuit}
 \end{table}
@@ -175,13 +175,13 @@ First, a \SI{47}{\ohm} resistor was measured and its \% difference from the nomi
 \begin{table}
   \centering
   \begin{tabular}{cccccc}
-    $R_L$ & $V_L$ & $I_L$ & $V_{OC}$ & $V_S$ Drop & Voltage \\
-    (\si{\ohm}) & (\si{V}) & (\si{mA}) & (\si{V}) & (\si{V}) & Regulation \\
+    $R_L$       & $V_L$    & $I_L$     & $V_{OC}$ & $V_S$ Drop & Voltage    \\
+    (\si{\ohm}) & (\si{V}) & (\si{mA}) & (\si{V}) & (\si{V})   & Regulation \\
     \hline
-    100 & 5.163 & 50.9 & 6.10 & 7.5 & 5.02\%  \\
-    330 & 5.318 & 15.62 & 7.87 & 5.9 & 4.03\% \\
-    1k & 5.11 & 5.27 & 8.60 & 5.3 & 1.15\% \\
-    $\infty$ & 5.38 & --- & --- & --- & ---\\
+    100         & 5.163    & 50.9      & 6.10     & 7.5        & 5.02\%     \\
+    330         & 5.318    & 15.62     & 7.87     & 5.9        & 4.03\%     \\
+    1k          & 5.11     & 5.27      & 8.60     & 5.3        & 1.15\%     \\
+    $\infty$    & 5.38     & ---       & ---      & ---        & ---        \\
   \end{tabular}
   \caption{\label{tab:volt_reg_meas} Measured values for voltage regulator circuit}
 \end{table}
@@ -189,12 +189,12 @@ First, a \SI{47}{\ohm} resistor was measured and its \% difference from the nomi
 \begin{table}
   \centering
   \begin{tabular}{ccccc}
-    $R_L$ & $V_{OC}$ & $V_S$ Drop \\
-    (\si{\ohm}) & (\% diff) & (\% diff) \\
+    $R_L$       & $V_{OC}$  & $V_S$ Drop \\
+    (\si{\ohm}) & (\% diff) & (\% diff)  \\
     \hline
-    100 & 0.359\% & 0.0\% \\
-    330 & 0.102\% & 1.7\% \\
-    1k & 3.327\% & 0.0\% \\
+    100         & 0.359\%   & 0.0\%      \\
+    330         & 0.102\%   & 1.7\%      \\
+    1k          & 3.327\%   & 0.0\%      \\
   \end{tabular}
   \caption{\label{tab:volt_reg_diff} Comparison of values for voltage regulator circuit}
 \end{table}
