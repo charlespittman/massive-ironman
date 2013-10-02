@@ -98,15 +98,8 @@ First, the capacitance of a 1 microfarad capacitor was measured and that measure
 \subsection{Voltage Regulator}
 \label{sec:volt_reg}
 
-% The circuit in Figure~\ref{fig:circuit1} was constructed with the
-% resistive decade box as $R$ and the power supply as $V_s$.  The
-% multimeters were again used to measure diode voltage ($V_d$) and
-% current ($I_d$).  This time $V_s$ was held at \SI{10}{V} and $R$
-% varied: \SI{200}{\ohm}, \SI{500}{\ohm}, \SI{1}{\kilo\ohm},
-% \SI{2}{\kilo\ohm}, \SI{5}{\kilo\ohm}, \SI{10}{\kilo\ohm},
-% \SI{20}{\kilo\ohm}, \SI{50}{\kilo\ohm}, \SI{100}{\kilo\ohm}.  These
-% values were recorded in Table~\ref{tab:part_b} and plotted in
-% Figure~\ref{fig:combined_graph}.
+First, a \SI{47}{\ohm} resistor was measured and its \% difference from the nominal resistance value was calculated and both values were recorded in Table~\ref{tab:res}. The circuit shown in Figure~\ref{fig:volt_reg} was constructed on a breadboard using a 1N5231B for the Zener diode, the HP power supply for the voltage source ($V_S$) set to 9 V, and a decade resistance box as the load resistance ($R_L$) set to \SI{1}{\kilo\ohm}. Then the load voltage ($V_L$) and load current ($I_L$) was measured and recorded in Table~\ref{tab:volt_reg_meas}, for the $R_L$ of \SI{1}{\kilo\ohm}, \SI{330}{\ohm}, and \SI{100}{\ohm}. The Zener diode was removed and the open-circuit voltage ($V_{OC}$) was measured and recorded in Table~\ref{tab:volt_reg_meas}, again for the $R_L$ of \SI{1}{\kilo\ohm}, \SI{330}{\ohm}, and \SI{100}{\ohm}. The Zener diode was added back into the circuit and, using the $R_L$ of \SI{1}{\kilo\ohm}, \SI{330}{\ohm}, and \SI{100}{\ohm}, the point at which the source drops out of regulation ($V_S$ Drop) was determined and recorded in Table~\ref{tab:volt_reg_meas} by sweeping the $V_S$. Finally, the $R_L$ was removed ($R_L$=$\infty$), $V_S$ was set to 9 V, and the voltage across the Zener diode (also $V_L$) was measured and recorded in Table~\ref{tab:volt_reg_meas}.
+
 
 \section{Results}
 \label{sec:results}
@@ -217,7 +210,8 @@ The PSpice computed values of $V_{OC}$ shown in Table~\ref{tab:volt_reg_calc}, w
 
 As seen in Figure~\ref{fig:rect_vp_vdc}, as the peak voltage of the rectifier circuit increases (Figure~\ref{fig:volt_rect}), the rectifier dc voltage increases. Also, as load resistance is increased on the rectifier, it decreases the \% ripple as shown in Table~\ref{tab:load_v_ripple}. This was probably because the increase of resistance reduced the amount of current that could be dissipated from the capacitor over the same amount of time before it was “charged up” again. Additionally, the \% ripple would likely decrease as the input frequency were increased because there would be a smaller time interval for the capacitor to discharge. 
 
-As shown in Table~\ref{tab:volt_reg_meas}, the Voltage Regulation across the \SI{100}{\ohm} resistor is 5.02\% different than the 5.38 V that was measured when the load resistor was removed from the circuit. This shows that the Zener used in the experiment is not an ideal Zener. In the regulator circuit (Figure~\ref{fig:volt_reg}), when $V_S$ is below the Zener diode voltage ($V_Z$), $V_{OC}$ is linearly related to $V_S$. When $V_S$ is above $V_Z$, $V_{OC}$ is almost at a constant value approximately equal to $V_Z$. When $V_S$ is “close” to $V_Z$, the relationship of $V_{OC}$ to $V_S$ is not linearly related and the simplified calculations we learned in class are less effective at computing the $V_{OC}$. 
+As shown in Table~\ref{tab:volt_reg_meas}, the voltage regulation (calculated using Equation~\ref{eq:volt_reg}) across the \SI{100}{\ohm} resistor is 5.02\% different than the 5.38 V that was measured when the load resistor was removed from the circuit. This shows that the Zener used in the experiment is not an ideal Zener. In the regulator circuit (Figure~\ref{fig:volt_reg}), when $V_S$ is below the Zener diode voltage ($V_Z$), $V_{OC}$ is linearly related to $V_S$. When $V_S$ is above $V_Z$, $V_{OC}$ is almost at a constant value approximately equal to $V_Z$. When $V_S$ is “close” to $V_Z$, the relationship of $V_{OC}$ to $V_S$ is not linearly related and the simplified calculations we learned in class are less effective at computing the $V_{OC}$. 
+
 \section{Equations}
 \label{sec:equations}
 
