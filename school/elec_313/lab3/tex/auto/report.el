@@ -9,6 +9,7 @@
      "fig:circuits_tested"
      "sec:procedure"
      "sec:rectifier"
+     "eq:percent_diff"
      "sec:volt_reg"
      "sec:results"
      "tab:cap"
@@ -19,9 +20,10 @@
      "tab:volt_reg_calc"
      "tab:volt_reg_meas"
      "tab:volt_reg_diff"
+     "sec:comp_of_res"
      "sec:conclusion"
      "sec:equations"
-     "eq:percent_diff"
+     "eq:ripple"
      "eq:volt_reg")
     (TeX-run-style-hooks
      "subcaption"
