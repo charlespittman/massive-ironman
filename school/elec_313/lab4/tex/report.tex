@@ -63,7 +63,7 @@ The objective is to construct, measure, and observe the behavior of two common d
 \begin{tabular}{ll}
   \centering
   Compact L290 Motor Driver Kit & Function generator: HP 33120A \\
-  \SI{6}{V} DC Motor            & Multimeter: Fluke 8010A       \\
+  \SI{6}{V} DC Motor            & Multimeter:        \\
   Power supply: HP E3631A       & Oscilloscope: Agilent 54622D  \\
 \end{tabular}
 
@@ -105,16 +105,32 @@ The objective is to construct, measure, and observe the behavior of two common d
   \begin{tabular}{ccc|ccc}
     Enable & \si{L_1} & \si{L_2} & \si{V_{out}} & LED & Motor \\
     \hline
-    L & L & L & & & \\
-    L & L & H & & & \\
-    L & H & L & & & \\
-    L & H & H & & & \\
-    H & L & L & & & \\
-    H & L & H & & & \\
-    H & H & L & & & \\
-    H & H & H & & & \\
+    L & L & L & \SI{-0.01}{V} & off & off \\
+    L & L & H & \SI{-0.01}{V} & off & off \\
+    L & H & L & \SI{-0.01}{V} & off & off \\
+    L & H & H & \SI{-0.01}{V} & off & off \\
+    H & L & L & \SI{-0.18}{V} & off & off \\
+    H & L & H & \SI{+5.7}{V} & red & CW \\
+    H & H & L & \SI{+5.5}{V} & green & CCW \\
+    H & H & H & \SI{+0.01}{V} & both & off \\
   \end{tabular}
   \caption{\label{tab:logic} Logic Table}
+\end{table}
+
+\begin{table}[hbtp]
+  \centering
+  \begin{tabular}{cc}
+    Duty Cycle & Vout \\
+    \hline
+    20\% & \SI{-3.01}{V} \\
+    30\% & \SI{-3.39}{V} \\
+    40\% & \SI{-3.76}{V} \\
+    50\% & \SI{-4.13}{V} \\
+    60\% & \SI{-4.49}{V} \\
+    70\% & \SI{-4.84}{V} \\
+    80\% & \SI{-5.19}{V} \\
+  \end{tabular}
+  \caption{\label{tab:duty} Pulse-width modulation}
 \end{table}
 
 \section{Comparison of Results}
