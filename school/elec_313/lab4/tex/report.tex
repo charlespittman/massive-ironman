@@ -36,15 +36,17 @@ The objective is to construct, measure, and observe the operation of a DC motor 
 \section{Procedure}
 \label{sec:procedure}
 
+Prior to performing the lab, the Compact L298 Motor Driver Board was constructed in accordance with the directions included in the Kit.
+
 \subsection{Part One}
 \label{sec:part_one}
 
-% First, the capacitance of a \SI{1}{\micro\farad} capacitor was measured and  recorded in Table~\ref{tab:cap} along with the percent difference calculated (Eq~\ref{eq:percent_diff}).  Then the circuit shown in Figure~\ref{fig:volt_rect} was constructed on a breadboard.  The voltage source ($V_S$) and \SI{50}{\ohm} resistor seen in Figure~\ref{fig:volt_rect} represented the function generator used.  Using a resistive decade box, the load resistance ($R_L$) was initially set to \SI{10}{\kilo\ohm}.  Then, the first channel of the oscilloscope was set to measure the output of the function generator and the second channel was set to measure the voltage across the load ($V_L$).  The function generator was programmed to produce a sine wave of \SI{1}{V_{peak}} at \SI{400}{\hertz}, measured with the oscilloscope.  $V_{max}$, $V_{min}$, and DC voltage across $V_L$ was measured with a multimeter and recorded in Table~\ref{tab:rect_vp_vdc} along with the ripple voltage $V_r$ (Eq~\ref{eq:ripple}).  Finally, the source voltage was then left at \SI{5}{V_{peak}}, and $R_L$ was adjusted to \SI{1}{\kilo\ohm} and \SI{100}{\kilo\ohm} and each $V_{DC}$, $V_{max}$, $V_{min}$, and $V_r$ were measured and recorded in Table~\ref{tab:load_v_ripple}.
+First, the (+) and (-) terminals of the Motor Driver Board were connected to the 6V DC power supply via the breadboard. Then the regulated +5V (H) output of the Motor Driver Board was connected to the breadboard, so it can be used in later steps to enable the driver logic. Wires were connected to the motor output terminals on the left side of the Motor Driver Board. Inputs L1, L2, and Enable (E1-2) were connected in accordance with Table 1. The output of the DC power supply was set to 6V and the motor output voltage (Vout) was measured and the LED lights were observed. Results for each input configuration shown in Table 1 were also recorded in Table 1. Then, the output of the DC power supply was turned off and 6V DC motor was connected to the output of the Motor Driver Board. The output of the DC power supply was set to 6 V and inputs were connected in accordance with Table 1 and the direction of motor rotation was also recorded in Table 1. Finally, L1, L2, and Enable were set in the clockwise motor rotation (according to table 1)and the DC power supply was swept from 6V to 3V in .1V increments and the effects were observed. The output of the DC power supply was turned off and DC motor was disconnected.
 
 \subsection{Part Two}
 \label{sec:part_two}
 
-% First, a \SI{47}{\ohm} resistor was measured and its percent difference from the nominal resistance value was calculated and both values were recorded in Table~\ref{tab:res}.  The circuit shown in Figure~\ref{fig:volt_reg} was constructed on a breadboard, the HP power supply for the voltage source ($V_S$) set to 9 V, and a decade resistance box as the load resistance ($R_L$) set to \SI{1}{\kilo\ohm}.  Then the load voltage ($V_L$) and load current ($I_L$) was measured and recorded in Table~\ref{tab:volt_reg_meas}, for the $R_L$ of \SI{1}{\kilo\ohm}, \SI{330}{\ohm}, and \SI{100}{\ohm}.  The Zener diode was removed and the open-circuit voltage ($V_{OC}$) was measured and recorded in Table~\ref{tab:volt_reg_meas}, again for the $R_L$ of \SI{1}{\kilo\ohm}, \SI{330}{\ohm}, and \SI{100}{\ohm}.  The Zener diode was added back into the circuit and, using the $R_L$ of \SI{1}{\kilo\ohm}, \SI{330}{\ohm}, and \SI{100}{\ohm}, the point at which the source drops out of regulation ($V_S$ drop) was determined and recorded in Table~\ref{tab:volt_reg_meas} by sweeping the $V_S$.  Finally, the $R_L$ was removed ($R_L$=$\infty$), $V_S$ was set to 9 V, and the voltage across the Zener diode (also $V_L$) was measured and recorded in Table~\ref{tab:volt_reg_meas}.
+First the function generator was set to a square wave with a frequency of 20 kHz. Channel 1 of the oscilloscope was connected to the output of the function generator and the square wave was offset for 0V to 5V. L1 and L2 were again set for clockwise rotation and the Enable input was connected to the function generator. The DC power supply was turned on and set to 6V. Then, the \%Duty of the square wave was swept from 20\% to 80\% in 10\% increments and the Motor Driver Board output was recorded in Table 2. After that, the output of the DC power supply was turned off and the \%Duty of the function generator was rest to 50\%. Then, the 6V DC motor was connected to the motor output of the Motor Driver Board and the output of the DC power supply was set to 6V. The \%Duty of the square wave was swept from 50\% to 80\% in 1\% increments and motor speed was observed.
 
 \section{Results}
 \label{sec:results}
@@ -82,15 +84,17 @@ The objective is to construct, measure, and observe the operation of a DC motor 
   \caption{\label{tab:duty} Pulse-width modulation}
 \end{table}
 
-\section{Comparison of Results}
-\label{sec:comp_of_res}
+%\section{Comparison of Results}
+%\label{sec:comp_of_res}
 
 % The PSpice computed values of $V_{OC}$ shown in Table~\ref{tab:volt_reg_calc}, were very close to the measured $V_{OC}$ values (Table~\ref{tab:volt_reg_calc}), and were at most only 3.327\% different (Table~\ref{tab:volt_reg_diff}).  Also, the PSpice computed $V_S$ drop (Table~\ref{tab:volt_reg_calc}) was very close to the measured $V_S$ drop (Table~\ref{tab:volt_reg_meas}) and the percent difference was at most only 1.7\% (Table~\ref{tab:volt_reg_diff}).
 
 \section{Conclusion}
 \label{sec:conclusion}
-%%% There's no reason to refer to equations after the first time in such a short document.  Once in the procedure should be good enough.  :D
-% As seen in Figure~\ref{fig:rect_vp_vdc}, as the peak voltage of the rectifier circuit increases, the rectifier DC voltage increases.  Also, as load resistance is increased on the rectifier, it decreases the percent ripple as shown in Table~\ref{tab:load_v_ripple}.  This was probably because the increase of resistance reduced the amount of current that could be dissipated from the capacitor over the same amount of time before it was “charged up” again.  Additionally, the percent ripple would likely decrease as input frequency increases because there would be a smaller time interval for the capacitor to discharge.
+
+
+The Motor Driver Board can be adjusted to control the speed and direction of the DC motor through various mechanisms. First, the Enable input must see ~5V before the Motor Drive Board can then allow the L1 and L2 inputs control the phase/rotation of the output. To control the of the output voltage, the L1 and L2 inputs must also see ~5V separately. In our configuration, when L1 was connected to 5V, the motor rotated counterclockwise (Table 1). When L2 was connected, the motor turned clockwise (Table 1). When both were connected or neither was connected, the motor didnt turn at all.
+The Motor Driver Board speed was adjust via 2 different approaches in the experiment. In part I, the input voltage was adjusted to proportionately affect the output voltage, thus varying the speed of the motor. As input voltage was swept from high to low in part I, the motor speed slowed and eventually no noticeable turning could be observed at 3V. In part II, the \%Duty of the 5V to the Enable input was adjusted such that the time that 5V was seen at the Enable input was varied from 50\% of the time to 80\% of the time which resulted in lower to higher Vrms accordingly. This proportional change in \%Duty and output Vrms was observed and recorded Table 2.
 
 % \section{Equations}
 % \label{sec:equations}
