@@ -1,4 +1,4 @@
-% Trying to break the document up a bit.  This command simply inserts the contents of the file at this point.  It contains the document license, preamble, and title page: things that aren't likely to change more than once.  This can be used to separate discrete parts of a document into files that're easier to edit at one time.
+% Trying to break the document up a bit.  This command simply inserts the contents of the file at this point.  It contains the document license, preamble, and title page: things that aren't likely to change more than once.  This can be used to separate discrete parts of a document into files that are easier to edit at one time.
 \input{./header.tex}
 
 \section{Objective}
@@ -41,7 +41,7 @@ Prior to performing the lab, the Compact L298 Motor Driver Board was constructed
 \subsection{Part One}
 \label{sec:part_one}
 
-First, the ($+$) and ($-$) terminals of the motor driver board were connected to the \SI{6}{V} DC power supply.  Wires were connected to the motor output terminals on the left side of the motor driver board.  Inputs $L_1$, $L_2$, and $E1-2$ (Enable) were connected in accordance with Table~\ref{tab:logic}.  The output of the DC power supply was set to \SI{6}{V} and the motor output voltage ($V_{out}$) was measured and the LED lights were observed.  Results for each input configuration shown in Table~\ref{tab:logic} were also recorded in Table~\ref{tab:logic}.  Then, the output of the DC power supply was turned off and \SI{6}{V} DC motor was connected to the output of the motor driver board.  The output of the DC power supply was set to \SI{6}{V} and inputs were connected in accordance with Table~\ref{tab:logic} and the direction of motor rotation was also recorded in Table~\ref{tab:logic}.  Finally, $L_1$, $L_2$, and $Enable$ were set in the clockwise motor rotation (according to table 1)and the DC power supply was swept from \SI{6}{V} to \SI{3}{V} in \SI{0.1}{V} increments and the effects were observed.  The output of the DC power supply was turned off and DC motor was disconnected.
+First, the ($+$) and ($-$) terminals of the motor driver board were connected to the \SI{6}{V} DC power supply.  Wires were connected to the motor output terminals on the left side of the motor driver board.  Inputs $L_1$, $L_2$, and $E1-2$ (Enable) were connected in accordance with Table~\ref{tab:logic}.  The output of the DC power supply was set to \SI{6}{V} and the motor output voltage ($V_{out}$) was measured and the LED's were observed, with values recorded in Table~\ref{tab:logic}.  Then, the output of the DC power supply was turned off and \SI{6}{V} DC motor was connected to the output of the motor driver board.  The output of the DC power supply was set to \SI{6}{V} and inputs were connected in accordance with Table~\ref{tab:logic} and the direction of motor rotation was also recorded in Table~\ref{tab:logic}.  Finally, $L_1$, $L_2$, and $Enable$ were set in the clockwise motor rotation and the DC power supply was swept from \SI{6}{V} to \SI{3}{V} in \SI{0.1}{V} increments and the effect on the motor's speed.
 
 \subsection{Part Two}
 \label{sec:part_two}
@@ -84,17 +84,12 @@ First the function generator was set to a square wave with a frequency of 20 kHz
   \caption{\label{tab:duty} Pulse-width modulation}
 \end{table}
 
-%\section{Comparison of Results}
-%\label{sec:comp_of_res}
-
-% The PSpice computed values of $V_{OC}$ shown in Table~\ref{tab:volt_reg_calc}, were very close to the measured $V_{OC}$ values (Table~\ref{tab:volt_reg_calc}), and were at most only 3.327\% different (Table~\ref{tab:volt_reg_diff}).  Also, the PSpice computed $V_S$ drop (Table~\ref{tab:volt_reg_calc}) was very close to the measured $V_S$ drop (Table~\ref{tab:volt_reg_meas}) and the percent difference was at most only 1.7\% (Table~\ref{tab:volt_reg_diff}).
-
 \section{Conclusion}
 \label{sec:conclusion}
 
-The motor driver board can be adjusted to control the speed and direction of the DC motor.  First, the $Enable$ input must ``see'' ~\SI{5}{V} before the Motor Drive Board can then allow the $L_1$ and $L_2$ inputs control the phase/rotation of the output.  To control the output rotation, the $L_1$ and $L_2$ inputs must also see ~\SI{5}{V} separately.  In our configuration, $L_1$ caused the motor to rotate counter-clockwise.  Similarly, $L_2$ caused clockwise rotation, so enabling both causes the motor to stop.
+The motor driver board can be adjusted to control the speed and direction of the DC motor.  First, the $Enable$ input must ``see'' ~\SI{5}{V} before the motor driver board can then allow the $L_1$ and $L_2$ inputs control the phase/rotation of the output.  To control the output rotation, the $L_1$ and $L_2$ inputs must also see ~\SI{5}{V} separately.  In our configuration, $L_1$ caused the motor to rotate counter-clockwise.  Similarly, $L_2$ caused clockwise rotation, so enabling both causes the motor to stop.
 
-The motor driver board speed was adjusted via two different approaches in the experiment.  As seen in Part One, the input voltage was adjusted to proportionately affect the output voltage, thus varying the speed of the motor.  As input voltage was swept from high to low in Part One, the motor speed slowed and eventually no noticeable turning could be observed at \SI{3}{V}.  As seen in Part Two, the \%Duty of the \SI{5}{V} to the $Enable$ input was adjusted such that the time that \SI{5}{V} was seen at the $Enable$ input was varied from 50\% of the time to 80\% of the time which resulted in lower to higher Vrms accordingly.  This proportional relationship in \%Duty and output Vrms was observed and recorded in Table~\ref{tab:duty}.
+The motor driver board speed was adjusted via two different approaches in the experiment: in part one, the input voltage was adjusted, changing the output voltage;  in part two, the frequency of the input signal was adjusted, which also affected output voltage.
 
 % \section{Equations}
 % \label{sec:equations}
