@@ -4,17 +4,17 @@
 \section{Objective}
 \label{sec:objective}
 
-The objective is to construct, measure, and observe the operation of a DC motor driver.
+The objective is to construct and observe the operation of a CMOS inverter and NAND gate.
 
 \section{Equipment}
 \label{sec:equipment}
 
-\begin{tabular}{ll}
-  \centering
-  Compact L298 Motor Driver Kit & Function generator: HP 33120A \\
-  \SI{6}{V} DC Motor            & Multimeter: Fluke 8010A       \\
-  Power supply: HP E3631A       & Oscilloscope: Agilent 54622D  \\
-\end{tabular}
+\begin{itemize}
+\item ALD1105 Dual N-channel and P-channel matched pair MOSFET
+\item Power supply: HP E3631A
+\item Oscilloscope: Agilent 54622D
+\item Function generator: HP 33120A
+\end{itemize}
 
  \section{Schematics}
  \label{sec:schematics}
@@ -36,15 +36,13 @@ The objective is to construct, measure, and observe the operation of a DC motor 
 \section{Procedure}
 \label{sec:procedure}
 
-Prior to performing the lab, the Compact L298 Motor Driver Board was constructed in accordance with the directions included in the Kit.
-
-\subsection{Part One}
-\label{sec:part_one}
+\subsection{CMOS Inverter}
+\label{sec:inverter}
 
 First, the ($+$) and ($-$) terminals of the motor driver board were connected to the \SI{6}{V} DC power supply.  Wires were connected to the motor output terminals on the left side of the motor driver board.  Inputs $L_1$, $L_2$, and $E1-2$ (Enable) were connected in accordance with Table~\ref{tab:logic}.  The output of the DC power supply was set to \SI{6}{V} and the motor output voltage ($V_{out}$) was measured and the LED's were observed, with values recorded in Table~\ref{tab:logic}.  Then, the output of the DC power supply was turned off and \SI{6}{V} DC motor was connected to the output of the motor driver board.  The output of the DC power supply was set to \SI{6}{V} and inputs were connected in accordance with Table~\ref{tab:logic} and the direction of motor rotation was also recorded in Table~\ref{tab:logic}.  Finally, $L_1$, $L_2$, and $Enable$ were set in the clockwise motor rotation and the DC power supply was swept from \SI{6}{V} to \SI{3}{V} in \SI{0.1}{V} increments and the effect on the motor's speed.
 
-\subsection{Part Two}
-\label{sec:part_two}
+\subsection{CMOS NAND}
+\label{sec:nand}
 
 First the function generator was set to a square wave with a frequency of 20 kHz.  Channel 1 of the oscilloscope was connected to the output of the function generator and the square wave was offset for \SI{0}{V} to \SI{5}{V}.  $L_1$ and $L_2$ were again set for clockwise rotation and the $Enable$ input was connected to the function generator.  The DC power supply was turned on and set to \SI{6}{V}.  Then, the \%Duty of the square wave was swept from 20\% to 80\% in 10\% increments and the motor driver board output was recorded in Table~\ref{tab:duty}.  After that, the output of the DC power supply was turned off and the \%Duty of the function generator was rest to 50\%.  Then, the \SI{6}{V} DC motor was connected to the motor output of the motor driver board and the output of the DC power supply was set to \SI{6}{V}.  The \%Duty of the square wave was swept from 50--80\% in 1\% increments and motor speed was observed.
 
@@ -56,14 +54,14 @@ First the function generator was set to a square wave with a frequency of 20 kHz
   \begin{tabular}{ccc|ccc}
     Enable & \si{L_1} & \si{L_2} & \si{V_{out}} & LED & Motor \\
     \hline
-    L & L & L & \SI{-0.01}{V} & off & off \\
-    L & L & H & \SI{-0.01}{V} & off & off \\
-    L & H & L & \SI{-0.01}{V} & off & off \\
-    L & H & H & \SI{-0.01}{V} & off & off \\
-    H & L & L & \SI{-0.18}{V} & off & off \\
-    H & L & H & \SI{+5.7}{V} & red & CW \\
-    H & H & L & \SI{+5.5}{V} & green & CCW \\
-    H & H & H & \SI{+0.01}{V} & both & off \\
+    L & L & L & \SI{-0.01}{V} & off   & off \\
+    L & L & H & \SI{-0.01}{V} & off   & off \\
+    L & H & L & \SI{-0.01}{V} & off   & off \\
+    L & H & H & \SI{-0.01}{V} & off   & off \\
+    H & L & L & \SI{-0.18}{V} & off   & off \\
+    H & L & H & \SI{+5.7}{V}  & red   & CW  \\
+    H & H & L & \SI{+5.5}{V}  & green & CCW \\
+    H & H & H & \SI{+0.01}{V} & both  & off \\
   \end{tabular}
   \caption{\label{tab:logic} Logic Table. }
 \end{table}
