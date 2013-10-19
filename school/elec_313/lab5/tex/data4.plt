@@ -1,6 +1,6 @@
 # gnuplot script
 set terminal epslatex color
-set output "data1.tex"
+set output "data4.tex"
 set autoscale
 set border 31 linewidth .3
 #unset log
@@ -14,4 +14,5 @@ set border 31 linewidth .3
 #set xlabel "$V_S (V_{peak})$"
 #set ylabel "$V_{DC} (V)$"
 #set key top center
-plot 'data1.dat' using 1:2 title "$V_{in}$", 'data1.dat' using 1:3 title "$V_{out}$"
+#plot 'data4.dat' using 1:2 title "$V_{in}$", 'data4.dat' using 1:3 title "$V_{out}1$", 'data4.dat' using 1:4 title "$V_{out}2$"
+plot 'data4.dat' using 1:3 title "A = {Low}", 'data4.dat' using 1:4 title "A = {High}"
