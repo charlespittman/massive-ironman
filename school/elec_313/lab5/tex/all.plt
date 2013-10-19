@@ -1,21 +1,17 @@
 # gnuplot script
 set terminal epslatex color colortext
 set autoscale
-set border linewidth 2
+
 set style line 1 linecolor rgb '#0060ad' linetype 1 linewidth 5
 set style line 2 linecolor rgb '#dd181f' linetype 1 linewidth 5
-#set border 31 linewidth .3
-#unset log
-unset label
-#set log y
+set style line 12 linecolor rgb '#808080' linetype 0 linewidth 1
+
+set tics scale 1.5 nomirror
+set border 3
+set grid back linestyle 12
+
 #set xrange [0:5]
 #set yrange [0:5]
-#set xtic auto
-#set ytic auto
-set title "$V_{in}$ vs. $V_{out}$"
-#set xlabel "$V_S (V_{peak})$"
-#set ylabel "$V_{DC} (V)$"
-#set key top center
 
 set output "data1.tex"
 #set title "Peak Voltage vs. DC Voltage in Rectifier Circuit"
