@@ -24,7 +24,7 @@
   }{}%
   \@ifundefined{ifGPblacktext}{%
     \newif\ifGPblacktext
-    \GPblacktexttrue
+    \GPblacktextfalse
   }{}%
   % define a \g@addto@macro without @ in the name:
   \let\gplgaddtomacro\g@addto@macro
@@ -76,13 +76,13 @@
     \gplgaddtomacro\gplbacktext{%
       \csname LTb\endcsname%
       \put(462,440){\makebox(0,0)[r]{\strut{}-1}}%
-      \put(462,1059){\makebox(0,0)[r]{\strut{} 0}}%
-      \put(462,1679){\makebox(0,0)[r]{\strut{} 1}}%
-      \put(462,2298){\makebox(0,0)[r]{\strut{} 2}}%
-      \put(462,2917){\makebox(0,0)[r]{\strut{} 3}}%
-      \put(462,3536){\makebox(0,0)[r]{\strut{} 4}}%
-      \put(462,4156){\makebox(0,0)[r]{\strut{} 5}}%
-      \put(462,4775){\makebox(0,0)[r]{\strut{} 6}}%
+      \put(462,1003){\makebox(0,0)[r]{\strut{} 0}}%
+      \put(462,1565){\makebox(0,0)[r]{\strut{} 1}}%
+      \put(462,2128){\makebox(0,0)[r]{\strut{} 2}}%
+      \put(462,2691){\makebox(0,0)[r]{\strut{} 3}}%
+      \put(462,3254){\makebox(0,0)[r]{\strut{} 4}}%
+      \put(462,3816){\makebox(0,0)[r]{\strut{} 5}}%
+      \put(462,4379){\makebox(0,0)[r]{\strut{} 6}}%
       \put(594,220){\makebox(0,0){\strut{}-2.5e-05}}%
       \put(1215,220){\makebox(0,0){\strut{}-2e-05}}%
       \put(1836,220){\makebox(0,0){\strut{}-1.5e-05}}%
@@ -94,12 +94,13 @@
       \put(5561,220){\makebox(0,0){\strut{} 1.5e-05}}%
       \put(6182,220){\makebox(0,0){\strut{} 2e-05}}%
       \put(6803,220){\makebox(0,0){\strut{} 2.5e-05}}%
+      \put(3698,4709){\makebox(0,0){\strut{}$V_{in}$ vs. $V_{out}$}}%
     }%
     \gplgaddtomacro\gplfronttext{%
       \csname LTb\endcsname%
-      \put(5816,4602){\makebox(0,0)[r]{\strut{}A = {Low}}}%
+      \put(5816,4206){\makebox(0,0)[r]{\strut{}A = {Low}}}%
       \csname LTb\endcsname%
-      \put(5816,4382){\makebox(0,0)[r]{\strut{}A = {High}}}%
+      \put(5816,3986){\makebox(0,0)[r]{\strut{}A = {High}}}%
     }%
     \gplbacktext
     \put(0,0){\includegraphics{data4}}%
