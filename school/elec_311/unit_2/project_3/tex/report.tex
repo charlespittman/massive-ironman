@@ -1,0 +1,115 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% This layout was adapted from one found at latextemplates.com which
+% was adapted from another.
+%
+% License: CC BY-NC-SA 3.0
+% (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+% Original header:
+%
+% This is a LaTeX version of the sample laboratory report from
+% Virginia Tech's copyrighted 08-09 CHEM 1045/1046 lab manual.
+% Reproduction of this one appendix section for academic purposes
+% should fall under fair use.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass{article}
+
+\usepackage{graphicx} % Lets us use images
+%\usepackage[acronym]{glossaries} % Lets us use acronyms
+\usepackage{subcaption}
+
+\author{Charles Pittman}
+\title{ELEC-311\\ Project 3\\ Adder-Subtractor}
+\date{October 28, 2013}
+
+%\loadglsentries{acronyms} % Actually loads 'acronyms.tex'
+%\makeglossaries
+
+\begin{document}
+
+\maketitle % Inserts title, author, and date from above
+
+\pagebreak
+
+% Number the enumerate environment (unordered lists) by letter:
+%\renewcommand{\labelenumi}{\alph{enumi}.}
+
+\section{Objective}
+\label{sec:objective}
+
+% Multiple objectives:
+\begin{itemize}
+\item Given a function, design a combinational logic logic circuit.
+\item Minimize the circuit using a Karnaugh map.
+\item Create the circuit using only NAND gates.
+\end{itemize}
+
+\section{Discussion}
+\label{sec:procedure}
+
+The circuit to be constructed was a 2-bit comparator.  A 2-bit comparator takes two 2-bit numbers, $P = P_1P_0$ and $Q = Q_1Q_0$, and produces an output, $GT=1 \iff P>Q$.  The truth table describing this function is shown in Table~\ref{tab:truth}.  This can be displayed more concisely as a summation of min-terms: $\sum_m(P_1, P_0, Q_1, Q_0) = (4, 8, 9, 12, 13,14)$.
+
+Using a Karnaugh map (Fig~\ref{fig:k_map}), a minimal form of the
+function was found: $GT = P_0 \overline{Q_1 Q_0} + P_1 P_0
+\overline{Q_0} + P_1 \overline{Q_1}$.  This function was then
+translated into the circuit shown in Fig~\ref{fig:circuit}.
+
+The NAND gate is considered to be a functionally complete set because any logic function can be created with only NAND gates.  This is demonstrated graphically in Figure~\ref{fig:nand_gates}.  Using these conversions, the circuit was again translated into one using only NAND gates (Fig~\ref{fig:circuit_nand}), and truth table verified (not shown).
+
+\section{Results}
+\label{sec:results}
+
+\begin{table}[hbtp]
+  \centering
+  \begin{tabular}{r|r|c|c|r|r}
+    X  & Y  & X    & Y    & X + Y & X - Y \\
+    \hline
+    3  & 1  & 0011 & 0001 & 0100  & 0010  \\
+    1  & 5  & 0001 & 0101 & 0110  & 1100  \\
+    -2 & 3  & 1110 & 0011 & 0001  & 1011  \\
+    -2 & -4 & 1110 & 1100 & 1010  & 0010  \\
+    4  & 6  & 0100 & 0110 & 01010 & 1110  \\
+\end{tabular}
+
+  \caption{\label{tab:truth}Truth table for 2-bit comparator.}
+\end{table}
+
+% \begin{figure}[hbtp]
+%   \centering
+%   \includegraphics[width=0.5\textwidth]{k_map}
+%   \caption{\label{fig:k_map} Karnaugh map used to minimize function.}
+% \end{figure}
+
+% \begin{figure}[hbtp]
+%   \centering
+%   \includegraphics[width=0.8\textwidth]{circuit}
+%   \caption{\label{fig:circuit} Circuit implemented from function.}
+% \end{figure}
+
+% \begin{figure}[hbtp]
+%   \centering
+%   \includegraphics[width=\textwidth]{circuit_nand}
+%   \caption{\label{fig:circuit_nand} Identical circuit using only NAND gates.}
+% \end{figure}
+
+% \begin{figure}[hbtp]
+%   \centering
+%   \begin{subfigure}[b]{0.4\textwidth}
+%     \includegraphics[width=\textwidth]{nand_invert}
+%     \caption{\label{fig:nand-invert} NOT gate}
+%   \end{subfigure}%
+%   ~
+%   \begin{subfigure}[t]{0.5\textwidth}
+%     \includegraphics[width=\textwidth]{nand_and}
+%     \caption{\label{fig:nand_and} AND gate}
+%   \end{subfigure}
+%   \begin{subfigure}[b]{0.5\textwidth}
+%     \includegraphics[width=\textwidth]{nand_or}
+%     \caption{\label{fig:nand_or} OR gate}
+%     \end{subfigure}
+%   \caption{\label{fig:nand_gates} NAND implementing other logic functions.}
+% \end{figure}
+
+\end{document}
