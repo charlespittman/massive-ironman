@@ -22,7 +22,7 @@
 
 \author{Charles Pittman}
 \title{ELEC-311\\ Project 3\\ Adder-Subtractor}
-\date{October 28, 2013}
+\date{October 29, 2013}
 
 %\loadglsentries{acronyms} % Actually loads 'acronyms.tex'
 %\makeglossaries
@@ -41,9 +41,8 @@
 
 % Multiple objectives:
 \begin{itemize}
-\item Given a function, design a combinational logic logic circuit.
-\item Minimize the circuit using a Karnaugh map.
-\item Create the circuit using only NAND gates.
+\item Design a combinational logic circuit that adds, or subtracts, two 4-bit 2's complement numbers
+\item Describe the circuit using VHDL
 \end{itemize}
 
 \section{Discussion}
@@ -72,15 +71,50 @@ The NAND gate is considered to be a functionally complete set because any logic 
     -2 & -4 & 1110 & 1100 & 1010  & 0010  \\
     4  & 6  & 0100 & 0110 & 01010 & 1110  \\
 \end{tabular}
-
-  \caption{\label{tab:truth}Truth table for 2-bit comparator.}
+  \caption{\label{tab:values}Test vectors and expected values.}
 \end{table}
 
-% \begin{figure}[hbtp]
-%   \centering
-%   \includegraphics[width=0.5\textwidth]{k_map}
-%   \caption{\label{fig:k_map} Karnaugh map used to minimize function.}
-% \end{figure}
+\section{VHDL}
+\label{sec:vhdl}
+
+\begin{verbatim}
+library IEEE;
+use IEEE.STD_LOGIC_1164.all;
+use work.project3_gates.all;
+
+entity circuit is
+  port (X    : in  std_logic_vector(3 downto 0);
+        Y    : in  std_logic_vector(3 downto 0);
+        Z    : out std_logic_vector(3 downto 0);
+        SEL  : in  std_logic;
+        Cout : out std_logic);
+end circuit;
+
+architecture Structural of circuit is
+
+  signal C : std_logic_vector(2 downto 0);
+  signal S : std_logic_vector(3 downto 0);
+
+begin
+
+  x3 : ExclusiveOR port map(SEL, Y(3), S(3));
+  x2 : ExclusiveOR port map(SEL, Y(2), S(2));
+  x1 : ExclusiveOR port map(SEL, Y(1), S(1));
+  x0 : ExclusiveOR port map(SEL, Y(0), S(0));
+
+  fa3 : FullAdder port map(X(3), S(3), C(2), Cout, Z(3));
+  fa2 : FullAdder port map(X(2), S(2), C(1), C(2), Z(2));
+  fa1 : FullAdder port map(X(1), S(1), C(0), C(1), Z(1));
+  fa0 : FullAdder port map(X(0), S(0), SEL, C(0), Z(0));
+
+end Structural;
+\end{verbatim}
+
+\begin{figure}[hbtp]
+  \centering
+  \includegraphics[width=\textwidth]{adder}
+  \caption{\label{fig:adder} 4-bit adder/subtractor.}
+\end{figure}
 
 % \begin{figure}[hbtp]
 %   \centering
