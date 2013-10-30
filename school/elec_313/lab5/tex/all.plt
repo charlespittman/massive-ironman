@@ -13,6 +13,9 @@ set grid back linestyle 12
 #set xrange [0:5]
 #set yrange [0:5]
 
+set format x "%.0s%cs"
+set format y "%.0s%cV"
+
 set output "data1.tex"
 #set title "Peak Voltage vs. DC Voltage in Rectifier Circuit"
 #set xlabel "$V_S (V_{peak})$"
@@ -35,4 +38,4 @@ set output "data4.tex"
 #set title "Peak Voltage vs. DC Voltage in Rectifier Circuit"
 #set xlabel "$V_S (V_{peak})$"
 #set ylabel "$V_{DC} (V)$"
-plot 'data4.dat' using 1:3 title "A = {Low}" with lines linestyle 1, 'data4.dat' using 1:4 title "A = {High}" with lines linestyle 2
+plot 'data4.dat' using 1:3 title "$V_{out}$ (A = {Low})" with lines linestyle 1, 'data4.dat' using 1:4 title "$V_{out}$ (A = {High})" with lines linestyle 2
