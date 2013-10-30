@@ -23,12 +23,12 @@ The objective is to construct and observe the operation of a CMOS inverter and N
    \centering
    \begin{subfigure}[b]{0.4\textwidth}
      \includegraphics[width=\textwidth]{invert}
-     \caption{\label{fig:invert} CMOS Inverter}
+     \caption{\label{schem:inverter} CMOS Inverter}
    \end{subfigure}%
    ~
    \begin{subfigure}[b]{0.4\textwidth}
      \includegraphics[width=\textwidth]{nand}
-     \caption{\label{fig:nand} CMOS NAND}
+     \caption{\label{schem:nand} CMOS NAND}
    \end{subfigure}
    \caption{\label{fig:schematics} Circuits used in this lab.}
  \end{figure}
@@ -39,12 +39,36 @@ The objective is to construct and observe the operation of a CMOS inverter and N
 \subsection{CMOS Inverter}
 \label{sec:inverter}
 
-% First, the ($+$) and ($-$) terminals of the motor driver board were connected to the \SI{6}{V} DC power supply.  Wires were connected to the motor output terminals on the left side of the motor driver board.  Inputs $L_1$, $L_2$, and $E1-2$ (Enable) were connected in accordance with Table~\ref{tab:logic}.  The output of the DC power supply was set to \SI{6}{V} and the motor output voltage ($V_{out}$) was measured and the LED's were observed, with values recorded in Table~\ref{tab:logic}.  Then, the output of the DC power supply was turned off and \SI{6}{V} DC motor was connected to the output of the motor driver board.  The output of the DC power supply was set to \SI{6}{V} and inputs were connected in accordance with Table~\ref{tab:logic} and the direction of motor rotation was also recorded in Table~\ref{tab:logic}.  Finally, $L_1$, $L_2$, and $Enable$ were set in the clockwise motor rotation and the DC power supply was swept from \SI{6}{V} to \SI{3}{V} in \SI{0.1}{V} increments and the effect on the motor's speed.
+\begin{enumerate}
+\item Construct the circuit of figure~\ref{schem:inverter}.
+\item Connect the \si{V+} terminal (Pin 11) to the + supply voltage
+\item Connect the \si{V-} terminal (Pin 4) to the circuit ground.
+\item Set VDD to 5V using the HP source.
+\item Use the function generator to input $V_i$. Set the function generator to a frequency of 20 kHz and select a triangle wave. Set the wave for 0 to 5 volts using the offset.
+\item Connect CHANNEL 1 of the oscilloscope to the input and CHANNEL 2 to the output.
+\item Use the x-y plot function of the scope to produce the transfer characteristic $V_o$ vs. $V_i$. (Press the main key, then select the xy softkey, then adjust the voltage scales as needed.)
+\item Capture the $V_o$ vs. $V_i$.  data, so you can recreate the plot for the lab report.
+\item Adjust the amplitude and offset of the function generator for an input square wave of 0 to 5 V as measured on the oscilloscope.
+\item Adjust the scope and capture both input and output on one screen for the report.
+\item Measure the propagation delay times of the output waveform.
+\end{enumerate}
 
 \subsection{CMOS NAND}
 \label{sec:nand}
 
-% First the function generator was set to a square wave with a frequency of 20 kHz.  Channel 1 of the oscilloscope was connected to the output of the function generator and the square wave was offset for \SI{0}{V} to \SI{5}{V}.  $L_1$ and $L_2$ were again set for clockwise rotation and the $Enable$ input was connected to the function generator.  The DC power supply was turned on and set to \SI{6}{V}.  Then, the \%Duty of the square wave was swept from 20\% to 80\% in 10\% increments and the motor driver board output was recorded in Table~\ref{tab:duty}.  After that, the output of the DC power supply was turned off and the \%Duty of the function generator was rest to 50\%.  Then, the \SI{6}{V} DC motor was connected to the motor output of the motor driver board and the output of the DC power supply was set to \SI{6}{V}.  The \%Duty of the square wave was swept from 50--80\% in 1\% increments and motor speed was observed.
+\begin{enumerate}
+\item Construct the circuit of figure~\ref{schem:nand}.
+\item Connect the \si{v+} terminal (Pin 11) to the + supply voltage.
+\item Connect the \si{V-} terminal (Pin 4) to the circuit ground.
+\item Set the + supply voltage to 5 volts DC using the HP source.
+\item Set input A to 0 volts.
+\item Use the function generator for input B. Set the function generator to a frequency of 20 kHz and select a square wave. Set the square wave for 0 to 5 V using the offset.
+\item Connect CHANNEL 1 of the oscilloscope to the input and CHANNEL 2 to the output.
+\item Adjust the scope and capture both input and output on one screen for the report.
+\item Repeat step 8 with the input A set to +5 V.
+\end{enumerate}
+
+\newpage
 
 \section{Results}
 \label{sec:results}
@@ -52,66 +76,51 @@ The objective is to construct and observe the operation of a CMOS inverter and N
 \begin{figure}[hbtp]
   \centering
   \resizebox{1.0\textwidth}{!}{\input{data1.tex}}
-  \caption{\label{fig:data1} Output of CMOS inverter}
+  \caption{\label{fig:inverter} Output of CMOS inverter}
 \end{figure}
 
 \begin{figure}[hbtp]
   \centering
   \resizebox{1.0\textwidth}{!}{\input{data2.tex}}
-  \caption{\label{fig:data2} Data 2}
+  \caption{\label{fig:data2} Transition point in CMOS inverter}
 \end{figure}
 
-\begin{figure}[hbtp]
+% \begin{figure}[hbtp]
+%   \centering
+%   \resizebox{1.0\textwidth}{!}{\input{data3.tex}}
+%   \caption{\label{fig:data3} Data 3}
+% \end{figure}
+
+\begin{table}[hbtp]
   \centering
-  \resizebox{1.0\textwidth}{!}{\input{data3.tex}}
-  \caption{\label{fig:data3} Data 3}
-\end{figure}
+  \begin{tabular}{cc|c}
+    A & B & F \\
+    \hline
+    0 & 0 & 1 \\
+    0 & 1 & 1 \\
+    1 & 0 & 1 \\
+    1 & 1 & 0 \\
+  \end{tabular}
+  \caption{\label{tab:nand} NAND logic table}
+  \end{table}
 
 \begin{figure}[hbtp]
   \centering
   \resizebox{1.0\textwidth}{!}{\input{data4.tex}}
-  \caption{\label{fig:data4} Output of CMOS NAND gate}
+  \caption{\label{fig:nand} Output of CMOS NAND gate}
 \end{figure}
 
-% \begin{table}[hbtp]
-%   \centering
-%   \begin{tabular}{ccc|ccc}
-%     Enable & \si{L_1} & \si{L_2} & \si{V_{out}} & LED & Motor \\
-%     \hline
-%     L & L & L & \SI{-0.01}{V} & off   & off \\
-%     L & L & H & \SI{-0.01}{V} & off   & off \\
-%     L & H & L & \SI{-0.01}{V} & off   & off \\
-%     L & H & H & \SI{-0.01}{V} & off   & off \\
-%     H & L & L & \SI{-0.18}{V} & off   & off \\
-%     H & L & H & \SI{+5.7}{V}  & red   & CW  \\
-%     H & H & L & \SI{+5.5}{V}  & green & CCW \\
-%     H & H & H & \SI{+0.01}{V} & both  & off \\
-%   \end{tabular}
-%   \caption{\label{tab:logic} Logic Table. }
-% \end{table}
-
-% \begin{table}[hbtp]
-%   \centering
-%   \begin{tabular}{cc}
-%     Duty Cycle & \si{V_{out}} \\
-%     \hline
-%     20\% & \SI{-3.01}{V} \\
-%     30\% & \SI{-3.39}{V} \\
-%     40\% & \SI{-3.76}{V} \\
-%     50\% & \SI{-4.13}{V} \\
-%     60\% & \SI{-4.49}{V} \\
-%     70\% & \SI{-4.84}{V} \\
-%     80\% & \SI{-5.19}{V} \\
-%   \end{tabular}
-%   \caption{\label{tab:duty} Pulse-width modulation}
-% \end{table}
+\newpage
 
 \section{Conclusion}
 \label{sec:conclusion}
 
-% The motor driver board can be adjusted to control the speed and direction of the DC motor.  First, the $Enable$ input must ``see'' ~\SI{5}{V} before the motor driver board can then allow the $L_1$ and $L_2$ inputs control the phase/rotation of the output.  To control the output rotation, the $L_1$ and $L_2$ inputs must also see ~\SI{5}{V} separately.  In our configuration, $L_1$ caused the motor to rotate counter-clockwise.  Similarly, $L_2$ caused clockwise rotation, so enabling both causes the motor to stop.
+As seen in Figure~\ref{fig:inverter}, as the input voltage ($V_i$) is low (\SI{0}{V}), $V_o$ is high (\SI{5}{V}). Conversely, when $V_i$ is high, $V_o$ is low. This relationship of $V_i$ to $V_o$ is why the configuration is called an inverter.  Also, the transition from high to low on the output happens when the input is approximately between 1 and 3V at $V_i$; that is, when the input voltage is less than one, the output voltage is almost exactly \SI{5}{V} and when the input voltage is greater than 3V, the output voltage is almost exactly \SI{0}{V}.  (Refer to Figure~\ref{fig:inverter} for a close up of the $V_i$ to $V_o$).  Additionally, the output voltage closely represents a square wave or an on/off relationship as the input voltage is swept back and forth between low and high. It should also be noted that it takes 58.8 nanoseconds for the output voltage response to change from high to low.
 
-% The motor driver board speed was adjusted via two different approaches in the experiment: in part one, the input voltage was adjusted, changing the output voltage;  in part two, the frequency of the input signal was adjusted, which also affected output voltage.
+The circuit in Figure~\ref{schem:nand} operates as a NAND gate because when input A is low (\SI{0}{V}), as is the case in the first portion of CMOS NAND experiment, the inverting gate (Q1) is shorted and the non-inverting gate Q3 is open. Therefore no matter what input B is shown, the output voltage is high (\SI{5}{V}).  In the second half of the experiment, when input A is high (\SI{5}{V}), Q1 is inverted and therefore open and Q3 is shorted. During this state, when input B is low, Q2 is inverted and shorted allowing current to flow through it, but Q4 is open blocking the current and the output voltage is again high. The only time the output voltage is low, is when A is high and B is high, which means both the inverting gates Q1 and Q2 are open and don't allow any current to flow through them.
+
+% Too tired to think.  Reword this to show current graph (both are on one plot)
+Figure~\ref{fig:nand} illustrates the NAND gate logic table (Table 1) exactly. In Figure 4, the A input is low and the B input (channel 1) is low at first and the output voltage (channel 2) is high. When the B input switches to high, the output voltage (channel 2) is still high. In Figure 5, the A input is high and B input (channel 1) is low at first and the output voltage (channel 2) is high. When the B input switches to high, the output voltage finally switches to low.
 
 % \section{Equations}
 % \label{sec:equations}
