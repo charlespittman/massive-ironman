@@ -1,0 +1,147 @@
+% Trying to break the document up a bit.  This command simply inserts the contents of the file at this point.  It contains the document license, preamble, and title page: things that aren't likely to change more than once.  This can be used to separate discrete parts of a document into files that are easier to edit at one time.
+\input{./header.tex}
+
+\section{Objective}
+\label{sec:objective}
+
+The objective is to construct and observe the operation of a CMOS inverter and NAND gate.
+
+\section{Equipment}
+\label{sec:equipment}
+
+\begin{itemize}
+\item ALD1105 Dual N-channel and P-channel matched pair MOSFET
+\item Power supply: HP E3631A
+\item Oscilloscope: Agilent 54622D
+\item Function generator: HP 33120A
+\end{itemize}
+
+ \section{Schematics}
+ \label{sec:schematics}
+
+ \begin{figure}[hbtp]
+   \centering
+   \begin{subfigure}[b]{0.4\textwidth}
+     \includegraphics[width=\textwidth]{invert}
+     \caption{\label{schem:inverter} CMOS Inverter}
+   \end{subfigure}%
+   ~
+   \begin{subfigure}[b]{0.4\textwidth}
+     \includegraphics[width=\textwidth]{nand}
+     \caption{\label{schem:nand} CMOS NAND}
+   \end{subfigure}
+   \caption{\label{fig:schematics} Circuits used in this lab.}
+ \end{figure}
+
+\section{Procedure}
+\label{sec:procedure}
+
+\subsection{CMOS Inverter}
+\label{sec:inverter}
+
+\begin{enumerate}
+\item Construct the circuit of Figure~\ref{schem:inverter}.
+\item Connect the \si{V+} terminal (Pin 11) to the + supply voltage
+\item Connect the \si{V-} terminal (Pin 4) to the circuit ground.
+\item Set VDD to \SI{5}{V} using the HP source.
+\item Use the function generator to input $V_i$. Set the function generator to a frequency of \SI{20}{kHz} and select a triangle wave. Set the wave for 0 to \SI{5}{V} using the offset.
+\item Connect channel 1 of the oscilloscope to the input and channel 2 to the output.
+\item Use the x-y plot function of the scope to produce the transfer characteristic $V_o$ vs. $V_i$. (Press the main key, then select the x-y soft-key, then adjust the voltage scales as needed.)
+\item Capture the $V_o$ vs. $V_i$.  data, so you can recreate the plot for the lab report.
+\item Adjust the amplitude and offset of the function generator for an input square wave of 0 to \SI{5}{V} as measured on the oscilloscope.
+\item Adjust the scope and capture both input and output on one screen for the report.
+\item Measure the propagation delay times of the output waveform.
+\end{enumerate}
+
+\subsection{CMOS NAND}
+\label{sec:nand}
+
+\begin{enumerate}
+\item Construct the circuit of figure~\ref{schem:nand}.
+\item Connect the \si{v+} terminal (Pin 11) to the + supply voltage.
+\item Connect the \si{V-} terminal (Pin 4) to the circuit ground.
+\item Set the + supply voltage to \SI{5}{V} DC using the HP source.
+\item Set input A to \SI{0}{V}.
+\item Use the function generator for input B. Set the function generator to a frequency of \SI{20}{kHz} and select a square wave. Set the square wave for 0 to \SI{5}{V} using the offset.
+\item Connect channel 1 of the oscilloscope to the input and channel 2 to the output.
+\item Adjust the scope and capture both input and output on one screen for the report.
+\item Repeat step 8 with the input A set to +\SI{5}{V}.
+\end{enumerate}
+
+\newpage
+
+\section{Results}
+\label{sec:results}
+
+\begin{figure}[hbtp]
+  \centering
+  \resizebox{1.0\textwidth}{!}{\input{data1.tex}}
+  \caption{\label{fig:inverter} Output of CMOS inverter}
+\end{figure}
+
+\begin{figure}[hbtp]
+  \centering
+  \resizebox{1.0\textwidth}{!}{\input{data2.tex}}
+  \caption{\label{fig:data2} Transition point in CMOS inverter}
+\end{figure}
+
+% \begin{figure}[hbtp]
+%   \centering
+%   \resizebox{1.0\textwidth}{!}{\input{data3.tex}}
+%   \caption{\label{fig:data3} Data 3}
+% \end{figure}
+
+\begin{table}[hbtp]
+  \centering
+  \begin{tabular}{cc|c}
+    A & B & F \\
+    \hline
+    0 & 0 & 1 \\
+    0 & 1 & 1 \\
+    1 & 0 & 1 \\
+    1 & 1 & 0 \\
+  \end{tabular}
+  \caption{\label{tab:nand} NAND logic table}
+  \end{table}
+
+\begin{figure}[hbtp]
+  \centering
+  \resizebox{1.0\textwidth}{!}{\input{data4.tex}}
+  \caption{\label{fig:nand} Output of CMOS NAND gate}
+\end{figure}
+
+\newpage
+
+\section{Conclusion}
+\label{sec:conclusion}
+
+As seen in Figure~\ref{fig:inverter}, as the input voltage ($V_i$) is low (\SI{0}{V}), $V_o$ is high (\SI{5}{V}).  Conversely, when $V_i$ is high, $V_o$ is low. This relationship of $V_i$ to $V_o$ is why the configuration is called an inverter.  Also, the transition from high to low on the output happens when the input is approximately between 1 and \SI{3}{V} at $V_i$; that is, when the input voltage is less than one, the output voltage is almost exactly \SI{5}{V} and when the input voltage is greater than \SI{3}{V}, the output voltage is almost exactly \SI{0}{V}.  (Refer to Figure~\ref{fig:inverter} for a close up of the $V_i$ to $V_o$).  Additionally, the output voltage closely represents a square wave or an on/off relationship as the input voltage is swept back and forth between low and high.  It should also be noted that it takes \SI{58.8}{\nano\second} for the output voltage response to change from high to low.
+
+The circuit in Figure~\ref{schem:nand} operates as a NAND gate (see Table~\ref{tab:nand}) because when input A is low (\SI{0}{V}), the inverting gate ($Q_1$) is shorted and the non-inverting gate ($Q_3$) is open.  Therefore no matter what input B is shown, the output voltage is high.  When input A is high, $Q_1$ is inverted and therefore open and $Q_3$ is shorted. During this state, when input B is low, $Q_2$ is inverted and shorted allowing current to flow through it, but $Q_4$ is open blocking the current and the output voltage is again high.  The only time the output voltage is low, is when A and B are high, which means both the inverting gates $Q_1$ and $Q_2$ are open.  This behavior is shown in Figure~\ref{fig:nand}.
+
+%% Rewrote this part before reading the previous paragraph.  This information has already been given (less the graph and logic table.)
+%Figure~\ref{fig:nand} illustrates the NAND gate logic table (Table~\ref{tab:nand}) exactly.  When input A is low, $V_o$ is high whether input B is high or low.  When input A is high, $V_o$ is high while input B is low; when input B goes high, $V_o$ drops to low.
+
+% \section{Equations}
+% \label{sec:equations}
+
+% % LaTeX sees blank lines as a start of another paragraph.  To avoid
+% % unnecessary vertical spaces between equations, and still visually
+% % separate in source, put a comment between them.
+% %
+% \begin{equation}
+%   \label{eq:percent_diff}
+%   \%_{diff} = \frac{|nominal - measured|}{nominal}\times 100\%
+% \end{equation}
+% %
+% \begin{equation}
+%   \label{eq:ripple}
+%   V_r = V_{max} - V_{min}
+% \end{equation}
+% %
+% \begin{equation}
+%   \label{eq:volt_reg}
+%   \%_{reg} = \frac{V_{load} - V_{no load}}{V_{no load}}\times 100\%
+% \end{equation}
+
+\end{document}
