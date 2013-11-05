@@ -13,13 +13,13 @@ set grid back linestyle 12
 #set xrange [0:5]
 #set yrange [0:5]
 
-#set format x "%.0s%cs"
-#set format y "%.0s%cV"
+set format x "%.0s%cV"
+set format y "%.0smA"
 
 set output "graph.tex"
 #set title "Peak Voltage vs. DC Voltage in Rectifier Circuit"
-#set xlabel "$V_S (V_{peak})$"
-#set ylabel "$V_{DC} (V)$"
+set xlabel "$V_{DS}$"
+set ylabel "$I_D$"
 plot 'data.dat' using 1:2 title "$V_{GS}$ = 2.11" with linespoints, \
      'data.dat' using 1:3 title "$V_{GS}$ = 2.31" with linespoints, \
      'data.dat' using 1:4 title "$V_{GS}$ = 2.51" with linespoints, \
