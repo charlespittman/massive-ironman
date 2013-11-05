@@ -11,32 +11,32 @@ The objective is to construct and observe the operation of a CMOS inverter and N
 
 \begin{tabular}{ll}
   \centering
-  Transistor: 1N4007                          & Power supply: HP E3631A       \\
-  Resistors: \SI{330}{\ohm} (x3), \SI{2.2}{\kilo\ohm}, \SI{33}{\kilo\ohm}               & Multimeters: Fluke 8010A (x2),  \\
+  Transistor: 1N4007 & Power supply: HP E3631A \\
+  Resistors: \SI{330}{\ohm} (x3), \SI{2.2}{\kilo\ohm}, \SI{33}{\kilo\ohm} & Multimeters: Fluke 8010A (x2) \\
 \end{tabular}
 
- \section{Schematics}
- \label{sec:schematics}
+\section{Schematics}
+\label{sec:schematics}
 
- \begin{figure}[hbtp]
-   \centering
-   \includegraphics[width=0.6\textwidth]{circuit}
-   \caption{\label{fig:circuit} Circuit used in this lab.}
- \end{figure}
+\begin{figure}[hbtp]
+  \centering
+  \includegraphics[width=0.6\textwidth]{circuit}
+  \caption{\label{fig:circuit} Circuit used in this lab.}
+\end{figure}
 
- % \begin{figure}[hbtp]
- %   \centering
- %   \begin{subfigure}[b]{0.4\textwidth}
- %     \includegraphics[width=\textwidth]{invert}
- %     \caption{\label{schem:inverter} CMOS Inverter}
- %   \end{subfigure}%
- %   ~
- %   \begin{subfigure}[b]{0.4\textwidth}
- %     \includegraphics[width=\textwidth]{nand}
- %     \caption{\label{schem:nand} CMOS NAND}
- %   \end{subfigure}
- %   \caption{\label{fig:schematics} Circuits used in this lab.}
- % \end{figure}
+% \begin{figure}[hbtp]
+%   \centering
+%   \begin{subfigure}[b]{0.4\textwidth}
+%     \includegraphics[width=\textwidth]{invert}
+%     \caption{\label{schem:inverter} CMOS Inverter}
+%   \end{subfigure}%
+%   ~
+%   \begin{subfigure}[b]{0.4\textwidth}
+%     \includegraphics[width=\textwidth]{nand}
+%     \caption{\label{schem:nand} CMOS NAND}
+%   \end{subfigure}
+%   \caption{\label{fig:schematics} Circuits used in this lab.}
+% \end{figure}
 
 \section{Procedure}
 \label{sec:procedure}
@@ -48,7 +48,7 @@ The objective is to construct and observe the operation of a CMOS inverter and N
 \item Obtain the 2N7000 MOSFET transistor and resistors needed to build the circuit shown.
 \item Construct the circuit of figure 2. Use the HP multi-meter to measure the drain current, $I_D$ , and the Fluke multi-meters to measure $V_{DS}$ and $V_{GS}$. Use the +6 V power supply for $V_{GG}$ and the +25 V supply for $V_{DD}$.
 \item Set $V_{GG}$ to 0 V and $V_{DD}$ to 5 V and measure $V_{DS}$ and $I_D$.
-\item Slowly increase $V_{GG}$ until the transistor just begins to conduct current as evidenced by a small drop in $V_{DS}$. Record the value of $V_{GS}$ as the Gate Threshold Voltage, $V_{TN}$. $V_{TN}$. = ________________
+ \item Slowly increase $V_{GG}$ until the transistor just begins to conduct current as evidenced by a small drop in $V_{DS}$. Record the value of $V_{GS}$ as the Gate Threshold Voltage, $V_{TN}$.
 \item Adjust $V_{GG}$ to increase $V_{GS}$ by 0.2 V above the threshold. Readjust $V_{DD}$ to return $V_{DS}$ to 5 V, and then measure the drain current ($I_D$ ). Record the value of $V_{GS}$ in the first column of table1, and record the value of $I_D$ in the second column (the $V_{DS}$ = 5 V column).
 \item Continue to increase $V_{GS}$ in steps of 0.2 V while maintaining $V_{DS}$ at 5 V. Measure the drain current at each step. Record the values of $V_{GS}$ and $I_D$ in table 1. Stop this process when the drain current reaches approximately 80mA.
 \item Complete the entries in table 1 by adjusting $V_{DD}$ and $V_{GG}$ to obtain the various required $V_{DS}$ and $V_{GS}$ values, then measuring $I_D$ at each value. Do not exceed 80mA drain current.
@@ -75,24 +75,36 @@ The objective is to construct and observe the operation of a CMOS inverter and N
   \caption{\label{fig:graph} Graph}
 \end{figure}
 
+\begin{table}[hbtp]
+  \centering
+  \begin{tabular}{c|ccc}
+    $V_{TN}$ = \SI{2.11}{V} & $V_{DS}$ = \SI{0.5}{V} & $V_{DS}$ = \SI{1}{V} & $V_{DS}$ = \SI{1.5}{V} \\
+    \hline
+    $V_{GS}$ = \SI{2.91}{V} & & & 0.1078 \\
+    $V_{GS}$ = \SI{2.71}{V} & & 0.0931 & \\
+    $V_{GS}$ = \SI{2.51}{V} & 0.07688 & & \\
+  \end{tabular}
+  \caption{\label{tab:kn} $k_n'$}
+\end{table}
+
 \section{Conclusion}
 \label{sec:conclusion}
 
- \section{Equations}
- \label{sec:equations}
+\section{Equations}
+\label{sec:equations}
 
 % LaTeX sees blank lines as a start of another paragraph.  To avoid
 % unnecessary vertical spaces between equations, and still visually
 % separate in source, put a comment between them.
 %
- \begin{equation}
-   \label{eq:transconduct}
-   g_m = \frac{I_{D2}-I_{D1}}{V_{GS2}-V_{GS1}}
- \end{equation}
-% %
-% \begin{equation}
-%   \label{eq:ripple}
-%   V_r = V_{max} - V_{min}
-% \end{equation}
+\begin{equation}
+  \label{eq:transconduct}
+  g_m = \frac{I_{D2}-I_{D1}}{V_{GS2}-V_{GS1}}
+\end{equation}
+%
+\begin{equation}
+  \label{eq:phys}
+  \frac{k_n'}{2} \cdot \frac{W}{L} = \frac{I_{D1}}{(V_{GS1} - V_{TN})^2}
+\end{equation}
 
 \end{document}
