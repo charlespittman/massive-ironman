@@ -44,8 +44,27 @@ The objective is to construct and observe the operation of a CMOS inverter and N
 \subsection{DC Characteristics}
 \label{sec:inverter}
 
+\begin{enumerate}
+\item Obtain the 2N7000 MOSFET transistor and resistors needed to build the circuit shown.
+\item Construct the circuit of figure 2. Use the HP multi-meter to measure the drain current, $I_D$ , and the Fluke multi-meters to measure $V_{DS}$ and $V_{GS}$. Use the +6 V power supply for $V_{GG}$ and the +25 V supply for $V_{DD}$.
+\item Set $V_{GG}$ to 0 V and $V_{DD}$ to 5 V and measure $V_{DS}$ and $I_D$.
+\item Slowly increase $V_{GG}$ until the transistor just begins to conduct current as evidenced by a small drop in $V_{DS}$. Record the value of $V_{GS}$ as the Gate Threshold Voltage, $V_{TN}$. $V_{TN}$. = ________________
+\item Adjust $V_{GG}$ to increase $V_{GS}$ by 0.2 V above the threshold. Readjust $V_{DD}$ to return $V_{DS}$ to 5 V, and then measure the drain current ($I_D$ ). Record the value of $V_{GS}$ in the first column of table1, and record the value of $I_D$ in the second column (the $V_{DS}$ = 5 V column).
+\item Continue to increase $V_{GS}$ in steps of 0.2 V while maintaining $V_{DS}$ at 5 V. Measure the drain current at each step. Record the values of $V_{GS}$ and $I_D$ in table 1. Stop this process when the drain current reaches approximately 80mA.
+\item Complete the entries in table 1 by adjusting $V_{DD}$ and $V_{GG}$ to obtain the various required $V_{DS}$ and $V_{GS}$ values, then measuring $I_D$ at each value. Do not exceed 80mA drain current.
+\end{enumerate}
+
 \subsection{Small-Signal Transconductance}
 \label{sec:nand}
+
+\begin{enumerate}
+\item Adjust $V_{GG}$ and $V_{DD}$ to obtain $V_{DS}$ = 5 V and $I_D$ = 10 mA.
+\item Record the value of $V_{GS}$ as $V_{G1}$.
+\item Record the exact measured value of $I_D$ and assign it to $I_{D1}$. Use the full resolution of the HP multimeter.
+\item Increase $V_{GS}$ by 10 mV and record it value as $V_{G2}$.
+\item Measure $I_D$ , recording it as $I_{D2}$.
+\item Compute the small signal transconductance (Eq~\ref{eq:transconduct}).
+\end{enumerate}
 
 \section{Results}
 \label{sec:results}
