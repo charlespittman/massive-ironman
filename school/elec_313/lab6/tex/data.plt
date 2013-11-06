@@ -1,5 +1,5 @@
 # gnuplot script
-set terminal epslatex color colortext
+#set terminal epslatex color colortext
 set autoscale
 
 set style line 1 linecolor rgb '#0060ad' linetype 1 linewidth 5
@@ -16,7 +16,11 @@ set grid back linestyle 12
 set format x "%.0s%cV"
 set format y "%.0smA"
 
-set output "graph.tex"
+# Id = Kn * (2 * Vds * (Vgs - Vtn) - Vds^2)
+I1(x) = Kn * (2 * x * (2.11 - Vtn) - x**2)
+
+
+#set output "graph.tex"
 #set title "Peak Voltage vs. DC Voltage in Rectifier Circuit"
 set xlabel "$V_{DS}$"
 set ylabel "$I_D$"
