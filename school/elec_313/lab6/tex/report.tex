@@ -69,7 +69,7 @@ The objective is to construct and observe the operation of a CMOS inverter and N
 \section{Results}
 \label{sec:results}
 
-The following table shows several $V_{GS}$ values that are just slightly over the overdrive voltage $V_{OV}$ and gives an idea of the amount of variation for values resulting from equation 2.
+The following table shows several $V_{GS}$ values that are just slightly over the overdrive voltage $V_{OV}$ and gives an idea of the amount of variation for values resulting from Equation~\ref{eq:phys}.
 
 \begin{figure}[hbtp]
   \centering
@@ -91,6 +91,12 @@ The following table shows several $V_{GS}$ values that are just slightly over th
 
 \section{Conclusion}
 \label{sec:conclusion}
+
+It’s hard to compare the Figure~\ref{fig:graph} plot with the 2N7000 data sheet because the data sheet’s lowest $V_{GS}$ curve is 3 V, which is still higher than the highest $V_{GS}$ curve in Figure~\ref{fig:graph}. However, it is still apparent that the $V_{GS}$ curve of \SI{2.91}{V} in Figure~\ref{fig:graph} is similar to the \SI{3}{V} curve because the $V_{OV}$ points are roughly the same with a $V_{DS}$ value of 1 – 1.5 V. After the $V_{OV}$ point, both curves taper off and have a very slight positive slope.
+
+It’s easier to compare Figure~\ref{fig:graph} plot with the PSpice simulation because the $V_{GS}$ are closer to the values seen in Figure~\ref{fig:graph}. Again the $V_{OV}$ values are similar in both the plot and the simulation. But, the PSpice simulation curves are “flat” at points beyond the $V_{OV}$ instead of sloped like it is in Figure~\ref{fig:graph}.
+
+The second PSpice simulation was more representative of the Figure~\ref{fig:graph} plots because the value of $\lambda$ was changed from 0 (in the first simulation) to .06, which made the $V_{GS}$ curves slope beyond the $V_{OV}$. Adding the $\lambda$ also “raised” the $I_D$ current for the individual $V_{OV}$ points. This is because the $\lambda$ value represents the slight resistance that is inherent to the transistor – a low $\lambda$ value is a higher resistance and a high $\lambda$ is a lower resistance because the resistance is the inverse of the $\lambda$.
 
 \section{Equations}
 \label{sec:equations}
