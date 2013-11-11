@@ -13,8 +13,7 @@
   Transistor: 2N7000               & Power supply: HP E3631A            \\
   Function Generator: HP 33120 & Multimeter: HP 34401A              \\
   Oscilloscope: Agilent 54622D & Capacitors: \SI{0.1}{\micro\farad} \\
-  Resistors: \SI{100}{\ohm}, \SI{300}{\ohm}, \SI{470}{\ohm}, \SI{1}{\kilo\ohm} (x2) & \\
-  ~~\SI{33}{\kilo\ohm}, \SI{100}{\kilo\ohm} (x2) & \\
+  \multicolumn{2}{l}{Resistors: \SI{100}{\ohm}, \SI{300}{\ohm}, \SI{470}{\ohm}, \SI{1}{\kilo\ohm} (x2) \SI{33}{\kilo\ohm}, \SI{100}{\kilo\ohm} (x2)} \\
 \end{tabular}
 
 \section{Schematics}
@@ -30,35 +29,36 @@
   \centering
   \begin{subfigure}[b]{0.4\textwidth}
     \includegraphics[width=\textwidth]{common-source}
-    \caption{\label{schem:common-source} Common-source circuit}
+    \caption{\label{schem:common-source} Common-source amplifier}
   \end{subfigure}%
   ~
   \begin{subfigure}[b]{0.4\textwidth}
     \includegraphics[width=\textwidth]{source-follower}
-    \caption{\label{schem:source-follower} Source-follower circuit}
+    \caption{\label{schem:source-follower} Source-follower amplifier}
   \end{subfigure}
-  \caption{\label{fig:schematics} Circuits used in this lab.}
+  \caption{\label{fig:schematics} Circuits used in this lab. $R_1=\SI{100}{\kilo\ohm}$,  $R_s=\SI{470}{\ohm}$}
 \end{figure}
 
 \section{Procedure}
 \label{sec:procedure}
 
 \subsection{Common-Source Amplifier}
-\label{sec:inverter}
-
 
 \subsection{Source-Follower Amplifier}
-\label{sec:smallsig}
-
 
 \section{Results}
-\label{sec:results}
 
-% \begin{figure}[hbtp]
-%   \centering
-%   \resizebox{1.0\textwidth}{!}{\input{graph.tex}}
-%   \caption{\label{fig:graph} Voltage-Current Relationship}
-% \end{figure}
+\subsection{Common-Source Amplifier}
+
+\begin{table}[hbtp]
+  \centering
+  \begin{tabular}{cccc}
+    $V_G$ & $V_D$ & $V_S$ & $I_D$ \\
+    \hline
+    \SI{4.391}{V} & \SI{13.498}{V} & \SI{2.11}{V} & \SI{4.52}{mA} \\
+  \end{tabular}
+  \caption{\label{tab:tran_common} Transistor characteristics}
+\end{table}
 
 \begin{table}[hbtp]
   \centering
@@ -76,6 +76,18 @@
     1000         & 1.90          \\
   \end{tabular}
   \caption{\label{tab:common-source} Common-source amplifier}
+\end{table}
+
+\subsection{Source-Follower Amplifier}
+
+\begin{table}[hbtp]
+  \centering
+  \begin{tabular}{cccc}
+    $V_G$ & $V_D$ & $V_S$ & $I_D$ \\
+    \hline
+    \SI{4.391}{V} & \SI{18.003}{V} & \SI{2.12}{V} & \SI{4.579}{mA} \\
+  \end{tabular}
+  \caption{\label{tab:tran_follower} Transistor characteristics}
 \end{table}
 
 \begin{table}[hbtp]
