@@ -10,7 +10,7 @@
 
 \begin{tabular}{ll}
   \centering
-  MOSFET: 2N7000               & Power supply: HP E3631A            \\
+  Transistor: 2N7000               & Power supply: HP E3631A            \\
   Function Generator: HP 33120 & Multimeter: HP 34401A              \\
   Oscilloscope: Agilent 54622D & Capacitors: \SI{0.1}{\micro\farad} \\
   Resistors: \SI{100}{\ohm}, \SI{300}{\ohm}, \SI{470}{\ohm}, \SI{1}{\kilo\ohm} (x2) & \\
@@ -59,6 +59,42 @@
 %   \resizebox{1.0\textwidth}{!}{\input{graph.tex}}
 %   \caption{\label{fig:graph} Voltage-Current Relationship}
 % \end{figure}
+
+\begin{table}[hbtp]
+  \centering
+  \begin{tabular}{cc}
+    $V_{in}$ (\si{mV}) & $V_{out}$ (\si{V}) \\
+    \hline
+    200          & 0.382         \\
+    300          & 0.566         \\
+    400          & 0.760         \\
+    500          & 0.939         \\
+    600          & 1.140         \\
+    700          & 1.340         \\
+    800          & 1.530         \\
+    900          & 1.721         \\
+    1000         & 1.90          \\
+  \end{tabular}
+  \caption{\label{tab:common-source} Common-source amplifier}
+\end{table}
+
+\begin{table}[hbtp]
+  \centering
+  \begin{tabular}{cc}
+    $V_{in}$ (\si{mV}) & $V_{out}$ (\si{mV}) \\
+    \hline
+    200                & 182                 \\
+    300                & 268                 \\
+    400                & 360                 \\
+    500                & 451                 \\
+    600                & 541                 \\
+    700                & 634                 \\
+    800                & 725                 \\
+    900                & 813                 \\
+    1000               & 906                 \\
+  \end{tabular}
+  \caption{\label{tab:source-follower} Source-follower amplifier}
+\end{table}
 
 % \begin{table}[hbtp]
 %   \centering
