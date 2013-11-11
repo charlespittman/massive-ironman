@@ -1,0 +1,102 @@
+% Trying to break the document up a bit.  This command simply inserts the contents of the file at this point.  It contains the document license, preamble, and title page: things that aren't likely to change more than once.  This can be used to separate discrete parts of a document into files that are easier to edit at one time.
+\input{./header.tex}
+
+\section{Objective}
+\label{sec:objective}
+
+
+\section{Equipment}
+\label{sec:equipment}
+
+\begin{tabular}{ll}
+  \centering
+  MOSFET: 2N7000               & Power supply: HP E3631A            \\
+  Function Generator: HP 33120 & Multimeter: HP 34401A              \\
+  Oscilloscope: Agilent 54622D & Capacitors: \SI{0.1}{\micro\farad} \\
+  Resistors: \SI{100}{\ohm}, \SI{300}{\ohm}, \SI{470}{\ohm}, \SI{1}{\kilo\ohm} (x2) & \\
+  ~~\SI{33}{\kilo\ohm}, \SI{100}{\kilo\ohm} (x2) & \\
+\end{tabular}
+
+\section{Schematics}
+\label{sec:schematics}
+
+% \begin{figure}[hbtp]
+%   \centering
+%   \includegraphics[width=0.6\textwidth]{circuit}
+%   \caption{\label{fig:circuit} Circuit used in this lab.}
+% \end{figure}
+
+\begin{figure}[hbtp]
+  \centering
+  \begin{subfigure}[b]{0.4\textwidth}
+    \includegraphics[width=\textwidth]{common-source}
+    \caption{\label{schem:common-source} Common-source circuit}
+  \end{subfigure}%
+  ~
+  \begin{subfigure}[b]{0.4\textwidth}
+    \includegraphics[width=\textwidth]{source-follower}
+    \caption{\label{schem:source-follower} Source-follower circuit}
+  \end{subfigure}
+  \caption{\label{fig:schematics} Circuits used in this lab.}
+\end{figure}
+
+\section{Procedure}
+\label{sec:procedure}
+
+\subsection{Common-Source Amplifier}
+\label{sec:inverter}
+
+
+\subsection{Source-Follower Amplifier}
+\label{sec:smallsig}
+
+
+\section{Results}
+\label{sec:results}
+
+% \begin{figure}[hbtp]
+%   \centering
+%   \resizebox{1.0\textwidth}{!}{\input{graph.tex}}
+%   \caption{\label{fig:graph} Voltage-Current Relationship}
+% \end{figure}
+
+% \begin{table}[hbtp]
+%   \centering
+%   \begin{tabular}{c|ccc}
+%     $V_{TN}$ = \SI{2.11}{V} & $V_{DS}$ = \SI{0.5}{V} & $V_{DS}$ = \SI{1}{V} & $V_{DS}$ = \SI{1.5}{V} \\
+%     \hline
+%     $V_{GS}$ = \SI{2.91}{V} & & & 0.1078 \\
+%     $V_{GS}$ = \SI{2.71}{V} & & 0.0931 & \\
+%     $V_{GS}$ = \SI{2.51}{V} & 0.07688 & & \\
+%   \end{tabular}
+%   \caption{\label{tab:kn} $k_n'$}
+% \end{table}
+
+% \begin{figure}[hbtp]
+%   \centering
+%   \includegraphics[width=0.9\textwidth]{lambda6}
+%   \caption{\label{fig:lambda6} PSpice Simulation. $\lambda$ = 0.06}
+% \end{figure}
+
+\section{Conclusion}
+\label{sec:conclusion}
+
+
+\section{Equations}
+\label{sec:equations}
+
+% LaTeX sees blank lines as a start of another paragraph.  To avoid
+% unnecessary vertical spaces between equations, and still visually
+% separate in source, put a comment between them.
+%
+\begin{equation}
+  \label{eq:amp}
+  V_{o,L} = V_{o,NL} \frac{R_L}{R_o + R_L}
+\end{equation}
+%
+% \begin{equation}
+%   \label{eq:phys}
+%   \frac{k_n'}{2} \cdot \frac{W}{L} = \frac{I_{D1}}{(V_{GS1} - V_{TN})^2}
+% \end{equation}
+
+\end{document}
