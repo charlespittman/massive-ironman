@@ -47,31 +47,33 @@ The following procedures were identified to observe the basic operation of MOSFE
 \subsection{Common-Source Amplifier}
 
 \begin{enumerate}
-\item Build the circuit of figure 1. Use the closest resistor values available for R1 and Rs.
-\item Measure and record the dc voltages at all terminals of the MOSFET. Compute the drain current.
-\item Set the function generator for a 200mV PP , 20-kHz sine wave with 0V DC offset. Connect it to V IN .
-\item Connect a 100kohm load resistor from V OUT to ground. This will be considered a no-load scenario.
-\item Connect CHANNEL 1 of the oscilloscope to V IN and CHANNEL 2 to V OUT . Set the scope to trigger off of CHANNEL 1 . This setting is accessed using the EDGE button on the oscilloscope.
-\item Adjust the function generator to an amplitude of 200mV pp as measured on CHANNEL 1 of the oscilloscope.
-\item Measure the peak-to-peak output voltage on CHANNEL 2 of the oscilloscope.
-\item Repeat step 6 for input voltages (as measured on CHANNEL 1 of the oscilloscope) of 300, 400, 500, 600, 700, 800, 900, and 1000mV pp .
-\item Replace the 100kohm from V OUT to ground with a 1kohm load resistor.
-\item Reset the function generator to an amplitude of 200mV pp as measured on CHANNEL 1 of the oscilloscope.
-\item Measure the peak-to-peak output voltage on CHANNEL 2 of the oscilloscope.
+\item Build the circuit shown in Figure~\ref{schem:common-source}.  Use the closest resistor values available for R1 and Rs.
+\item Measure and record the dc voltages at all terminals of the MOSFET.  Compute the drain current.
+\item Set the function generator for a \SI{200}{V_{pp}}, \SI{20}{kHz} sine wave with 0V DC offset.  Connect it to $V_{in}$ .
+\item Connect a \SI{100}{\kilo\ohm} load resistor from $V_{out}$ to ground. This will be considered a no-load scenario.
+\item Connect channel 1 of the oscilloscope to $V_{in}$ and channel 2 to $V_{out}$ . Set the scope to trigger off of channel 1 . This setting is accessed using the EDGE button on the oscilloscope.
+\item Adjust the function generator to an amplitude of \SI{200}{V_{pp}} as measured on channel 1 of the oscilloscope.
+\item Measure the peak-to-peak output voltage on channel 2 of the oscilloscope.
+\item Repeat step 6 for input voltages (as measured on channel 1 of the oscilloscope) of 300, 400, 500, 600, 700, 800, 900, and \SI{1000}{mV_{pp}} .
+\item Replace the \SI{100}{\kilo\ohm} from $V_{out}$ to ground with a \SI{1}{\kilo\ohm} load resistor.
+\item Reset the function generator to an amplitude of \SI{200}{V_{pp}} as measured on channel 1 of the oscilloscope.
+\item Measure the peak-to-peak output voltage on channel 2 of the oscilloscope.
 \end{enumerate}
 
 \subsection{Source-Follower Amplifier}
 
 \begin{enumerate}
-\item Construct the circuit of figure 2 by removing the 1kohm drain resistor and moving the output capacitor to the source of the MOSFET.
+\item Construct the circuit shown in Figure~\ref{schem:source-follower} by removing the \SI{1}{\kilo\ohm} drain resistor and moving the output capacitor to the source of the MOSFET.
 \item Measure and record the dc voltages at all terminals of the MOSFET. Compute the drain current.
-\item Connect a 100kohm load resistor from V OUT to ground. This will be considered a no-load scenario.
-\item Adjust the function generator to an amplitude of 200mV pp as measured on CHANNEL 1 of the oscilloscope.5) Measure the peak-to-peak output voltage on CHANNEL 2 of the oscilloscope.
-\item Repeat step 4 for input voltages (as measured on CHANNEL 1 of the oscilloscope) of 300, 400, 500, 600, 700, 800, 900, and 1000mV pp .
-\item Reset the function generator to an amplitude of 200mV pp as measured on CHANNEL 1 of the oscilloscope.
-\item Replace the 100kohm resistor from V OUT to ground with a 1kohm resistor and measure the peak-to-peak output voltage on CHANNEL 2 of the oscilloscope.
-\item Now replace the 1kohm load resistor with a 100ohm load resistor and measure the peak-to-peak output voltage on CHANNEL 2 of the oscilloscope.
+\item Connect a \SI{100}{\kilo\ohm} load resistor from $V_{out}$ to ground. This will be considered a no-load scenario.
+\item Adjust the function generator to an amplitude of \SI{200}{V_{pp}} as measured on channel 1 of the oscilloscope.
+\item Measure the peak-to-peak output voltage on channel 2 of the oscilloscope.
+\item Repeat step 4 for input voltages (as measured on channel 1 of the oscilloscope) of 300, 400, 500, 600, 700, 800, 900, and \SI{1000}{mV_{pp}} .
+\item Reset the function generator to an amplitude of \SI{200}{V_{pp}} as measured on channel 1 of the oscilloscope.
+\item Replace the \SI{100}{\kilo\ohm} resistor from $V_{out}$ to ground with a \SI{1}{\kilo\ohm} resistor and measure the peak-to-peak output voltage on channel 2 of the oscilloscope.
+\item Now replace the \SI{1}{\kilo\ohm} load resistor with a 100ohm load resistor and measure the peak-to-peak output voltage on channel 2 of the oscilloscope.
 \end{enumerate}
+
 \section{Results}
 
 \subsection{Common-Source Amplifier}
