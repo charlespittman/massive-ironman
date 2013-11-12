@@ -11,7 +11,7 @@
 \begin{tabular}{ll}
   \centering
   Transistor: 2N7000               & Power supply: HP E3631A            \\
-  Function Generator: HP 33120 & Multimeter: HP 34401A              \\
+  Function generator: HP 33120 & Multimeter: HP 34401A              \\
   Oscilloscope: Agilent 54622D & Capacitors: \SI{0.1}{\micro\farad} \\
   \multicolumn{2}{l}{Resistors: \SI{100}{\ohm}, \SI{300}{\ohm}, \SI{470}{\ohm}, \SI{1}{\kilo\ohm} (x2) \SI{33}{\kilo\ohm}, \SI{100}{\kilo\ohm} (x2)} \\
 \end{tabular}
@@ -42,10 +42,36 @@
 \section{Procedure}
 \label{sec:procedure}
 
+The following procedures were identified to observe the basic operation of MOSFET amplifier circuits.
+
 \subsection{Common-Source Amplifier}
+
+\begin{enumerate}
+\item Build the circuit of figure 1. Use the closest resistor values available for R1 and Rs.
+\item Measure and record the dc voltages at all terminals of the MOSFET. Compute the drain current.
+\item Set the function generator for a 200mV PP , 20-kHz sine wave with 0V DC offset. Connect it to V IN .
+\item Connect a 100kohm load resistor from V OUT to ground. This will be considered a no-load scenario.
+\item Connect CHANNEL 1 of the oscilloscope to V IN and CHANNEL 2 to V OUT . Set the scope to trigger off of CHANNEL 1 . This setting is accessed using the EDGE button on the oscilloscope.
+\item Adjust the function generator to an amplitude of 200mV pp as measured on CHANNEL 1 of the oscilloscope.
+\item Measure the peak-to-peak output voltage on CHANNEL 2 of the oscilloscope.
+\item Repeat step 6 for input voltages (as measured on CHANNEL 1 of the oscilloscope) of 300, 400, 500, 600, 700, 800, 900, and 1000mV pp .
+\item Replace the 100kohm from V OUT to ground with a 1kohm load resistor.
+\item Reset the function generator to an amplitude of 200mV pp as measured on CHANNEL 1 of the oscilloscope.
+\item Measure the peak-to-peak output voltage on CHANNEL 2 of the oscilloscope.
+\end{enumerate}
 
 \subsection{Source-Follower Amplifier}
 
+\begin{enumerate}
+\item Construct the circuit of figure 2 by removing the 1kohm drain resistor and moving the output capacitor to the source of the MOSFET.
+\item Measure and record the dc voltages at all terminals of the MOSFET. Compute the drain current.
+\item Connect a 100kohm load resistor from V OUT to ground. This will be considered a no-load scenario.
+\item Adjust the function generator to an amplitude of 200mV pp as measured on CHANNEL 1 of the oscilloscope.5) Measure the peak-to-peak output voltage on CHANNEL 2 of the oscilloscope.
+\item Repeat step 4 for input voltages (as measured on CHANNEL 1 of the oscilloscope) of 300, 400, 500, 600, 700, 800, 900, and 1000mV pp .
+\item Reset the function generator to an amplitude of 200mV pp as measured on CHANNEL 1 of the oscilloscope.
+\item Replace the 100kohm resistor from V OUT to ground with a 1kohm resistor and measure the peak-to-peak output voltage on CHANNEL 2 of the oscilloscope.
+\item Now replace the 1kohm load resistor with a 100ohm load resistor and measure the peak-to-peak output voltage on CHANNEL 2 of the oscilloscope.
+\end{enumerate}
 \section{Results}
 
 \subsection{Common-Source Amplifier}
@@ -108,23 +134,17 @@
   \caption{\label{tab:source-follower} Source-follower amplifier}
 \end{table}
 
-% \begin{table}[hbtp]
-%   \centering
-%   \begin{tabular}{c|ccc}
-%     $V_{TN}$ = \SI{2.11}{V} & $V_{DS}$ = \SI{0.5}{V} & $V_{DS}$ = \SI{1}{V} & $V_{DS}$ = \SI{1.5}{V} \\
-%     \hline
-%     $V_{GS}$ = \SI{2.91}{V} & & & 0.1078 \\
-%     $V_{GS}$ = \SI{2.71}{V} & & 0.0931 & \\
-%     $V_{GS}$ = \SI{2.51}{V} & 0.07688 & & \\
-%   \end{tabular}
-%   \caption{\label{tab:kn} $k_n'$}
-% \end{table}
-
-% \begin{figure}[hbtp]
-%   \centering
-%   \includegraphics[width=0.9\textwidth]{lambda6}
-%   \caption{\label{fig:lambda6} PSpice Simulation. $\lambda$ = 0.06}
-% \end{figure}
+\begin{table}[hbtp]
+  \centering
+  \begin{tabular}{ccccc}
+    & $V_{G}$ (\si{V}) & $V_{D}$ (\si{V}) & $V_{S}$ (\si{V}) & $I_D$ (\si{mA}) \\
+    \hline
+    \textbf{Measured} & 4.391 & 13.498 & 2.11 & 4.52 \\
+    \textbf{Theoretical} & 4.466 & 14.000 & 2.4214 & 4.00 \\
+    \textbf{\% Difference} & 1.712\% & 3.719\% & 14.800\% & 11.500\% \\
+  \end{tabular}
+  \caption{\label{tab:percent_diff} \% Difference}
+\end{table}
 
 \section{Conclusion}
 \label{sec:conclusion}
@@ -142,9 +162,24 @@
   V_{o,L} = V_{o,NL} \frac{R_L}{R_o + R_L}
 \end{equation}
 %
-% \begin{equation}
-%   \label{eq:phys}
-%   \frac{k_n'}{2} \cdot \frac{W}{L} = \frac{I_{D1}}{(V_{GS1} - V_{TN})^2}
-% \end{equation}
+\begin{equation}
+  \label{eq:V_G}
+  V_G = \frac{V_{DD} \cdot \SI{33}{\kilo\ohm}}{\SI{100}{\kilo\ohm} + \SI{33}{\kilo\ohm}}
+\end{equation}
+%
+\begin{equation}
+  \label{eq:V_S}
+  V_S = V_G \cdot \sqrt{\frac{I_D}{K_N}} - V_{TN}
+\end{equation}
+%
+\begin{equation}
+  \label{eq:V_D}
+  V_D = V_{DD} - I_D \cdot \SI{1}{\kilo\ohm}
+\end{equation}
+%
+\begin{equation}
+  \label{eqn:percent_diff}
+  \%_{diff} = \frac{|measured - theoretical|}{theoretical} \times 100\%
+\end{equation}
 
 \end{document}
