@@ -4,7 +4,6 @@
 \section{Objective}
 \label{sec:objective}
 
-
 \section{Equipment}
 \label{sec:equipment}
 
@@ -49,9 +48,9 @@ The following procedures were identified to observe the basic operation of MOSFE
 \begin{enumerate}
 \item Build the circuit shown in Figure~\ref{schem:common-source}.  Use the closest resistor values available for R1 and Rs.
 \item Measure and record the drain current and DC voltages at all terminals of the MOSFET.
-\item Set the function generator for a \SI{200}{V_{pp}}, \SI{20}{kHz} sine wave with \SI{0}{V} DC offset.  Connect it to $V_{in}$.
+\item Set the function generator for a \SI{200}{V_{pp}}, \SI{20}{kHz} sine wave with \SI{0}{VDC} offset.  Connect it to $V_{in}$.
 \item Connect a \SI{100}{\kilo\ohm} load resistor from $V_{out}$ to ground.  This will be considered a no-load scenario.
-\item Connect channel 1 of the oscilloscope to $V_{in}$ and channel 2 to $V_{out}$.  Set the scope to trigger off of channel 1. This setting is accessed using the EDGE button on the oscilloscope.
+\item Connect channel 1 of the oscilloscope to $V_{in}$ and channel 2 to $V_{out}$.  Set the scope to trigger off of channel 1.
 \item Adjust the function generator to an amplitude of \SI{200}{V_{pp}} as measured on channel 1 of the oscilloscope.
 \item Measure the peak-to-peak output voltage on channel 2 of the oscilloscope.
 \item Repeat step 6 for input voltages of 300, 400, 500, 600, 700, 800, 900, and \SI{1000}{mV_{pp}}.
@@ -81,30 +80,30 @@ The following procedures were identified to observe the basic operation of MOSFE
 
 \begin{table}[hbtp]
   \centering
-  \begin{tabular}{ccccc}
-    & $V_{G}$ (\si{V}) & $V_{D}$ (\si{V}) & $V_{S}$ (\si{V}) & $I_D$ (\si{mA}) \\
+  \begin{tabular}{r|cccc}
+                           & $V_{G}$ (\si{V}) & $V_{D}$ (\si{V}) & $V_{S}$ (\si{V}) & $I_D$ (\si{mA}) \\
     \hline
-    \textbf{Measured} & 4.391 & 13.498 & 2.11 & 4.52 \\
-    \textbf{Theoretical} & 4.466 & 14.000 & 2.4214 & 4.00 \\
-    \textbf{\% Difference} & 1.712\% & 3.719\% & 14.800\% & 11.500\% \\
+    \textbf{Measured}      & 4.391            & 13.498           & 2.11             & 4.52            \\
+    \textbf{Theoretical}   & 4.466            & 14.000           & 2.4214           & 4.00            \\
+    \textbf{\% Difference} & 1.712\%          & 3.719\%          & 14.800\%         & 11.500\%        \\
   \end{tabular}
   \caption{\label{tab:tran_common} Transistor characteristics}
 \end{table}
 
 \begin{table}[hbtp]
   \centering
-  \begin{tabular}{cc}
-    $V_{in}$ (\si{mV}) & $V_{out}$ (\si{V}) \\
+  \begin{tabular}{ccc}
+    $V_{in}$ (\si{mV}) & $V_{out}$ (\si{V}) & $A_V$ \\
     \hline
-    200          & 0.382         \\
-    300          & 0.566         \\
-    400          & 0.760         \\
-    500          & 0.939         \\
-    600          & 1.140         \\
-    700          & 1.340         \\
-    800          & 1.530         \\
-    900          & 1.721         \\
-    1000         & 1.90          \\
+    200                & 0.382              & 1.91  \\
+    300                & 0.566              & 1.89  \\
+    400                & 0.760              & 1.90  \\
+    500                & 0.939              & 1.88  \\
+    600                & 1.140              & 1.90  \\
+    700                & 1.340              & 1.91  \\
+    800                & 1.530              & 1.91  \\
+    900                & 1.721              & 1.91  \\
+    1000               & 1.90               & 1.90  \\
   \end{tabular}
   \caption{\label{tab:common-source} Common-source amplifier}
 \end{table}
@@ -123,24 +122,26 @@ The following procedures were identified to observe the basic operation of MOSFE
 
 \begin{table}[hbtp]
   \centering
-  \begin{tabular}{cc}
-    $V_{in}$ (\si{mV}) & $V_{out}$ (\si{mV}) \\
+  \begin{tabular}{ccc}
+    $V_{in}$ (\si{mV}) & $V_{out}$ (\si{mV}) & $A_V$ \\
     \hline
-    200                & 182                 \\
-    300                & 268                 \\
-    400                & 360                 \\
-    500                & 451                 \\
-    600                & 541                 \\
-    700                & 634                 \\
-    800                & 725                 \\
-    900                & 813                 \\
-    1000               & 906                 \\
+    200                & 182                 & 0.910 \\
+    300                & 268                 & 0.893 \\
+    400                & 360                 & 0.900 \\
+    500                & 451                 & 0.902 \\
+    600                & 541                 & 0.902 \\
+    700                & 634                 & 0.906 \\
+    800                & 725                 & 0.906 \\
+    900                & 813                 & 0.903 \\
+    1000               & 906                 & 0.906 \\
   \end{tabular}
   \caption{\label{tab:source-follower} Source-follower amplifier}
 \end{table}
 
 \section{Conclusion}
 \label{sec:conclusion}
+
+The mean voltage gain (AV) for the Common Source Amplifier (CSA) is 1.90 (as shown in Table ??) and the output resistance (RO) is 990 ohms or roughly the same as the 1k ohm drain resistor (RD). The output voltage is 180° out of phase from the input voltage. The mean AV for the Source Follower Amplifier (SFA) is 0.903 (as shown in Table ??) and the output resistance is relatively low at 43.6 ohms. The input and the output voltages are also in phase. The input resistance is much higher thatn the output resistance therefore the output current is much higher. A CSA is useful when a voltage gain is desired and when an output voltage is needed to be 180° out of phase. An SFA is useful when no voltage gain is desired, a large current gain is desired, and the output voltage is needed to be in phase with the input voltage.
 
 \section{Equations}
 \label{sec:equations}
@@ -167,6 +168,16 @@ The following procedures were identified to observe the basic operation of MOSFE
 \begin{equation}
   \label{eq:V_D}
   V_D = V_{DD} - I_D \cdot \SI{1}{\kilo\ohm}
+\end{equation}
+%
+\begin{equation}
+  \label{eq:I_D}
+  I_D = \frac{V_S}{R_S}
+\end{equation}
+%
+\begin{equation}
+  \label{eq:A_V}
+  A_V = \frac{V_{out}}{V_{in}} = \frac{-g_m \cdot R_D}{1 + g_m \cdot R_S}
 \end{equation}
 %
 \begin{equation}
