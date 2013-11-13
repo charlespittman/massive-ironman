@@ -77,8 +77,6 @@ The following procedures were identified to observe the basic operation of MOSFE
 
 \section{Results}
 
-%\subsection{Common-Source Amplifier}
-
 \begin{table}[hbtp]
   \centering
   \begin{tabular}{r|cccc}
@@ -106,20 +104,19 @@ The following procedures were identified to observe the basic operation of MOSFE
     900                & 1.721              & 1.91  \\
     1000               & 1.90               & 1.90  \\
   \end{tabular}
-  \caption{\label{tab:common-source} Common-source amplifier}
+  \caption{\label{tab:common-source} Voltage gain of common-source amplifier}
 \end{table}
 
-%\subsection{Source-Follower Amplifier}
-
-% \begin{table}[hbtp]
-%   \centering
-%   \begin{tabular}{cccc}
-%     $V_G$ & $V_D$ & $V_S$ & $I_D$ \\
-%     \hline
-%     \SI{4.391}{V} & \SI{18.003}{V} & \SI{2.12}{V} & \SI{4.579}{mA} \\
-%   \end{tabular}
-%   \caption{\label{tab:tran_follower} Transistor characteristics}
-% \end{table}
+\begin{table}[hbtp]
+  \centering
+  \begin{tabular}{cccc}
+    $V_{out,load}$ & $V_{out,no load}$ & $R_L$ & $R_o$ \\
+    (\si{mV}) & (\si{mV}) & (\si{\ohm}) & (\si{\ohm}) \\
+    \hline
+    382 & 192 & 1000 & 990 \\
+    \end{tabular}
+    \caption{\label{tab:ro_common} Output resistance of common-source amplifier}
+\end{table}
 
 \begin{table}[hbtp]
   \centering
@@ -136,7 +133,18 @@ The following procedures were identified to observe the basic operation of MOSFE
     900                & 813                 & 0.903 \\
     1000               & 906                 & 0.906 \\
   \end{tabular}
-  \caption{\label{tab:source-follower} Source-follower amplifier}
+  \caption{\label{tab:source-follower} Voltage gain of source-follower amplifier}
+\end{table}
+
+\begin{table}[hbtp]
+  \centering
+  \begin{tabular}{cccc}
+    $V_{out,load}$ & $V_{out,no load}$ & $R_L$ & $R_o$ \\
+    (\si{mV}) & (\si{mV}) & (\si{\ohm}) & (\si{\ohm}) \\
+    \hline
+    182 & 174 & 1000 & 43.6 \\
+    \end{tabular}
+    \caption{\label{tab:ro_follow} Output resistance of source-follower amplifier}
 \end{table}
 
 \begin{figure}[hbtp]
@@ -150,6 +158,8 @@ The following procedures were identified to observe the basic operation of MOSFE
 \section{Conclusion}
 \label{sec:conclusion}
 
+The \% difference is relatively close for $V_G$ and the $V_D$.  Using Equation~\ref{eq:I_D} to calculate a current of \SI{4.49}{mA} instead of the assumed \SI{4}{mA} from the prelab would have generated even closer calculated values for $V_G$ and $V_D$.  The relatively large \% difference for the $V_S$ values is probably due to the $V_{TN}$ not being \SI{2}{V} but instead more like \SI{2.3}{V}.
+
 The mean voltage gain ($A_V$) for the common-source amplifier is 1.90 (Table~\ref{tab:common-source}) and the output resistance ($R_o$) is \SI{9.9}{\kilo\ohm} or roughly the same as the \SI{1}{\kilo\ohm} drain resistor ($R_D$).  The output voltage is 180° out of phase from the input voltage.  The gain for the source-follower amplifier is 0.903 (Table~\ref{tab:source-follower}) and the output resistance is relatively low at \SI{43.6}{\ohm}.  The input and the output voltages are also in phase.   The input resistance is much higher than the output resistance therefore the output current is much higher.   A common-source amplifier is useful when a voltage gain is desired and when an output voltage is needed to be 180° out of phase.  A source-follower amplifier is useful when no voltage gain is desired, a large current gain is desired, and the output voltage is needed to be in phase with the input voltage.
 
 \section{Equations}
@@ -161,7 +171,7 @@ The mean voltage gain ($A_V$) for the common-source amplifier is 1.90 (Table~\re
 %
 \begin{equation}
   \label{eq:amp}
-  V_{o,L} = V_{o,NL} \frac{R_L}{R_o + R_L}
+  V_{out,load} = \frac{R_L}{R_o + R_L} \cdot V_{out,no load}
 \end{equation}
 %
 \begin{equation}
