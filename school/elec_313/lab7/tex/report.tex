@@ -4,6 +4,8 @@
 \section{Objective}
 \label{sec:objective}
 
+The objective is to observe the basic operation of two MOSFET amplifier circuits: a common-source amplifier, and a source-follower amplifier.
+
 \section{Equipment}
 \label{sec:equipment}
 
@@ -26,12 +28,12 @@
 
 \begin{figure}[hbtp]
   \centering
-  \begin{subfigure}[b]{0.4\textwidth}
+  \begin{subfigure}[b]{0.5\textwidth}
     \includegraphics[width=\textwidth]{common-source}
     \caption{\label{schem:common-source} Common-source amplifier}
   \end{subfigure}%
   ~
-  \begin{subfigure}[b]{0.4\textwidth}
+  \begin{subfigure}[b]{0.5\textwidth}
     \includegraphics[width=\textwidth]{source-follower}
     \caption{\label{schem:source-follower} Source-follower amplifier}
   \end{subfigure}
@@ -70,13 +72,12 @@ The following procedures were identified to observe the basic operation of MOSFE
 \item Repeat step 4 for input voltages of 300, 400, 500, 600, 700, 800, 900, and \SI{1000}{mV_{pp}}.
 \item Reset the function generator to an amplitude of \SI{200}{V_{pp}} as measured on channel 1 of the oscilloscope.
 \item Replace the \SI{100}{\kilo\ohm} resistor from $V_{out}$ to ground with a \SI{1}{\kilo\ohm} resistor and measure the peak-to-peak output voltage on channel 2 of the oscilloscope.
-\item Now replace the \SI{1}{\kilo\ohm} load resistor with a \SI{100}{ohm} load resistor and measure the peak-to-peak output voltage on channel 2 of the oscilloscope.
+\item Replace the \SI{1}{\kilo\ohm} load resistor with a \SI{100}{ohm} load resistor and measure the peak-to-peak output voltage on channel 2 of the oscilloscope.
 \end{enumerate}
 
 \section{Results}
 
-\subsection{Common-Source Amplifier}
-
+%\subsection{Common-Source Amplifier}
 
 \begin{table}[hbtp]
   \centering
@@ -108,17 +109,17 @@ The following procedures were identified to observe the basic operation of MOSFE
   \caption{\label{tab:common-source} Common-source amplifier}
 \end{table}
 
-\subsection{Source-Follower Amplifier}
+%\subsection{Source-Follower Amplifier}
 
-\begin{table}[hbtp]
-  \centering
-  \begin{tabular}{cccc}
-    $V_G$ & $V_D$ & $V_S$ & $I_D$ \\
-    \hline
-    \SI{4.391}{V} & \SI{18.003}{V} & \SI{2.12}{V} & \SI{4.579}{mA} \\
-  \end{tabular}
-  \caption{\label{tab:tran_follower} Transistor characteristics}
-\end{table}
+% \begin{table}[hbtp]
+%   \centering
+%   \begin{tabular}{cccc}
+%     $V_G$ & $V_D$ & $V_S$ & $I_D$ \\
+%     \hline
+%     \SI{4.391}{V} & \SI{18.003}{V} & \SI{2.12}{V} & \SI{4.579}{mA} \\
+%   \end{tabular}
+%   \caption{\label{tab:tran_follower} Transistor characteristics}
+% \end{table}
 
 \begin{table}[hbtp]
   \centering
@@ -138,10 +139,18 @@ The following procedures were identified to observe the basic operation of MOSFE
   \caption{\label{tab:source-follower} Source-follower amplifier}
 \end{table}
 
+\begin{figure}[hbtp]
+  \centering
+  \resizebox{1.0\textwidth}{!}{\input{graph.tex}}
+  \caption{\label{fig:graph} Gain vs. $V_{in}$}
+\end{figure}
+
+\newpage
+
 \section{Conclusion}
 \label{sec:conclusion}
 
-The mean voltage gain (AV) for the Common Source Amplifier (CSA) is 1.90 (as shown in Table ??) and the output resistance (RO) is 990 ohms or roughly the same as the 1k ohm drain resistor (RD). The output voltage is 180° out of phase from the input voltage. The mean AV for the Source Follower Amplifier (SFA) is 0.903 (as shown in Table ??) and the output resistance is relatively low at 43.6 ohms. The input and the output voltages are also in phase. The input resistance is much higher thatn the output resistance therefore the output current is much higher. A CSA is useful when a voltage gain is desired and when an output voltage is needed to be 180° out of phase. An SFA is useful when no voltage gain is desired, a large current gain is desired, and the output voltage is needed to be in phase with the input voltage.
+The mean voltage gain ($A_V$) for the common-source amplifier is 1.90 (Table~\ref{tab:common-source}) and the output resistance ($R_o$) is \SI{9.9}{\kilo\ohm} or roughly the same as the \SI{1}{\kilo\ohm} drain resistor ($R_D$).  The output voltage is 180° out of phase from the input voltage.  The gain for the source-follower amplifier is 0.903 (Table~\ref{tab:source-follower}) and the output resistance is relatively low at \SI{43.6}{\ohm}.  The input and the output voltages are also in phase.   The input resistance is much higher than the output resistance therefore the output current is much higher.   A common-source amplifier is useful when a voltage gain is desired and when an output voltage is needed to be 180° out of phase.  A source-follower amplifier is useful when no voltage gain is desired, a large current gain is desired, and the output voltage is needed to be in phase with the input voltage.
 
 \section{Equations}
 \label{sec:equations}
