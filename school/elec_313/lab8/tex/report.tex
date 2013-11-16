@@ -43,37 +43,18 @@ The objective is to plot the output characteristic of a common-emmitter transist
 \section{Procedure}
 \label{sec:procedure}
 
-% The following procedures were identified to observe the basic operation of MOSFET amplifier circuits.
+\begin{enumerate}
+\item Construct the circuit of Figure~\ref{fig:circuit}.  Use the +\SI{6}{V} power supply for $V_{BB}$ and the +\SI{25}{V} supply for $V_{CC}$.  Be sure to keep the connection distance between the capacitor and the transistor short.  Use the HP multimeter to measure the base current ($I_B$) on the source side of the capacitor and Fluke multimeters to measure the collector voltage and current ($V_{CE}$ and $I_C$).
 
-% \subsection{Common-Source Amplifier}
+\item Adjust $V_{BB}$ so that base current ($I_B$) is \SI{20}{\micro\ampere}.
 
-% \begin{enumerate}
-% \item Build the circuit shown in Figure~\ref{schem:common-source}.  Use the closest resistor values available for R1 and Rs.
-% \item Measure and record the drain current and DC voltages at all terminals of the MOSFET.
-% \item Set the function generator for a \SI{200}{V_{pp}}, \SI{20}{kHz} sine wave with \SI{0}{VDC} offset.  Connect it to $V_{in}$.
-% \item Connect a \SI{100}{\kilo\ohm} load resistor from $V_{out}$ to ground.  This will be considered a no-load scenario.
-% \item Connect channel 1 of the oscilloscope to $V_{in}$ and channel 2 to $V_{out}$.  Set the scope to trigger off of channel 1.
-% \item Adjust the function generator to an amplitude of \SI{200}{V_{pp}} as measured on channel 1 of the oscilloscope.
-% \item Measure the peak-to-peak output voltage on channel 2 of the oscilloscope.
-% \item Repeat step 6 for input voltages of 300, 400, 500, 600, 700, 800, 900, and \SI{1000}{mV_{pp}}.
-% \item Replace the \SI{100}{\kilo\ohm} from $V_{out}$ to ground with a \SI{1}{\kilo\ohm} load resistor.
-% \item Reset the function generator to an amplitude of \SI{200}{V_{pp}} as measured on channel 1 of the oscilloscope.
-% \item Measure the peak-to-peak output voltage on channel 2 of the oscilloscope.
-% \end{enumerate}
+\item Adjust $V_{CC}$ from 0.5 -- \SI{1.5}{V} in \SI{0.25}{V} steps, then from 2 -- \SI{20}{V} in \SI{2}{V} steps.
 
-% \subsection{Source-Follower Amplifier}
+\item At each step measure the collector current, $I_C$, and the collector-to-emitter voltage,
+$V_{CE}$.  If $I_B$ has drifted, readjust $V_{BB}$ before recording the values of $I_C$ and $V_{CE}$.
 
-% \begin{enumerate}
-% \item Construct the circuit shown in Figure~\ref{schem:source-follower} by removing the \SI{1}{\kilo\ohm} drain resistor and moving the output capacitor to the source of the MOSFET.
-% \item Measure and record the drain current and DC voltages at all terminals of the MOSFET.
-% \item Connect a \SI{100}{\kilo\ohm} load resistor from $V_{out}$ to ground. This will be considered a no-load scenario.
-% \item Adjust the function generator to an amplitude of \SI{200}{V_{pp}} as measured on channel 1 of the oscilloscope.
-% \item Measure the peak-to-peak output voltage on channel 2 of the oscilloscope.
-% \item Repeat step 4 for input voltages of 300, 400, 500, 600, 700, 800, 900, and \SI{1000}{mV_{pp}}.
-% \item Reset the function generator to an amplitude of \SI{200}{V_{pp}} as measured on channel 1 of the oscilloscope.
-% \item Replace the \SI{100}{\kilo\ohm} resistor from $V_{out}$ to ground with a \SI{1}{\kilo\ohm} resistor and measure the peak-to-peak output voltage on channel 2 of the oscilloscope.
-% \item Replace the \SI{1}{\kilo\ohm} load resistor with a \SI{100}{ohm} load resistor and measure the peak-to-peak output voltage on channel 2 of the oscilloscope.
-% \end{enumerate}
+\item Adjust $V_{BB}$ for a base current of \SI{50}{\micro\ampere}, \SI{80}{\micro\ampere}, and \SI{100}{\micro\ampere}.  Repeat steps 3 and 4 at each $I_B$ value.
+\end{enumerate}
 
 \section{Results}
 
