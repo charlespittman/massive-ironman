@@ -4,6 +4,8 @@
 \section{Objective}
 \label{sec:objective}
 
+The objective is to plot the output characteristic of a common-emmitter transistor circuit, and use it to determine the current gain and output conductance.
+
 \section{Equipment}
 \label{sec:equipment}
 
@@ -18,11 +20,11 @@
 \section{Schematics}
 \label{sec:schematics}
 
-% \begin{figure}[hbtp]
-%   \centering
-%   \includegraphics[width=0.6\textwidth]{circuit}
-%   \caption{\label{fig:circuit} Circuit used in this lab.}
-% \end{figure}
+\begin{figure}[hbtp]
+  \centering
+  \includegraphics[width=0.6\textwidth]{circuit}
+  \caption{\label{fig:circuit} Common-emitter transistor circuit}
+\end{figure}
 
 % \begin{figure}[hbtp]
 %   \centering
@@ -154,38 +156,42 @@
 % separate in source, put a comment between them.
 %
 \begin{equation}
-  \label{eq:amp}
-  V_{o,L} = V_{o,NL} \frac{R_L}{R_o + R_L}
+  \label{eq:hoe}
+  h_{oe} \approx \frac{1}{r_o} = \frac{\Delta i_C}{\Delta v_{CE}}
 \end{equation}
-%
-\begin{equation}
-  \label{eq:V_G}
-  V_G = \frac{V_{DD} \cdot \SI{33}{\kilo\ohm}}{\SI{100}{\kilo\ohm} + \SI{33}{\kilo\ohm}}
-\end{equation}
-%
-\begin{equation}
-  \label{eq:V_S}
-  V_S = V_G \cdot \sqrt{\frac{I_D}{K_N}} - V_{TN}
-\end{equation}
-%
-\begin{equation}
-  \label{eq:V_D}
-  V_D = V_{DD} - I_D \cdot \SI{1}{\kilo\ohm}
-\end{equation}
-%
-\begin{equation}
-  \label{eq:I_D}
-  I_D = \frac{V_S}{R_S}
-\end{equation}
-%
-\begin{equation}
-  \label{eq:A_V}
-  A_V = \frac{V_{out}}{V_{in}} = \frac{-g_m \cdot R_D}{1 + g_m \cdot R_S}
-\end{equation}
-%
-\begin{equation}
-  \label{eqn:percent_diff}
-  \%_{diff} = \frac{|measured - theoretical|}{theoretical} \times 100\%
-\end{equation}
+% \begin{equation}
+%   \label{eq:amp}
+%   V_{o,L} = V_{o,NL} \frac{R_L}{R_o + R_L}
+% \end{equation}
+% %
+% \begin{equation}
+%   \label{eq:V_G}
+%   V_G = \frac{V_{DD} \cdot \SI{33}{\kilo\ohm}}{\SI{100}{\kilo\ohm} + \SI{33}{\kilo\ohm}}
+% \end{equation}
+% %
+% \begin{equation}
+%   \label{eq:V_S}
+%   V_S = V_G \cdot \sqrt{\frac{I_D}{K_N}} - V_{TN}
+% \end{equation}
+% %
+% \begin{equation}
+%   \label{eq:V_D}
+%   V_D = V_{DD} - I_D \cdot \SI{1}{\kilo\ohm}
+% \end{equation}
+% %
+% \begin{equation}
+%   \label{eq:I_D}
+%   I_D = \frac{V_S}{R_S}
+% \end{equation}
+% %
+% \begin{equation}
+%   \label{eq:A_V}
+%   A_V = \frac{V_{out}}{V_{in}} = \frac{-g_m \cdot R_D}{1 + g_m \cdot R_S}
+% \end{equation}
+% %
+% \begin{equation}
+%   \label{eqn:percent_diff}
+%   \%_{diff} = \frac{|measured - theoretical|}{theoretical} \times 100\%
+% \end{equation}
 
 \end{document}
