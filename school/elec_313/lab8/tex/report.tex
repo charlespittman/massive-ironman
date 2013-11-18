@@ -4,6 +4,8 @@
 \section{Objective}
 \label{sec:objective}
 
+The objective is to plot the output characteristic of a common-emmitter transistor circuit, and use it to determine the current gain and output conductance.
+
 \section{Equipment}
 \label{sec:equipment}
 
@@ -18,11 +20,11 @@
 \section{Schematics}
 \label{sec:schematics}
 
-% \begin{figure}[hbtp]
-%   \centering
-%   \includegraphics[width=0.6\textwidth]{circuit}
-%   \caption{\label{fig:circuit} Circuit used in this lab.}
-% \end{figure}
+\begin{figure}[hbtp]
+  \centering
+  \includegraphics[width=0.6\textwidth]{circuit}
+  \caption{\label{fig:circuit} Common-emitter transistor circuit}
+\end{figure}
 
 % \begin{figure}[hbtp]
 %   \centering
@@ -41,107 +43,153 @@
 \section{Procedure}
 \label{sec:procedure}
 
-% The following procedures were identified to observe the basic operation of MOSFET amplifier circuits.
+\begin{enumerate}
+\item Construct the circuit of Figure~\ref{fig:circuit}.  Use the +\SI{6}{V} power supply for $V_{BB}$ and the +\SI{25}{V} supply for $V_{CC}$.  Be sure to keep the connection distance between the capacitor and the transistor short.  Use the HP multimeter to measure the base current ($I_B$) on the source side of the capacitor and Fluke multimeters to measure the collector voltage and current ($V_{CE}$ and $I_C$).
 
-% \subsection{Common-Source Amplifier}
+\item Adjust $V_{BB}$ so that base current ($I_B$) is \SI{20}{\micro\ampere}.
 
-% \begin{enumerate}
-% \item Build the circuit shown in Figure~\ref{schem:common-source}.  Use the closest resistor values available for R1 and Rs.
-% \item Measure and record the drain current and DC voltages at all terminals of the MOSFET.
-% \item Set the function generator for a \SI{200}{V_{pp}}, \SI{20}{kHz} sine wave with \SI{0}{VDC} offset.  Connect it to $V_{in}$.
-% \item Connect a \SI{100}{\kilo\ohm} load resistor from $V_{out}$ to ground.  This will be considered a no-load scenario.
-% \item Connect channel 1 of the oscilloscope to $V_{in}$ and channel 2 to $V_{out}$.  Set the scope to trigger off of channel 1.
-% \item Adjust the function generator to an amplitude of \SI{200}{V_{pp}} as measured on channel 1 of the oscilloscope.
-% \item Measure the peak-to-peak output voltage on channel 2 of the oscilloscope.
-% \item Repeat step 6 for input voltages of 300, 400, 500, 600, 700, 800, 900, and \SI{1000}{mV_{pp}}.
-% \item Replace the \SI{100}{\kilo\ohm} from $V_{out}$ to ground with a \SI{1}{\kilo\ohm} load resistor.
-% \item Reset the function generator to an amplitude of \SI{200}{V_{pp}} as measured on channel 1 of the oscilloscope.
-% \item Measure the peak-to-peak output voltage on channel 2 of the oscilloscope.
-% \end{enumerate}
+\item Adjust $V_{CC}$ from 0.5 -- \SI{1.5}{V} in \SI{0.25}{V} steps, then from 2 -- \SI{20}{V} in \SI{2}{V} steps.
 
-% \subsection{Source-Follower Amplifier}
+\item At each step measure the collector current, $I_C$, and the collector-to-emitter voltage,
+$V_{CE}$.  If $I_B$ has drifted, readjust $V_{BB}$ before recording the values of $I_C$ and $V_{CE}$.
 
-% \begin{enumerate}
-% \item Construct the circuit shown in Figure~\ref{schem:source-follower} by removing the \SI{1}{\kilo\ohm} drain resistor and moving the output capacitor to the source of the MOSFET.
-% \item Measure and record the drain current and DC voltages at all terminals of the MOSFET.
-% \item Connect a \SI{100}{\kilo\ohm} load resistor from $V_{out}$ to ground. This will be considered a no-load scenario.
-% \item Adjust the function generator to an amplitude of \SI{200}{V_{pp}} as measured on channel 1 of the oscilloscope.
-% \item Measure the peak-to-peak output voltage on channel 2 of the oscilloscope.
-% \item Repeat step 4 for input voltages of 300, 400, 500, 600, 700, 800, 900, and \SI{1000}{mV_{pp}}.
-% \item Reset the function generator to an amplitude of \SI{200}{V_{pp}} as measured on channel 1 of the oscilloscope.
-% \item Replace the \SI{100}{\kilo\ohm} resistor from $V_{out}$ to ground with a \SI{1}{\kilo\ohm} resistor and measure the peak-to-peak output voltage on channel 2 of the oscilloscope.
-% \item Replace the \SI{1}{\kilo\ohm} load resistor with a \SI{100}{ohm} load resistor and measure the peak-to-peak output voltage on channel 2 of the oscilloscope.
-% \end{enumerate}
+\item Adjust $V_{BB}$ for a base current of \SI{50}{\micro\ampere}, \SI{80}{\micro\ampere}, and \SI{100}{\micro\ampere}.  Repeat steps 3 and 4 at each $I_B$ value.
+\end{enumerate}
 
 \section{Results}
 
-%\subsection{Common-Source Amplifier}
+\begin{table}[hbtp]
+  \centering
+  \begin{tabular}{cccc}
+    $V_{CC}$ & $I_C$     & $V_{CE}$ & $\beta$ \\
+    (\si{V}) & (\si{mA}) & (\si{V}) &         \\
+    \hline
+    0.50     & 0.232     & 0.454    & 11.60   \\
+    0.75     & 0.233     & 0.705    & 11.65   \\
+    1.00     & 0.234     & 0.954    & 11.70   \\
+    1.25     & 0.237     & 1.204    & 11.85   \\
+    1.50     & 0.237     & 1.454    & 11.85   \\
+    2        & 0.242     & 1.954    & 12.10   \\
+    4        & 0.25      & 3.95     & 12.30   \\
+    6        & 0.25      & 5.95     & 12.60   \\
+    8        & 0.26      & 7.95     & 12.75   \\
+    10       & 0.26      & 9.96     & 12.85   \\
+    12       & 0.26      & 11.95    & 13.10   \\
+    14       & 0.27      & 13.94    & 13.30   \\
+    16       & 0.27      & 15.95    & 13.40   \\
+    18       & 0.27      & 17.95    & 13.50   \\
+    20       & 0.27      & 19.95    & 13.70   \\
+  \end{tabular}
+  \caption{\label{tab:1} $I_B = $ \SI{20}{\micro\ampere}}
+\end{table}
 
-% \begin{table}[hbtp]
-%   \centering
-%   \begin{tabular}{r|cccc}
-%                            & $V_{G}$ (\si{V}) & $V_{D}$ (\si{V}) & $V_{S}$ (\si{V}) & $I_D$ (\si{mA}) \\
-%     \hline
-%     \textbf{Measured}      & 4.391            & 13.498           & 2.11             & 4.52            \\
-%     \textbf{Theoretical}   & 4.466            & 14.000           & 2.4214           & 4.00            \\
-%     \textbf{\% Difference} & 1.712\%          & 3.719\%          & 14.800\%         & 11.500\%        \\
-%   \end{tabular}
-%   \caption{\label{tab:tran_common} Transistor characteristics}
-% \end{table}
+\begin{table}[hbtp]
+  \centering
+  \begin{tabular}{cccc}
+    $V_{CC}$ & $I_C$     & $V_{CE}$ & $\beta$ \\
+    (\si{V}) & (\si{mA}) & (\si{V}) &         \\
+    \hline
+    0.50     & 2.73      & 0.178    & 54.60   \\
+    0.75     & 4.34      & 0.236    & 86.80   \\
+    1.00     & 4.96      & 0.41     & 99.20   \\
+    1.25     & 4.95      & 0.662    & 99.00   \\
+    1.50     & 4.97      & 0.91     & 99.40   \\
+    2        & 4.98      & 1.41     & 99.60   \\
+    4        & 5.15      & 3.39     & 103.00  \\
+    6        & 5.25      & 5.38     & 105.00  \\
+    8        & 5.39      & 7.36     & 107.80  \\
+    10       & 5.58      & 9.34     & 111.60  \\
+    12       & 5.77      & 11.31    & 115.40  \\
+    14       & 5.97      & 13.28    & 119.40  \\
+    16       & 6.21      & 15.26    & 124.20  \\
+    18       & 6.45      & 17.23    & 129.00  \\
+    20       & 6.69      & 19.20    & 133.80  \\
+  \end{tabular}
+  \caption{\label{tab2:}$I_B = $ \SI{50}{\micro\ampere}}
+\end{table}
 
-% \begin{table}[hbtp]
-%   \centering
-%   \begin{tabular}{ccc}
-%     $V_{in}$ (\si{mV}) & $V_{out}$ (\si{V}) & $A_V$ \\
-%     \hline
-%     200                & 0.382              & 1.91  \\
-%     300                & 0.566              & 1.89  \\
-%     400                & 0.760              & 1.90  \\
-%     500                & 0.939              & 1.88  \\
-%     600                & 1.140              & 1.90  \\
-%     700                & 1.340              & 1.91  \\
-%     800                & 1.530              & 1.91  \\
-%     900                & 1.721              & 1.91  \\
-%     1000               & 1.90               & 1.90  \\
-%   \end{tabular}
-%   \caption{\label{tab:common-source} Common-source amplifier}
-% \end{table}
+\begin{table}[hbtp]
+  \centering
+  \begin{tabular}{cccc}
+    $V_{CC}$ & $I_C$     & $V_{CE}$ & $\beta$ \\
+    (\si{V}) & (\si{mA}) & (\si{V}) &         \\
+    \hline
+    0.50     & 3.08      & 0.135    & 38.50   \\
+    0.75     & 4.95      & 0.163    & 61.88   \\
+    1.00     & 6.8       & 0.191    & 85.00   \\
+    1.25     & 8.58      & 0.229    & 107.25  \\
+    1.50     & 9.1       & 0.421    & 113.75  \\
+    2        & 9.4       & 0.881    & 117.50  \\
+    4        & 10.79     & 2.71     & 134.88  \\
+    6        & 11.03     & 4.68     & 137.88  \\
+    8        & 11.45     & 6.63     & 143.13  \\
+    10       & 11.99     & 8.56     & 149.88  \\
+    12       & 12.72     & 10.47    & 159.00  \\
+    14       & 13.41     & 12.39    & 167.63  \\
+    16       & 14.20     & 14.29    & 177.50  \\
+    18       & 15.05     & 16.20    & 188.13  \\
+    20       & 15.85     & 18.10    & 198.13  \\
+  \end{tabular}
+  \caption{\label{tab:3}$I_B = $ \SI{80}{\micro\ampere}}
+\end{table}
 
-%\subsection{Source-Follower Amplifier}
-
-% \begin{table}[hbtp]
-%   \centering
-%   \begin{tabular}{cccc}
-%     $V_G$ & $V_D$ & $V_S$ & $I_D$ \\
-%     \hline
-%     \SI{4.391}{V} & \SI{18.003}{V} & \SI{2.12}{V} & \SI{4.579}{mA} \\
-%   \end{tabular}
-%   \caption{\label{tab:tran_follower} Transistor characteristics}
-% \end{table}
-
-% \begin{table}[hbtp]
-%   \centering
-%   \begin{tabular}{ccc}
-%     $V_{in}$ (\si{mV}) & $V_{out}$ (\si{mV}) & $A_V$ \\
-%     \hline
-%     200                & 182                 & 0.910 \\
-%     300                & 268                 & 0.893 \\
-%     400                & 360                 & 0.900 \\
-%     500                & 451                 & 0.902 \\
-%     600                & 541                 & 0.902 \\
-%     700                & 634                 & 0.906 \\
-%     800                & 725                 & 0.906 \\
-%     900                & 813                 & 0.903 \\
-%     1000               & 906                 & 0.906 \\
-%   \end{tabular}
-%   \caption{\label{tab:source-follower} Source-follower amplifier}
-%\end{table}
+\begin{table}[hbtp]
+  \centering
+  \begin{tabular}{cccc}
+    $V_{CC}$ & $I_C$     & $V_{CE}$ & $\beta$ \\
+    (\si{V}) & (\si{mA}) & (\si{V}) &         \\
+    \hline
+    0.50     & 3.21      & 0.12     & 32.10   \\
+    0.75     & 5.11      & 0.143    & 51.10   \\
+    1.00     & 7.02      & 0.164    & 70.20   \\
+    1.25     & 8.93      & 0.186    & 89.30   \\
+    1.5      & 10.79     & 0.214    & 107.90  \\
+    2        & 10.33     & 0.77     & 103.30  \\
+    4        & 11.33     & 2.67     & 113.30  \\
+    6        & 13.95     & 4.34     & 139.50  \\
+    8        & 15.63     & 6.14     & 156.30  \\
+    10       & 16.60     & 8.02     & 166.00  \\
+    12       & 17.98     & 9.95     & 179.80  \\
+    14       & 19.20     & 11.70    & 192.00  \\
+    16       & 20.70     & 13.69    & 207.00  \\
+    18       & 22.40     & 15.53    & 224.00  \\
+    20       & 23.80     & 17.37    & 238.00  \\
+    \end{tabular}
+    \caption{\label{tab4:}$I_B = $ \SI{100}{\micro\ampere}}
+\end{table}
 
 \begin{figure}[hbtp]
   \centering
   \resizebox{1.0\textwidth}{!}{\input{graph.tex}}
   \caption{\label{fig:graph} $V_{CE}$ vs. $I_C$}
 \end{figure}
+
+\begin{table}[hbtp]
+  \centering
+  \begin{tabular}{cc}
+    $I_B$ (\si{\micro\ampere}) & $\beta_{avg}$ \\
+    \hline
+    20                         & 12.55         \\
+    50                         & 105.85        \\
+    80                         & 132.00        \\
+    100                        & 137.99        \\
+  \end{tabular}
+  \caption{\label{tab:beta_avg} Average values of $\beta$}
+\end{table}
+
+\begin{table}[hbtp]
+  \centering
+  \begin{tabular}{ccc}
+    $I_B$                & $h_{oe}$ & $r_o$            \\
+    (\si{\micro\ampere}) &          & (\si{\kilo\ohm}) \\
+    \hline
+    20                   & 7.412E-4 & 1.349            \\
+    50                   & 3.669E-4 & 2.726            \\
+    80                   & 9.950E-5 & 10.10            \\
+    100                  & 1.700E-6 & 58.82            \\
+  \end{tabular}
+  \caption{\label{tab:hoe} $h_{oe}$ vs. $r_o$}
+\end{table}
 
 \section{Conclusion}
 \label{sec:conclusion}
@@ -154,38 +202,46 @@
 % separate in source, put a comment between them.
 %
 \begin{equation}
-  \label{eq:amp}
-  V_{o,L} = V_{o,NL} \frac{R_L}{R_o + R_L}
+  \label{eq:hoe}
+  h_{oe} \approx \frac{1}{r_o} = \frac{\Delta I_C}{\Delta V_{CE}}
 \end{equation}
-%
 \begin{equation}
-  \label{eq:V_G}
-  V_G = \frac{V_{DD} \cdot \SI{33}{\kilo\ohm}}{\SI{100}{\kilo\ohm} + \SI{33}{\kilo\ohm}}
+  \label{eq:beta}
+  \beta = \frac{I_C}{I_E}
 \end{equation}
-%
-\begin{equation}
-  \label{eq:V_S}
-  V_S = V_G \cdot \sqrt{\frac{I_D}{K_N}} - V_{TN}
-\end{equation}
-%
-\begin{equation}
-  \label{eq:V_D}
-  V_D = V_{DD} - I_D \cdot \SI{1}{\kilo\ohm}
-\end{equation}
-%
-\begin{equation}
-  \label{eq:I_D}
-  I_D = \frac{V_S}{R_S}
-\end{equation}
-%
-\begin{equation}
-  \label{eq:A_V}
-  A_V = \frac{V_{out}}{V_{in}} = \frac{-g_m \cdot R_D}{1 + g_m \cdot R_S}
-\end{equation}
-%
-\begin{equation}
-  \label{eqn:percent_diff}
-  \%_{diff} = \frac{|measured - theoretical|}{theoretical} \times 100\%
-\end{equation}
+% \begin{equation}
+%   \label{eq:amp}
+%   V_{o,L} = V_{o,NL} \frac{R_L}{R_o + R_L}
+% \end{equation}
+% %
+% \begin{equation}
+%   \label{eq:V_G}
+%   V_G = \frac{V_{DD} \cdot \SI{33}{\kilo\ohm}}{\SI{100}{\kilo\ohm} + \SI{33}{\kilo\ohm}}
+% \end{equation}
+% %
+% \begin{equation}
+%   \label{eq:V_S}
+%   V_S = V_G \cdot \sqrt{\frac{I_D}{K_N}} - V_{TN}
+% \end{equation}
+% %
+% \begin{equation}
+%   \label{eq:V_D}
+%   V_D = V_{DD} - I_D \cdot \SI{1}{\kilo\ohm}
+% \end{equation}
+% %
+% \begin{equation}
+%   \label{eq:I_D}
+%   I_D = \frac{V_S}{R_S}
+% \end{equation}
+% %
+% \begin{equation}
+%   \label{eq:A_V}
+%   A_V = \frac{V_{out}}{V_{in}} = \frac{-g_m \cdot R_D}{1 + g_m \cdot R_S}
+% \end{equation}
+% %
+% \begin{equation}
+%   \label{eqn:percent_diff}
+%   \%_{diff} = \frac{|measured - theoretical|}{theoretical} \times 100\%
+% \end{equation}
 
 \end{document}
