@@ -155,14 +155,8 @@ $V_{CE}$.  If $I_B$ has drifted, readjust $V_{BB}$ before recording the values o
     18       & 22.40     & 15.53    & 224.00  \\
     20       & 23.80     & 17.37    & 238.00  \\
     \end{tabular}
-    \caption{\label{tab4:}$I_B = $ \SI{100}{\micro\ampere}}
+    \caption{\label{tab:4}$I_B = $ \SI{100}{\micro\ampere}}
 \end{table}
-
-\begin{figure}[hbtp]
-  \centering
-  \resizebox{1.0\textwidth}{!}{\input{graph.tex}}
-  \caption{\label{fig:graph} $V_{CE}$ vs. $I_C$}
-\end{figure}
 
 \begin{table}[hbtp]
   \centering
@@ -174,7 +168,67 @@ $V_{CE}$.  If $I_B$ has drifted, readjust $V_{BB}$ before recording the values o
     80                         & 132.00        \\
     100                        & 137.99        \\
   \end{tabular}
-  \caption{\label{tab:beta_avg} Average values of $\beta$}
+  \caption{\label{tab:beta_IB} Average values of $\beta$ per $I_B$}
+\end{table}
+
+\begin{figure}[hbtp]
+  \centering
+  \resizebox{1.0\textwidth}{!}{\input{graph.tex}}
+  \caption{\label{fig:graph} $V_{CE}$ vs. $I_C$}
+\end{figure}
+
+\begin{table}[hbtp]
+  \centering
+  \begin{tabular}{ccc}
+    $I_B$                & $I_C$     & $\beta$ \\
+    (\si{\micro\ampere}) & (\si{mA}) &         \\
+    \hline
+    20                   & 0.25      & 12.26   \\
+    50                   & 5.20      & 104.00  \\
+    80                   & 11.10     & 138.75  \\
+    100                  & 14.67     & 146.68  \\
+  \end{tabular}
+  \caption{\label{tab:da2a1}$V_{CE} = $ \SI{5}{V}}
+\end{table}
+
+\begin{table}[hbtp]
+  \centering
+  \begin{tabular}{ccc}
+    $I_B$                & $I_C$     & $\beta$ \\
+    (\si{\micro\ampere}) & (\si{mA}) &         \\
+    \hline
+    20                   & 0.26      & 12.97   \\
+    50                   & 5.64      & 112.84  \\
+    80                   & 12.47     & 155.88  \\
+    100                  & 18.00     & 180.00  \\
+  \end{tabular}
+  \caption{\label{tab:da2a2}$V_{CE} = $ \SI{10}{V}}
+\end{table}
+
+\begin{table}[hbtp]
+  \centering
+  \begin{tabular}{ccc}
+    $I_B$                & $I_C$     & $\beta$ \\
+    (\si{\micro\ampere}) & (\si{mA}) &         \\
+    \hline
+    20                   & 0.27      & 13.32   \\
+    50                   & 6.18      & 123.61  \\
+    80                   & 14.50     & 181.25  \\
+    100                  & 22.93     & 229.30  \\
+  \end{tabular}
+  \caption{\label{tab:da2a3}$V_{CE} = $ \SI{15}{V}}
+\end{table}
+
+\begin{table}[hbtp]
+  \centering
+  \begin{tabular}{cc}
+    $V_{CE}$ (\si{V}) & $\beta_{avg}$ \\
+    \hline
+    5                 & 100.42        \\
+    10                & 115.42        \\
+    15                & 136.87        \\
+  \end{tabular}
+  \caption{\label{tab:beta_VCE} Average values of $\beta$ per $V_{CE}$}
 \end{table}
 
 \begin{table}[hbtp]
@@ -202,43 +256,15 @@ $V_{CE}$.  If $I_B$ has drifted, readjust $V_{BB}$ before recording the values o
 % separate in source, put a comment between them.
 %
 \begin{equation}
+  \label{eq:beta}
+  \beta = \frac{I_C}{I_B}
+\end{equation}
+%
+\begin{equation}
   \label{eq:hoe}
   h_{oe} \approx \frac{1}{r_o} = \frac{\Delta I_C}{\Delta V_{CE}}
 \end{equation}
-\begin{equation}
-  \label{eq:beta}
-  \beta = \frac{I_C}{I_E}
-\end{equation}
-% \begin{equation}
-%   \label{eq:amp}
-%   V_{o,L} = V_{o,NL} \frac{R_L}{R_o + R_L}
-% \end{equation}
-% %
-% \begin{equation}
-%   \label{eq:V_G}
-%   V_G = \frac{V_{DD} \cdot \SI{33}{\kilo\ohm}}{\SI{100}{\kilo\ohm} + \SI{33}{\kilo\ohm}}
-% \end{equation}
-% %
-% \begin{equation}
-%   \label{eq:V_S}
-%   V_S = V_G \cdot \sqrt{\frac{I_D}{K_N}} - V_{TN}
-% \end{equation}
-% %
-% \begin{equation}
-%   \label{eq:V_D}
-%   V_D = V_{DD} - I_D \cdot \SI{1}{\kilo\ohm}
-% \end{equation}
-% %
-% \begin{equation}
-%   \label{eq:I_D}
-%   I_D = \frac{V_S}{R_S}
-% \end{equation}
-% %
-% \begin{equation}
-%   \label{eq:A_V}
-%   A_V = \frac{V_{out}}{V_{in}} = \frac{-g_m \cdot R_D}{1 + g_m \cdot R_S}
-% \end{equation}
-% %
+%
 % \begin{equation}
 %   \label{eqn:percent_diff}
 %   \%_{diff} = \frac{|measured - theoretical|}{theoretical} \times 100\%
