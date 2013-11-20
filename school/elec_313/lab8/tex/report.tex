@@ -39,8 +39,9 @@ The objective is to plot the output characteristic of a common-emmitter transist
 
 \section{Procedure}
 
-\begin{enumerate}
 The following steps were observed to plot the output characteristic of a common emmitter transistor circuit:
+
+\begin{enumerate}
 \item Construct the circuit of Figure~\ref{fig:circuit}.  Use the +\SI{6}{V} power supply for $V_{BB}$ and the +\SI{25}{V} supply for $V_{CC}$.  Be sure to keep the connection distance between the capacitor and the transistor short.  Use the HP multimeter to measure the base current ($I_B$) on the source side of the capacitor and Fluke multimeters to measure the collector voltage and current ($V_{CE}$ and $I_C$).
 \item Adjust $V_{BB}$ so that base current ($I_B$) is \SI{20}{\micro\ampere}.
 \item Adjust $V_{CC}$ from 0.5 -- \SI{1.5}{V} in \SI{0.25}{V} steps, then from 2 -- \SI{20}{V} in \SI{2}{V} steps.
@@ -229,16 +230,22 @@ The following steps were observed to plot the output characteristic of a common 
     $I_B$                & $h_{oe}$ & $r_o$            \\
     (\si{\micro\ampere}) &          & (\si{\kilo\ohm}) \\
     \hline
-    20                   & 7.412E-4 & 1.349            \\
-    50                   & 3.669E-4 & 2.726            \\
-    80                   & 9.950E-5 & 10.10            \\
-    100                  & 1.700E-6 & 58.82            \\
+     20                  & 1.700E-6 & 58.82            \\
+     50                  & 9.950E-5 & 10.10            \\
+     80                  & 3.669E-4 & 2.726            \\
+    100                  & 7.412E-4 & 1.349            \\
   \end{tabular}
   \caption{\label{tab:hoe} $h_{oe}$ vs. $r_o$}
 \end{table}
 
 \section{Conclusion}
 \label{sec:conclusion}
+
+As shown in Figure ??, the family of curves associated with the 4 IB currents loosely follow the typical plot of Bipolar Junction Transmitters (BJTs).  The mode of operation of the transistor transitions to the “forward-active mode” when VCE is approximately greater than .2 V. Also, as IB increases, the slope of the IC to VCE increases as seen in Table ??
+
+Tables 2b), 2a)_1, 2a)_2, and 2a)_3 show that as IB increases, the ratio of IC to IB (ß [also known as the current gain]) increases. But, this change in ß seems to “taper off” as the IB current (Table 2b) increases such that if one were to plot mean ß vs. IB, it would resemble logarithmic growth. For each of the values of IB; as IC and VCE increase, ß increases as well (as shown in Table 2a). If one were to plot mean ß vs. VCE , I suspect it would resemble exponential growth though there is minimal evidence to prove this, considering only three data points are provided in Tables 2a)_1, 2a)_2, and 2a)_3.
+
+Figure ?? shows the slope of each of the family of curves  for VCE values greater than 3 V. The output conductance hoe was conducted with the slope of each of the 4 the trend line equations and the Equation ??. As IB increased, hoe increased.Therefor, as IB in creased, Current gain ß becasue the ouput resitance ro decreased.
 
 \section{Equations}
 
