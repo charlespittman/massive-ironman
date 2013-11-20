@@ -2,8 +2,8 @@
 set terminal epslatex color colortext
 set autoscale
 
-set style line 1 linecolor rgb '#0060ad' linetype 1 linewidth 5
-set style line 2 linecolor rgb '#dd181f' linetype 1 linewidth 5
+#set style line 1 linecolor rgb '#0060ad' linetype 1 linewidth 5
+#set style line 2 linecolor rgb '#dd181f' linetype 1 linewidth 5
 set style line 12 linecolor rgb '#808080' linetype 0 linewidth 1
 
 set tics scale 1.5 nomirror
@@ -15,6 +15,7 @@ set grid back linestyle 12
 
 #set log x
 
+set key top left
 set format x "%.0s%cV"
 set format y "%.0smA"
 
