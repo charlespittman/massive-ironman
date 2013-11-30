@@ -9,83 +9,68 @@ The objective is to construct and observe the operation of a common-emitter tran
 
 \begin{tabular}{ll}
   \centering
-  Transistor: 2N2222A               &  Capacitor: \SI{0.1}{\micro\farad}           \\
-  Resistors: \SI{100}{\kilo\ohm}, \SI{20}{\kilo\ohm}, \SI{1}{\kilo\ohm}, \SI{470}{\ohm} &    Power supply: HP E3631A \\
-  Function generator: HP 33120  & Oscilloscope: Agilent 54622D \\
+  Transistor: 2N2222A & Capacitor: \SI{0.1}{\micro\farad} \\
+  Resistors: \SI{100}{\kilo\ohm}, \SI{20}{\kilo\ohm}, \SI{1}{\kilo\ohm}, \SI{470}{\ohm} & Power supply: HP E3631A \\
+  Function generator: HP 33120 & Oscilloscope: Agilent 54622D \\
   \multicolumn{2}{l}{Multimeters: HP 34401A, Fluke 8010A (x2)} \\
 \end{tabular}
 
 \section{Schematics}
 
-% \begin{figure}[hbtp]
-%   \centering
-%   \includegraphics[width=0.6\textwidth]{circuit}
-%   \caption{\label{fig:circuit} Common-emitter transistor circuit}
-% \end{figure}
-
-% \begin{figure}[hbtp]
-%   \centering
-%   \begin{subfigure}[b]{0.5\textwidth}
-%     \includegraphics[width=\textwidth]{common-source}
-%     \caption{\label{schem:common-source} Common-source amplifier}
-%   \end{subfigure}%
-%   ~
-%   \begin{subfigure}[b]{0.5\textwidth}
-%     \includegraphics[width=\textwidth]{source-follower}
-%     \caption{\label{schem:source-follower} Source-follower amplifier}
-%   \end{subfigure}
-%   \caption{\label{fig:schematics} Circuits used in this lab. $R_1=\SI{100}{\kilo\ohm}$,  $R_s=\SI{470}{\ohm}$}
-% \end{figure}
+\begin{figure}[hbtp]
+  \centering
+  \includegraphics[width=0.7\textwidth]{circuit}
+  \caption{\label{fig:circuit} Common-emitter transistor amplifier (without the emitter bypass capacitor). $R_2$ = \SI{20}{\kilo\ohm}}
+\end{figure}
 
 \section{Procedure}
 
 \section{Results}
 
-% \begin{table}[hbtp]
-%   \centering
-%   \begin{tabular}{cccc}
-%     $V_{CC}$ & $I_C$     & $V_{CE}$ & $\beta$ \\
-%     (\si{V}) & (\si{mA}) & (\si{V}) &         \\
-%     \hline
-%     0.50     & 0.232     & 0.454    & 11.60   \\
-%     0.75     & 0.233     & 0.705    & 11.65   \\
-%     1.00     & 0.234     & 0.954    & 11.70   \\
-%     1.25     & 0.237     & 1.204    & 11.85   \\
-%     1.50     & 0.237     & 1.454    & 11.85   \\
-%     2        & 0.242     & 1.954    & 12.10   \\
-%     4        & 0.25      & 3.95     & 12.30   \\
-%     6        & 0.25      & 5.95     & 12.60   \\
-%     8        & 0.26      & 7.95     & 12.75   \\
-%     10       & 0.26      & 9.96     & 12.85   \\
-%     12       & 0.26      & 11.95    & 13.10   \\
-%     14       & 0.27      & 13.94    & 13.30   \\
-%     16       & 0.27      & 15.95    & 13.40   \\
-%     18       & 0.27      & 17.95    & 13.50   \\
-%     20       & 0.27      & 19.95    & 13.70   \\
-%   \end{tabular}
-%   \caption{\label{tab:1} $I_B = $ \SI{20}{\micro\ampere}}
-% \end{table}
+\begin{table}[hbtp]
+  \centering
+  \begin{tabular}{ccc|cc|c}
+    $V_B$    & $V_C$    & $V_E$    & $V_i$     & $V_o$     & $A_V$ \\
+    (\si{V}) & (\si{V}) & (\si{V}) & (\si{mV}) & (\si{mV}) &       \\
+    \hline
+    1.788    & 9.58     & 1.153    & 500       & 970       & 1.94  \\
+  \end{tabular}
+  \caption{\label{tab:amp} Transistor amplifier characteristics}
+\end{table}
 
-% \begin{table}[hbtp]
-%   \centering
-%   \begin{tabular}{cc}
-%     $I_B$ (\si{\micro\ampere}) & $\beta_{avg}$ \\
-%     \hline
-%     20                         & 12.55         \\
-%     50                         & 105.85        \\
-%     80                         & 132.00        \\
-%     100                        & 137.99        \\
-%   \end{tabular}
-%   \caption{\label{tab:beta_IB} Average values of $\beta$ per $I_B$}
-% \end{table}
+\begin{table}[hbtp]
+  \centering
+  \begin{tabular}{cc}
+    $R$         & $V_{OC}$  \\
+    (\si{\ohm}) & (\si{mV}) \\
+    \hline
+    958         & 477       \\
+  \end{tabular}
+  \caption{\label{tab:imp} Port impedances}
+\end{table}
 
-% \begin{figure}[hbtp]
-%   \centering
-%   \resizebox{1.0\textwidth}{!}{\input{graph.tex}}
-%   \caption{\label{fig:graph} $V_{CE}$ vs. $I_C$}
-% \end{figure}
+\begin{table}[hbtp]
+  \centering
+  \begin{tabular}{cc}
+    $R$              & $V_i$    \\
+    (\si{\kilo\ohm}) & (\si{V}) \\
+    \hline
+    13.9             & 2.57     \\
+  \end{tabular}
+  \caption{\label{tab:lrg_sig} Large-signal performance}
+\end{table}
 
-\newpage
+\begin{table}[hbtp]
+  \centering
+  \begin{tabular}{ccc|cc|c}
+    $V_B$    & $V_C$    & $V_E$    & $V_i$    & $V_o$    & $A_V$ \\
+    (\si{V}) & (\si{V}) & (\si{V}) & (\si{V}) & (\si{V}) &       \\
+    \hline
+    1.783    & 9.547    & 1.164    & 0.122    & 6.19     & 52.0
+  \end{tabular}
+  \caption{\label{tab:amp_bypass} Transistor amplifier characteristics (with emitter bypass capacitor)}
+\end{table}
+
 \section{Conclusion}
 \label{sec:conclusion}
 
