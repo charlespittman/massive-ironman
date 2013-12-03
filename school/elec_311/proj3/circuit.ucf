@@ -1,0 +1,15 @@
+net "X(3)" loc = "N3";
+net "X(2)" loc = "E2";
+net "X(1)" loc = "F3";
+net "X(0)" loc = "G3";
+net "Y(3)" loc = "B4";
+net "Y(2)" loc = "K3";
+net "Y(1)" loc = "L3";
+net "Y(0)" loc = "P11";
+net "SEL"  loc = "A7";
+net "Cout"  loc = "N5";
+net "OVR" loc = "N4";
+net "Z(3)" loc = "P6";
+net "Z(2)" loc = "P7";
+net "Z(1)" loc = "M11";
+net "Z(0)" loc = "M5";

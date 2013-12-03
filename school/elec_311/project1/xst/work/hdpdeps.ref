@@ -1,0 +1,8 @@
+V3 8
+FL /home/cpittman/project1/circuit.vhf 2013/09/12.17:03:47 P.68d
+EN work/circuit 1379021729 FL /home/cpittman/project1/circuit.vhf \
+      PB ieee/std_logic_1164 1370735607 PB ieee/NUMERIC_STD 1370735611 LB UNISIM \
+      PH unisim/VCOMPONENTS 1370735613
+AR work/circuit/BEHAVIORAL 1379021730 \
+      FL /home/cpittman/project1/circuit.vhf EN work/circuit 1379021729 CP AND2 \
+      CP OR2 CP INV CP AND3

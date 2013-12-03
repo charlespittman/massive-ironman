@@ -1,0 +1,18 @@
+V3 13
+FL /home/cpittman/proj3/circuit.vhd 2013/11/01.12:02:33 P.68d
+EN work/circuit 1383836962 FL /home/cpittman/proj3/circuit.vhd \
+      PB ieee/std_logic_1164 1370735607 PH work/PROJECT3_GATES 1383836957
+AR work/circuit/Structural 1383836963 \
+      FL /home/cpittman/proj3/circuit.vhd EN work/circuit 1383836962 \
+      CP ExclusiveOR CP FullAdder
+FL /home/cpittman/proj3/project3_gates.vhd 2013/09/03.10:29:14 P.68d
+PH work/PROJECT3_GATES 1383836957 FL /home/cpittman/proj3/project3_gates.vhd \
+      PB ieee/std_logic_1164 1370735607 CD ExclusiveOR CD FullAdder
+EN work/ExclusiveOR 1383836958 \
+      FL /home/cpittman/proj3/project3_gates.vhd PB ieee/std_logic_1164 1370735607
+AR work/ExclusiveOR/DATAFLOW 1383836959 \
+      FL /home/cpittman/proj3/project3_gates.vhd EN work/ExclusiveOR 1383836958
+EN work/FullAdder 1383836960 \
+      FL /home/cpittman/proj3/project3_gates.vhd PB ieee/std_logic_1164 1370735607
+AR work/FullAdder/DATAFLOW 1383836961 \
+      FL /home/cpittman/proj3/project3_gates.vhd EN work/FullAdder 1383836960

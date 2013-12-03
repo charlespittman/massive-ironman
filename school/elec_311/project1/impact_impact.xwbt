@@ -1,0 +1,8 @@
+INTSTYLE=impact
+INFILE=/home/cpittman/project1/impact.xsl
+OUTFILE=/home/cpittman/project1/impact.xsl
+FAMILY=Multiple
+PART=Multiple
+WORKINGDIR=/home/cpittman/project1
+LICENSE=iMPACT
+USER_INFO=iMPACT

@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<generated_project xmlns="http://www.xilinx.com/XMLSchema" xmlns:xil_pn="http://www.xilinx.com/XMLSchema">
+
+  <!--                                                          -->
+
+  <!--             For tool use only. Do not edit.              -->
+
+  <!--                                                          -->
+
+  <!-- ProjectNavigator created generated project file.         -->
+
+  <!-- For use in tracking generated file and other information -->
+
+  <!-- allowing preservation of process status.                 -->
+
+  <!--                                                          -->
+
+  <!-- Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved. -->
+
+  <version xmlns="http://www.xilinx.com/XMLSchema">11.1</version>
+
+  <sourceproject xmlns="http://www.xilinx.com/XMLSchema" xil_pn:fileType="FILE_XISE" xil_pn:name="project2.xise"/>
+
+  <files xmlns="http://www.xilinx.com/XMLSchema">
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="_ngo"/>
+    <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/bitgen.xmsgs"/>
+    <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/map.xmsgs"/>
+    <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/ngdbuild.xmsgs"/>
+    <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/par.xmsgs"/>
+    <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/trce.xmsgs"/>
+    <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/xst.xmsgs"/>
+    <file xil_pn:fileType="FILE_CMD_LOG" xil_pn:name="circuit.cmd_log"/>
+    <file xil_pn:fileType="FILE_JHD" xil_pn:name="circuit.jhd"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_LSO" xil_pn:name="circuit.lso"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="circuit.prj"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_REPORT" xil_pn:name="circuit.syr"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_VHDL" xil_pn:name="circuit.vhf"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST" xil_pn:name="circuit.xst"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_BITGEN_REPORT" xil_pn:name="circuit_nand.bgn" xil_pn:subbranch="FPGAConfiguration"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_BIT" xil_pn:name="circuit_nand.bit" xil_pn:subbranch="FPGAConfiguration"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGDBUILD_LOG" xil_pn:name="circuit_nand.bld"/>
+    <file xil_pn:fileType="FILE_CMD_LOG" xil_pn:name="circuit_nand.cmd_log"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_BITGEN_DRC" xil_pn:name="circuit_nand.drc" xil_pn:subbranch="FPGAConfiguration"/>
+    <file xil_pn:fileType="FILE_JHD" xil_pn:name="circuit_nand.jhd"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_LSO" xil_pn:name="circuit_nand.lso"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NCD" xil_pn:name="circuit_nand.ncd" xil_pn:subbranch="Par"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGC" xil_pn:name="circuit_nand.ngc"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGD" xil_pn:name="circuit_nand.ngd"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGR" xil_pn:name="circuit_nand.ngr"/>
+    <file xil_pn:fileType="FILE_PAD_MISC" xil_pn:name="circuit_nand.pad"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_PAR_REPORT" xil_pn:name="circuit_nand.par" xil_pn:subbranch="Par"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_PCF" xil_pn:name="circuit_nand.pcf" xil_pn:subbranch="Map"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="circuit_nand.prj"/>
+    <file xil_pn:fileType="FILE_TRCE_MISC" xil_pn:name="circuit_nand.ptwx"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_STX" xil_pn:name="circuit_nand.stx"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_REPORT" xil_pn:name="circuit_nand.syr"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_TIMING_TXT_REPORT" xil_pn:name="circuit_nand.twr" xil_pn:subbranch="Par"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_TIMING_XML_REPORT" xil_pn:name="circuit_nand.twx" xil_pn:subbranch="Par"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_UNROUTES" xil_pn:name="circuit_nand.unroutes" xil_pn:subbranch="Par"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_BITGEN_REPORT" xil_pn:name="circuit_nand.ut" xil_pn:subbranch="FPGAConfiguration"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_VHDL" xil_pn:name="circuit_nand.vhf"/>
+    <file xil_pn:fileType="FILE_XPI" xil_pn:name="circuit_nand.xpi"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST" xil_pn:name="circuit_nand.xst"/>
+    <file xil_pn:fileType="FILE_NCD" xil_pn:name="circuit_nand_guide.ncd" xil_pn:origination="imported"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_MAP_REPORT" xil_pn:name="circuit_nand_map.map" xil_pn:subbranch="Map"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_MAP_REPORT" xil_pn:name="circuit_nand_map.mrp" xil_pn:subbranch="Map"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NCD" xil_pn:name="circuit_nand_map.ncd" xil_pn:subbranch="Map"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGM" xil_pn:name="circuit_nand_map.ngm" xil_pn:subbranch="Map"/>
+    <file xil_pn:fileType="FILE_XRPT" xil_pn:name="circuit_nand_map.xrpt"/>
+    <file xil_pn:fileType="FILE_XRPT" xil_pn:name="circuit_nand_ngdbuild.xrpt"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_PAD_EXCEL_REPORT" xil_pn:name="circuit_nand_pad.csv" xil_pn:subbranch="Par"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_PAD_TXT_REPORT" xil_pn:name="circuit_nand_pad.txt" xil_pn:subbranch="Par"/>
+    <file xil_pn:fileType="FILE_XRPT" xil_pn:name="circuit_nand_par.xrpt"/>
+    <file xil_pn:fileType="FILE_HTML" xil_pn:name="circuit_nand_summary.html"/>
+    <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="circuit_nand_summary.xml"/>
+    <file xil_pn:fileType="FILE_WEBTALK" xil_pn:name="circuit_nand_usage.xml"/>
+    <file xil_pn:fileType="FILE_XRPT" xil_pn:name="circuit_nand_xst.xrpt"/>
+    <file xil_pn:fileType="FILE_HTML" xil_pn:name="circuit_summary.html"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="circuit_vhdl.prj"/>
+    <file xil_pn:fileType="FILE_XRPT" xil_pn:name="circuit_xst.xrpt"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="planAhead_run_1"/>
+    <file xil_pn:fileType="FILE_HTML" xil_pn:name="usage_statistics_webtalk.html"/>
+    <file xil_pn:fileType="FILE_LOG" xil_pn:name="webtalk.log"/>
+    <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="webtalk_pn.xml"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="xlnx_auto_0_xdb"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="xst"/>
+  </files>
+
+  <transforms xmlns="http://www.xilinx.com/XMLSchema">
+    <transform xil_pn:end_ts="1380209354" xil_pn:name="TRAN_copyInitialToXSTAbstractSynthesis" xil_pn:start_ts="1380209354">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1380215017" xil_pn:in_ck="8797865927217147199" xil_pn:name="TRAN_schematicsToHdl" xil_pn:prop_ck="-5395933151235495109" xil_pn:start_ts="1380215015">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="circuit_nand.vhf"/>
+    </transform>
+    <transform xil_pn:end_ts="1380215017" xil_pn:name="TRAN_regenerateCores" xil_pn:prop_ck="-1530278974148125877" xil_pn:start_ts="1380215017">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1380209356" xil_pn:name="TRAN_SubProjectAbstractToPreProxy" xil_pn:start_ts="1380209356">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1380215017" xil_pn:name="TRAN_xawsTohdl" xil_pn:prop_ck="-5781034712218676679" xil_pn:start_ts="1380215017">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1380209594" xil_pn:name="TRAN_SubProjectPreToStructuralProxy" xil_pn:prop_ck="2988080280822507185" xil_pn:start_ts="1380209594">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1380215017" xil_pn:name="TRAN_platgen" xil_pn:prop_ck="7255686602258422165" xil_pn:start_ts="1380215017">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1380215026" xil_pn:in_ck="8797865927217150629" xil_pn:name="TRANEXT_xstsynthesize_spartan3e" xil_pn:prop_ck="-8544844821597893087" xil_pn:start_ts="1380215017">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="OutputChanged"/>
+      <outfile xil_pn:name="_xmsgs/xst.xmsgs"/>
+      <outfile xil_pn:name="circuit_nand.jhd"/>
+      <outfile xil_pn:name="circuit_nand.lso"/>
+      <outfile xil_pn:name="circuit_nand.ngc"/>
+      <outfile xil_pn:name="circuit_nand.ngr"/>
+      <outfile xil_pn:name="circuit_nand.prj"/>
+      <outfile xil_pn:name="circuit_nand.stx"/>
+      <outfile xil_pn:name="circuit_nand.syr"/>
+      <outfile xil_pn:name="circuit_nand.xst"/>
+      <outfile xil_pn:name="circuit_nand_xst.xrpt"/>
+      <outfile xil_pn:name="webtalk_pn.xml"/>
+      <outfile xil_pn:name="xst"/>
+    </transform>
+    <transform xil_pn:end_ts="1380215372" xil_pn:in_ck="8797865927217149375" xil_pn:name="TRAN_compileBCD2" xil_pn:prop_ck="-7940347175963310475" xil_pn:start_ts="1380215372">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1380215378" xil_pn:in_ck="-3154995775503556552" xil_pn:name="TRANEXT_ngdbuild_FPGA" xil_pn:prop_ck="-2333401023543206920" xil_pn:start_ts="1380215372">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="_ngo"/>
+      <outfile xil_pn:name="_xmsgs/ngdbuild.xmsgs"/>
+      <outfile xil_pn:name="circuit_nand.bld"/>
+      <outfile xil_pn:name="circuit_nand.ngd"/>
+      <outfile xil_pn:name="circuit_nand_ngdbuild.xrpt"/>
+    </transform>
+    <transform xil_pn:end_ts="1380215384" xil_pn:in_ck="-6980324870716751303" xil_pn:name="TRANEXT_map_spartan3" xil_pn:prop_ck="-1303429204059397298" xil_pn:start_ts="1380215378">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="OutputChanged"/>
+      <outfile xil_pn:name="_xmsgs/map.xmsgs"/>
+      <outfile xil_pn:name="circuit_nand.pcf"/>
+      <outfile xil_pn:name="circuit_nand_map.map"/>
+      <outfile xil_pn:name="circuit_nand_map.mrp"/>
+      <outfile xil_pn:name="circuit_nand_map.ncd"/>
+      <outfile xil_pn:name="circuit_nand_map.ngm"/>
+      <outfile xil_pn:name="circuit_nand_map.xrpt"/>
+      <outfile xil_pn:name="circuit_nand_summary.xml"/>
+      <outfile xil_pn:name="circuit_nand_usage.xml"/>
+    </transform>
+    <transform xil_pn:end_ts="1380215392" xil_pn:in_ck="-2563661000052002862" xil_pn:name="TRANEXT_par_spartan3" xil_pn:prop_ck="-4078461964484670437" xil_pn:start_ts="1380215384">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="_xmsgs/par.xmsgs"/>
+      <outfile xil_pn:name="circuit_nand.ncd"/>
+      <outfile xil_pn:name="circuit_nand.pad"/>
+      <outfile xil_pn:name="circuit_nand.par"/>
+      <outfile xil_pn:name="circuit_nand.ptwx"/>
+      <outfile xil_pn:name="circuit_nand.unroutes"/>
+      <outfile xil_pn:name="circuit_nand.xpi"/>
+      <outfile xil_pn:name="circuit_nand_pad.csv"/>
+      <outfile xil_pn:name="circuit_nand_pad.txt"/>
+      <outfile xil_pn:name="circuit_nand_par.xrpt"/>
+    </transform>
+    <transform xil_pn:end_ts="1380215580" xil_pn:in_ck="8797865927217141750" xil_pn:name="TRANEXT_bitFile_spartan3e" xil_pn:prop_ck="-7817169320884990698" xil_pn:start_ts="1380215574">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="_xmsgs/bitgen.xmsgs"/>
+      <outfile xil_pn:name="circuit_nand.bgn"/>
+      <outfile xil_pn:name="circuit_nand.bit"/>
+      <outfile xil_pn:name="circuit_nand.drc"/>
+      <outfile xil_pn:name="circuit_nand.ut"/>
+      <outfile xil_pn:name="usage_statistics_webtalk.html"/>
+      <outfile xil_pn:name="webtalk.log"/>
+      <outfile xil_pn:name="webtalk_pn.xml"/>
+    </transform>
+    <transform xil_pn:end_ts="1380215392" xil_pn:in_ck="-98974292732937803" xil_pn:name="TRAN_postRouteTrce" xil_pn:prop_ck="445577401284416186" xil_pn:start_ts="1380215389">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="_xmsgs/trce.xmsgs"/>
+      <outfile xil_pn:name="circuit_nand.twr"/>
+      <outfile xil_pn:name="circuit_nand.twx"/>
+    </transform>
+  </transforms>
+
+</generated_project>

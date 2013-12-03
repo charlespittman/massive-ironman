@@ -1,0 +1,7 @@
+AR exclusiveor dataflow /home/cpittman/proj3/project3_gates.vhd sub00/vhpl02 1383836959
+AR circuit structural /home/cpittman/proj3/circuit.vhd sub00/vhpl06 1383836963
+EN fulladder NULL /home/cpittman/proj3/project3_gates.vhd sub00/vhpl03 1383836960
+AR fulladder dataflow /home/cpittman/proj3/project3_gates.vhd sub00/vhpl04 1383836961
+EN circuit NULL /home/cpittman/proj3/circuit.vhd sub00/vhpl05 1383836962
+EN exclusiveor NULL /home/cpittman/proj3/project3_gates.vhd sub00/vhpl01 1383836958
+PH project3_gates NULL /home/cpittman/proj3/project3_gates.vhd sub00/vhpl00 1383836957

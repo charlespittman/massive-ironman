@@ -1,0 +1,5 @@
+NET "P1" LOC = "B4";
+NET "P0" LOC = "K3";
+NET "Q1" LOC = "L3";
+NET "Q0" LOC = "P11";
+NET "GT" LOC = "M5";

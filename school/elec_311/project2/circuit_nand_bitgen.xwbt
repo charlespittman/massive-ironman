@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=/home/cpittman/project2/circuit_nand.ncd
+OUTFILE=/home/cpittman/project2/circuit_nand.bit
+FAMILY=Spartan3E
+PART=xc3s100e-4cp132
+WORKINGDIR=/home/cpittman/project2
+LICENSE=WebPack
+USER_INFO=210793928_0_0_076

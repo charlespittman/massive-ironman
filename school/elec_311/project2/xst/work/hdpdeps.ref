@@ -1,0 +1,13 @@
+V3 12
+FL /home/cpittman/project2/circuit.vhf 2013/09/26.11:33:14 P.68d
+EN work/circuit 0 FL /home/cpittman/project2/circuit.vhf PB ieee/std_logic_1164 1370735607 \
+      PB ieee/NUMERIC_STD 1370735611 LB UNISIM PH unisim/VCOMPONENTS 1370735613
+AR work/circuit/BEHAVIORAL 0 \
+      FL /home/cpittman/project2/circuit.vhf EN work/circuit 0 CP AND3 CP OR3 CP INV
+FL /home/cpittman/project2/circuit_nand.vhf 2013/09/26.13:03:37 P.68d
+EN work/circuit_nand 1380215021 FL /home/cpittman/project2/circuit_nand.vhf \
+      PB ieee/std_logic_1164 1370735607 PB ieee/NUMERIC_STD 1370735611 LB UNISIM \
+      PH unisim/VCOMPONENTS 1370735613
+AR work/circuit_nand/BEHAVIORAL 1380215022 \
+      FL /home/cpittman/project2/circuit_nand.vhf EN work/circuit_nand 1380215021 \
+      CP NAND2 CP NAND3

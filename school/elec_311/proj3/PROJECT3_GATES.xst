@@ -1,0 +1,5 @@
+set -tmpdir "/home/cpittman/proj3/xst/projnav.tmp"
+set -xsthdpdir "/home/cpittman/proj3/xst"
+elaborate
+-ifn PROJECT3_GATES.prj
+-ifmt mixed
