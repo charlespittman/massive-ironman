@@ -19,7 +19,7 @@ The objective is to construct and observe the operation of a common-emitter tran
 
 \begin{figure}[hbtp]
   \centering
-  \includegraphics[width=0.7\textwidth]{circuit}
+  \includegraphics[width=.7\textwidth]{circuit}
   \caption{\label{fig:circuit} Common-emitter transistor amplifier (without the emitter bypass capacitor). $R_2$ = \SI{20}{\kilo\ohm}}
 \end{figure}
 
@@ -33,8 +33,8 @@ The following procedure was used to evaluate the transistor amplifier of Figure~
 \item Channel 1 of the oscilloscope was connected to the input of the circuit and channel 2 connected to the output.
 \item The amplitude of the sinusoidal waveform was adjusted to -\SI{250}{mV} to +\SI{250}{mV} (\SI{500}{mVpp}) at the circuit input as measured on the oscilloscope.
 \item The peak-to-peak amplitude of the output waveform ($V_o$) was measured and recorded in Table~\ref{tab:amp}.
-\item Then the voltage gain ($A_V$) of the amplifier was computed at \SI{30}{\kilo\hertz} and recorded in Table~\ref{tab:amp}.
-\item The decade resistance box was connected to the output of the circuit. Then the resistance was adjusted until the output voltage read as one-half the open circuit value measured in step 6. The displayed resistance value, which is also equivalent to the output resistance ($R_o$) of the circuit, was recorded in Table~\ref{tab:imp}.
+\item Then the voltage gain ($A_V$) of the amplifier was computed and recorded in Table~\ref{tab:amp}.
+\item The decade resistance box was connected to the output of the circuit and adjusted until the output voltage read as one-half the open circuit value measured in step 6. The displayed resistance value, which is also equivalent to the output resistance ($R_o$) of the circuit, was recorded in Table~\ref{tab:imp}.
 \item The function generator was disconnected from the circuit input and then connected to the oscilloscope to measure the open circuit voltage ($V_{OC}$) produced by the generator. The open-circuit voltage was recorded in Table~\ref{tab:imp}.
 \item The decade box was removed from the output and reconnected between the function generator and the open circuit input, so that the signal travels from the function generator and through the resistance box on its way to the circuit input.
 \item The decade resistance box was adjusted so that the voltage measured at the circuit input is one-half the open circuit voltage measured in step 9. That displayed resistance is \SI{50}{\ohm} less than the input resistance ($R_i$) of the circuit. The input resistance was recorded in Table~\ref{tab:lrg_sig}.
@@ -96,7 +96,7 @@ The following procedure was used to evaluate the transistor amplifier of Figure~
     & Measured & Calculated & \% Diff. \\
     \hline
     $R_o$ & \SI{958}{\ohm} & \SI{1}{\kilo\ohm} & 4.20\% \\
-    $R_o$ & \SI{13.95}{\kilo\ohm} & \SI{13.543}{\kilo\ohm} & 3.01\% \\
+    $R_i$ & \SI{13.95}{\kilo\ohm} & \SI{13.543}{\kilo\ohm} & 3.01\% \\
     $A_V$ (no bypass) & -1.94 & -2.06 & 5.83\$ \\
     $A_V$ (with bypass) & -50.9 & -111 & 54.14\% \\
   \end{tabular}
@@ -110,9 +110,7 @@ The following procedure was used to evaluate the transistor amplifier of Figure~
 
 As seen in Table~\ref{tab:amp_bypass}, the small signal voltage gain $A_V$ increased once the emitter bypass capacitor was added, even though it had relatively insignificant impact to the DC voltages of each terminal. The DC voltages shouldn’t change because the capacitor that was added is ideally an open circuit. But the emitter bypass resistor has a significant impact to the AC analysis because it is seen as a closed circuit and allows the $I_E$ to pass through. As seen in Eq~\ref{eq:gm2}, the addition of the emitter bypass capacitor, reduced the denominator of the $A_V$ Eq~\ref{eq:Av1}, thus increasing gain.
 
-%REMINDER: fix the references to "Part I-II"
-Table~\ref{tab:gains} shows the percent differences of the input and output impedances ($R_i$ and $R_o$) and the small signal gains of the circuit with and without the bypass capacitor.
-The 5.7 percent difference between the $A_V$ for Part I is caused from a combination of using nominal instead of measured resistance values, and the assumptions that $\beta$ was assumed to be 150 and  $I_{CQ}$ was assumed to be \SI{3}{mA} (from the in the pre-lab). $I_{CQ}$ was probably less than \SI{3}{mA} because the voltage drop between the \SI{12}{VDC} input and terminal C is smaller. There is significant percent difference between the theoretical $A_V$ versus the measured $A_V$ in Part II. Eq~\ref{eq:gm2} shows that the calculated $A_V$ is affected more by $I_{CQ}$. Also, when calculating the theoretical votage gain, $r_o$ is assumed to be infinite (i.e. an open circuit). %<Not sure what you were saying>The resistance of $r_o$ in parallel with $R_C$ this would actually have been slightly less than the $R_o$ used in the theoretical calculations.
+Table~\ref{tab:gains} shows the percent differences of the small signal gains along with input and output impedances ($R_i$ and $R_o$) both with and without the bypass capacitor. The 5.7 percent difference between the $A_V$ (no bypass) is caused from a combination of using nominal instead of measured resistance values, and the assumptions that $\beta$ was assumed to be 150 and  $I_{CQ}$ was assumed to be \SI{3}{mA} (from the in the pre-lab). $I_{CQ}$ was probably less than \SI{3}{mA} because the voltage drop between the \SI{12}{VDC} input and terminal C is smaller. There is significant percent difference between the theoretical $A_V$ versus the measured $A_V$ with the bypass emitter. Eq~\ref{eq:gm2} shows that the calculated $A_V$ is affected more by $I_{CQ}$. Also, when calculating the theoretical votage gain, $r_o$ is assumed to be infinite (i.e. an open circuit), which is not entirely true. %<Not sure what you were saying>The resistance of $r_o$ in parallel with $R_C$ this would actually have been slightly less than the $R_o$ used in the theoretical calculations.
 
 %$R_i$ and $R_o$ are relatively close and the small percent differences are probably because we took the nominal resistor values instead of the measured resistor values. Experience has shown that resistors are usually slightly less than their nominal value.
 % Table~\ref{tab:gains} shows the $V_{OC}$ recorded during step 9. It is less than \SI{500}{mV} probably because of “noise” could have affected the output reading. The table also shows the $V_{clip}$, which is the point at which the output voltage began to clip (when the transistor is at saturation).
