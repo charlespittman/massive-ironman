@@ -94,9 +94,9 @@ The following procedure was used to evaluate the transistor amplifier of Figure~
 \section{Conclusion}
 \label{sec:conclusion}
 
-As seen in Table X, the small signal voltage gain $A_V$ increased once the emitter bypass capacitor was added, even though it had relatively insignificant impact to the DC voltages of each terminal. The DC voltages shouldn’t change because the capacitor that was added is ideally an open circuit to the DC voltage which would offer no new path for the DC current to take. But the emitter bypass resistor has a significant impact to the AC analysis because it is seen as a closed circuit and allows the $I_E$ to pass “un-resisted” through the capacitor. As seen in eq. 6, the addition of the emitter bypass capacitor, reduced the denominator of the $A_V$ eq. 4, thus increasing gain.
+As seen in Table X, the small signal voltage gain $A_V$ increased once the emitter bypass capacitor was added, even though it had relatively insignificant impact to the DC voltages of each terminal. The DC voltages shouldn’t change because the capacitor that was added is ideally an open circuit to the DC voltage which would offer no new path for the DC current to take. But the emitter bypass resistor has a significant impact to the AC analysis because it is seen as a closed circuit and allows the $I_E$ to pass “un-resisted” through the capacitor. As seen in Eq~\ref{eq:gm2}, the addition of the emitter bypass capacitor, reduced the denominator of the $A_V$ Eq~\ref{eq:Av1}, thus increasing gain.
 
-Table Y shows the percent difference of the theoretical input and output impedances ($R_i$ and $R_o$ respectively) and the small signal gains of the circuits of Part I and Part II of the experiment which were calculated using equations 1 through 7. $R_i$ and $R_o$ are relatively close and the small percent differences are probably because we took the nominal resistor values instead of the measured resistor values. Experience has shown that resistors are usually slightly less than their nominal value. The 5.7 percent difference between the $A_V$ for Part I is caused from a combination of using nominal instead of measured resistance values, and the assumptions that $\beta$ was assumed to be 150 and  $I_{CQ}$ was assumed to be \SI{3}{mA} (both were given in the pre lab section of the lab). $I_{CQ}$ was probably less than \SI{3}{mA} because the voltage difference between the 12 V input (see Figure ??) and the 9.547 VC terminal (see Table ??) divided by the \SI{1}{\kilo\ohm} resistor would have generated a smaller current than \SI{3}{mA}. Their is significant percent difference between the theoretical $A_V$ versus the measured $A_V$ in Part II. Eq. 6 shows that the calculcated $A_V$ is more effected the $I_{CQ}$ value, which as explained earlier was probably less than the assumed \SI{3}{mA}. Also, the assumption that $r_o$ is infinite and therefore an open circuit is not totally true (which was the assumption made in when calculating the theoretical voltage gain). The resistance of $r_o$ in parallel with RC this would actually have been slightly less than the $R_o$ used in the theoretical calculations. Also, we could have accidentally not reduced the voltage enough such that it was clipped as described in step 15.
+Table Y shows the percent difference of the theoretical input and output impedances ($R_i$ and $R_o$ respectively) and the small signal gains of the circuits of Part I and Part II of the experiment which were calculated using equations 1 through 7. $R_i$ and $R_o$ are relatively close and the small percent differences are probably because we took the nominal resistor values instead of the measured resistor values. Experience has shown that resistors are usually slightly less than their nominal value. The 5.7 percent difference between the $A_V$ for Part I is caused from a combination of using nominal instead of measured resistance values, and the assumptions that $\beta$ was assumed to be 150 and  $I_{CQ}$ was assumed to be \SI{3}{mA} (both were given in the pre lab section of the lab). $I_{CQ}$ was probably less than \SI{3}{mA} because the voltage difference between the 12 V input (see Figure ??) and the 9.547 VC terminal (see Table ??) divided by the \SI{1}{\kilo\ohm} resistor would have generated a smaller current than \SI{3}{mA}. Their is significant percent difference between the theoretical $A_V$ versus the measured $A_V$ in Part II. Eq~\ref{eq:gm2} shows that the calculcated $A_V$ is more effected the $I_{CQ}$ value, which as explained earlier was probably less than the assumed \SI{3}{mA}. Also, the assumption that $r_o$ is infinite and therefore an open circuit is not totally true (which was the assumption made in when calculating the theoretical voltage gain). The resistance of $r_o$ in parallel with RC this would actually have been slightly less than the $R_o$ used in the theoretical calculations. Also, we could have accidentally not reduced the voltage enough such that it was clipped as described in step 15.
 
 Table Y shows the $V_{OC}$ recorded during step 9. It is less than \SI{500}{mV} probably because of “noise” could have affected the output reading. The table also shows the $V_{clip}$, which is the point at which the output voltage began to clip (see step 13). This clipping of the voltage happens when the transistor is saturated in which the current cannot go any higher.
 
@@ -106,19 +106,39 @@ Table Y shows the $V_{OC}$ recorded during step 9. It is less than \SI{500}{mV} 
 % unnecessary vertical spaces between equations, and still visually
 % separate in source, put a comment between them.
 %
-% \begin{equation}
-%   \label{eq:beta}
-%   \beta = \frac{I_C}{I_B}
-% \end{equation}
-% %
-% \begin{equation}
-%   \label{eq:hoe}
-%   h_{oe} \approx \frac{1}{r_o} = \frac{\Delta I_C}{\Delta V_{CE}}
-% \end{equation}
+\begin{equation}
+  \label{eq:Ri}
+  R_i = R_1 | R_2 | R_3
+\end{equation}
 %
-% \begin{equation}
-%   \label{eqn:percent_diff}
-%   \%_{diff} = \frac{|measured - theoretical|}{theoretical} \times 100\%
-% \end{equation}
+\begin{equation}
+  \label{eq:Rib}
+  R_{ib} = r_\pi + (1+\beta) R_E
+\end{equation}
+%
+\begin{equation}
+  \label{eq:rpi}
+  r_\pi = \frac{V_T\beta}{I_{CQ}}
+\end{equation}
+%
+\begin{equation}
+  \label{eq:Av1}
+  A_V = \frac{-\beta R_o}{R_{ib}} \cdot \left( \frac{R_i}{R_i + R_S} \right)
+\end{equation}
+%
+\begin{equation}
+  \label{eq:gm1}
+  g_m = \frac{\beta}{r_\pi}
+\end{equation}
+%
+\begin{equation}
+  \label{eq:Av2}
+  -g_mR_o \cdot \left(\frac{R_i}{R_i + R_S} \right) = \frac{I_{CQ}R_oR_i}{R_i + R_S}
+\end{equation}
+%
+\begin{equation}
+  \label{eq:gm2}
+  g_m = \frac{I_{CQ}}{V_T}
+\end{equation}
 
 \end{document}
