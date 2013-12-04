@@ -18,11 +18,12 @@
 
 \usepackage{graphicx} % Lets us use images
 %\usepackage[acronym]{glossaries} % Lets us use acronyms
+\usepackage{multicol}
 \usepackage{subcaption}
 
 \author{Charles Pittman}
-\title{ELEC-311\\ Project 3\\ Adder-Subtractor}
-\date{October 29, 2013}
+\title{ELEC-311\\ Project 4\\ Synchronous Design}
+\date{December 5, 2013}
 
 %\loadglsentries{acronyms} % Actually loads 'acronyms.tex'
 %\makeglossaries
@@ -41,37 +42,49 @@
 
 % Multiple objectives:
 \begin{itemize}
-\item Design a combinational logic circuit that adds, or subtracts, two 4-bit 2's complement numbers
-\item Describe the circuit using VHDL
+\item Design and test a synchronous sequential circuit which implements a 2-bit binary counter.
+\item Describe the circuit using VHDL.
 \end{itemize}
 
 \section{Discussion}
 \label{sec:procedure}
 
-A diagram of a 4-bit adder/subtractor circuit is shown in Fig~\ref{fig:adder}.  The adder is identical to the type previously studied: given two 4-bit numbers as input, $X$ and $Y$,  output their 5-bit sum.  Subtraction is functionally identical to adding a negative number, so the adder can be converted to a subtractor simply by allowing one input to be negative.
+% A diagram of a 4-bit adder/subtractor circuit is shown in Fig~\ref{fig:adder}.  The adder is identical to the type previously studied: given two 4-bit numbers as input, $X$ and $Y$,  output their 5-bit sum.  Subtraction is functionally identical to adding a negative number, so the adder can be converted to a subtractor simply by allowing one input to be negative.
 
-The encoding given for negative numbers is two's-complement, formed by complementing (negating) the binary number and adding 1.  A third input is made, $SEL$, to produce the negative of the second input, $Y$, to make the circuit a subtractor.  When $SEL$ is 1, the XOR gates produce the complement of $Y$, and $C_{in}$ of the circuit adds 1 to form the two's-complement.
+% The encoding given for negative numbers is two's-complement, formed by complementing (negating) the binary number and adding 1.  A third input is made, $SEL$, to produce the negative of the second input, $Y$, to make the circuit a subtractor.  When $SEL$ is 1, the XOR gates produce the complement of $Y$, and $C_{in}$ of the circuit adds 1 to form the two's-complement.
 
-The entire circuit was then implemented in VHDL (See Section~\ref{sec:vhdl}), using a library consisting of the logic XOR gates and full-adders.  After programming the FPGA, the circuit's operation was verified using the values in Table~\ref{tab:values}.
+% The entire circuit was then implemented in VHDL (See Section~\ref{sec:vhdl}), using a library consisting of the logic XOR gates and full-adders.  After programming the FPGA, the circuit's operation was verified using the values in Table~\ref{tab:values}.
 
-\begin{figure}[hbtp]
-  \centering
-  \includegraphics[width=\textwidth]{adder}
-  \caption{\label{fig:adder} 4-bit adder/subtractor.}
-\end{figure}
+% \begin{figure}[hbtp]
+%   \centering
+%   \includegraphics[width=\textwidth]{adder}
+%   \caption{\label{fig:adder} 4-bit adder/subtractor.}
+% \end{figure}
 
 \begin{table}[hbtp]
   \centering
-  \begin{tabular}{r|r|c|c|r|r}
-    X  & Y  & X    & Y    & X + Y & X - Y \\
-    \hline
-    3  & 1  & 0011 & 0001 & 0100  & 0010  \\
-    1  & 5  & 0001 & 0101 & 0110  & 1100  \\
-    -2 & 3  & 1110 & 0011 & 0001  & 1011  \\
-    -2 & -4 & 1110 & 1100 & 1010  & 0010  \\
-    4  & 6  & 0100 & 0110 & 1010  & 1110  \\
+  \begin{tabular}{c|cc|cc|cc|cc}
+ & \multicolumn{2}{c|}{Inputs} & \multicolumn{2}{c|}{PS} & \multicolumn{2}{c|}{NS} & \multicolumn{2}{c}{Outputs} \\
+mt    &	EL     & UP & Q1 & Q0    & Q1+ & Q0+ & Z1 & Z0 \\
+\hline
+0     &	0      & 0  & 0  & 0     &     &     & 0  & 0  \\
+1     &	0      & 0  & 0  & 1     &     &     & 0  & 1  \\
+2     &	0      & 0  & 1  & 0     &     &     & 1  & 0  \\
+3     &	0      & 0  & 1  & 1     &     &     & 1  & 1  \\
+4     &	0      & 1  & 0  & 0     &     &     & 0  & 0  \\
+5     &	0      & 1  & 0  & 1     &     &     & 0  & 1  \\
+6     &	0      & 1  & 1  & 0     &     &     & 1  & 0  \\
+7     &	0      & 1  & 1  & 1     &     &     & 1  & 1  \\
+8     &	1      & 0  & 0  & 0     &     &     & 0  & 0  \\
+9     &	1      & 0  & 0  & 1     &     &     & 0  & 1  \\
+10    &	1      & 0  & 1  & 0     &     &     & 1  & 0  \\
+11    &	1      & 0  & 1  & 1     &     &     & 1  & 1  \\
+12    &	1      & 1  & 0  & 0     &     &     & 0  & 0  \\
+13    &	1      & 1  & 0  & 1     &     &     & 0  & 1  \\
+14    &	1      & 1  & 1  & 0     &     &     & 1  & 0  \\
+15    &	1      & 1  & 1  & 1     &     &     & 1  & 1  \\
 \end{tabular}
-  \caption{\label{tab:values}Test vectors and expected values.}
+  \caption{\label{tab:values} }
 \end{table}
 
 \section{VHDL}
