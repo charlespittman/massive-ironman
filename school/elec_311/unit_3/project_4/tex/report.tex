@@ -1,25 +1,10 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% This layout was adapted from one found at latextemplates.com which
-% was adapted from another.
-%
-% License: CC BY-NC-SA 3.0
-% (http://creativecommons.org/licenses/by-nc-sa/3.0/)
-%
-% Original header:
-%
-% This is a LaTeX version of the sample laboratory report from
-% Virginia Tech's copyrighted 08-09 CHEM 1045/1046 lab manual.
-% Reproduction of this one appendix section for academic purposes
-% should fall under fair use.
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\documentclass{article}
+\documentclass{report}
 
 \usepackage{graphicx} % Lets us use images
 %\usepackage[acronym]{glossaries} % Lets us use acronyms
 \usepackage{multicol}
 \usepackage{subcaption}
+\usepackage[fleqn]{amsmath}
 
 \author{Charles Pittman}
 \title{ELEC-311\\ Project 4\\ Synchronous Design}
@@ -32,13 +17,12 @@
 
 \maketitle % Inserts title, author, and date from above
 
-\pagebreak
+%\pagebreak
 
 % Number the enumerate environment (unordered lists) by letter:
 %\renewcommand{\labelenumi}{\alph{enumi}.}
 
-\section{Objective}
-\label{sec:objective}
+\section*{Objective}
 
 % Multiple objectives:
 \begin{itemize}
@@ -46,76 +30,62 @@
 \item Describe the circuit using VHDL.
 \end{itemize}
 
-\section{Discussion}
-\label{sec:procedure}
+ \begin{figure}[hbtp]
+   \centering
+   \includegraphics[width=0.5\textwidth]{drawing}
+   \caption{\label{fig:counter} 2-bit binary counter}
+ \end{figure}
 
-% A diagram of a 4-bit adder/subtractor circuit is shown in Fig~\ref{fig:adder}.  The adder is identical to the type previously studied: given two 4-bit numbers as input, $X$ and $Y$,  output their 5-bit sum.  Subtraction is functionally identical to adding a negative number, so the adder can be converted to a subtractor simply by allowing one input to be negative.
+\section*{Discussion}
 
-% The encoding given for negative numbers is two's-complement, formed by complementing (negating) the binary number and adding 1.  A third input is made, $SEL$, to produce the negative of the second input, $Y$, to make the circuit a subtractor.  When $SEL$ is 1, the XOR gates produce the complement of $Y$, and $C_{in}$ of the circuit adds 1 to form the two's-complement.
+Figure~\ref{fig:counter} shows a block diagram of the 2-bit binary counter to be implemented.  It takes four inputs: $E_L$, $U_P$, $C_{LK}$, and $C_{LR}$; and the present state is shown by a 2-bit binary number ($Z_1Z_0$).  Since the output (which indicates present state) is only two bits, the circuit can have only four states.  The $U_P$ (active-high) control selects the counter's direction: count up when high; count down when low.  $E_L$ (active-low enable) and $C_{LK}$ (rising-edge triggered) determine when state changes are normally permitted: only when $C_{LK}$ changes low-high while $E_L = 0$.  The only exception to this is $C_{LR}$ (active-high asynchronous clear) signal, which immediately sets the count to 0.
 
-% The entire circuit was then implemented in VHDL (See Section~\ref{sec:vhdl}), using a library consisting of the logic XOR gates and full-adders.  After programming the FPGA, the circuit's operation was verified using the values in Table~\ref{tab:values}.
-
-% \begin{figure}[hbtp]
-%   \centering
-%   \includegraphics[width=\textwidth]{adder}
-%   \caption{\label{fig:adder} 4-bit adder/subtractor.}
-% \end{figure}
+The circuit's regular behavior (i.e. without the asynchronous clear signal) is shown in Table~\ref{tab:trans}.  The sums of minterms in columns $Q_1^+$ and $Q_0^+$ were then used to develop the next-state equations.  Two Karnaugh maps were used (not pictured) to minimize the equations:
+%
+%\begin{subequations}
+%D_1(E_L,U_P,Q_1,Q_0)\nonumber\\
+\begin{align}
+\label{q1}
+  Q_1^+ &=  \sum_m(0,3,5,6,10,11,14,15) \nonumber\\
+  &= E_L'U_P'Q_1'Q_0' + U_P'Q_1Q_0 + E_L'U_PQ_1'Q_0 + U_PQ_1Q_0' + E_LQ_1
+\end{align}
+%
+\begin{align}
+  \label{eq:D2}
+  Q_0^+ &= \sum_m(0,2,4,6,9,11,13,15) \nonumber \\
+  &= E_L'Q_0' + E_LQ_0
+\end{align}
+%\end{subequations}
 
 \begin{table}[hbtp]
   \centering
   \begin{tabular}{c|cc|cc|cc|cc}
  & \multicolumn{2}{c|}{Inputs} & \multicolumn{2}{c|}{PS} & \multicolumn{2}{c|}{NS} & \multicolumn{2}{c}{Outputs} \\
-mt & E & U & Q1 & Q0 & Q1+ & Q0+ & Z1 & Z0 \\
+mt & $E_L$ & $U_P$ & $Q_1$ & $Q_0$ & $Q_1^+$ & $Q_0^+$ & $Z_1$ & $Z_0$ \\
 \hline
-0  & 0 & 0 & 0  & 0  & 1   & 1   & 0  & 0  \\
-1  & 0 & 0 & 0  & 1  & 0   & 0   & 0  & 1  \\
-2  & 0 & 0 & 1  & 0  & 0   & 1   & 1  & 0  \\
-3  & 0 & 0 & 1  & 1  & 1   & 0   & 1  & 1  \\
-4  & 0 & 1 & 0  & 0  & 0   & 1   & 0  & 0  \\
-5  & 0 & 1 & 0  & 1  & 1   & 0   & 0  & 1  \\
-6  & 0 & 1 & 1  & 0  & 1   & 1   & 1  & 0  \\
-7  & 0 & 1 & 1  & 1  & 0   & 0   & 1  & 1  \\
-8  & 1 & 0 & 0  & 0  & 0   & 0   & 0  & 0  \\
-9  & 1 & 0 & 0  & 1  & 0   & 1   & 0  & 1  \\
-10 & 1 & 0 & 1  & 0  & 1   & 0   & 1  & 0  \\
-11 & 1 & 0 & 1  & 1  & 1   & 1   & 1  & 1  \\
-12 & 1 & 1 & 0  & 0  & 0   & 0   & 0  & 0  \\
-13 & 1 & 1 & 0  & 1  & 0   & 1   & 0  & 1  \\
-14 & 1 & 1 & 1  & 0  & 1   & 0   & 1  & 0  \\
-15 & 1 & 1 & 1  & 1  & 1   & 1   & 1  & 1  \\
+0  & 0    & 0    & 0     & 0     & 1       & 1       & 0     & 0     \\
+1  & 0    & 0    & 0     & 1     & 0       & 0       & 0     & 1     \\
+2  & 0    & 0    & 1     & 0     & 0       & 1       & 1     & 0     \\
+3  & 0    & 0    & 1     & 1     & 1       & 0       & 1     & 1     \\
+4  & 0    & 1    & 0     & 0     & 0       & 1       & 0     & 0     \\
+5  & 0    & 1    & 0     & 1     & 1       & 0       & 0     & 1     \\
+6  & 0    & 1    & 1     & 0     & 1       & 1       & 1     & 0     \\
+7  & 0    & 1    & 1     & 1     & 0       & 0       & 1     & 1     \\
+8  & 1    & 0    & 0     & 0     & 0       & 0       & 0     & 0     \\
+9  & 1    & 0    & 0     & 1     & 0       & 1       & 0     & 1     \\
+10 & 1    & 0    & 1     & 0     & 1       & 0       & 1     & 0     \\
+11 & 1    & 0    & 1     & 1     & 1       & 1       & 1     & 1     \\
+12 & 1    & 1    & 0     & 0     & 0       & 0       & 0     & 0     \\
+13 & 1    & 1    & 0     & 1     & 0       & 1       & 0     & 1     \\
+14 & 1    & 1    & 1     & 0     & 1       & 0       & 1     & 0     \\
+15 & 1    & 1    & 1     & 1     & 1       & 1       & 1     & 1     \\
 \end{tabular}
-  \caption{\label{tab:values} Transition Table }
+  \caption{\label{tab:trans} Transition Table for Figure~\ref{fig:counter}}
 \end{table}
 
-$D_1 = Q_1^+ = \sum_m(0,3,5,6,10,11,14,15)$
 
-$D_0 = Q_0^+ = \sum_m(0,2,4,6,9,11,13,15)$
 
-$Q_1^+ = E'U'Q_1'Q_0' + U'Q_1Q_0 + E'UQ_1'Q_0 + UQ_1Q_0' + EQ_1$
-
-$Q_0^+ = E'Q_0' + EQ_0$
-
-% \begin{equation}
-%   \label{eq:D1}
-%   D_1(E,U,Q_1,Q_0) = Q_1^+ = \sum_m(0,3,5,6,10,11,14,15)
-% \end{equation}
-
-% \begin{equation}
-%   \label{eq:D2}
-%   D_0(E,U,Q_1,Q_0) = Q_0^+ = \sum_m(0,2,4,6,9,11,13,15)
-% \end{equation}
-
-% \begin{equation}
-%   \label{eq:Q1}
-%   Q_1^+ = E'U'Q_1'Q_0' + U'Q_1Q_0 + E'UQ_1'Q_0 + UQ_1Q_0' + EQ_1
-% \end{equation}
-
-% \begin{equation}
-%   \label{eq:Q0}
-%   Q_0^+ = E'Q_0' + EQ_0
-% \end{equation}
-
-\section{VHDL}
+\section*{VHDL}
 \label{sec:vhdl}
 
 \begin{verbatim}
