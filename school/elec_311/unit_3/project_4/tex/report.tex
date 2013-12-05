@@ -65,27 +65,55 @@
   \centering
   \begin{tabular}{c|cc|cc|cc|cc}
  & \multicolumn{2}{c|}{Inputs} & \multicolumn{2}{c|}{PS} & \multicolumn{2}{c|}{NS} & \multicolumn{2}{c}{Outputs} \\
-mt    &	EL     & UP & Q1 & Q0    & Q1+ & Q0+ & Z1 & Z0 \\
+mt & E & U & Q1 & Q0 & Q1+ & Q0+ & Z1 & Z0 \\
 \hline
-0     &	0      & 0  & 0  & 0     &     &     & 0  & 0  \\
-1     &	0      & 0  & 0  & 1     &     &     & 0  & 1  \\
-2     &	0      & 0  & 1  & 0     &     &     & 1  & 0  \\
-3     &	0      & 0  & 1  & 1     &     &     & 1  & 1  \\
-4     &	0      & 1  & 0  & 0     &     &     & 0  & 0  \\
-5     &	0      & 1  & 0  & 1     &     &     & 0  & 1  \\
-6     &	0      & 1  & 1  & 0     &     &     & 1  & 0  \\
-7     &	0      & 1  & 1  & 1     &     &     & 1  & 1  \\
-8     &	1      & 0  & 0  & 0     &     &     & 0  & 0  \\
-9     &	1      & 0  & 0  & 1     &     &     & 0  & 1  \\
-10    &	1      & 0  & 1  & 0     &     &     & 1  & 0  \\
-11    &	1      & 0  & 1  & 1     &     &     & 1  & 1  \\
-12    &	1      & 1  & 0  & 0     &     &     & 0  & 0  \\
-13    &	1      & 1  & 0  & 1     &     &     & 0  & 1  \\
-14    &	1      & 1  & 1  & 0     &     &     & 1  & 0  \\
-15    &	1      & 1  & 1  & 1     &     &     & 1  & 1  \\
+0  & 0 & 0 & 0  & 0  & 1   & 1   & 0  & 0  \\
+1  & 0 & 0 & 0  & 1  & 0   & 0   & 0  & 1  \\
+2  & 0 & 0 & 1  & 0  & 0   & 1   & 1  & 0  \\
+3  & 0 & 0 & 1  & 1  & 1   & 0   & 1  & 1  \\
+4  & 0 & 1 & 0  & 0  & 0   & 1   & 0  & 0  \\
+5  & 0 & 1 & 0  & 1  & 1   & 0   & 0  & 1  \\
+6  & 0 & 1 & 1  & 0  & 1   & 1   & 1  & 0  \\
+7  & 0 & 1 & 1  & 1  & 0   & 0   & 1  & 1  \\
+8  & 1 & 0 & 0  & 0  & 0   & 0   & 0  & 0  \\
+9  & 1 & 0 & 0  & 1  & 0   & 1   & 0  & 1  \\
+10 & 1 & 0 & 1  & 0  & 1   & 0   & 1  & 0  \\
+11 & 1 & 0 & 1  & 1  & 1   & 1   & 1  & 1  \\
+12 & 1 & 1 & 0  & 0  & 0   & 0   & 0  & 0  \\
+13 & 1 & 1 & 0  & 1  & 0   & 1   & 0  & 1  \\
+14 & 1 & 1 & 1  & 0  & 1   & 0   & 1  & 0  \\
+15 & 1 & 1 & 1  & 1  & 1   & 1   & 1  & 1  \\
 \end{tabular}
-  \caption{\label{tab:values} }
+  \caption{\label{tab:values} Transition Table }
 \end{table}
+
+$D_1 = Q_1^+ = \sum_m(0,3,5,6,10,11,14,15)$
+
+$D_0 = Q_0^+ = \sum_m(0,2,4,6,9,11,13,15)$
+
+$Q_1^+ = E'U'Q_1'Q_0' + U'Q_1Q_0 + E'UQ_1'Q_0 + UQ_1Q_0' + EQ_1$
+
+$Q_0^+ = E'Q_0' + EQ_0$
+
+% \begin{equation}
+%   \label{eq:D1}
+%   D_1(E,U,Q_1,Q_0) = Q_1^+ = \sum_m(0,3,5,6,10,11,14,15)
+% \end{equation}
+
+% \begin{equation}
+%   \label{eq:D2}
+%   D_0(E,U,Q_1,Q_0) = Q_0^+ = \sum_m(0,2,4,6,9,11,13,15)
+% \end{equation}
+
+% \begin{equation}
+%   \label{eq:Q1}
+%   Q_1^+ = E'U'Q_1'Q_0' + U'Q_1Q_0 + E'UQ_1'Q_0 + UQ_1Q_0' + EQ_1
+% \end{equation}
+
+% \begin{equation}
+%   \label{eq:Q0}
+%   Q_0^+ = E'Q_0' + EQ_0
+% \end{equation}
 
 \section{VHDL}
 \label{sec:vhdl}
@@ -93,38 +121,43 @@ mt    &	EL     & UP & Q1 & Q0    & Q1+ & Q0+ & Z1 & Z0 \\
 \begin{verbatim}
 library IEEE;
 use IEEE.STD_LOGIC_1164.all;
-use work.project3_gates.all;
 
-entity circuit is
-  port (X    : in  std_logic_vector(3 downto 0);
-        Y    : in  std_logic_vector(3 downto 0);
-        Z    : out std_logic_vector(3 downto 0);
-        SEL  : in  std_logic;
-        Cout : out std_logic;
-        OVR  : out std_logic);
-end circuit;
+library UNISIM;
+use UNISIM.VComponents.all;
 
-architecture Structural of circuit is
+use work.project4_pkg.all;
 
-  signal C : std_logic_vector(3 downto 0);
-  signal S : std_logic_vector(3 downto 0);
+entity counter is
+  port (EL  : in  std_logic;  -- Active-low enable
+        UP  : in  std_logic;  -- Active-high control (count up/down)
+        CLK : in  std_logic;  -- Rising-edge trigger clock
+        CLR : in  std_logic;  -- Active-high asynchronous clear
+        Z   : out std_logic_vector (1 downto 0));  -- 2-bit number
+end counter;
+
+architecture Dataflow of counter is
+  signal d        : std_logic_vector(1 downto 0);
+  signal q        : std_logic_vector(1 downto 0);
+  signal slow_clk : std_logic;
 
 begin
+  -- q next-state equations
+  d(1) <= (not EL and not UP and not q(1) and not q(0)) or
+          (not UP and q(1) and q(0)) or
+          (not EL and UP and not q(1) and q(0)) or
+          (UP and q(1) and not q(0)) or
+          (EL and q(1));
+  d(0) <= (not EL and not q(0)) or (EL and q(1));
 
-  x3 : ExclusiveOR port map(SEL, Y(3), S(3));
-  x2 : ExclusiveOR port map(SEL, Y(2), S(2));
-  x1 : ExclusiveOR port map(SEL, Y(1), S(1));
-  x0 : ExclusiveOR port map(SEL, Y(0), S(0));
+  -- Stretch the clock input for slow_clk
+  CDIV : CLK_DIV port map (CLK, slow_clk);
 
-  fa3 : FullAdder port map(X(3), S(3), C(2), C(3), Z(3));
-  fa2 : FullAdder port map(X(2), S(2), C(1), C(2), Z(2));
-  fa1 : FullAdder port map(X(1), S(1), C(0), C(1), Z(1));
-  fa0 : FullAdder port map(X(0), S(0), SEL, C(0), Z(0));
+  -- D flip-flops to do the actual switching
+  FF1 : FDC port map(q(1), slow_clk, CLR, d(1));
+  FF0 : FDC port map(q(0), slow_clk, CLR, d(0));
 
-  Cout <= C(3);
-  OVR <= (((not X(3)) and (not Y(3)) and C(3)) or (X(3) and Y(3) and (not C(3))));
-
-end Structural;
+  Z <= q;  -- Give Z the present state (for output)
+end Dataflow;
 \end{verbatim}
 
 \end{document}
