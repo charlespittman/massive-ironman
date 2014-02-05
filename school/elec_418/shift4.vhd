@@ -42,9 +42,7 @@ end entity Shift4;
 architecture BeeHive of Shift4 is
   signal Q : std_logic_vector(3 downto 0);
 begin  -- architecture Bee-Hive
-  SO <= Q(0);
-  PO <= Q;
-  process(Clk, Q)
+  process(Clk)
     begin
       if Clk'event and Clk = '0' then
         if ClrN = '0' then Q <= "0000";
@@ -52,6 +50,8 @@ begin  -- architecture Bee-Hive
         elsif Sel = '0' then Q <= Q(3) & Q(3 downto 1);
         else Q <= SI & Q(3 downto 1);
         end if;
+        SO <= Q(0);
+        PO <= Q;
       end if;
     end process;
 end architecture BeeHive;
