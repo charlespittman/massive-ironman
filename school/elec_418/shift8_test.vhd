@@ -1,16 +1,10 @@
 library ieee;
 use ieee.std_logic_1164.all;
 
--- Uncomment the following library declaration if using
--- arithmetic functions with Signed or Unsigned values
---USE ieee.numeric_std.ALL;
-
 entity shift8_test is
 end shift8_test;
 
 architecture behavior of shift8_test is
-
-  -- Component Declaration for the Unit Under Test (UUT)
 
   component Shift8
     port(
@@ -39,6 +33,7 @@ architecture behavior of shift8_test is
 
   -- Clock period definitions
   constant Clk_period : time := 10 ns;
+  constant half_tick  : time := Clk_period/2;
 
   -- Hate typing these
   constant Hi : std_logic := '1';
@@ -73,20 +68,36 @@ begin
     -- hold reset state for 100 ns.
     wait for 100 ns;
 
-    --wait for Clk_period*10;
+    -- Stop clearing, load first value
     ClrN <= Hi;
-    PI <= "11101110";
-    LdN <= Hi after Clk_period;
+    PI   <= "11101110";
+    LdN  <= Hi after half_tick;
+
+    -- Shift right 4 times, then clear
+    wait for Clk_period*4;
+    ClrN <= Lo after half_tick;
+
+    -- Load 2nd test vector and switch the function select
     wait for Clk_period*10;
-    --wait for Clk_period*10;
-    --wait for Clk_period*10;
-    --wait for Clk_period*10;
-    --wait for Clk_period*10;
-    --wait for Clk_period*10;
+    ClrN <= Hi;
+    LdN  <= Lo;
+    PI   <= "01110111";
+    LdN  <= Hi after half_tick;
+    Sel  <= Hi;
+
+    -- Shift right 2 times, then clear
+    wait for Clk_period*2;
+    ClrN <= Lo after half_tick;
+
+    -- Instructions as written don't explicitly demonstrate the difference
+    -- between the function selector; since the shift-in value defaults to 0
+    -- and the MSB of the test vector is 0, the behavior appears the same.
+    -- Setting the shift-in value to 1 will show how this function differs.
+    wait for Clk_period*10;
+    ClrN <= Hi;
+    SI <= '1';
 
     wait;
   end process;
 
 end;
-
---$dumpvars
