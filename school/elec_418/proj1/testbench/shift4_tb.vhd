@@ -1,16 +1,10 @@
 library ieee;
 use ieee.std_logic_1164.all;
 
--- Uncomment the following library declaration if using
--- arithmetic functions with Signed or Unsigned values
---USE ieee.numeric_std.ALL;
-
 entity shift4_tb is
 end shift4_tb;
 
 architecture behavior of shift4_tb is
-
-  -- Component Declaration for the Unit Under Test (UUT)
 
   component Shift4
     port(Clk  : in  std_logic;

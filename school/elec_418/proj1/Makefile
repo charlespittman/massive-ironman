@@ -2,9 +2,8 @@
 PROJECT=shift8
 # vhdl files
 FILES = src/shift4.vhd src/shift8.vhd
-#FILES = src/bus_led.vhd src/bus_led_top.vhd
 # testbench
-SIMTOP = shift8_tb
+SIMTOP = $(PROJECT)_tb
 SIMFILES = testbench/$(SIMTOP).vhd
 # Simu break condition
 GHDL_SIM_OPT    = --assert-level=error
