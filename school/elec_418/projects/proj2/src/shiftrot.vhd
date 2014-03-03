@@ -21,7 +21,18 @@ architecture Behav of RottedShift is
   signal state : integer;
 
   begin  -- architecture Behav
-    --stuff
-    --goes
-    --here
+    -- Controller
+    process(Clk, Start)
+      begin
+        -- When given Start, set d <= Din
+        -- On each Clk, issue shift signal and decrement N
+        -- When N is 0, issue done signal
+    end process;
+
+    -- Data Path
+    process(Clk, load)
+      begin
+        -- On each Clk, shift if asked
+        -- When given done signal, set Dout <= d
+      end process;
 end architecture Behav;
