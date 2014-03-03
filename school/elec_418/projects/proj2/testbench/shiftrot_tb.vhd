@@ -11,6 +11,7 @@
 
 library ieee;
 use ieee.std_logic_1164.all;
+--use ieee.std_logic_unsigned.all;
 
 -------------------------------------------------------------------------------
 
@@ -21,15 +22,24 @@ end entity shiftrot_tb;
 -------------------------------------------------------------------------------
 
 architecture Behav of shiftrot_tb is
+--  component RottedShift is
+--    port (
+--      Clk, Start : in  std_logic;
+--      N          : in  std_logic_vector(2 downto 0);
+--      N : in integer;
+--      Din        : in  std_logic_vector(7 downto 0);
+--      Dout       : out std_logic_vector(7 downto 0));
+--  end component RottedShift;
 
   -- component ports
-  signal Clk, Start : bit;
-  signal N          : bit_vector(2 downto 0);
-  signal Din        : bit_vector(7 downto 0);
-  signal Dout       : bit_vector(7 downto 0);
+  signal Start : std_logic;
+--  signal N          : std_logic_vector(2 downto 0);
+  signal N : integer;
+  signal Din        : std_logic_vector(7 downto 0);
+  signal Dout       : std_logic_vector(7 downto 0);
 
   -- clock
---  signal Clk : std_logic := '1';
+  signal Clk : std_logic := '1';
 
 begin  -- architecture Behav
 
@@ -49,8 +59,13 @@ begin  -- architecture Behav
   WaveGen_Proc: process
   begin
     -- insert signal assignments here
-
+    N <= 4;
+    Din <= "11011011";
     wait until Clk = '1';
+    Start <= '1';
+    wait until Dout = "10111101";
+    N <= 6;
+    Din <="00111100";
   end process WaveGen_Proc;
 
 end architecture Behav;
