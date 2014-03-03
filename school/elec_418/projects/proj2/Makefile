@@ -31,3 +31,4 @@ ghdl-view:
 
 ghdl-clean :
 	$(GHDL_CMD) --clean --workdir=$(SIMDIR)
+	-rm -rf simu
