@@ -101,12 +101,14 @@ BEGIN
       Mcand <= Mcandarr(i);
       Mplier <= Mplierarr(i);
       St <= '1';
-      wait until CLK = '1' and CLK'event;
+      wait for CLK_period;
       St <= '0';
-      wait until Done = '0' and Done'event;
+      wait for CLK_period;
+      wait until falling_edge(Done);
       assert Product = Productarr(i)	-- compare with expected answer
         report "Incorrect Product"
         severity error;  
+      wait for CLK_period;
     end loop;
     report "TEST COMPLETED";
    end process;
