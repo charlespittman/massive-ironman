@@ -4,15 +4,15 @@
 -------------------------------------------------------------------------------
 -- Title      : 8-bit Rotating Shifter
 -------------------------------------------------------------------------------
--- 65.105.110.275.461
+
 library IEEE;
 use IEEE.STD_LOGIC_1164.all;
---use ieee.std_logic_unsigned.all;
+use ieee.std_logic_unsigned.all;
 
 entity RottedShift is
   port(Clk, Start : in std_logic;
-       --N : in std_logic_vector(2 downto 0);
-       N : in integer range 0 to 7;
+       N : in std_logic_vector(2 downto 0);
+       --N : in integer range 0 to 7;
        Din : in std_logic_vector(7 downto 0);
        Dout : out std_logic_vector(7 downto 0));
 end RottedShift;
@@ -20,9 +20,8 @@ end RottedShift;
 architecture Behav of RottedShift is
   signal load, shift, done : std_logic;
   signal d : std_logic_vector(7 downto 0);
-  --signal count : std_logic_vector(2 downto 0);
-  signal count : integer;
-  signal state, nextstate : integer range 0 to 2;
+  signal count : std_logic_vector(2 downto 0);
+  signal state, nextstate : integer range 0 to 5;
 
   signal hi : std_logic := '1';
 
@@ -49,6 +48,8 @@ architecture Behav of RottedShift is
                 shift <= '1';
                 count <= count - 1;
               end if;
+  --          when 3 =>
+--              Start <= 0; N <= 0; Din <= 0; Dout <= 0;
             when others =>
               state <= 0;
           end case;

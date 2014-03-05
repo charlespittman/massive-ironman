@@ -33,8 +33,8 @@ architecture Behav of shiftrot_tb is
 
   -- component ports
   signal Start : std_logic;
---  signal N          : std_logic_vector(2 downto 0);
-  signal N : integer;
+  signal N          : std_logic_vector(2 downto 0);
+--  signal N : integer;
   signal Din        : std_logic_vector(7 downto 0);
   signal Dout       : std_logic_vector(7 downto 0);
 
@@ -44,7 +44,7 @@ architecture Behav of shiftrot_tb is
 begin  -- architecture Behav
 
   -- component instantiation
-  DUT: entity work.RottedShift
+  test1: entity work.RottedShift
     port map (
       Clk   => Clk,
       Start => Start,
@@ -56,16 +56,43 @@ begin  -- architecture Behav
   Clk <= not Clk after 10 ns;
 
   -- waveform generation
-  WaveGen_Proc: process
+--  WaveGen_Proc: process
+  process
   begin
     -- insert signal assignments here
-    N <= 4;
+    N <= "100";
     Din <= "11011011";
     wait until Clk = '1';
     Start <= '1';
-    wait until Dout = "10111101";
-    N <= 6;
-    Din <="00111100";
-  end process WaveGen_Proc;
+    end process;
+--    wait until Dout = "10111101";
+--    N <= "110";
+  --  Din <="00111100";
+--  end process WaveGen_Proc;
+  process
+  begin
+    -- insert signal assignments here
+    N <= "100";
+    Din <= "11011011";
+    wait until Clk = '1';
+    Start <= '1';
+    wait until Clk = '1';
+    Start <= '0';
+    end process;
 
 end architecture Behav;
+
+--all_modes: process
+--begin
+---- mode variable assigned here
+--case mode is
+--when mode_1 =>
+---- assignments to input_1, input_2, input_3
+--when mode_2 =>
+---- assignments to input_1, input_2, input_3
+--when mode_3 =>
+---- assignments to input_1, input_2, input_3
+--when mode_4 =>
+---- assignments to input_1, input_2, input_3
+--end case;
+--end process all_modes;
