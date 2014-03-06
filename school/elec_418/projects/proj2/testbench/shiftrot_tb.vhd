@@ -22,29 +22,21 @@ end entity shiftrot_tb;
 -------------------------------------------------------------------------------
 
 architecture Behav of shiftrot_tb is
---  component RottedShift is
---    port (
---      Clk, Start : in  std_logic;
---      N          : in  std_logic_vector(2 downto 0);
---      N : in integer;
---      Din        : in  std_logic_vector(7 downto 0);
---      Dout       : out std_logic_vector(7 downto 0));
---  end component RottedShift;
 
   -- component ports
   signal Start : std_logic;
-  signal N          : std_logic_vector(2 downto 0);
---  signal N : integer;
-  signal Din        : std_logic_vector(7 downto 0);
-  signal Dout       : std_logic_vector(7 downto 0);
+  signal N     : std_logic_vector(2 downto 0);
+  signal Din   : std_logic_vector(7 downto 0);
+  signal Dout  : std_logic_vector(7 downto 0);
 
   -- clock
-  signal Clk : std_logic := '1';
+  signal Clk          : std_logic := '1';
+  constant clk_period : time      := 10 ns;
 
 begin  -- architecture Behav
 
   -- component instantiation
-  test1: entity work.RottedShift
+  dut : entity work.RottedShift
     port map (
       Clk   => Clk,
       Start => Start,
@@ -53,46 +45,26 @@ begin  -- architecture Behav
       Dout  => Dout);
 
   -- clock generation
-  Clk <= not Clk after 10 ns;
+  Clk <= not Clk after clk_period/2;
 
   -- waveform generation
---  WaveGen_Proc: process
-  process
+  WaveGen_Proc : process
   begin
-    -- insert signal assignments here
-    N <= "100";
-    Din <= "11011011";
+    N     <= "100";
+    Din   <= "11011011";
     wait until Clk = '1';
     Start <= '1';
-    end process;
---    wait until Dout = "10111101";
---    N <= "110";
-  --  Din <="00111100";
---  end process WaveGen_Proc;
-  process
-  begin
-    -- insert signal assignments here
-    N <= "100";
-    Din <= "11011011";
-    wait until Clk = '1';
-    Start <= '1';
-    wait until Clk = '1';
+    wait for clk_period*2;
     Start <= '0';
-    end process;
+    wait until Dout = "10111101";
+--    wait until Clk = '0';
+    N     <= "110";
+    Din   <= "00111100";
+    wait until Clk = '1';
+    start <= '1';
+    wait for clk_period*2;
+    start <= '0';
+    wait;
+  end process WaveGen_Proc;
 
 end architecture Behav;
-
---all_modes: process
---begin
----- mode variable assigned here
---case mode is
---when mode_1 =>
----- assignments to input_1, input_2, input_3
---when mode_2 =>
----- assignments to input_1, input_2, input_3
---when mode_3 =>
----- assignments to input_1, input_2, input_3
---when mode_4 =>
----- assignments to input_1, input_2, input_3
---end case;
---end process all_modes;
