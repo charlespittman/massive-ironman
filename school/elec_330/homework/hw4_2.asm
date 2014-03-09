@@ -1,23 +1,41 @@
-	Title "IP6-4: Finding Max Temperature"
-	list p=18f452, f =inhx32
-	#include <p18f452.inc>		;the header file
+	Title "hw4.2"
+	#include <p18f452.inc>
 
-reg0	equ 	0x00			;define data registers
-buffer 	equ	0x10
+counter:        equ     0x00
+buffer:         equ     0x01
 
 	org	0x00			;reset vector
 	goto	start
 
-	org	0x20
-start:	clrf	reg0			;init reg0
+        org     0x20
+source:
+        db      0x66, 0x88, 0x75, 0xf2, 0xca, 0x00
+
+	org	0x30
+start:
 	lfsr	FSR0,buffer		;init pointer
-next:	movf	POSTINC0,w 		;copy data byte to WREG
-	bz	finish			;data = 0?
-	btfsc	WREG,7			;data > 0?
-	bra	next
-	cpfslt	reg0			;reg0 < data?
-	bra	next
-	movwf	reg0			;save larger data
-	bra	next			;go back and check next byte
-finish	sleep
-	end
+        movlw	upper source		;init table pointer
+	movwf	TBLPTRU
+	movlw	high source
+	movwf	TBLPTRH
+	movlw	low source
+	movwf	TBLPTRL
+
+fetch:
+        ;; Copy next data byte to WREG
+        tblrd*+
+        movf    TABLAT,w
+        bz      finished            ;0x00 used to indicate final list item
+
+test:
+        ;; If value is positive, increment counter and copy to buffer.
+        ;; Get next byte
+        bn      fetch
+        incf    counter, f
+        movwf    POSTINC0
+        bra     fetch
+
+finished:
+        sleep
+
+        end
