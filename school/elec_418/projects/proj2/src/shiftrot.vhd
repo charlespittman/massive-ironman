@@ -34,7 +34,7 @@ begin  -- architecture Behav
 
   -- Controller
   process(clk, fin)
-  -- When given Start, set d <= Din
+  -- When given start signal, issue load.
   -- On each clk, issue shift signal and decrement N
   -- When N is 0, issue fin signal
   begin
