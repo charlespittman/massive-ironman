@@ -1,3 +1,24 @@
+-------------------------------------------------------------------------------
+-- Title      : Testbench for design "hw3"
+-- Project    :
+-------------------------------------------------------------------------------
+-- File       : hw3_tb.vhd
+-- Author     : Charles Pittman  <charles.pittman@gmail.com>
+-- Company    :
+-- Created    : 2014-03-13
+-- Last update: 2014-03-13
+-- Platform   :
+-- Standard   : VHDL'93/02
+-------------------------------------------------------------------------------
+-- Description:
+-------------------------------------------------------------------------------
+-- Copyright (c) 2014
+-------------------------------------------------------------------------------
+-- Revisions  :
+-- Date        Version  Author  Description
+-- 2014-03-13  1.0      cpittman	Created
+-------------------------------------------------------------------------------
+
 library ieee;
 use ieee.std_logic_1164.all;
 
@@ -9,17 +30,20 @@ end entity hw3_tb;
 
 -------------------------------------------------------------------------------
 
-architecture tb of hw3_tb is
+architecture testbench of hw3_tb is
 
   -- component ports
-  signal Clk, Go, M1, M2    : std_logic := '0';
+  signal Go, M1, M2    : std_logic := '0';
   signal Ld, Bk, Gr, Rd, Yw : std_logic := '0';
+
+  -- clock
+  signal Clk : std_logic := '1';
   constant tick : time := 5 ns;
 
-begin  -- architecture tb
+begin  -- architecture testbench
 
   -- component instantiation
-  DUT1: entity work.Controller_1
+  DUT: entity work.Controller_1
     port map (Clk => Clk,
               Go  => Go,
               M1  => M1,
@@ -45,7 +69,16 @@ begin  -- architecture tb
     M1 <= '0';
     wait for tick*2;
     M2 <= '1';
-
+    wait until Clk = '1';
   end process WaveGen_Proc;
 
-end architecture tb;
+end architecture testbench;
+
+-------------------------------------------------------------------------------
+
+configuration hw3_tb_testbench_cfg of hw3_tb is
+  for testbench
+  end for;
+end hw3_tb_testbench_cfg;
+
+-------------------------------------------------------------------------------
