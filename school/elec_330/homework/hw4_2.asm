@@ -27,11 +27,11 @@ start:
         movlw   low source
         movwf   TBLPTRL
 
-;;; Copy next data byte to WREG.  Quit if 0x00.
+;;; Copy next data byte to WREG.  Stop when the next byte is 0x00.
 fetch:
         tblrd*+
         movf    TABLAT, w
-        bz      finished        ;0x00 used to indicate final list item
+        bz      to_table        ;0x00 used to indicate final list item
 
 ;;; If value is positive, increment counter and copy to buffer.  Fetch next byte.
 test:
@@ -39,6 +39,24 @@ test:
         incf    counter, f
         movwf   POSTINC0
         bra     fetch
+
+;;; Copy buffer to a new table.
+to_table:
+        ;; Set file pointer back to beginning of buffer.
+        lfsr    FSR0, buffer
+        ;; Set table pointer to 0x018040
+        movlw   0x01
+        movwf   TBLPTRU
+        movlw   0x80
+        movwf   TBLPTRH
+        movlw   0x40
+        movwf   TBLPTRL
+copy:
+        ;; Copy buffer -> table latch -> table.  Stop on 0x00.
+        movf    POSTINC0, W
+        movwf   TABLAT
+        tblwt*+
+        bnz     copy
 
 finished:
         sleep
