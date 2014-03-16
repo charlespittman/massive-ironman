@@ -55,7 +55,7 @@ unpack:
 	movwf	bcd0
 
         ;; Grab another copy of original
-	movf	reg2, w		;get the byte again
+	movf	reg2, w
 
         ;; Save upper half
 	swapf	WREG, w
@@ -65,7 +65,6 @@ unpack:
         return
 
 ;;; Main program
-        ;; org 0x40
 start:
         ;;  Set up and run a few tests
         movlw   0x40
