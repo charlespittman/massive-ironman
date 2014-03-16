@@ -1,23 +1,16 @@
 	list p=18f452, f =inhx32
 	#include <p18f452.inc>
 
-
 reg1:   equ	0x01            ;used by bcdbin
 reg2:   equ     0x02            ;used by unpack
 
-bcd0:   equ	0x10
-bcd1:   equ	0x11
-binary: equ     0x12
+bcd1:   equ	0x10            ;first digit
+bcd0:   equ	0x11            ;second digit
+binary: equ     0x12            ;binary result
 
         ;; reset vector
 	org	0x00
         goto    start
-
-;;; Main program
-	org     0x20
-start:
-        goto    bcdbin
-        end
 
 ;;;
 ;;; Function:   Convert a two-digit BCD number in WREG to its binary equivalent
@@ -36,13 +29,15 @@ bcdbin:
         ;; Fix tens-place
         movf    bcd1, w
 	mullw	d'10'
-	movff	prodl, WREG
+	movff	PRODL, WREG
 
         ;; Find sum
 	addwf	bcd0, w
 
         ;; Save result to binary
         movwf   binary
+
+        return
 
 ;;;
 ;;; Function:   Splits two-digit packed BCD in WREG into bcd1 and bcd0
@@ -69,27 +64,21 @@ unpack:
 
         return
 
-;;;
-;;; First half of the homework. Might be useful for generating tests.
-;;;
-;; counter:        equ     0x00
-;; ledcode:        equ     0x12
-;; start:  call    unpack
-;;         call    outled
-;;         movlw   d'5'
+;;; Main program
+        ;; org 0x40
+start:
+        ;;  Set up and run a few tests
+        movlw   0x40
+        call    bcdbin
+	;; Expect 0010 1000 (0x28)
 
-;; unpack: movf    counter,W
-;;         andlw   0x0f
+        movlw   0x02
+        call    bcdbin
+        ;; Expect 0000 0010 (0x02)
 
-;;         swapf   bcd1, F
-;;         return
+        movlw   0x42
+        call    bcdbin
+        ;; Expect 0010 1010 (0x2a)
 
-;; outled: movf    bcd0, W
-;;         call    getcode
-
-;;         movff   TABLAT, PORTC
-
-;; getcode:        movwf temp
-;;         movlw   upper ledcode
-
-;;         end
+        sleep
+        end
