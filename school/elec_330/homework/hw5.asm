@@ -25,7 +25,7 @@ start:
 ;;; Output:     Binary equivalent in WREG
 ;;; Alters:     reg1, binary
 ;;; Calls:      unpack
-;;; Notes:      Assumes each digit is in range 0x00-0x0A
+;;; Notes:      Assumes each digit is in range 0-9
 bcdbin:
         ;; Save a copy of the packed BCD
         movwf   reg1
@@ -50,7 +50,7 @@ bcdbin:
 ;;; Output:     Two one-digit packed BCD numbers in BCD1, BCD0
 ;;; Alters:     reg2, bcd1, bcd0
 ;;; Calls:      none
-;;; Notes:      Assumes each digit is in range 0x00-0x0A
+;;; Notes:      Assumes each digit is in range 0-9
 unpack:
         ;; Save a copy of the packed BCD
         movwf   reg2
