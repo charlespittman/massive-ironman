@@ -57,7 +57,7 @@ main:         movlw b'11100000'     ; init timer0:interrupt enable
               movwf T0CON
               movlw scale           ; low count
               movwf TMR0L           ; load low count in timer0
-              bcf   INTCON,TMR0IF   ; clear timr0 overflow flag – reset timer
+              bcf   INTCON,TMR0IF   ; clear timr0 overflow flag & reset timer
               movlw 0xf0            ; enable rb7-rb4 as input and rb3-rb0 as output
               movwf TRISB
               clrf  zero            ; code for zero
@@ -69,16 +69,25 @@ main:         movlw b'11100000'     ; init timer0:interrupt enable
               movwf stop
               movlw kpad_b          ; code for door open
               movwf door
-              movlw 0x01                ; code for magnetron
+              movlw 0x01            ; code for magnetron
               movwf mag
-              movlw     0x00            ; code for buzzer
+              movlw 0x00            ; code for buzzer
               movwf buzz
 
-                                    ; init ports a,c,d as output ports
+              ;; init ports a,c,d as output ports
+              movlw 0x00
+              movwf TRISA
+              movwf TRISC
+              movwf TRISD
+
+              ;; init leds off
 
 
-                                    ; init leds off
-                                    ; init 7-seg leds off
+              ;; init 7-seg leds off
+              movlw 0x92
+              movwf PORTC
+              movlw 0x92
+              movwf PORTD
 
               ;;
               clrf  bcd0
@@ -125,7 +134,7 @@ cook:
 ;;; Notes:
 tmr0_isr:     movlw scale           ; low count
               movwf TMR0L           ; load low count in timer0
-              bcf   INTCON,TMR0IF   ; clear timr0 overflow flag – reset timer
+              bcf   INTCON,TMR0IF   ; clear timr0 overflow flag & reset timer
 
 
 
