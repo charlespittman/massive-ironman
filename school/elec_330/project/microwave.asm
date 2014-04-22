@@ -8,6 +8,8 @@
               list  p=18f452, f =inhx32
               #include <p18f452.inc>		;header file for pic18f452
 
+;;
+;; Registers
 ZERO:         equ   0x00            ; zero register
 
 BCD0:         equ   0x01            ; time low BCD digit
@@ -26,7 +28,7 @@ MAG:          equ   0x16            ; code register for magnitron
 
 scale:        equ   0xc0            ; scale for timer0
 
-;; Codes identifying keypad buttons
+;; Constants used for identifying keypad buttons
 KPAD_0:       equ   0x00            ; code for key '0'
 KPAD_1:       equ   0x01            ; code for key '1'
 KPAD_2:       equ   0x02            ; code for key '2'
@@ -37,12 +39,12 @@ KPAD_6:       equ   0x06            ; code for key '6'
 KPAD_7:       equ   0x07            ; code for key '7'
 KPAD_8:       equ   0x08            ; code for key '8'
 KPAD_9:       equ   0x09            ; code for key '9'
-KPAD_a:       equ   0x0a            ; code for key 'a'
-KPAD_b:       equ   0x0b            ; code for key 'b'
-KPAD_c:       equ   0x0c            ; code for key 'c'
-KPAD_d:       equ   0x0d            ; code for key 'd'
-KPAD_e:       equ   0x0e            ; code for key 'e'
-KPAD_f:       equ   0x0f            ; code for key 'f'
+KPAD_A:       equ   0x0a            ; code for key 'a'
+KPAD_B:       equ   0x0b            ; code for key 'b'
+KPAD_C:       equ   0x0c            ; code for key 'c'
+KPAD_D:       equ   0x0d            ; code for key 'd'
+KPAD_E:       equ   0x0e            ; code for key 'e'
+KPAD_F:       equ   0x0f            ; code for key 'f'
 
 ;; Begin assembly
               org   0x00
@@ -71,13 +73,13 @@ main:
               movlw 0x0f            ; code when all keys are open
               movwf KYSOPEN
 
-              movlw KPAD_f          ; code for start
+              movlw KPAD_F          ; code for start
               movwf START
 
-              movlw KPAD_a          ; code for stop
+              movlw KPAD_A          ; code for stop
               movwf STOP
 
-              movlw KPAD_b          ; code for door open
+              movlw KPAD_B          ; code for door open
               movwf DOOR
 
               movlw 0x01            ; code for magnetron
@@ -129,8 +131,13 @@ c_loop:
 ;;; Calls: keychk, outled
 ;;; Notes:
 input:
-
-	return
+              ;; keychk returns either 0x80 or the KPAD value of button pressed
+              ;; 0x80 should trip the negative flag in STATUS
+              call  keychk
+              bn    input
+              movwf BCD1
+              call outled
+              return
 
 ;;; Function: COOK checks for stop and door buttons, then lights magnetron.
 ;;; Input: STOP, DOOR
@@ -140,7 +147,7 @@ input:
 ;;; Notes:
 cook:
 
-	return
+              return
 
 ;;; Function: TMR0_ISR resets TIMER0, decrements time, and calls outled.
 ;;; Input:
@@ -158,25 +165,27 @@ tmr0_isr:
               retfie FAST           ; return
 
 ;;; Function: KEYCHK checks that all keys are open, then calls keycode
-;;; Input:
-;;; Output: Sets bit 7 if all keys are open
-;;; Alters:
+;;; Input: PORTB
+;;; Output: 0x80 if no keys pressed, or the result of keycode
+;;; Alters: WREG, PORTB
 ;;; Calls: keycode
 ;;; Notes:
 keychk:
               movlw 0x0f            ; set rb0-rb3 hi
               movwf PORTB
               movf  PORTB, w        ; read PORTB
+
+              ;; Trip negative flag if no keys are currently pressed, otherwise
+              ;; call keycode to get button pressed.
               cpfseq KYSOPEN        ; are all keys open?
               bra   keycode
-
               movlw b'10000000'     ; return a 1 in bit7 if all open
               return
 
 ;;; Function: KEYCODE encodes key and identifies key position
-;;; Input:
+;;; Input: PORTB
 ;;; Output: Encoded key position in WREG.
-;;; Alters:
+;;; Alters: WREG
 ;;; Calls:
 ;;; Notes:
 keycode:
@@ -187,26 +196,26 @@ setrb0:       bsf   PORTB, 0        ; set column - rb0
 
 keyb0_4:
               btfss PORTB, 4        ; check rb4, if = 1, find code
-              bra   keyb0_5          ; if rb4 = 0, check next key
+              bra   keyb0_5         ; if rb4 = 0, check next key
               movlw KPAD_1
               return
 
 keyb0_5:
               btfss PORTB, 5        ; check rb5, if = 1, find code
-              bra   keyb0_6          ; if rb5 = 0, check next key
+              bra   keyb0_6         ; if rb5 = 0, check next key
               movlw KPAD_4
               return
 
 keyb0_6:
               btfss PORTB, 6        ; check rb6, if = 1, find code
-              bra   keyb0_7          ; if rb6 = 0, check next key
+              bra   keyb0_7         ; if rb6 = 0, check next key
               movlw KPAD_7
               return
 
 keyb0_7:
               btfss PORTB, 7        ; check rb7, if = 1, find code
               bra   colrb1          ; if rb7 = 0, go to next column
-              movlw KPAD_a
+              movlw KPAD_A
               return
 
               ;; Scan column RB1
@@ -216,19 +225,19 @@ setrb1:       bsf   PORTB, 1        ; set column - rb1
 
 keyb1_4:
               btfss PORTB, 4        ; check rb4, if = 1, find code
-              bra   keyb1_5          ; if rb4 = 0, check next key
+              bra   keyb1_5         ; if rb4 = 0, check next key
               movlw KPAD_2
               return
 
 keyb1_5:
               btfss PORTB, 5        ; check rb5, if = 1, find code
-              bra   keyb1_6          ; if rb5 = 0, check next key
+              bra   keyb1_6         ; if rb5 = 0, check next key
               movlw KPAD_5
               return
 
 keyb1_6:
               btfss PORTB, 6        ; check rb6, if = 1, find code
-              bra   keyb1_7          ; if rb6 = 0, check next key
+              bra   keyb1_7         ; if rb6 = 0, check next key
               movlw KPAD_8
               return
 
@@ -245,26 +254,26 @@ setrb2:       bsf   PORTB, 2        ; set column - rb2
 
 keyb2_4:
               btfss PORTB, 4        ; check rb4, if = 1, find code
-              bra   keyb2_5          ; if rb4 = 0, check next key
+              bra   keyb2_5         ; if rb4 = 0, check next key
               movlw KPAD_3
               return
 
 keyb2_5:
               btfss PORTB, 5        ; check rb5, if = 1, find code
-              bra   keyb2_6          ; if rb1 = 5, check next key
+              bra   keyb2_6         ; if rb1 = 5, check next key
               movlw KPAD_6
               return
 
 keyb2_6:
               btfss PORTB, 6        ; check rb6, if = 1, find code
-              bra   keyb2_7          ; if rb6 = 0, check next key
+              bra   keyb2_7         ; if rb6 = 0, check next key
               movlw KPAD_9
               return
 
 keyb2_7:
               btfss PORTB, 7        ; check rb7, if = 1, find code
               bra   colrb3          ; if rb7 = 0, go to next column
-              movlw KPAD_b
+              movlw KPAD_B
               return
 
               ;; Scan column RB3
@@ -276,25 +285,25 @@ setrb3:       bsf   PORTB, 3        ; set column - rb3
 keyb3_4:
               btfss PORTB, 4        ; check rb4, if = 1, find code
               bra   keyb3_5         ; if rb4 = 0, check next key
-              movlw KPAD_c
+              movlw KPAD_C
               return
 
 keyb3_5:
               btfss PORTB, 5        ; check rb5, if = 1, find code
               bra   keyb3_6         ; if rb5 = 0, check next key
-              movlw KPAD_d
+              movlw KPAD_D
               return
 
 keyb3_6:
               btfss PORTB, 6        ; check rb6, if = 1, find code
               bra   keyb3_7         ; if rb6 = 0, check next key
-              movlw KPAD_e
+              movlw KPAD_E
               return
 
 keyb3_7:
               btfss PORTB, 7        ; check rb7, if = 1, find code
               bra   rtn             ; if rb7 = 0, go to next column
-              movlw KPAD_f
+              movlw KPAD_F
 
 rtn:          return
 
