@@ -1,0 +1,13 @@
+-- MOVE (Rs), Rd
+-- Rd <- MEM(Rs)
+
+--T3      MAR <= Rs       REGS_Read1 <= '1';
+--                        ALU_OP <= Pass_A;
+--                        Load_MAR <= '1';
+--T4      MDR <= MEM(MAR) MEM_Read <= '1';
+--                        Load_MDR <= '1';
+--T5      Rd <= MDR       BUS_A <= MDR;
+--                        ALU_OP <= Pass_A;
+--                        Load_Status <= '1';
+--                        REGS_Write <= '1';
+--                        Clear <= '1';
