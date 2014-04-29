@@ -167,14 +167,15 @@ input:
               call  keychk
               btfsc WREG,7
               return
+
+              ;; If input is a number, display it.
               cpfslt NINE
               bra cpy_bcd1
-                                    ; bn    input
-                                    ; cpfslt 0x09
-                                    ; bra   cpy_bcd1
               return
 
 cpy_bcd1:
+              ;; This would keep resetting BCD1 when called later, and since 0
+              ;; isn't a valid time, chose not to set BCD1 to it.
               movwf TEST
               tstfsz TEST
               movwf BCD1
@@ -204,7 +205,6 @@ mag_on:
               call keychk
               cpfseq DOOR
               bra   cook
-              bra   pause
 
 pause:
               ;; Stop timer and magnetron
@@ -276,7 +276,6 @@ leave_timer:
               movf  BCD0,W
               addwf TIMEUP,F        ; add bcd1 and bcd0 to allow timer=0 check
               retfie FAST           ; return
-
 
 ;;; Function: KEYCHK checks that all keys are open, then calls keycode
 ;;; Input: PORTB
