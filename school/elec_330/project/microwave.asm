@@ -126,26 +126,28 @@ c_start:
               bsf   T0CON,TMR0ON    ; enable timer0
 
 ;; Cook loop
-c_loop:
+c_loop:       ;; To avoid having to check BCD1 and BCD0 separately when checking
+              ;; for time=0, we can add them and check the result (since 0+0=0).
+              ;; This should be (and is) set in the timer0 interrupt, so this
+              ;; block probably isn't necessary, but after breaking the project
+              ;; numerous times, I'm afraid to take anything out.
               movff BCD1, TIMEUP
               movf  BCD0,W
-              addwf TIMEUP,F       ; add bcd1 and bcd0 to allow timer=0 check
+              addwf TIMEUP,F
+
               call  cook            ; cooking
 
-;; Cooking done
-d_loop:
+              ;; Done cooking.  Reset display.
               clrf  BCD0
               clrf  BCD1
               call  outled
 
-door_chk:
-              ;; Keep checking for the door until it's opened.
+door_chk:     ;; Keep checking for the door until it's opened.
               call  keychk
               cpfseq DOOR
               bra   door_chk
 
-door_open:
-              ;; Kill buzzer
+door_open:    ;; Kill buzzer and magnetron
               clrf  PORTA
 
               ;; Wait for the door to reset
@@ -155,18 +157,21 @@ door_open:
 
               bra   i_loop          ; Ready for the next session
 
-;;; Function: INPUT gets user input for time.
-;;; Input:
-;;; Output: time in BCD1
-;;; Alters: BCD1
+;;; Function: INPUT gets user input.
+;;; Input: Keypad matrix at PORTB
+;;; Output: time in BCD1 and/or button pressed
+;;; Alters: BCD1, TEST
 ;;; Calls: keychk, outled
-;;; Notes:
-input:
-              ;; keychk returns either 0x80 or the KPAD value of button pressed
+input:        ;; keychk returns either 0x80 or the KPAD value of button pressed
               ;; 0x80 should trip the negative flag in STATUS
               call  keychk
               btfsc WREG,7
               return
+
+              ;; INPUT kept overwriting BCD1 when checking for control signals,
+              ;; so I tried setting BCD1 only when a number was received.
+              ;; Something, somewhere kept triggering the reset, so I eventually
+              ;; just copied BCD1 to a temp variable and ignored zeroes, as well.
 
               ;; If input is a number, display it.
               cpfslt NINE
@@ -174,82 +179,74 @@ input:
               return
 
 cpy_bcd1:
-              ;; This would keep resetting BCD1 when called later, and since 0
-              ;; isn't a valid time, chose not to set BCD1 to it.
               movwf TEST
               tstfsz TEST
-              movwf BCD1
-              call  outled
+              movwf BCD1            ; Only 1-9 gets copied back to BCD1 but zero
+              call  outled          ; still triggers a display update
               return
 
 ;;; Function: COOK checks for stop and door buttons, then lights magnetron.
 ;;; Input: STOP, DOOR
 ;;; Output: MAG
 ;;; Alters: WREG, MAG
-;;; Calls:
-;;; Notes:
-cook:
-              ;; Check if we ran out of time, if not, enable timer
+;;; Calls: keychk
+cook:         ;; Check if we ran out of time, if not, enable timer
               movf  TIMEUP,F
               bz    stop_cook
-              bsf   T0CON,TMR0ON
+              bsf   T0CON,TMR0ON    ; start timer0
 
               call  keychk
               cpfseq STOP
               bra   mag_on
               bra   stop_cook
 
-mag_on:
-              ;; Enable magnetron unless door's open
+mag_on:       ;; Enable magnetron unless door's open
               movff MAG,PORTA
               call keychk
               cpfseq DOOR
               bra   cook
 
-pause:
-              ;; Stop timer and magnetron
-              bcf   T0CON,TMR0ON
+pause:        ;; Stop timer and magnetron
+              bcf   T0CON,TMR0ON    ; stop timer0
               clrf  PORTA
 
               ;; If no keys are pressed, then door was closed
               call  keychk
               btfsc WREG,7
               bra   re_cook
+
               ;; Stay paused if door's open
               cpfseq DOOR
               bra   stop_check
               bra   pause
 
-stop_check:
-              ;; Check if STOP pressed
+stop_check:   ;; Check if STOP pressed
               cpfseq STOP
               bra   pause
               bra   stop_cook
 
-re_cook:
-              ;; Come back from pause
-              bsf   T0CON,TMR0ON
+re_cook:      ;; Come back from pause
+              bsf   T0CON,TMR0ON    ; start timer0
               bra   cook
 
-stop_cook:
-              ;; Kill timer and magnetron.  Start the buzzer, and go back to main.
-              bcf   T0CON,TMR0ON
+stop_cook:    ;; Kill timer and magnetron.  Start the buzzer, and go back to main.
+              bcf   T0CON,TMR0ON    ; stop timer0
               movff BUZZ,PORTA
               return
 
 ;;; Function: TMR0_ISR resets TIMER0, decrements time, and calls outled.
-;;; Input:
-;;; Output:
-;;; Alters:
+;;; Input: SCALE
+;;; Output: current countdown in BCD1 and BCD0, BUZZ (when time=0)
+;;; Alters: BCD0, BCD1, TIMEUP
 ;;; Calls: outled
-;;; Notes:
+;;; Notes: This generates an interrupt everytime SCALE overflows, and is meant to
+;;;        simulate a second in realtime.
 tmr0_isr:
               movlw SCALE           ; low count
               movwf TMR0L           ; load low count in timer0
               bcf   INTCON,TMR0IF   ; clear timr0 overflow flag & reset timer
 
-countdown:
-              ;; If BCD=0 && BCD1=0, call buzzer and leave.
+countdown:    ;; If BCD=0 && BCD1=0, call buzzer and leave.
               movf  BCD0,F
               bnz   dec_bcd0
               movf  BCD1,F
@@ -274,7 +271,7 @@ time_up:      ;; Kill magnetron, and start buzzing
 leave_timer:
               movff BCD1, TIMEUP
               movf  BCD0,W
-              addwf TIMEUP,F        ; add bcd1 and bcd0 to allow timer=0 check
+              addwf TIMEUP,F        ; add BCD1 and BCD0 to allow timer=0 check
               retfie FAST           ; return
 
 ;;; Function: KEYCHK checks that all keys are open, then calls keycode
@@ -282,7 +279,6 @@ leave_timer:
 ;;; Output: 0x80 if no keys pressed, or the result of keycode
 ;;; Alters: WREG, PORTB
 ;;; Calls: keycode
-;;; Notes:
 keychk:
               movlw 0x0f            ; set rb0-rb3 hi
               movwf PORTB
@@ -299,8 +295,6 @@ keychk:
 ;;; Input: PORTB
 ;;; Output: Encoded key position in WREG.
 ;;; Alters: WREG
-;;; Calls:
-;;; Notes:
 keycode:
               ;; Scan column RB0
 colrb0:       movlw 0x00
@@ -409,9 +403,7 @@ rtn:          return
 ;;; Output: BCD digits at PORTD, PORTC
 ;;; Alters: WREG
 ;;; Calls: getcode
-;;; Notes:
-outled:
-              ;; Copy low-order BCD digit to WREG, and display it at PORTC.
+outled:       ;; Copy low-order BCD digit to WREG, and display it at PORTC.
               movf  BCD0,W
               call  getcode
               movff TABLAT, PORTC
@@ -428,10 +420,7 @@ outled:
 ;;; Input: Unpacked digit in WREG
 ;;; Output: 7-segment code in TABLAT
 ;;; Alters: WREG
-;;; Calls:
-;;; Notes:
-getcode:
-              ;; Copy BCD digit to be displayed
+getcode:      ;; Copy BCD digit to be displayed
               movwf TEMP
 
               ;; Copy 21-bit address of ledcode to table pointer
