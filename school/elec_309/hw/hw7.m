@@ -31,10 +31,13 @@ pkg load signal
 # plot(t,x)
 # grid on;
 
-T = 5*(1/2);
-Fs = 1000;
-dt = 1/Fs;
-t = -5:dt:5;
-x = (2*j/3)*t*rectpuls(t,6);
-plot(t,x)
-axis([-5 5])
+## T = 5*(1/2);
+## Fs = 1000;
+## dt = 1/Fs;
+## t = -5:dt:5;
+## x = (2*j/3)*t*rectpuls(t,6);
+## plot(t,x)
+## axis([-5 5])
+
+x = -1:0.25:1
+n = -4:4
