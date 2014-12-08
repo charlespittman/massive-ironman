@@ -1,0 +1,31 @@
+<Qucs Schematic 0.0.17>
+<Properties>
+  <View=0,0,800,844,1,0,0>
+  <Grid=10,10,0>
+  <DataSet=7.65.dat>
+  <DataDisplay=7.65.sch>
+  <OpenDisplay=1>
+  <Script=7.65.m>
+  <RunScript=0>
+  <showFrame=0>
+  <FrameText0=Title>
+  <FrameText1=Drawn By:>
+  <FrameText2=Date:>
+  <FrameText3=Revision:>
+</Properties>
+<Symbol>
+</Symbol>
+<Components>
+</Components>
+<Wires>
+</Wires>
+<Diagrams>
+  <Rect 150 443 629 323 3 #c0c0c0 1 10 1 1 1 1e+07 1 -265.863 20 -98.4193 1 -1 0.2 1 315 0 225 "Frequency (Hz)" "Gain (dB)" "">
+	<"Gain" #0000ff 0 3 0 0 0>
+  </Rect>
+  <Rect 150 804 630 304 3 #c0c0c0 1 10 1 1 1 1e+07 0 0 30 180 1 -1 0.5 1 315 0 225 "Frequency (Hz)" "Phase (°)" "">
+	<"Phase" #0000ff 0 3 0 0 0>
+  </Rect>
+</Diagrams>
+<Paintings>
+</Paintings>

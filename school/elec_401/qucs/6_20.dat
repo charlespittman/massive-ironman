@@ -1,0 +1,46 @@
+<Qucs Dataset 0.0.17>
+<indep V2.I 1>
+  -2.07694462971e-03
+</indep>
+<indep V1.I 1>
+  +0.00000000000e+00
+</indep>
+<indep Pr1.I 1>
+  +1.82193841549e-05
+</indep>
+<indep Pr2.I 1>
+  +1.87437137667e-03
+</indep>
+<indep Pr3.I 1>
+  +1.85615199252e-03
+</indep>
+<indep _net4.V 1>
+  +3.03859879565e+00
+</indep>
+<indep _net5.V 1>
+  +4.91646561647e+00
+</indep>
+<indep _net6.V 1>
+  +2.24924565200e+00
+</indep>
+<indep B.V 1>
+  +3.03859879565e+00
+</indep>
+<indep _net3.V 1>
+  +9.00000000000e+00
+</indep>
+<indep C.V 1>
+  +4.91646561647e+00
+</indep>
+<indep _net2.V 1>
+  +0.00000000000e+00
+</indep>
+<indep E.V 1>
+  +2.24924565200e+00
+</indep>
+<indep _net0.V 1>
+  +0.00000000000e+00
+</indep>
+<indep _net1.V 1>
+  +0.00000000000e+00
+</indep>
