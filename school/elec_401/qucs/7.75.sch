@@ -36,8 +36,8 @@
   <IProbe Ic 1 700 220 -26 16 1 2>
   <.SW SW1 1 250 540 0 59 0 0 "AC1" 1 "list" 1 "RL" 1 "5 Ohm" 0 "50 Ohm" 0 "[0.2k; 2k; 20k]" 1>
   <Eqn Eqn1 1 390 550 -23 12 0 0 "Gain=Output.v/Input.v" 1 "Gain_dB=dB(Gain)" 1 "Phase=phase(Output.v/Input.v)" 1 "yes" 0>
-  <.AC AC1 1 80 540 0 37 0 0 "log" 1 "1 Hz" 1 "100 GHz" 1 "41" 1 "no" 0>
-  <Vac V3 1 100 430 18 -26 0 1 "1 V" 1 "AC1" 0 "0" 0 "0" 0>
+  <Vac V3 1 100 430 18 -26 0 1 "1 V" 1 "1GHz" 0 "0" 0 "0" 0>
+  <.AC AC1 1 80 540 0 37 0 0 "log" 1 "1 MHz" 1 "1 GHz" 1 "100" 1 "no" 0>
 </Components>
 <Wires>
   <600 510 600 540 "" 0 0 0 "">
