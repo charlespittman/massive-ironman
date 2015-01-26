@@ -1,0 +1,28 @@
+f1a : 1 - exp(-t) - t*exp(-t);
+laplace(%, t, s);
+
+f1b : t*exp(-t)*cos(t);
+laplace(%, t, s);
+
+f2 : (1 / (s^2 + 2*s));
+sf2 : ilt(f2, s, t);
+df2 : diff(%,t);
+
+limit(f2, t, 0);
+limit(f2, t, inf);
+limit(df2, t, 0);
+limit(df2, t, inf);
+
+part_and_inverse(fun) :=
+  partfrac(fun, s);
+  ilt(fun, s, t);
+
+part_and_inverse(f2);
+
+f3 : (s+1) /
+(s*(s^2 + 2*s + 10));
+part_and_inverse(f3);
+
+f4 : (10 * (s + 2) * (s + 4)) /
+((s + 1) * (s + 3) * (s + 5)^2);
+part_and_inverse(%);
