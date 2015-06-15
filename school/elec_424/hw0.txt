@@ -1,0 +1,29 @@
+Answer the following from data within the 2013 edition of the "International
+Technology Roadmap for Semiconductors".
+
+1. From the Executive Summary:
+  a. How many key contributors were in the “metrology” working group?  How
+     about in the “test and test equipment” group?
+
+     There are 26 in the "Metrology" group. There are 77 in the "Test and Test
+     Equipment".
+
+  b. Just by glance, which group has the most key contributors?  The "Emerging
+     Research Materials" has the most key contributors.
+
+  c. Roughly, how many people contributed to the road map in total?  From the
+     entire document?  There are about 1,100 key contributors.
+
+2. Click around the road map, be awed by its depth and staggered by its detail. Then find some obscure but interesting fact to share with the class in a couple of paragraphs (no more than one page) of writing.
+
+   The testing section is titled "Test and Test Equippment".  Not important,
+   but a glaring oversight. [1]
+
+   Chemistry is _way_ more important than I thought.  "Emerging Research
+   Materials" having so many contributors should have been a hint.  A large
+   chunk of the research and difficulties revolves around finding new materials
+   with desired properties.  The two most common properties are less-lossy
+   dialetrics and smaller footprints with comparable mechanical properties.
+
+
+[1] http://www.itrs.net/ITRS%201999-2014%20Mtgs,%20Presentations%20&%20Links/2013ITRS/2013Chapters/2013Test_Summary.pdf
