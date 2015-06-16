@@ -1,0 +1,74 @@
+* Objective
+  Provide broad device-specific exposure to classmates and the professor.
+
+* Outline
+** Introduction
+*** What is it?
+*** Who discovered it?
+*** How's it work?
+** What are some applications?
+***
+
+* img comparing 4 passive elements [99]
+  https://upload.wikimedia.org/wikipedia/commons/1/15/Two-terminal_non-linear_circuit_elements.svg
+
+* Description
+** [1]
+   The memristor (/ˈmɛmrɨstər/; a portmanteau of "memory resistor") was a term
+   coined in 1971 by circuit theorist Leon Chua as a missing non-linear passive
+   two-terminal electrical component relating electric charge and magnetic flux
+   linkage.
+
+** [2]
+   According to the characterizing mathematical relations, the memristor would
+   hypothetically operate in the following way: The memristor's electrical
+   resistance is not constant but depends on the history of current that had
+   previously flowed through the device, i.e., its present resistance depends on
+   how much electric charge has flowed in what direction through it in the
+   past. The device remembers its history - the so-called non-volatility
+   property:
+
+** [3]
+   But in 1971, a young circuit designer called Leon Chua at the University of
+   California, Berkeley, realised something was missing. He was toying with the
+   non-linear mathematics that describes how the four variables in a circuit -
+   voltage, current, charge and flux - behave in the three basic elements.
+
+   The three building blocks each relate two of the four electronic properties
+   of circuits, creating a chain linking charge to flux via voltage and
+   current. But his calculations showed there should be a fourth device to
+   directly link flux and charge.
+
+   "This was a stroke of absolute, sheer genius by Chua," says Williams. "He
+   then worked through some complex mathematics and saw that such a device would
+   have an unusual property: the ability to remember its past history."
+
+   Chua showed that his predicted device could remember the last voltage applied
+   to it, and how long it had been applied. He dubbed the property "memristance"
+   but the memristor was quietly forgotten because it was unclear how it could
+   ever be built.
+
+* Implementations
+** Titanium dioxide memristor
+*** [4]
+   How it works
+
+* Uses
+** Memory
+** Logic
+
+* References
+[1] Chua, L. O. (1971), "Memristor—The Missing Circuit Element", IEEE
+Transactions on Circuit Theory, CT-18 (5): 507–519, doi:10.1109/TCT.1971.1083337
+
+[2] Chua, L. O. (2011), "Resistance switching memories are memristors", Applied
+Physics A 102 (4): 765–783, Bibcode:2011ApPhA.102..765C,
+doi:10.1007/s00339-011-6264-9
+
+[3] Marks, P. (30 April 2008), "Engineers find 'missing link' of electronics",
+New Scientist, retrieved 2008-04-30
+
+[4] http://spectrum.ieee.org/semiconductors/processors/how-we-found-the-missing-memristor/memrf1
+
+[99] By Parcly Taxel (Own work) [CC BY-SA 3.0
+(http://creativecommons.org/licenses/by-sa/3.0)], via Wikimedia Commons
