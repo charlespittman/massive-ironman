@@ -1,22 +1,22 @@
-\author{Charles Pittman}
-\date{\today}
-\title{Memristors}
+%\author{Charles Pittman}
+%\date{\today}
+%\title{Memristors}
 
 \documentclass[12pt]{article}
 
 \begin{document}
-\maketitle
+%\maketitle
 
-\begin{abstract}
-This is the paper's abstract \ldots
-\end{abstract}
+%\begin{abstract}
+%This is the paper's abstract \ldots
+%\end{abstract}
 
-\section{Introduction}
+%\section{Introduction}
 Electronics textbooks list three passive components: resistors, capacitors, and
 inductors.  Resistors relate voltage to current, capacitors relate voltage to
 charge, and inductors relate charge to magnetic flux.  Noting the symmetry (no
 component relating magnetic flux to current), in 1971 Leon Chua published a
-mathematical proof \cite{chua1971} that such a device should be possible.
+mathematical proof\cite{chua1971} that such a device should be possible.
 
 As a function of time, the device gives a flux-charge relationship similar to
 the current-voltage relationship of a resistor (i.e. its resistance changes
@@ -25,25 +25,28 @@ which is where the term ``memristor'' comes from.  Active devices simulating
 the behavior had existed, but the first passive version came from HP 37 years
 later.\cite{strukov2008missing}
 
-\paragraph{Outline}
-The remainder of this article is organized as follows.
-Section~\ref{previous work} gives account of previous work.
-Our new and exciting results are described in Section~\ref{results}.
-Finally, Section~\ref{conclusions} gives the conclusions.
+HP's device consisted of two layers of titanium dioxide ($\mathrm{TiO_2}$), a
+semiconductor, sandwiched between platinum plates with some oxygen atoms
+removed from one of the layers to make it conductive ($\mathrm{TiO_{2-x}}$).
+Voltage applied to the platinum plates would expand or contract the
+$\mathrm{TiO_{2-x}}$ layer, changing the device's
+conductivity\cite{williams2008we} (a switch, essentially).
 
-\section{Applications}
-\subsection{Memory}\label{memory}
-\subsection{Logic}\label{logic}
-
-\section{Previous work}\label{previous work}
-A much longer \LaTeXe{} example was written by Gil~\cite{Gil:02}.
-
-\section{Results}\label{results}
-In this section we describe the results.
-
-\section{Conclusions}\label{conclusions}
-We worked hard, and achieved very little.
-
+%\section{Applications}
+%\subsection{Memory}\label{memory}
+The device HP created was born out of a research group tasked with figuring out
+what to do when transistors could be shrunk no further\cite{williams2008we}.
+As component sizes shrink aligning masks during the die creation becomes more
+difficult and probability of surface defects increase, together reducing
+yield\cite{snider2008molecular}.  The team realized that redundancy could be
+used to combat the reduced yield.  Inspired by another HP project, the
+Teramac\cite{heath1998} massively-parallel computer, the cross-board latch
+would be used: multiple switches are placed between an input and output line
+such that any could trigger a connection.  Forming an array of these latches
+creates a storage device.
+%\subsection{Logic}\label{logic}
+The extension from storage to logic is simple
+%\subsection{Artificial Intelligence}\label{ai}
 \bibliographystyle{abbrv}
 \bibliography{main}
 
